@@ -64,5 +64,15 @@ Nowy tekst strony — także strony działu i tekst nad listą (Seminaria, Konfe
 ## Jedna gałąź `main` (od 7.11.2026, decyzja właściciela)
 Od 7.11 repozytoria treści i Web-Core mają jedną gałąź `main`, a Web-Podglad buduje się z `main`. **Każdy push na `main` od razu zmienia Podgląd**, a redaktorzy pracują w CMS na `main`. Dlatego: pracuj na lokalnej gałęzi roboczej (np. `praca/NN-nazwa`), commituj lokalnie, a na `main` wypychaj dopiero po słowie właściciela „push”, po `git pull --rebase` (redaktorzy mogli w tym czasie zapisać zmiany). Gałęzi roboczych nie wypychaj na GitHuba, bo CMS pokazuje redaktorom wszystkie gałęzie. Budowa Core (workflow „Budowanie i publikacja strony”) jest wyłączona; nie włączaj jej bez polecenia.
 
-## Raporty i zrzuty tylko lokalnie (od zlecenia 38, decyzja właściciela 7.11)
-Raporty zleceń (`RAPORT-*.md`, `PYTANIA.md`) i zrzuty (`raport-zrzuty/`) zapisuj **tylko lokalnie**, w katalogu `Web-Core`. Nie commituj ich i nie wypychaj: `.gitignore` je pomija, więc nie dodawaj ich przez `git add -f`. Dawne raporty i zrzuty (do 18.11.2026) oraz pierwsza wersja strony są w znaczniku `archiwum/pierwsza-wersja`, a stare gałęzie wszystkich repozytoriów w znacznikach `archiwum/<nazwa>`. W repozytoriach zostaje tylko `main` (w Web-Podglad także `zbudowana`).
+## Historia zleceń w prywatnym repozytorium Web-Zlecenia (od 23.11.2026, decyzja właściciela)
+Folder `.przekazanie/` jest klonem prywatnego repozytorium https://github.com/IM-UWr/Web-Zlecenia. Widzi je tylko właściciel i nie trafia na stronę.
+- **Na początku pracy:** `git -C .przekazanie pull --ff-only`. Nowe zlecenia mogą przyjść prosto na GitHub.
+- **Po każdym zapisie** zrób od razu commit i push w `.przekazanie`. Zapisem jest:
+  - zlecenie, także wykonane, zapisane jako changelog z „WYKONANE” w tytule;
+  - wpis w `dziennik.md`;
+  - raport.
+- **Raporty** (`RAPORT-*.md`, `PYTANIA.md`) zapisuj w `.przekazanie/raporty/`, nie w katalogu głównym Web-Core.
+- **Zrzuty z testów** nie są przechowywane. Rób je w katalogu tymczasowym, a w raporcie opisz, co pokazały.
+- Do Web-Core nie trafia nic z tej historii: `.gitignore` pomija `.przekazanie/` i `RAPORT-*.md`, więc nie dodawaj ich przez `git add -f`.
+
+Do 22.11 raporty i zrzuty były tylko lokalnie (zlecenie 38). Dawne raporty i zrzuty (do 18.11.2026) oraz pierwsza wersja strony są w znaczniku `archiwum/pierwsza-wersja`, a stare gałęzie wszystkich repozytoriów w znacznikach `archiwum/<nazwa>`. W repozytoriach zostaje tylko `main` (w Web-Podglad także `zbudowana`).
