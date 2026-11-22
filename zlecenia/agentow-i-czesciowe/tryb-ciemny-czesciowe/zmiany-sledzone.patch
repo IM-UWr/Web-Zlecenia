@@ -1,0 +1,698 @@
+diff --git a/src/components/Ikona.astro b/src/components/Ikona.astro
+index 77bd0dd1..47715181 100644
+--- a/src/components/Ikona.astro
++++ b/src/components/Ikona.astro
+@@ -28,6 +28,8 @@ const IKONY: Record<string, string> = {
+   facebook: '<path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V8z"/>',
+   youtube: '<rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z"/>',
+   czapka: '<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c2 2 10 2 12 0v-5M22 9v6"/>',
++  // biret z wypełnionym denkiem — etykieta „Obrona doktorska” (EtykietaRodzaju.astro; decyzja 31.10.2026)
++  biret: '<path d="M12 4 2 9l10 5 10-5-10-5z" fill="currentColor" stroke="none"/><path d="M6 11.2V15c0 1.4 2.7 2.8 6 2.8s6-1.4 6-2.8v-3.8M21 9v5"/>',
+ };
+ 
+ const svg = IKONY[nazwa] ?? IKONY.strzalka;
+diff --git a/src/components/WierszAktualnosci.astro b/src/components/WierszAktualnosci.astro
+index cf56a758..2381373b 100644
+--- a/src/components/WierszAktualnosci.astro
++++ b/src/components/WierszAktualnosci.astro
+@@ -6,8 +6,13 @@
+ // zwijają się od końca do jednej plakietki „+N” (liczy skrypt niżej dla rzeczywistej szerokości). Zwinięte plakietki są
+ // schowane tylko wizualnie (czytnik ekranu dalej je czyta), „+N” jest aria-hidden. Bez JS — zawijanie jak dawniej.
+ // Pełna lista odbiorców jest na stronie wpisu (Aktualnosc.astro, „dla: …”).
++// Etykiety B1 (decyzja 31.10.2026; telefon): rodzaj — EtykietaRodzaju.astro (wspólna z Kalendarzem), odbiorcy nie jako
++// plakietki, tylko zwykły szary tekst małymi literami po przecinku („studenci, doktoranci”), „+N” — tym samym tekstem,
++// pogrubiony. Na komputerze odbiorcy jak dotąd (plakietki z wielką literą): każdy odbiorca ma oba napisy
++// (.tylko-komputer / .tylko-telefon), skrypt zwijania mierzy cały element [data-wa-dla].
++import EtykietaRodzaju from './EtykietaRodzaju.astro';
+ import { u, isExternal } from '../lib/url';
+-import { wJezyku, RODZAJE, ODBIORCY } from '../lib/i18n';
++import { wJezyku, ODBIORCY, odbiorcyMalymi } from '../lib/i18n';
+ import { short, range, type Lang } from '../lib/daty';
+ import type { PozycjaListy } from '../lib/tresci';
+ 
+@@ -18,8 +23,8 @@ const href = isExternal(p.href) ? p.href : u(wJezyku(p.href, lang));
+ <a class="row-item wa-row" href={href} data-rodzaj={p.rodzaj} data-dla={p.dla.join(' ')}>
+   <span class="body">
+     <span class="news-meta wa-meta" data-wa-meta>
+-      <span class={`badge badge-${p.rodzaj}`}>{RODZAJE[p.rodzaj]?.[lang]}</span>
+-      {p.dla.map((d) => <span class="badge" data-wa-dla>{ODBIORCY[d]?.[lang]}</span>)}
++      <EtykietaRodzaju rodzaj={p.rodzaj} lang={lang} />
++      {p.dla.map((d) => <span class="badge wa-dla" data-wa-dla><span class="tylko-komputer">{ODBIORCY[d]?.[lang]}</span><span class="tylko-telefon">{odbiorcyMalymi(d, lang)}</span></span>)}
+       {p.dla.length > 0 && <span class="badge wa-wiecej" data-wa-wiecej aria-hidden="true" hidden></span>}
+       <time datetime={p.data}>{short(p.data)}</time>
+     </span>
+@@ -135,7 +140,12 @@ const href = isExternal(p.href) ? p.href : u(wJezyku(p.href, lang));
+     .wa-row > .body { display: contents; }
+     .wa-meta { grid-column: 1; grid-row: 1 / 4; flex-direction: column; align-items: flex-start; gap: 4px; padding-top: 2px; }
+     .wa-meta time { order: -1; font-size: 14px; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; }
+-    .wa-meta .badge { padding: 1px 8px; font-size: 12.5px; white-space: nowrap; }
++    /* etykieta rodzaju: kształt, rozmiar i kolory B1 — telefon.css (.news-meta .badge) */
++    .wa-meta .badge { white-space: nowrap; }
++    /* odbiorcy i „+N” (B1, decyzja 31.10.2026): zwykły szary tekst 13,5 px, bez tła, „+N” pogrubiony */
++    .wa-meta .wa-dla, .wa-meta .wa-wiecej { padding: 0; border-radius: 0; background: none; box-shadow: none;
++      font-size: 13.5px; font-weight: 500; line-height: 1.5; letter-spacing: 0; color: var(--et-dla, var(--muted)); }
++    .wa-meta .wa-wiecej { font-weight: 700; }
+     .wa-row .t { grid-column: 2; grid-row: 1; }
+     .wa-kiedy { grid-column: 2; grid-row: 2; margin-top: 3px; }
+     .wa-row .x { grid-column: 2; grid-row: 3; margin-top: 3px; }
+@@ -144,7 +154,10 @@ const href = isExternal(p.href) ? p.href : u(wJezyku(p.href, lang));
+   @media (max-width: 640px) {
+     .wa-row { grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto auto auto minmax(0, 1fr); }
+     .wa-meta { grid-column: 1 / -1; grid-row: 1; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 4px; margin-bottom: 4px; padding-top: 0; }
+-    .wa-meta time { margin-right: 6px; }
++    .wa-meta time { margin-right: 4px; }
++    /* odbiorcy w jednej linijce po przecinku — przecinek po każdym, za którym stoi jeszcze widoczny (niezwinięty) odbiorca:
++       „studenci, doktoranci +1” (w kolumnie 641–760 px — jeden pod drugim, bez przecinków) */
++    .wa-meta .wa-dla:has(~ .wa-dla:not(.wa-zwiniete))::after { content: ','; }
+     .wa-row .t { grid-column: 1; grid-row: 2; }
+     .wa-kiedy { grid-column: 1; grid-row: 3; }
+     .wa-row .x { grid-column: 1; grid-row: 4; }
+diff --git a/src/lib/i18n.ts b/src/lib/i18n.ts
+index 8c900844..cf67cff7 100644
+--- a/src/lib/i18n.ts
++++ b/src/lib/i18n.ts
+@@ -230,16 +230,26 @@ export const RODZAJE: Record<string, { pl: string; en: string }> = {
+   termin: { pl: 'Termin', en: 'Deadline' },
+ };
+ 
+-// Nazwy rodzajów w filtrach listy aktualności (przyciski na komputerze, lista rozwijana na telefonie) — w liczbie mnogiej;
+-// plakietki przy wpisach zostają w liczbie pojedynczej (RODZAJE) — decyzja 31.10.2026.
++// Nazwy rodzajów w filtrach list (Aktualności: przyciski na komputerze, lista rozwijana na telefonie; Kalendarz: lista
++// rozwijana na telefonie) — w liczbie mnogiej; plakietki przy wpisach zostają w liczbie pojedynczej (RODZAJE) — decyzja 31.10.2026.
+ export const RODZAJE_FILTRY: Record<string, { pl: string; en: string }> = {
+   ogloszenie: { pl: 'Ogłoszenia', en: 'Announcements' },
+   wydarzenie: { pl: 'Wydarzenia', en: 'Events' },
+   sukces: { pl: 'Sukcesy', en: 'Achievements' },
+   kariera: { pl: 'Kariera', en: 'Careers' },
+   obrona: { pl: 'Obrony', en: 'PhD defences' },
++  referat: { pl: 'Seminaria', en: 'Seminars' },
++  konferencja: { pl: 'Konferencje', en: 'Conferences' },
+ };
+ 
++// Odmiana po liczebniku: 1 / 2–4 (bez 12–14) / 5+ ; po angielsku: 1 / reszta — np. liczby w banerach (LiczbyBanera.astro).
++export function odmiana(n: number, pl: [string, string, string], en: [string, string], lang: Lang): string {
++  if (lang === 'en') return n === 1 ? en[0] : en[1];
++  if (n === 1) return pl[0];
++  const j = n % 10, d = n % 100;
++  return j >= 2 && j <= 4 && (d < 12 || d > 14) ? pl[1] : pl[2];
++}
++
+ export const RODZAJE_GRANTOW: Record<string, { pl: string; en: string }> = {
+   ncn: { pl: 'NCN', en: 'NCN' },
+   ue: { pl: 'UE i międzynarodowe', en: 'EU and international' },
+@@ -254,6 +264,12 @@ export const ODBIORCY: Record<string, { pl: string; en: string }> = {
+   kandydaci: { pl: 'Kandydaci', en: 'Prospective students' },
+ };
+ 
++// Nazwa odbiorców małymi literami w zwykłym tekście („studenci, doktoranci”; decyzja 31.10.2026): wyrazy zaczynające się
++// wielką literą zmniejszone, skróty z wielkimi literami w środku zostają („PhD students”, nie „phd students”).
++export function odbiorcyMalymi(d: string, lang: Lang): string {
++  return (ODBIORCY[d]?.[lang] ?? d).split(' ').map((w) => (/^\p{Lu}\p{Ll}*$/u.test(w) ? w.toLowerCase() : w)).join(' ');
++}
++
+ // Wersja angielska ma te same adresy z przedrostkiem /en (np. /en/aktualnosci).
+ export function jezykZeSciezki(pathname: string): Lang {
+   return /^\/en(\/|$)/.test(pathname) ? 'en' : 'pl';
+diff --git a/src/styles/global.css b/src/styles/global.css
+index 8def28c9..c03069dc 100644
+--- a/src/styles/global.css
++++ b/src/styles/global.css
+@@ -66,6 +66,12 @@
+   --shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+   color-scheme: dark;
+ }
++/* Znaczniki i etykiety (decyzja 31.10.2026; na razie tylko telefon): kafelki dat, etykieta „Wydarzenie”, aktywne filtry
++   i przycisk menu biorą kolor z tokenu --znacznik (--znacznik-ink — tekst na nim), tekstowe akcenty w ciemnym motywie
++   (.link-arrow, .pt-k, .pt-all…) — z --znacznik-tekst, miesiąc na kafelku daty — z --znacznik-miesiac; etykiety
++   w wierszach list (.news-meta .badge) — z tokenów --et-*. Reguły niżej mają zapas: var(--znacznik, var(--primary)) itd.,
++   więc bez tokenów wszystko wygląda jak dotąd. Tokeny są zdefiniowane w telefon.css (@media (max-width: 760px), blok
++   „Znaczniki i etykiety”) — żeby objąć komputer, wystarczy przenieść tamte definicje tutaj (i reguły etykiet B1). */
+ 
+ /* ---------- podstawy ---------- */
+ *, *::before, *::after { box-sizing: border-box; }
+@@ -106,13 +112,15 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.2; letter-spacing: -0.01em; }
+ .btn-accent:hover { color: var(--accent-ink); filter: brightness(1.05); }
+ .btn-small { min-height: 40px; padding: 0 14px; font-size: 14px; }
+ .link-arrow { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 700; font-size: 15px; text-decoration: none; color: var(--primary); }
+-:root[data-theme='dark'] .link-arrow { color: var(--accent); }
++:root[data-theme='dark'] .link-arrow { color: var(--znacznik-tekst, var(--accent)); }
+ .badge { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 999px; font-size: 13px; font-weight: 700; line-height: 1.4; background: var(--tint); color: var(--tint-ink); }
+-.badge-wydarzenie { background: var(--primary); color: var(--primary-ink); }
++/* ikonka w etykiecie (biret przy „Obronie doktorskiej”, EtykietaRodzaju.astro) — widoczna tylko z etykietami B1 (telefon.css) */
++.badge > .et-ikona { display: none; }
++.badge-wydarzenie { background: var(--znacznik, var(--primary)); color: var(--znacznik-ink, var(--primary-ink)); }
+ .badge-sukces { background: var(--accent); color: var(--accent-ink); }
+ .badge-obrona { background: var(--bg); color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
+ .chip { min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--bg); color: var(--ink); font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; }
+-.chip[aria-pressed='true'], .chip[role='tab'][aria-selected='true'] { background: var(--primary); border-color: var(--primary); color: var(--primary-ink); }
++.chip[aria-pressed='true'], .chip[role='tab'][aria-selected='true'] { background: var(--znacznik, var(--primary)); border-color: var(--znacznik, var(--primary)); color: var(--znacznik-ink, var(--primary-ink)); }
+ 
+ /* ---------- nagłówek ---------- */
+ :root { --hdr-h: 71px; }
+@@ -190,8 +198,8 @@ body > main { flex: 1 0 auto; }
+ .icon-btn { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 999px; background: transparent; color: var(--ink); font: inherit; font-size: 14px; font-weight: 700; text-decoration: none; cursor: pointer; }
+ .icon-btn:hover { background: var(--surface); color: var(--ink); }
+ .icon-btn svg { width: 20px; height: 20px; }
+-.burger { display: none; background: var(--primary); color: var(--primary-ink); }
+-.burger:hover { background: var(--primary); color: var(--primary-ink); filter: brightness(1.12); }
++.burger { display: none; background: var(--znacznik, var(--primary)); color: var(--znacznik-ink, var(--primary-ink)); }
++.burger:hover { background: var(--znacznik, var(--primary)); color: var(--znacznik-ink, var(--primary-ink)); filter: brightness(1.12); }
+ /* Menu na telefon: panel wysuwany z prawej pod nagłówkiem, nad treścią (strona się nie przesuwa ani nie przewija);
+    po lewej przyciemniony pasek strony (.mnav-tlo). --menu-top: dół nagłówka, ustawiany skryptem przy otwarciu. */
+ .mnav { position: fixed; top: var(--menu-top, var(--hdr-h)); right: 0; bottom: 0; z-index: 31; width: min(86vw, 420px);
+@@ -329,16 +337,19 @@ details[open] > summary .chev { transform: rotate(180deg); }
+ .event-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+ .event { display: flex; gap: 18px; padding: 18px; border-radius: var(--radius-l); background: var(--bg); text-decoration: none; color: var(--text); }
+ .event:hover { color: var(--text); box-shadow: inset 0 0 0 1.5px var(--line); }
+-.datebox { flex: 0 0 72px; height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 14px; background: var(--primary); color: var(--primary-ink); }
++.datebox { flex: 0 0 72px; height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 14px; background: var(--znacznik, var(--primary)); color: var(--znacznik-ink, var(--primary-ink)); }
+ .datebox .d { font-size: 28px; font-weight: 800; line-height: 1; }
+ .datebox .m { font-size: 13px; font-weight: 700; text-transform: uppercase; }
++/* miesiąc na nadchodzącym kafelku: własny kolor tylko z tokenem --znacznik-miesiac (ciemny motyw na telefonie — bursztyn);
++   bez tokenu currentColor = kolor kafelka, jak dotąd */
++:is(.datebox, .pt-dbox):not(.minione) .m { color: var(--znacznik-miesiac, currentColor); }
+ .datebox.small { flex-basis: 56px; height: 62px; border-radius: 12px; }
+ .datebox.small .d { font-size: 22px; }
+ /* Kafelek daty — jedna zasada na całej stronie: granatowy (domyślny) = nadchodzące lub trwające, szary (.minione) = już się
+    odbyło (liczone przy budowaniu strony, funkcja trwaLubBedzie; ten sam szary w kafelkach .pt-dbox wyglądu „Portal”). */
+ .datebox.minione { background: var(--minione-tlo); color: var(--minione-tekst); }
+ .event .k { font-size: 13px; font-weight: 700; color: var(--primary); }
+-:root[data-theme='dark'] .event .k { color: var(--accent); }
++:root[data-theme='dark'] .event .k { color: var(--znacznik-tekst, var(--accent)); }
+ .event .t { font-size: 17px; font-weight: 800; line-height: 1.3; color: var(--ink); }
+ .event .s { font-size: 14px; color: var(--muted); }
+ .event-body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+@@ -353,7 +364,7 @@ details[open] > summary .chev { transform: rotate(180deg); }
+ .sem-row .day, .sem-row .time { font-size: 15px; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; }
+ .sem-row .room { font-size: 14px; color: var(--muted); }
+ .sem-row .sem { font-size: 14px; font-weight: 700; color: var(--primary); }
+-:root[data-theme='dark'] .sem-row .sem { color: var(--accent); }
++:root[data-theme='dark'] .sem-row .sem { color: var(--znacznik-tekst, var(--accent)); }
+ .sem-row .talk b { font-size: 15px; color: var(--ink); }
+ .sem-row .talk span { font-size: 14px; color: var(--muted); }
+ .sem-empty { margin: 0; padding: 16px 18px; color: var(--muted); }
+@@ -572,7 +583,7 @@ article.talk { padding: 18px 0; border-top: 1px solid var(--line); scroll-margin
+ .talk .who { font-size: 15px; font-weight: 600; }
+ .talk details { margin-top: 8px; }
+ .talk summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+-:root[data-theme='dark'] .talk summary { color: var(--accent); }
++:root[data-theme='dark'] .talk summary { color: var(--znacznik-tekst, var(--accent)); }
+ .info-list { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 16px; margin: 0; font-size: 16px; }
+ .info-list dt { font-weight: 700; color: var(--muted); }
+ .info-list dd { margin: 0; }
+@@ -694,7 +705,7 @@ article.talk { padding: 18px 0; border-top: 1px solid var(--line); scroll-margin
+ .plain-list { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+ .more { margin-top: 10px; }
+ .more summary { cursor: pointer; font-weight: 700; color: var(--primary); min-height: 36px; display: flex; align-items: center; }
+-:root[data-theme='dark'] .more summary { color: var(--accent); }
++:root[data-theme='dark'] .more summary { color: var(--znacznik-tekst, var(--accent)); }
+ 
+ /* kierunek studiów */
+ .eyebrow { margin: 0; font-size: 14px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+diff --git a/src/styles/portal.css b/src/styles/portal.css
+index bc8d4fe2..438badd3 100644
+--- a/src/styles/portal.css
++++ b/src/styles/portal.css
+@@ -45,7 +45,7 @@
+ .pt-opis { margin: 6px 0 4px; font-size: 14px; line-height: 1.45; color: var(--muted); }
+ .pt-all { display: inline-flex; align-items: center; gap: 5px; min-height: 30px; font-size: 14px; font-weight: 700; color: var(--primary); text-decoration: none; white-space: nowrap; }
+ .pt-all:hover { text-decoration: underline; text-underline-offset: 3px; color: var(--primary); }
+-:root[data-theme='dark'] .pt-all, :root[data-theme='dark'] .pt-all:hover { color: var(--accent); }
++:root[data-theme='dark'] .pt-all, :root[data-theme='dark'] .pt-all:hover { color: var(--znacznik-tekst, var(--accent)); }
+ .pt-stopka { display: flex; flex-wrap: wrap; gap: 0 18px; margin-top: auto; padding-top: 6px; }
+ .pt-pusto { margin: 8px 0 4px; font-size: 15px; color: var(--muted); }
+ 
+@@ -59,13 +59,13 @@
+ .pt-d-szer { min-width: 76px; }
+ .pt-b { display: flex; flex-direction: column; gap: 1px; min-width: 0; flex: 1 1 auto; }
+ .pt-k { font-size: 12.5px; font-weight: 800; letter-spacing: .02em; line-height: 1.35; color: var(--primary); }
+-:root[data-theme='dark'] .pt-k { color: var(--accent); }
++:root[data-theme='dark'] .pt-k { color: var(--znacznik-tekst, var(--accent)); }
+ .pt-k .pt-k-m { font-weight: 600; color: var(--muted); }
+ .pt-t { font-size: 15px; font-weight: 700; line-height: 1.35; color: var(--ink); overflow-wrap: anywhere; }
+ .pt-s { font-size: 14px; line-height: 1.45; color: var(--muted); overflow-wrap: anywhere; }
+ .pt-x { font-size: 15px; line-height: 1.5; color: var(--text); }
+-/* mały kafelek daty (wydarzenia, konferencje, obrony) */
+-.pt-dbox { flex: 0 0 46px; height: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 10px; background: var(--primary); color: var(--primary-ink); line-height: 1; }
++/* mały kafelek daty (wydarzenia, konferencje, obrony); kolor z tokenu --znacznik jak .datebox (global.css) */
++.pt-dbox { flex: 0 0 46px; height: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 10px; background: var(--znacznik, var(--primary)); color: var(--znacznik-ink, var(--primary-ink)); line-height: 1; }
+ .pt-dbox .d { font-size: 19px; font-weight: 800; }
+ .pt-dbox .m { margin-top: 2px; font-size: 11.5px; font-weight: 800; text-transform: uppercase; }
+ .pt-dbox.minione { background: var(--minione-tlo); color: var(--minione-tekst); }
+@@ -118,10 +118,10 @@ a.pt-card:hover, .pt-card.pt-link:hover, .pt-card.pt-link:focus-within { border-
+ .pt-liczby .n { font-size: 22px; font-weight: 800; line-height: 1.1; color: var(--ink); font-variant-numeric: tabular-nums; }
+ /* Telefon (≤ 760 px): liczby obok siebie w kolumnach (tyle kolumn, ile liczb; w działach po 3), etykieta pod liczbą,
+    nad nimi cienka kreska (decyzja 31.10.2026). Na telefonie widać je tylko na stronach działów (Instytut, Nauka,
+-   Studia; Aktualności i Popularyzacja — lista z .tylko-telefon, na komputerze bez liczb); na pozostałych podstronach
+-   lista ma .tylko-komputer.
+-   Etykiety łamią się równo (text-wrap: balance — np. „wydarzenia / w ostatnim miesiącu” zamiast „wydarzenia w ostatnim /
+-   miesiącu”), najwyżej w dwóch linijkach; jednoliterowe wyrazy z twardą spacją (bezSierotek w i18n.ts; decyzja 31.10.2026). */
++   Studia; Aktualności, Kalendarz i Popularyzacja — lista z .tylko-telefon, na komputerze bez liczb; Aktualności i Kalendarz:
++   LiczbyBanera.astro); na pozostałych podstronach lista ma .tylko-komputer.
++   Etykiety łamią się równo (text-wrap: balance — np. „ogłoszenia / z 30 dni”), najwyżej w dwóch linijkach; jednoliterowe
++   wyrazy z twardą spacją (bezSierotek w i18n.ts; decyzja 31.10.2026). */
+ @media (max-width: 760px) {
+   .pt-liczby { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 0 12px; max-width: none;
+     margin-top: 2px; padding-top: 10px; border-top: 1px solid color-mix(in srgb, var(--ink) 14%, transparent); }
+diff --git a/src/styles/telefon.css b/src/styles/telefon.css
+index 933dfd62..630c457a 100644
+--- a/src/styles/telefon.css
++++ b/src/styles/telefon.css
+@@ -99,7 +99,7 @@
+   .row-item .thumb { flex: 0 0 76px; width: 76px; height: 76px; border-radius: 14px; }
+   /* Jasne kafelki dat — tylko jasny motyw (decyzja 31.10.2026): tło #eef2f9 z cienką ramką, dzień i miesiąc w granacie zamiast
+      pełnego granatowego kwadratu. .datebox (Kalendarz, obrony, konferencje, wydarzenia, wpis) i .pt-dbox (konferencje
+-     na „Nauce”). Minione (szare) bez zmian; ciemny motyw bez zmian (osobne propozycje). */
++     na „Nauce”). Minione (szare) bez zmian; ciemny motyw — token --znacznik (blok „Znaczniki i etykiety” niżej). */
+   :root:not([data-theme='dark']) :is(.datebox, .pt-dbox):not(.minione) { border: 1px solid var(--line); background: #eef2f9; color: var(--primary); }
+ 
+   .event-box { gap: 12px 24px; padding: 14px 18px; }
+@@ -217,6 +217,71 @@
+   body[data-sekcje='linia'] .prose h2 { margin-top: 1.6em; padding-top: 14px; }
+ }
+ 
++/* ---------- Znaczniki i etykiety (decyzja 31.10.2026: ciemny motyw A1 „stalowy granat”, etykiety B1) ----------
++   Na razie tylko telefon. Reguły, które używają tokenów --znacznik*, są w global.css i portal.css (z zapasem
++   var(--znacznik, var(--primary)) — bez tokenu jak dotąd); tu tylko wartości tokenów i reguły etykiet B1.
++   Rozszerzenie na komputer: definicje tokenów przenieść do global.css (:root i :root[data-theme='dark'], .menu-ciemne),
++   a reguły etykiet B1 — wyjąć z @media. */
++@media (max-width: 760px) {
++  /* A1. Znacznik: kafelek daty (.datebox, .pt-dbox), etykieta „Wydarzenie”, aktywny filtr (.chip[aria-pressed]),
++     przycisk menu (.burger). Jasny motyw: ten sam granat co --primary (nic się nie zmienia). Ciemny motyw: stalowy
++     granat zamiast bursztynu, miesiąc na kafelku bursztynowy; tekstowe akcenty (.pt-k, .pt-all, .link-arrow, .event .k,
++     .sem-row .sem, .talk summary, .more summary) jasnoniebieskie; tekst na jasnym tle --tint jasnoszary zamiast bursztynu.
++     .menu-ciemne (nagłówek i menu na ciemnym pasie w jasnym motywie) — jak ciemny motyw (global.css robi tak samo).
++     Granatowy baner (.ph-granat, oba motywy): aktywny filtr biały z granatowym tekstem.
++     Bursztyn zostaje: hasło, rysunek w banerze, miesiąc na kafelku, kreski sekcji, linki w treści, przyciski .btn-primary. */
++  :root { --znacznik: #1b2d52; --znacznik-ink: #ffffff; }
++  :root[data-theme='dark'], .menu-ciemne { --znacznik: #2b4170; --znacznik-ink: #f1f4fa; --znacznik-tekst: #a9c0e8; --znacznik-miesiac: #f2a33a; }
++  :root[data-theme='dark'] { --tint-ink: #d3dcea; }
++  .ph-granat { --znacznik: #ffffff; --znacznik-ink: #1b2d52; }
++
++  /* B1. Etykiety w wierszach list (.news-meta .badge: Aktualności, Kalendarz, wpis, konferencje, projekty…) — jedna
++     rodzina: lekko zaokrąglony prostokąt (6 px, nie pastylka — etykieta nie udaje przycisku filtra), jeden rozmiar,
++     rodzaj rozróżnia odcień „mgiełki”: szara (domyślna: Seminarium, Ogłoszenie, Kariera, Termin, odwołana…), granatowa
++     (Wydarzenie), bursztynowa z ciemnym tekstem (Sukces, Konferencja), mocniejsza granatowa z biretem (Obrona doktorska;
++     ikonka — EtykietaRodzaju.astro). Odbiorcy (studenci, doktoranci…) to zwykły szary tekst — WierszAktualnosci.astro
++     (kolor --et-dla). */
++  :root {
++    --et-promien: 6px;
++    --et-szary-tlo: #eceef2; --et-szary: #4a5466;
++    --et-granat-tlo: #dce6f7; --et-granat: #18305f;
++    --et-burs-tlo: #fcebd2; --et-burs: #6b3f05;
++    --et-obrona-tlo: #c3d2ee; --et-obrona: #0f2552;
++    --et-dla: #5b6577;
++  }
++  :root[data-theme='dark'] {
++    --et-szary-tlo: rgb(255 255 255 / .065); --et-szary: #aab5c7;
++    --et-granat-tlo: rgb(110 150 230 / .26); --et-granat: #d3e1fb;
++    --et-burs-tlo: rgb(242 163 58 / .16); --et-burs: #f6c47a;
++    --et-obrona-tlo: rgb(120 160 235 / .42); --et-obrona: #eef3ff;
++    --et-dla: #9da9be;
++  }
++  .news-meta .badge { padding: 1px 8px; border-radius: var(--et-promien); font-size: 12.5px; font-weight: 700; line-height: 1.5; letter-spacing: 0;
++    background: var(--et-szary-tlo); color: var(--et-szary); box-shadow: none; }
++  .news-meta .badge-wydarzenie { background: var(--et-granat-tlo); color: var(--et-granat); }
++  .news-meta :is(.badge-sukces, .badge-konferencja) { background: var(--et-burs-tlo); color: var(--et-burs); }
++  .news-meta .badge-obrona { gap: 4px; background: var(--et-obrona-tlo); color: var(--et-obrona); }
++  .news-meta .badge > .et-ikona { display: block; }
++}
++
++/* ---------- Wiersz filtrów list (decyzja 31.10.2026; Aktualności i Kalendarz — FiltrISzukaj.astro) ---------- */
++@media (max-width: 760px) {
++  /* Z lewej lista rozwijana rodzajów
++     (ok. 42% szerokości; szersza, gdy najdłuższa nazwa się nie mieści — np. „Announcements” po angielsku albo „Wydarzenia”
++     przy 360 px), z prawej pole szukania z krótką podpowiedzią; obie 44 px wysokości, zaokrąglone jak pole szukania.
++     Czcionka listy 16 px — mniejsza powoduje powiększanie strony na iPhonie. Przyciski rodzajów (komputer) mają
++     .tylko-komputer. Strzałka listy to ikona „dol”. */
++  .filters.filters-lewo { flex-wrap: nowrap; gap: 8px; }
++  .fl-rodzaj { position: relative; display: flex; flex: 0 0 auto; min-width: 42%; max-width: 60%; color: var(--muted); }
++  .fl-rodzaj select { appearance: none; -webkit-appearance: none; flex: 1 1 auto; width: auto; min-width: 0; height: 44px; margin: 0; padding: 0 34px 0 15px;
++    border: 1.5px solid var(--line); border-radius: 999px; background: var(--bg); color: var(--ink);
++    font: inherit; font-size: 16px; font-weight: 700; line-height: 1.2; text-overflow: ellipsis; white-space: nowrap; cursor: pointer; }
++  .fl-rodzaj select:focus-visible { border-color: var(--ink); }
++  .fl-rodzaj .ico { position: absolute; top: 50%; right: 12px; translate: 0 -50%; pointer-events: none; }
++  .fl-szukaj { flex: 1 1 0; min-width: 0; }
++  .fl-szukaj .search { flex: 1 1 auto; min-width: 0; height: 44px; }
++}
++
+ /* węższe progi z global.css — powtórzone, bo reguły wyżej przyszły później */
+ @media (min-width: 721px) and (max-width: 760px) {
+   .hero-fig figcaption { bottom: 10px; }
+diff --git a/src/views/Kalendarz.astro b/src/views/Kalendarz.astro
+index 8ef4180e..3d1f8741 100644
+--- a/src/views/Kalendarz.astro
++++ b/src/views/Kalendarz.astro
+@@ -2,20 +2,27 @@
+ // Kalendarz: nadchodzące wydarzenia, obrony i referaty (subskrypcja kanałów .ics zdjęta ze strony — decyzja właściciela; pliki .ics nadal się generują).
+ // Wygląd na komputerze (≥ 761 px): baner jak w wariancie „Portal”, reszta jak w „Zwarta” (uklad="zwarta portal-baner"),
+ // miesiące jako sekcje z kreską jak na stronach działów, pozycje jako osobne białe karty (.karty-lista w global.css). Filtry rodzaju w banerze;
+-// pod banerem przyciski widoku „Nadchodzące” / „Archiwum”. Telefon (≤ 760 px): poza przyciskami widoku bez zmian.
++// pod banerem przyciski widoku „Nadchodzące” / „Archiwum”.
++// Telefon (≤ 760 px; decyzja 31.10.2026 — jeden styl z Aktualnościami): w banerze tytuł, bursztynowe hasło zamiast opisu
++// i trzy liczby z najbliższych 30 dni (LiczbyBanera); przyciski rodzajów z banera schowane (.tylko-komputer), pod banerem
++// wiersz filtrów jak w Aktualnościach — lista rozwijana rodzajów i pole szukania (FiltrISzukaj, tylko telefon), pod nim
++// zwarty przełącznik „Nadchodzące | Archiwum” (te same przyciski widoku, inny wygląd). Stan filtrów wspólny dla przycisków
++// komputera i listy rozwijanej (skrypt niżej), więc przejście przez 760 px go nie gubi; etykiety — EtykietaRodzaju (B1).
+ import Baza from '../layouts/Baza.astro';
+ import NaglowekStrony from '../components/NaglowekStrony.astro';
+-import Ikona from '../components/Ikona.astro';
++import FiltrISzukaj from '../components/FiltrISzukaj.astro';
++import LiczbyBanera from '../components/LiczbyBanera.astro';
++import EtykietaRodzaju from '../components/EtykietaRodzaju.astro';
+ import TytulZewn from '../components/TytulZewn.astro';
+ import TytulReferatu from '../components/TytulReferatu.astro';
+-import { u, absolute, isExternal } from '../lib/url';
++import { u, isExternal } from '../lib/url';
+ import { t, wJezyku, RODZAJE } from '../lib/i18n';
+-import { monthYear, dayNum, monthShort, dayShort, range, time, hasTime, type Lang } from '../lib/daty';
+-import { wszystkieWydarzenia, trwaLubBedzie, seminaria } from '../lib/tresci';
+-import { adresIcs } from '../lib/kalendarz';
++import { monthYear, dayNum, monthShort, dayShort, range, time, hasTime, today, addDays, type Lang } from '../lib/daty';
++import { wszystkieWydarzenia, trwaLubBedzie } from '../lib/tresci';
+ 
+ interface Props { lang: Lang }
+ const { lang } = Astro.props;
++const T = (pl: string, en: string) => (lang === 'en' ? en : pl);
+ // Dwa widoki: „Nadchodzące” (trwające i przyszłe, od najbliższego) i „Archiwum” (cała historia, od najnowszego).
+ const wszystkie = await wszystkieWydarzenia(lang);
+ type W = (typeof wszystkie)[number];
+@@ -33,23 +40,37 @@ const poMiesiacach = (lista: W[]) => {
+   return grupy;
+ };
+ const widoki = [
+-  { id: 'nadchodzace', etykieta: lang === 'en' ? 'Upcoming' : 'Nadchodzące', grupy: poMiesiacach(wszystkie.filter(trwaLubBedzie)), pusty: t(lang, 'brakWydarzen') },
+-  { id: 'archiwum', etykieta: lang === 'en' ? 'Archive' : 'Archiwum', grupy: poMiesiacach(wszystkie.filter((w) => !trwaLubBedzie(w)).reverse()), pusty: lang === 'en' ? 'No past events.' : 'Brak minionych wydarzeń.' },
++  { id: 'nadchodzace', etykieta: T('Nadchodzące', 'Upcoming'), grupy: poMiesiacach(wszystkie.filter(trwaLubBedzie)), pusty: t(lang, 'brakWydarzen') },
++  { id: 'archiwum', etykieta: T('Archiwum', 'Archive'), grupy: poMiesiacach(wszystkie.filter((w) => !trwaLubBedzie(w)).reverse()), pusty: T('Brak minionych wydarzeń.', 'No past events.') },
+ ];
+-const sem = (await seminaria()).filter((s) => s.data.aktywne);
+-const kanaly = [
+-  { nazwa: t(lang, 'wszystkieWydarzeniaKal'), plik: 'wszystko' },
+-  { nazwa: t(lang, 'tylkoWydarzenia'), plik: 'wydarzenia' },
+-  ...sem.map((s) => ({ nazwa: `${RODZAJE.referat[lang]}: ${(lang === 'en' && s.data.nazwa_en) || s.data.nazwa}`, plik: `seminarium-${s.id}` })),
+-];
+-const webcal = (plik: string) => absolute(adresIcs(plik), Astro.site).replace(/^https?:/, 'webcal:');
+ const lead = lang === 'en'
+   ? 'Events, PhD defences, conferences and seminar talks at the Mathematical Institute — upcoming and past.'
+   : 'Wydarzenia, obrony doktorskie, konferencje i referaty seminaryjne w Instytucie Matematycznym — nadchodzące i archiwalne.';
++// Hasło na telefonie zamiast opisu (NaglowekStrony.astro; decyzja 31.10.2026). Opis zostaje na komputerze i w <meta description>.
++const haslo = T('Co, gdzie i kiedy', 'What, where and when');
++
++// Liczby w banerze (telefon; decyzja 31.10.2026): pozycje z najbliższych 30 dni od dnia budowania — te, które są
++// w „Nadchodzących” (trwają albo dopiero będą) i zaczynają się najpóźniej 30 dni po dniu budowania. Seminaria = referaty
++// seminariów, wydarzenia = wpisy z polem „Wydarzenie: początek”, obrony doktorskie. Konferencje nie są liczone.
++// Etykieta okresu „w ciągu 30 dni” — mieści się w dwóch linijkach przy 360 i 390 px (sprawdzone pomiarem).
++const za30 = addDays(today(), 30);
++const w30 = (r: W['rodzaj']) => wszystkie.filter((w) => w.rodzaj === r && trwaLubBedzie(w) && w.poczatek.slice(0, 10) <= za30).length;
++const liczby: { n: number; pl: [string, string, string]; en: [string, string] }[] = [
++  { n: w30('referat'), pl: ['seminarium', 'seminaria', 'seminariów'], en: ['seminar', 'seminars'] },
++  { n: w30('wydarzenie'), pl: ['wydarzenie', 'wydarzenia', 'wydarzeń'], en: ['event', 'events'] },
++  { n: w30('obrona'), pl: ['obrona', 'obrony', 'obron'], en: ['defence', 'defences'] },
++];
++// Filtry na telefonie: lista rozwijana (kolejność jak w decyzji: Seminaria, Wydarzenia, Obrony, Konferencje) i szukanie
++// po tekście pozycji — jak w Aktualnościach. Na komputerze przyciski w banerze, bez pola szukania (bez zmian).
++const rodzajeListy = ['referat', 'wydarzenie', 'obrona', 'konferencja'];
++const filtrEtykieta = T('Filtruj według rodzaju', 'Filter by type');
++const szukajDlugo = T('Szukaj w kalendarzu', 'Search calendar');
++const szukajKrotko = T('Szukaj', 'Search');
+ ---
+ <Baza tytul={t(lang, 'kalendarz')} opis={lead} uklad="zwarta portal-baner">
+-  <NaglowekStrony tytul={t(lang, 'kalendarz')} lead={lead} lang={lang} wstecz={{ etykieta: lang === 'en' ? 'Research' : 'Nauka', adres: '/nauka' }}>
+-    <div class="filters">
++  <NaglowekStrony tytul={t(lang, 'kalendarz')} lead={lead} haslo={haslo} lang={lang} wstecz={{ etykieta: lang === 'en' ? 'Research' : 'Nauka', adres: '/nauka' }}>
++    <LiczbyBanera lang={lang} okres={T('w ciągu 30 dni', 'in the next 30 days')} pozycje={liczby} />
++    <div class="filters tylko-komputer">
+       <div class="chips" role="group" aria-label={lang === 'en' ? 'Filter' : 'Filtruj'}>
+         <button type="button" class="chip" aria-pressed="true" data-rodzaj="">{t(lang, 'wszystkie')}</button>
+         <button type="button" class="chip" aria-pressed="false" data-rodzaj="wydarzenie">{RODZAJE.wydarzenie[lang]}</button>
+@@ -62,7 +83,11 @@ const lead = lang === 'en'
+ 
+   <div class="wrap layout kal-wrap">
+     <div class="main">
+-      {/* widok pod banerem: nadchodzące / archiwum (przyciski jak w tabeli pracowników) */}
++      {/* telefon: wiersz filtrów jak w Aktualnościach (wspólny stan z przyciskami w banerze — skrypt niżej) */}
++      <div class="filters filters-lewo tylko-telefon">
++        <FiltrISzukaj lang={lang} rodzaje={rodzajeListy} etykieta={filtrEtykieta} szukajDlugo={szukajDlugo} szukajKrotko={szukajKrotko} szukajTylkoTelefon />
++      </div>
++      {/* widok pod banerem: nadchodzące / archiwum (przyciski jak w tabeli pracowników; na telefonie — przełącznik segmentowy) */}
+       <div class="chips kal-widok" role="group" aria-label={lang === 'en' ? 'View' : 'Widok'}>
+         {widoki.map((v, i) => <button type="button" class="chip" aria-pressed={i === 0 ? 'true' : 'false'} data-widok-btn={v.id}>{v.etykieta}</button>)}
+       </div>
+@@ -80,7 +105,7 @@ const lead = lang === 'en'
+                   </span>
+                   <span class="body">
+                     <span class="news-meta kropki">
+-                      <span class={`badge badge-${w.rodzaj}`}>{RODZAJE[w.rodzaj][lang]}</span>
++                      <EtykietaRodzaju rodzaj={w.rodzaj} lang={lang} />
+                       <span>{dayShort(w.poczatek, lang)} {hasTime(w.poczatek) ? time(w.poczatek) : range(w.poczatek, w.koniec, lang)}</span>
+                       {w.miejsce && <span class="kropka">{w.miejsce}</span>}
+                     </span>
+@@ -93,7 +118,7 @@ const lead = lang === 'en'
+               </div>
+             </section>
+           ))}
+-          <p class="muted kal-pusto" data-pusty-filtr hidden>{lang === 'en' ? 'Nothing of this kind here.' : 'Brak pozycji tego rodzaju.'}</p>
++          <p class="muted kal-pusto" data-pusty-filtr data-pusty-szukaj={T('Brak pozycji spełniających wybrane kryteria.', 'No items match the selected filters.')} hidden>{T('Brak pozycji tego rodzaju.', 'Nothing of this kind here.')}</p>
+         </div>
+       ))}
+     </div>
+@@ -102,32 +127,53 @@ const lead = lang === 'en'
+ </Baza>
+ 
+ <script>
+-  // Widok (Nadchodzące / Archiwum, w adresie #archiwum) i filtr rodzaju — działają razem.
++  // Widok (Nadchodzące / Archiwum, w adresie #archiwum), filtr rodzaju (przyciski w banerze na komputerze, lista rozwijana
++  // na telefonie; w adresie także ?rodzaj=…, jak w Aktualnościach) i szukanie po tekście pozycji (pole tylko na telefonie)
++  // — działają razem. Przyciski i lista są zawsze w dokumencie (jedno schowane przez CSS), stan trzyma skrypt, więc
++  // przejście przez 760 px (obrót telefonu, zmiana okna) nie gubi filtra ani widoku. Szukanie liczy się tylko na telefonie
++  // (na komputerze pola nie widać); wpisany tekst zostaje w polu i wraca po powrocie do wąskiego ekranu.
+   const btnRodzaj = Array.from(document.querySelectorAll<HTMLButtonElement>('button[data-rodzaj]'));
+   const btnWidok = Array.from(document.querySelectorAll<HTMLButtonElement>('button[data-widok-btn]'));
+   const widoki = Array.from(document.querySelectorAll<HTMLElement>('[data-widok]'));
++  const rodzajLista = document.querySelector<HTMLSelectElement>('[data-rodzaj-lista]');
++  const szukaj = document.querySelector<HTMLInputElement>('[data-szukaj]');
++  const naTelefonie = window.matchMedia('(max-width: 760px)');
++  const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ł/g, 'l');
++  const znanyRodzaj = (r: string) => btnRodzaj.some((b) => (b.dataset.rodzaj ?? '') === r);
+   let rodzaj = '';
+   let widok = location.hash === '#archiwum' ? 'archiwum' : 'nadchodzace';
+   const pokaz = () => {
++    const q = naTelefonie.matches ? norm(szukaj?.value.trim() ?? '') : '';
+     btnWidok.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.widokBtn === widok)));
+     btnRodzaj.forEach((b) => b.setAttribute('aria-pressed', String((b.dataset.rodzaj ?? '') === rodzaj)));
++    if (rodzajLista) rodzajLista.value = rodzaj;
+     widoki.forEach((v) => {
+       v.hidden = v.dataset.widok !== widok;
+-      v.querySelectorAll<HTMLElement>('.row-item[data-rodzaj]').forEach((p) => (p.hidden = !!rodzaj && p.dataset.rodzaj !== rodzaj));
++      // szukanie w treści pozycji (etykieta, termin, miejsce, tytuł, prelegent, seminarium) — bez kafelka daty („2 LIS”)
++      v.querySelectorAll<HTMLElement>('.row-item[data-rodzaj]').forEach((p) => (p.hidden = (!!rodzaj && p.dataset.rodzaj !== rodzaj) || (!!q && !norm(p.querySelector('.body')?.textContent ?? '').includes(q))));
+       const grupy = Array.from(v.querySelectorAll<HTMLElement>('[data-grupa]'));
+       grupy.forEach((g) => (g.hidden = !g.querySelector('.row-item:not([hidden])')));
+-      // komunikat „brak pozycji tego rodzaju” tylko, gdy widok ma pozycje, ale filtr wszystkie schował
++      // komunikat „brak pozycji” tylko, gdy widok ma pozycje, ale filtr (albo szukanie) wszystkie schował
+       const pf = v.querySelector<HTMLElement>('[data-pusty-filtr]');
+-      if (pf) pf.hidden = grupy.length === 0 || grupy.some((g) => !g.hidden);
++      if (pf) {
++        pf.dataset.pustyRodzaj ??= pf.textContent ?? '';
++        pf.textContent = (q ? pf.dataset.pustySzukaj : pf.dataset.pustyRodzaj) ?? '';
++        pf.hidden = grupy.length === 0 || grupy.some((g) => !g.hidden);
++      }
+     });
+   };
+-  btnRodzaj.forEach((b) => b.addEventListener('click', () => { rodzaj = b.dataset.rodzaj ?? ''; pokaz(); }));
++  const ustawRodzaj = (r: string) => { rodzaj = znanyRodzaj(r) ? r : ''; pokaz(); };
++  btnRodzaj.forEach((b) => b.addEventListener('click', () => ustawRodzaj(b.dataset.rodzaj ?? '')));
++  rodzajLista?.addEventListener('change', () => ustawRodzaj(rodzajLista.value));
++  szukaj?.addEventListener('input', pokaz);
++  naTelefonie.addEventListener('change', pokaz);
+   btnWidok.forEach((b) => b.addEventListener('click', () => {
+     widok = b.dataset.widokBtn ?? 'nadchodzace';
+     history.replaceState(null, '', widok === 'archiwum' ? '#archiwum' : location.pathname + location.search);
+     pokaz();
+   }));
+-  pokaz();
++  // ?rodzaj=… z adresu; lista rozwijana zawsze zgodna ze stanem (także gdy przeglądarka przywróciła jej wartość po powrocie)
++  ustawRodzaj(new URLSearchParams(location.search).get('rodzaj') ?? '');
+ </script>
+ 
+ <style>
+@@ -145,4 +191,14 @@ const lead = lang === 'en'
+   .kal-bez-linku:hover :global(.t) { text-decoration: none; }
+   /* przyciski widoku pod banerem, nad listą miesięcy */
+   .kal-widok { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
++  /* ---------- telefon (≤ 760 px): zwarty przełącznik segmentowy „Nadchodzące | Archiwum” (decyzja 31.10.2026) ----------
++     Jedna linia pod wierszem filtrów, 36 px wysokości (ramka 1 + wypełnienie 3 + przycisk 28 + 3 + 1): szare tło z cienką
++     ramką, wybrany widok w kolorze znacznika (token --znacznik, jak aktywny filtr — telefon.css). Odstępy: 10 px pod wierszem
++     filtrów, 8 px nad miesiącem (+ jego 14 px — razem tyle, ile w Aktualnościach między filtrami a miesiącem). */
++  @media (max-width: 760px) {
++    .filters.filters-lewo { margin-bottom: 10px; }
++    .kal-widok { display: flex; flex-wrap: nowrap; gap: 2px; width: max-content; max-width: 100%; margin: 0 0 8px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
++    .kal-widok .chip { min-height: 28px; padding: 0 14px; border: 0; background: transparent; font-size: 14px; line-height: 1; }
++    .kal-widok .chip[aria-pressed='true'] { background: var(--znacznik, var(--primary)); color: var(--znacznik-ink, var(--primary-ink)); }
++  }
+ </style>
+diff --git a/src/views/ListaAktualnosci.astro b/src/views/ListaAktualnosci.astro
+index 0e183bb3..f070fe7c 100644
+--- a/src/views/ListaAktualnosci.astro
++++ b/src/views/ListaAktualnosci.astro
+@@ -2,15 +2,17 @@
+ // Lista aktualności z filtrem rodzaju i szukaniem (filtrowanie w przeglądarce); ?dla=studenci itp. z linków zawęża listę (z przyciskiem „pokaż wszystkie”).
+ // Wygląd na komputerze (≥ 761 px): baner jak w wariancie „Portal”, reszta strony jak w wariancie „Zwarta”
+ // (uklad="zwarta portal-baner", style: src/styles/uklad-*.css i blok niżej).
+-// Telefon (≤ 760 px; decyzja 31.10.2026): pod hasłem w banerze trzy liczby z ostatniego miesiąca (ogłoszenia, wydarzenia,
+-// seminaria), filtry w jednym wierszu — lista rozwijana rodzajów i pole szukania z krótką podpowiedzią.
++// Telefon (≤ 760 px; decyzja 31.10.2026): pod hasłem w banerze trzy liczby z ostatnich 30 dni (ogłoszenia, wydarzenia,
++// seminaria), filtry w jednym wierszu — lista rozwijana rodzajów i pole szukania z krótką podpowiedzią. Baner, wiersz
++// filtrów i etykiety — wspólne z Kalendarzem (LiczbyBanera, FiltrISzukaj, EtykietaRodzaju; jeden styl, decyzja 31.10.2026).
+ import Baza from '../layouts/Baza.astro';
+ import NaglowekStrony from '../components/NaglowekStrony.astro';
+ import WierszAktualnosci from '../components/WierszAktualnosci.astro';
+-import Ikona from '../components/Ikona.astro';
++import FiltrISzukaj from '../components/FiltrISzukaj.astro';
++import LiczbyBanera from '../components/LiczbyBanera.astro';
+ import ustawienia from '../data/ustawienia.json';
+ import { u } from '../lib/url';
+-import { t, wJezyku, RODZAJE_FILTRY, ODBIORCY, bezSierotek } from '../lib/i18n';
++import { t, wJezyku, RODZAJE_FILTRY, ODBIORCY } from '../lib/i18n';
+ import { monthYear, today, addDays, type Lang } from '../lib/daty';
+ import { listaAktualnosci, referaty, seminaria, seminariumReferatu } from '../lib/tresci';
+ 
+@@ -33,48 +35,35 @@ const lead = lang === 'en' ? 'Announcements, events and achievements of the Math
+ const haslo = lang === 'en' ? "What's new at the Institute" : 'Co słychać w Instytucie';
+ const T = (pl: string, en: string) => (lang === 'en' ? en : pl);
+ 
+-// Odmiana po liczebniku: 1 / 2–4 (bez 12–14) / 5+ ; po angielsku: 1 / reszta (jak w DzialNauka.astro).
+-const odm = (n: number, pl: [string, string, string], en: [string, string]) => {
+-  if (lang === 'en') return n === 1 ? en[0] : en[1];
+-  if (n === 1) return pl[0];
+-  const j = n % 10, d = n % 100;
+-  return j >= 2 && j <= 4 && (d < 12 || d > 14) ? pl[1] : pl[2];
+-};
+ // Liczby w banerze — na razie tylko na telefonie, pod hasłem, jak w innych działach (decyzja 31.10.2026; komputer później):
+-// wpisy danego rodzaju z datą publikacji w ostatnich 30 dniach (względem dnia budowania). Pozycje z zerem pomijamy.
+-// Zwykłe liczby, nieklikalne (jak w Nauce i Instytucie).
++// wpisy danego rodzaju z datą publikacji w ostatnich 30 dniach (względem dnia budowania). Pozycje z zerem pomijamy
++// (LiczbyBanera.astro — wspólne z Kalendarzem).
+ // Trzecia liczba to seminaria zamiast sukcesów (decyzja 31.10.2026: sukcesy zdarzają się rzadko, w miesiącu bywa zero):
+ // referaty opublikowanych seminariów z terminem w tych samych 30 dniach, do dnia budowania włącznie (jak w kalendarzu:
+ // referaty z src/lib/tresci.ts, seminarium referatu — pole „Seminarium” albo folder).
++// Etykieta okresu „z 30 dni” zamiast „w ostatnim miesiącu” (decyzja 31.10.2026): krótsza — „ogłoszenia / z 30 dni”
++// mieści się w dwóch linijkach przy 360 i 390 px (dłuższa zajmowała trzy).
+ const dzis = today();
+ const miesiacTemu = addDays(dzis, -30);
+ const wOknie = (d: string) => d.slice(0, 10) >= miesiacTemu && d.slice(0, 10) <= dzis;
+ const wMiesiacu = (r: string) => lista.filter((p) => p.rodzaj === r && wOknie(p.data)).length;
+ const idSeminariow = new Set((await seminaria()).map((s) => s.id));
+ const referatyWMiesiacu = (await referaty()).filter((r) => idSeminariow.has(seminariumReferatu(r)) && wOknie(r.data.termin)).length;
+-const liczby = ([
+-  [wMiesiacu('ogloszenie'), ['ogłoszenie', 'ogłoszenia', 'ogłoszeń'], ['announcement', 'announcements']],
+-  [wMiesiacu('wydarzenie'), ['wydarzenie', 'wydarzenia', 'wydarzeń'], ['event', 'events']],
+-  [referatyWMiesiacu, ['seminarium', 'seminaria', 'seminariów'], ['seminar', 'seminars']],
+-] as [number, [string, string, string], [string, string]][])
+-  .map(([n, pl, en]) => ({ n, l: `${odm(n, pl, en)} ${T('w ostatnim miesiącu', 'in the past month')}` }))
+-  .filter((x) => x.n > 0);
+-// Filtr rodzaju: na komputerze przyciski, na telefonie lista rozwijana obok pola szukania (jeden wiersz; decyzja 31.10.2026).
+-// Nazwy rodzajów w liczbie mnogiej (RODZAJE_FILTRY w i18n.ts), podpowiedź w polu szukania na telefonie krótsza.
++const liczby: { n: number; pl: [string, string, string]; en: [string, string] }[] = [
++  { n: wMiesiacu('ogloszenie'), pl: ['ogłoszenie', 'ogłoszenia', 'ogłoszeń'], en: ['announcement', 'announcements'] },
++  { n: wMiesiacu('wydarzenie'), pl: ['wydarzenie', 'wydarzenia', 'wydarzeń'], en: ['event', 'events'] },
++  { n: referatyWMiesiacu, pl: ['seminarium', 'seminaria', 'seminariów'], en: ['seminar', 'seminars'] },
++];
++// Filtr rodzaju: na komputerze przyciski, na telefonie lista rozwijana obok pola szukania (jeden wiersz; decyzja 31.10.2026;
++// FiltrISzukaj.astro — wspólny z Kalendarzem). Nazwy rodzajów w liczbie mnogiej (RODZAJE_FILTRY w i18n.ts), podpowiedź
++// w polu szukania na telefonie krótsza.
+ const filtrEtykieta = T('Filtruj według rodzaju', 'Filter by type');
+ const szukajDlugo = T('Szukaj w aktualnościach', 'Search news');
+ const szukajKrotko = T('Szukaj', 'Search');
+-// Podpowiedź na telefonie ustawiana od razu za polem (zanim strona się narysuje, więc bez mignięcia); przy zmianie
+-// szerokości okna przez 760 px przełącza ją skrypt na dole.
+-const podpowiedzTel = `(function(i){try{if(i&&window.matchMedia&&matchMedia('(max-width: 760px)').matches)i.placeholder=${JSON.stringify(szukajKrotko)};}catch(e){}})(document.currentScript.previousElementSibling)`;
+ ---
+ <Baza tytul={t(lang, 'aktualnosci')} opis={lead} uklad="zwarta portal-baner">
+   <NaglowekStrony tytul={t(lang, 'aktualnosci')} lead={lead} haslo={haslo} lang={lang} okruszki={[{ etykieta: t(lang, 'aktualnosci') }]}>
+-    {liczby.length > 0 && (
+-      <ul class="pt-liczby tylko-telefon" data-pagefind-ignore>
+-        {liczby.map((x) => <li><span class="n">{x.n}</span>{bezSierotek(x.l)}</li>)}
+-      </ul>
+-    )}
++    <LiczbyBanera lang={lang} okres={T('z 30 dni', 'in 30 days')} pozycje={liczby} />
+   </NaglowekStrony>
+ 
+   <div class="wrap layout">
+@@ -85,23 +74,8 @@ const podpowiedzTel = `(function(i){try{if(i&&window.matchMedia&&matchMedia('(ma
+           <button type="button" class="chip" aria-pressed="true" data-rodzaj="">{t(lang, 'wszystkie')}</button>
+           {rodzaje.map((r) => <button type="button" class="chip" aria-pressed="false" data-rodzaj={r}>{RODZAJE_FILTRY[r][lang]}</button>)}
+         </div>
+-        {/* telefon: te same rodzaje jako lista rozwijana (wspólny stan z przyciskami w skrypcie niżej) */}
+-        <label class="la-rodzaj tylko-telefon" data-pagefind-ignore>
+-          <span class="sr-only">{filtrEtykieta}</span>
+-          <select data-rodzaj-lista autocomplete="off">
+-            <option value="">{t(lang, 'wszystkie')}</option>
+-            {rodzaje.map((r) => <option value={r}>{RODZAJE_FILTRY[r][lang]}</option>)}
+-          </select>
+-          <Ikona nazwa="dol" rozmiar={18} />
+-        </label>
+-        <div class="la-szukaj" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+-          <label class="search">
+-            <Ikona nazwa="szukaj" rozmiar={18} />
+-            <span class="sr-only">{szukajDlugo}</span>
+-            <input type="search" data-szukaj placeholder={szukajDlugo} data-podp-komputer={szukajDlugo} data-podp-telefon={szukajKrotko} />
+-            <script is:inline set:html={podpowiedzTel} />
+-          </label>
+-        </div>
++        {/* telefon: te same rodzaje jako lista rozwijana (wspólny stan z przyciskami w skrypcie niżej) i pole szukania */}
++        <FiltrISzukaj lang={lang} rodzaje={rodzaje} etykieta={filtrEtykieta} szukajDlugo={szukajDlugo} szukajKrotko={szukajKrotko} />
+       </div>
+       <p class="dla-info" data-dla-info hidden>
+         <span>{lang === 'en' ? 'Showing posts for:' : 'Pokazuję wpisy dla:'} {Object.entries(ODBIORCY).map(([k, v]) => <strong data-dla-etykieta={k} hidden>{v[lang].toLowerCase()}</strong>)}</span>
+@@ -178,15 +152,7 @@ const podpowiedzTel = `(function(i){try{if(i&&window.matchMedia&&matchMedia('(ma
+     history.replaceState(history.state, '', url);
+   });
+   szukaj?.addEventListener('input', filtruj);
+-  // Podpowiedź w polu szukania: na telefonie krótka („Szukaj”), na komputerze pełna. Przy wczytaniu ustawia ją
+-  // skrypt wpisany zaraz za polem; tu — przy zmianie szerokości okna przez 760 px.
+-  const naTelefonie = window.matchMedia('(max-width: 760px)');
+-  const podpowiedz = () => {
+-    if (!szukaj) return;
+-    const tekst = naTelefonie.matches ? szukaj.dataset.podpTelefon : szukaj.dataset.podpKomputer;
+-    if (tekst) szukaj.placeholder = tekst;
+-  };
+-  naTelefonie.addEventListener('change', podpowiedz);
++  // (podpowiedź w polu szukania przy zmianie szerokości okna — FiltrISzukaj.astro)
+   if (lista) {
+     const p = new URLSearchParams(location.search);
+     const d = p.get('dla');
+@@ -199,22 +165,7 @@ const podpowiedzTel = `(function(i){try{if(i&&window.matchMedia&&matchMedia('(ma
+ 
+ <style>
+   .la-archiwum { margin-top: 28px; }
+-  /* ---------- telefon (≤ 760 px): filtry w jednym wierszu (decyzja 31.10.2026) ----------
+-     Z lewej lista rozwijana rodzajów (ok. 42% szerokości; szersza, gdy najdłuższa nazwa się nie mieści — np. „Announcements”
+-     po angielsku albo „Wydarzenia” przy 360 px), z prawej pole szukania z krótką podpowiedzią; obie 44 px wysokości,
+-     zaokrąglone jak pole szukania. Czcionka listy 16 px — mniejsza powoduje powiększanie strony na iPhonie.
+-     Przyciski rodzajów (.chips) mają .tylko-komputer. Strzałka listy to ikona „dol”. */
+-  @media (max-width: 760px) {
+-    .filters.filters-lewo { flex-wrap: nowrap; gap: 8px; }
+-    .la-rodzaj { position: relative; display: flex; flex: 0 0 auto; min-width: 42%; max-width: 60%; color: var(--muted); }
+-    .la-rodzaj select { appearance: none; -webkit-appearance: none; flex: 1 1 auto; width: auto; min-width: 0; height: 44px; margin: 0; padding: 0 34px 0 15px;
+-      border: 1.5px solid var(--line); border-radius: 999px; background: var(--bg); color: var(--ink);
+-      font: inherit; font-size: 16px; font-weight: 700; line-height: 1.2; text-overflow: ellipsis; white-space: nowrap; cursor: pointer; }
+-    .la-rodzaj select:focus-visible { border-color: var(--ink); }
+-    .la-rodzaj :global(.ico) { position: absolute; top: 50%; right: 12px; translate: 0 -50%; pointer-events: none; }
+-    .la-szukaj { flex: 1 1 0; min-width: 0; }
+-    .la-szukaj .search { flex: 1 1 auto; min-width: 0; height: 44px; }
+-  }
++  /* telefon (≤ 760 px): filtry w jednym wierszu — FiltrISzukaj.astro, style w telefon.css („Wiersz filtrów list”) */
+   /* ---------- komputer (≥ 761 px): wariant „Zwarta” ----------
+      Odstęp listy od banera stały (24 px), jak na stronach działów; mniej miejsca nad odnośnikiem do archiwum. */
+   @media (min-width: 761px) {
+@@ -226,7 +177,7 @@ const podpowiedzTel = `(function(i){try{if(i&&window.matchMedia&&matchMedia('(ma
+     .filters.filters-lewo > .chips { flex: 0 1 auto; }
+     /* wyszukiwarka trochę szersza (300 px zamiast ok. 255), żeby podpowiedź „Szukaj w aktualnościach” nie była ucinana
+        przy szerszych czcionkach (np. na Windowsie) */
+-    .filters.filters-lewo .search { width: 300px; }
++    .filters.filters-lewo :global(.search) { width: 300px; }
+     .la-archiwum { margin-top: 18px; }
+   }
+ </style>

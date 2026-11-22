@@ -1,0 +1,27 @@
+{
+  "id": "andrzej-krzywicki",
+  "liczby": [
+    {
+      "n": "1962",
+      "podpis": "twierdzenie AKS",
+      "podpis_en": "AKS theorem",
+      "z": "twierdzenie Aronszajna–Krzywickiego–Szarskiego"
+    },
+    {
+      "n": "6",
+      "podpis": "doktorów",
+      "podpis_en": "doctoral students",
+      "z": "wypromowanych doktorów (wg [Mathematics Genealogy Project](https://mathgenealogy.org/id.php?id=150535))"
+    },
+    {
+      "n": "1970",
+      "podpis": "Nagroda Zaremby",
+      "podpis_en": "Zaremba Prize",
+      "z": "Nagroda PTM im. Stanisława Zaremby"
+    }
+  ],
+  "pominiete": [
+    "doktorat na Uniwersytecie Wrocławskim"
+  ],
+  "uwagi": "Pominięto doktorat z 1957 r., bo najmniej mówi o jego roli. Nagroda Zaremby (wg zestawienia Instytutu) i 6 doktorów (wg MGP) mają w weryfikacji po jednym źródle, ale żadne źródło im nie przeczy. Pełna nazwa twierdzenia się nie mieści; skrótu AKS nie ma w tekście, więc trzeba go połączyć z pełną nazwą w zajawce. Osoba żyjąca, sylwetka nieopublikowana."
+}

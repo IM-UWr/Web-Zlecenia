@@ -1,0 +1,27 @@
+{
+  "id": "hugo-steinhaus",
+  "liczby": [
+    {
+      "n": "1945",
+      "podpis": "pierwszy dziekan",
+      "podpis_en": "first dean",
+      "z": "pierwszy dziekan wspólnego Wydziału Matematyki, Fizyki i Chemii Uniwersytetu i Politechniki we Wrocławiu"
+    },
+    {
+      "n": "1946",
+      "podpis": "Nowa Księga Szkocka",
+      "podpis_en": "New Scottish Book",
+      "z": "pierwsze zagadnienie w Nowej Księdze Szkockiej"
+    },
+    {
+      "n": "20",
+      "podpis": "doktorów",
+      "podpis_en": "doctoral students",
+      "z": "wypromowanych doktorów (według [Mathematics Genealogy Project](https://www.mathgenealogy.org/id.php?id=7383))"
+    }
+  ],
+  "pominiete": [
+    "założenie czasopisma „Zastosowania Matematyki”"
+  ],
+  "uwagi": "Wybór jak w przykładzie z briefu, ale z podpisem „Nowa Księga Szkocka” (19 znaków, mieści się w twardym limicie): sam „Księga Szkocka” przy roku 1946 sugerowałby lwowską księgę z lat 30. Rozbieżności w weryfikacji dotyczą szczegółów, nie liczb w banerze: dnia pierwszego wpisu (1 czy 2 lipca 1946), nazwy wydziału (pkt 7) i składu listy doktorów (pkt 9: DW ma Kucharczyka, nie ma kilku osób z MGP), więc 20 to liczba według MGP. Pominięto rok 1953 („Zastosowania Matematyki”), bo nazwa pisma nie mieści się w 20 znakach, a trzy lata obok siebie dałyby mniej różnorodny baner."
+}

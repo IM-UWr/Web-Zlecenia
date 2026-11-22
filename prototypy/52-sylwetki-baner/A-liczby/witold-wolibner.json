@@ -1,0 +1,25 @@
+{
+  "id": "witold-wolibner",
+  "liczby": [
+    {
+      "n": "1933",
+      "podpis": "równania Eulera",
+      "podpis_en": "Euler equations",
+      "z": "twierdzenie o globalnym istnieniu płaskiego ruchu cieczy idealnej"
+    },
+    {
+      "n": "1947",
+      "podpis": "katedra mechaniki",
+      "podpis_en": "Chair of Mechanics",
+      "z": "kierownik nowej Katedry Mechaniki Teoretycznej we Wrocławiu"
+    },
+    {
+      "n": "1955",
+      "podpis": "Nagroda Banacha",
+      "podpis_en": "Banach Prize",
+      "z": "Nagroda im. Stefana Banacha PTM"
+    }
+  ],
+  "pominiete": [],
+  "uwagi": "W ramce są tylko 3 punkty bez rozbieżności (praca w Math. Z. 37, katedra: APAN i DW, nagroda: APAN, Wikipedia, lista Instytutu), więc wzięto wszystkie. Podpis „równania Eulera” wzięto z tekstu („klasyka teorii równań Eulera”), bo hasło już mówi o ruchu cieczy idealnej. Jeśli lepszy będzie bliższy ramce, zamiennik to „płaski ruch cieczy” (18 znaków). Liczby doktorów świadomie brak (promotorstwo Krzywickiego jest sporne)."
+}

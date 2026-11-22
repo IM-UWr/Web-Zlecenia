@@ -1,0 +1,315 @@
+{
+ "instytut": {
+  "szpilrajn-porzadek": {
+   "zdanie": "Szpilrajn, później Marczewski: każdy porządek częściowy da się rozszerzyć do liniowego, ustawić w jednej kolejce.",
+   "zdanie_en": "Szpilrajn, later Marczewski: every partial order can be extended to a linear one, with all elements in a single queue."
+  },
+  "graf-przeciec": {
+   "zdanie": "Marczewski zauważył, że każdą sieć powiązań oddają zbiory: dwa punkty łączymy, gdy ich zbiory mają część wspólną.",
+   "zdanie_en": "Marczewski noticed that any network of links can be represented by sets: two points are joined when their sets have a common part."
+  },
+  "wymiar-i-miara": {
+   "zdanie": "Wymiar topologiczny nie przekracza wymiaru Hausdorffa: Marczewski uważał to za swój najważniejszy wynik.",
+   "zdanie_en": "Topological dimension never exceeds Hausdorff dimension; Marczewski (then Szpilrajn) considered this his most important result."
+  },
+  "funkcja-charakterystyczna": {
+   "zdanie": "Marczewski (wtedy Szpilrajn) zapisał ciąg zbiorów jedną funkcją: cyfra 2 znaczy „należy”, cyfra 0 — „nie należy”.",
+   "zdanie_en": "Marczewski (then Szpilrajn) wrote a whole sequence of sets as one function: the digit 2 means “belongs”, the digit 0 “does not belong”."
+  },
+  "zbiory-niezalezne": {
+   "zdanie": "U Marczewskiego zbiory są niezależne, gdy każda kombinacja „w środku / na zewnątrz” wszystkich naraz jest możliwa.",
+   "zdanie_en": "For Marczewski, sets are independent when every combination of “inside / outside” for all of them at once is possible."
+  },
+  "hewitt-marczewski-pondiczery": {
+   "zdanie": "Marczewski: iloczyn continuum przestrzeni ośrodkowych jest ośrodkowy; współodkrywca Pondiczery nigdy nie istniał.",
+   "zdanie_en": "Marczewski: a product of continuum many separable spaces is separable; a co-discoverer, E. S. Pondiczery, never existed."
+  },
+  "pierwsze-prace-1930": {
+   "zdanie": "Marczewski (wtedy Szpilrajn) ogłosił pierwsze prace w 1930 r., mając 22 lata; jedna dotyczy hipotezy Borela.",
+   "zdanie_en": "Marczewski (then Szpilrajn) published his first papers in 1930, aged 22; one concerns Borel’s conjecture on sets of “strong measure zero”."
+  },
+  "miara-i-kategoria": {
+   "zdanie": "Już w doktoracie Marczewski porównywał zbiory mierzalne i o własności Baire’a: dwa sposoby mówienia o „małości”.",
+   "zdanie_en": "Marczewski’s doctoral thesis already compared measurable sets with sets having the Baire property: two ways of speaking about “smallness”."
+  },
+  "kierst-szpilrajn": {
+   "zdanie": "Marczewski i S. Kierst: „typowa” funkcja holomorficzna na kole nie przedłuża się przez żaden punkt jego brzegu.",
+   "zdanie_en": "Marczewski and S. Kierst showed that a “typical” holomorphic function on the disc does not extend through any point of its boundary."
+  },
+  "marczewski-sikorski": {
+   "zdanie": "Marczewski i Sikorski: miara na ogromnej przestrzeni metrycznej zwykle skupia się na małej części ośrodkowej.",
+   "zdanie_en": "Marczewski and Roman Sikorski: a measure on a metric space, even a huge one, is usually concentrated on a small separable part."
+  },
+  "suma-plonki": {
+   "zdanie": "Doktorant Marczewskiego Jerzy Płonka wymyślił sklejanie algebr wzdłuż półkraty; metoda żyje w algebrze i logice.",
+   "zdanie_en": "Marczewski’s doctoral student Jerzy Płonka invented gluing algebras along a semilattice; the method lives on in algebra and logic."
+  },
+  "graffiti-fajtlowicz": {
+   "zdanie": "Doktorant Marczewskiego Siemion Fajtlowicz napisał Graffiti, program, który sam wysuwa hipotezy w teorii grafów.",
+   "zdanie_en": "Marczewski’s doctoral student Siemion Fajtlowicz wrote Graffiti, a program that proposes conjectures in graph theory on its own."
+  },
+  "biblioteka-1945": {
+   "zdanie": "Marczewski od 10 maja 1945 r. zbierał ocalałe książki; jesienią było już kilkaset tomów, zalążek biblioteki.",
+   "zdanie_en": "From 10 May 1945 Marczewski gathered surviving mathematics books; by autumn there were several hundred volumes, the seed of a library."
+  },
+  "etos-szkoly": {
+   "zdanie": "Marczewski sformułował etos szkoły: autorzy zawsze alfabetycznie; liczy się talent i wynik, nie stopień czy tytuł.",
+   "zdanie_en": "Marczewski set out the school’s ethos: authors always in alphabetical order, and what counts is talent and results, not degree or title."
+  },
+  "katedra-numeryczna-1962": {
+   "zdanie": "Z inicjatywy Marczewskiego powstała Katedra Metod Numerycznych; objął ją jego wychowanek Stefan Paszkowski.",
+   "zdanie_en": "On Marczewski’s initiative the Institute set up a Chair of Numerical Methods, headed by his former student Stefan Paszkowski."
+  },
+  "norwid-archytas": {
+   "zdanie": "Marczewski kochał Norwida: w 1967 r. omawiał publicznie jego wiersz o dwóch postawach wobec matematyki.",
+   "zdanie_en": "Marczewski loved Norwid: in 1967 he gave a public talk on Norwid’s poem about two attitudes to mathematics."
+  },
+  "zachowanie-miary": {
+   "zdanie": "Żartobliwa bibliografia z 1953 r. dała Marczewskiemu pracę „O zachowaniu miary we wszystkim”; śmiał się z innymi.",
+   "zdanie_en": "A humorous 1953 bibliography credited Marczewski with a paper “On keeping measure in all things”; he laughed along with the others."
+  }
+ },
+ "nauka": {
+  "pochodna-liego": {
+   "zdanie": "Ślebodziński jako pierwszy podał ogólny wzór na zmianę pola tensorów niesionego przepływem pola wektorów.",
+   "zdanie_en": "Ślebodziński was the first to give a general formula for the change of a tensor field carried along by the flow of a vector field."
+  },
+  "hamilton-1931": {
+   "zdanie": "Ślebodziński pokazał, że ruch według równań Hamiltona zachowuje formę symplektyczną (na płaszczyźnie: pole figur).",
+   "zdanie_en": "Ślebodziński showed that motion according to Hamilton’s equations preserves the symplectic form (in the plane: the area of figures)."
+  },
+  "nawias-liego": {
+   "zdanie": "Wzór Ślebodzińskiego dla pól wektorów daje nawias Liego: mierzy, o ile obieg czterema przepływami mija start.",
+   "zdanie_en": "For vector fields Ślebodziński’s formula gives the Lie bracket: it measures how far a loop of four flows misses its starting point."
+  },
+  "zjazd-lwow-1927": {
+   "zdanie": "Na I Polskim Zjeździe Matematycznym Ślebodziński współprowadził sekcję geometrii i wygłosił trzy referaty.",
+   "zdanie_en": "At the First Polish Mathematical Congress Ślebodziński co-chaired the geometry section and gave three talks."
+  },
+  "seminarium-1948": {
+   "zdanie": "Seminarium Ślebodzińskiego, od wiosny 1948 r., uczyniło Wrocław obok Krakowa ośrodkiem geometrii różniczkowej.",
+   "zdanie_en": "Ślebodziński’s seminar, running from spring 1948, made Wrocław, alongside Kraków, a centre of differential geometry."
+  },
+  "wyklady-1946": {
+   "zdanie": "W 1946 r. Ślebodziński zaczął wprowadzać młodych w geometrię różniczkową, prawie nieznaną w przedwojennej Polsce.",
+   "zdanie_en": "In 1946 Ślebodziński began lectures introducing young people to differential geometry, almost unknown in pre-war Poland."
+  },
+  "jedenastu-doktorow": {
+   "zdanie": "Ślebodziński wypromował jedenastu doktorów; ostatnia, Hanna Matuszczyk, obroniła się w 1971 r., gdy miał 87 lat.",
+   "zdanie_en": "Ślebodziński supervised eleven doctorates; the last, Hanna Matuszczyk, obtained hers in 1971, when he was 87."
+  },
+  "formes-exterieures": {
+   "zdanie": "Ślebodziński napisał dwutomową monografię o formach zewnętrznych (1954 i 1963), w 1970 r. wydaną po angielsku.",
+   "zdanie_en": "Ślebodziński wrote a two-volume monograph on exterior forms (1954 and 1963), published in English in 1970."
+  },
+  "zespol-impan-1956": {
+   "zdanie": "Ślebodziński kierował zespołem geometrii w IM PAN; w 1956 r. zbadał równoważność form różniczkowych stopnia 2.",
+   "zdanie_en": "Ślebodziński led the geometry group at IM PAN; in 1956 he studied when two differential forms of degree 2 are equivalent."
+  },
+  "geometria-tkanin-1945": {
+   "zdanie": "20 października 1945 r., na założeniu wrocławskiego oddziału PTM, Ślebodziński mówił o geometrii tkanin.",
+   "zdanie_en": "On 20 October 1945, at the founding meeting of the Wrocław branch of the Polish Mathematical Society, Ślebodziński spoke on web geometry."
+  },
+  "galois-tarnobrzeg": {
+   "zdanie": "Ślebodziński zaczął badania jako nauczyciel szkoły realnej w Tarnobrzegu; najpierw pociągała go teoria Galois.",
+   "zdanie_en": "Ślebodziński began research as a teacher at the secondary school in Tarnobrzeg; at first he was drawn to Galois theory."
+  },
+  "ogrod-botaniczny": {
+   "zdanie": "W Tarnobrzegu Ślebodziński uczył też niemieckiego i geografii oraz opiekował się szkolnym ogrodem botanicznym.",
+   "zdanie_en": "In Tarnobrzeg Ślebodziński also taught German and geography, and looked after the school botanical garden."
+  },
+  "getynga-1913": {
+   "zdanie": "Dzięki stypendium Kretkowskiego Ślebodziński słuchał w Getyndze wykładów Hilberta, Landaua i Carathéodory’ego.",
+   "zdanie_en": "A Kretkowski Foundation scholarship took Ślebodziński to Göttingen, where he attended lectures by Hilbert, Landau and Carathéodory."
+  },
+  "toczenie-1923": {
+   "zdanie": "Wczesna praca Ślebodzińskiego, ogłoszona po polsku w 1923 r., zawiera kilka twierdzeń o toczeniu się powierzchni.",
+   "zdanie_en": "An early paper by Ślebodziński, published in Polish in 1923, contains several theorems on the rolling of surfaces."
+  },
+  "ptm-1923-1963": {
+   "zdanie": "Ślebodziński założył poznański oddział PTM (1923), a w latach 1961–1963 był prezesem całego Towarzystwa.",
+   "zdanie_en": "Ślebodziński founded the Poznań branch of the Polish Mathematical Society (1923), and in 1961–1963 he was president of the whole Society."
+  },
+  "doktorat-1928": {
+   "zdanie": "Ślebodziński obronił doktorat w wieku 44 lat; zachęcił go Sierpiński, który załatwił też wsparcie finansowe.",
+   "zdanie_en": "Ślebodziński defended his doctorate at the age of 44; Sierpiński encouraged him and arranged financial support."
+  },
+  "wnuk-liego": {
+   "zdanie": "Promotor Ślebodzińskiego Żorawski był doktorantem Liego, więc twórca pochodnej Liego to naukowy wnuk jej patrona.",
+   "zdanie_en": "Ślebodziński’s supervisor Żorawski was Lie’s doctoral student, so the creator of the Lie derivative is the academic grandson of its namesake."
+  },
+  "pole-grawitacji-1926": {
+   "zdanie": "Dekadę po Einsteinie Ślebodziński badał geometrię statycznego pola grawitacji i metrykę wokół punktu materialnego.",
+   "zdanie_en": "A decade after Einstein, Ślebodziński studied the geometry of the static gravitational field and the metric around a point mass."
+  },
+  "nagroda-doktoraty-hc": {
+   "zdanie": "Ślebodziński dostał Nagrodę Państwową (1955) i doktoraty honorowe Politechnik Wrocławskiej i Poznańskiej oraz UWr.",
+   "zdanie_en": "Ślebodziński received the State Prize (1955) and honorary doctorates from the Wrocław and Poznań Universities of Technology and the University of Wrocław."
+  },
+  "pionier-elektryki": {
+   "zdanie": "Ślebodziński wśród „Pionierów Dolnośląskiej Elektryki”: od marca 1946 r. zasiadał w radzie wydziału Politechniki.",
+   "zdanie_en": "Ślebodziński among the “Pioneers of Lower Silesian Electrical Engineering”: from March 1946 he sat on a faculty council of the University of Technology."
+  },
+  "yano-1957": {
+   "zdanie": "Yano poświęcił pochodnej Liego, wprowadzonej przez Ślebodzińskiego, całą monografię, wznowioną jeszcze w 2020 r.",
+   "zdanie_en": "Kentaro Yano devoted an entire monograph to the Lie derivative, introduced by Ślebodziński; it was reprinted as late as 2020."
+  },
+  "spinory-kosmann": {
+   "zdanie": "Pojęcie Ślebodzińskiego rosło: Lichnerowicz i Y. Kosmann rozszerzyli pochodną Liego na spinory z fizyki cząstek.",
+   "zdanie_en": "Ślebodziński’s concept kept growing: Lichnerowicz and Yvette Kosmann extended the Lie derivative to the spinors of particle physics."
+  },
+  "tom-26-colloquium": {
+   "zdanie": "Tom 26 „Colloquium Mathematicum” uczcił pamięć Ślebodzińskiego; otwiera go praca Kentaro Yano o izometriach.",
+   "zdanie_en": "Volume 26 of Colloquium Mathematicum honoured Ślebodziński’s memory; it opens with a paper by Kentaro Yano on isometries.",
+   "nazwa": "Tom ku pamięci Ślebodzińskiego",
+   "nazwa_en": "A volume in Ślebodziński’s memory"
+  }
+ },
+ "studia": {
+  "lemat-kkm": {
+   "zdanie": "Knaster, Kuratowski i Mazurkiewicz: trzy zbiory domknięte pokrywające trójkąt zgodnie z bokami mają punkt wspólny.",
+   "zdanie_en": "Knaster, Kuratowski and Mazurkiewicz: three closed sets covering a triangle in agreement with its sides must have a common point."
+  },
+  "jednorodne-kontinua": {
+   "zdanie": "Knaster z Kuratowskim pytał w 1920 r., czy okrąg to jedyne jednorodne kontinuum płaskie; odpowiedź padła w 2016 r.",
+   "zdanie_en": "In 1920 Knaster and Kuratowski asked whether the circle is the only homogeneous plane continuum; the full answer came in 2016."
+  },
+  "wachlarz-lelka": {
+   "zdanie": "Uczeń Knastera Andrzej Lelek zbudował wachlarz, w którym końce włókien leżą gęsto; jest tylko jeden taki.",
+   "zdanie_en": "Knaster’s student Andrzej Lelek constructed a fan in which the endpoints of the fibres lie densely; there is only one such fan."
+  },
+  "praca-na-glos": {
+   "zdanie": "Knaster czytał z uczniami ich prace na głos, tropiąc luki; gdy wynik był znany: „Musi pan wymyślić coś więcej”.",
+   "zdanie_en": "Knaster read his students’ papers aloud with them, hunting for gaps; when a result turned out to be known: “You must think up something more.”"
+  },
+  "seria-b-wtn": {
+   "zdanie": "Knaster współtworzył Wrocławskie Towarzystwo Naukowe, zredagował 131 tomów serii B, zorganizował drukarnię naukową.",
+   "zdanie_en": "Knaster co-founded the Wrocław Scientific Society, edited 131 volumes of its Series B and organised a scientific printing house."
+  },
+  "referat-borsuka": {
+   "zdanie": "W Zurychu Knaster wygłosił też referat Borsuka o dzieleniu kuli; dlaczego, skoro autor był na miejscu, nie wiadomo.",
+   "zdanie_en": "In Zurich Knaster also gave Borsuk’s talk on dividing the ball; why, when the author was there himself, is not known."
+  },
+  "banach-po-francusku": {
+   "zdanie": "Według monografii szkoły wrocławskiej to Knaster przełożył na francuski słynną książkę Stefana Banacha.",
+   "zdanie_en": "According to a monograph on the Wrocław school, it was Knaster who translated Stefan Banach’s famous book into French."
+  },
+  "roze-i-skamander": {
+   "zdanie": "Knaster próbował hodować nowe odmiany róż, grywał dla siebie, a przez żonę Marię był blisko poetów Skamandra.",
+   "zdanie_en": "Knaster tried to breed new varieties of roses, played music for himself, and through his wife Maria was close to the Skamander poets."
+  },
+  "doktorat-am-1961": {
+   "zdanie": "Niedoszły lekarz Knaster został doktorem honoris causa Akademii Medycznej we Wrocławiu w 1961 r., jak Steinhaus.",
+   "zdanie_en": "Knaster, a would-be physician, became an honorary doctor of the Medical Academy in Wrocław in 1961, as did Steinhaus."
+  },
+  "katedra-topologii": {
+   "zdanie": "Gdy 15 listopada 1945 r. ruszyły wykłady, Knaster objął jedną z pierwszych czterech katedr: Katedrę Topologii.",
+   "zdanie_en": "When lectures began on 15 November 1945, Knaster took one of the first four chairs of mathematics: the Chair of Topology."
+  },
+  "kontinuum-dziedzicznie-nierozkladalne": {
+   "zdanie_en": "Knaster’s doctoral thesis constructed a continuum in which every subcontinuum is indecomposable."
+  }
+ },
+ "popularyzacja": {
+  "kanapka-z-szynka": {
+   "zdanie": "Problem Steinhausa: trzy dowolnie położone bryły da się przepołowić naraz jednym cięciem płaszczyzną.",
+   "zdanie_en": "Steinhaus’s problem: any three solids, however placed, can be halved at once by a single plane cut."
+  },
+  "banach-na-plantach": {
+   "zdanie": "Steinhaus na wieczornym spacerze usłyszał słowa o całce Lebesgue’a i tak poznał Banacha, swoje największe odkrycie.",
+   "zdanie_en": "On an evening walk Steinhaus overheard the words “Lebesgue integral” and so met Banach, his greatest discovery."
+  },
+  "osiemnascie-punktow": {
+   "zdanie": "Zadanie Steinhausa: stawiamy punkty tak, by n pierwszych leżało w różnych n-tych częściach odcinka; 18 się nie da.",
+   "zdanie_en": "Steinhaus’s problem: points are placed one by one so that the first n lie in different n-ths of a segment; with 18 it is no longer possible."
+  },
+  "longimetr": {
+   "zdanie": "Przezroczysta płytka Steinhausa: policz przecięcia krzywej z liniami siatek, a masz jej długość w milimetrach.",
+   "zdanie_en": "Steinhaus’s transparent plate with grids: count where a curve crosses the lines and you get its length in millimetres."
+  },
+  "sprawiedliwy-podzial": {
+   "zdanie": "Problem Steinhausa: jak podzielić tort między trzy osoby o różnych gustach, by każda miała według siebie choć 1/3?",
+   "zdanie_en": "Steinhaus’s problem: how to divide a cake among three people with different tastes so that each gets at least 1/3 by their own measure?"
+  },
+  "dlugosc-wisly": {
+   "zdanie": "Steinhaus: lewy brzeg Wisły mierzony coraz dokładniej dałby długość nawet tysiąc razy większą niż z mapy szkolnej.",
+   "zdanie_en": "Steinhaus: measured ever more precisely, the left bank of the Vistula would come out up to a thousand times longer than on a school map."
+  },
+  "trzy-odleglosci": {
+   "zdanie": "Hipoteza Steinhausa: obroty o stały kąt dzielą okrąg na łuki najwyżej trzech długości; największa to suma dwóch.",
+   "zdanie_en": "Steinhaus’s conjecture: successive rotations by the same angle divide a circle into arcs of at most three lengths; the largest is the sum of the other two."
+  },
+  "kalejdoskop-matematyczny": {
+   "zdanie": "Książka Steinhausa niemal z samych obrazków, bez dowodów, od razu po polsku i angielsku, potem w wielu językach.",
+   "zdanie_en": "Steinhaus’s book of almost nothing but pictures, without proofs, published at once in Polish and English, later in many other languages."
+  },
+  "kieszen-ksiazki": {
+   "zdanie": "Książka Steinhausa miała kieszeń: okulary do obrazów 3D, karty do kartkowania i połówki dwunastościanu do złożenia.",
+   "zdanie_en": "Steinhaus’s book had a pocket: glasses for 3D pictures, flip cards and two halves of a dodecahedron to assemble."
+  },
+  "krol-wieza-miny": {
+   "zdanie": "Steinhaus: albo król przejdzie szachownicę w poprzek, omijając miny, albo wieża przejedzie z góry na dół po minach.",
+   "zdanie_en": "Steinhaus: either the king can cross the chessboard avoiding the mines, or the rook can travel from top to bottom on mines alone."
+  },
+  "zapalki-banacha": {
+   "zdanie": "Ostatni wpis Księgi Szkockiej, od Steinhausa: ile zapałek zostaje w jednym pudełku, gdy drugie okazuje się puste?",
+   "zdanie_en": "The last entry in the Scottish Book, by Steinhaus: how many matches are left in one box when the other turns out to be empty?"
+  },
+  "k-srednich": {
+   "zdanie": "Steinhaus dzielił bryłę na k części o najmniejszej sumie momentów bezwładności; dziś tak samo grupuje się dane.",
+   "zdanie_en": "Steinhaus divided a solid into k parts with the smallest sum of moments of inertia; today this is how data are clustered."
+  },
+  "dendryt": {
+   "zdanie": "Steinhaus i inni: najkrótsze drzewo łączące punkty, po usunięciu najdłuższych krawędzi, rozpada się na grupy.",
+   "zdanie_en": "Steinhaus and his co-authors: the shortest tree joining the points, with its longest edges removed, falls apart into natural groups."
+  },
+  "zamiany-sasiadow": {
+   "zdanie": "Algorytm Steinhausa–Johnsona–Trottera: wszystkie ustawienia n elementów obejdziesz, zamieniając dwa sąsiednie.",
+   "zdanie_en": "The Steinhaus–Johnson–Trotter algorithm: all arrangements of n elements can be visited by swapping only two adjacent ones each time."
+  },
+  "liczby-w-figurach": {
+   "zdanie": "Steinhaus zapisywał olbrzymie liczby figurami: 2 w kole to mega, czyli 256 w 256 zagnieżdżonych trójkątach.",
+   "zdanie_en": "Steinhaus wrote huge numbers with shapes: 2 in a circle is mega, that is 256 in 256 nested triangles."
+  },
+  "twierdzenie-o-odleglosciach": {
+   "zdanie": "Steinhaus: w każdym zbiorze na prostej o dodatniej mierze są dwa różne punkty odległe o liczbę wymierną.",
+   "zdanie_en": "Steinhaus: every set of positive measure on the line contains two distinct points a rational distance apart."
+  },
+  "kolo-n-punktow": {
+   "zdanie": "Z pytania Steinhausa: dla każdego n jest koło, w którym leży dokładnie n punktów o współrzędnych całkowitych.",
+   "zdanie_en": "From a question by Steinhaus: for every n there is a circle with exactly n points with integer coordinates inside it."
+  },
+  "czem-jest-matematyka": {
+   "zdanie": "„Żadna nauka nie wzmacnia tak wiary w potęgę umysłu ludzkiego, jak matematyka”, pisał Steinhaus.",
+   "zdanie_en": "“No science strengthens faith in the power of the human mind as much as mathematics does”, Steinhaus wrote in a popular book."
+  },
+  "ojcostwo-i-bayes": {
+   "zdanie": "Do sporów o ojcostwo Steinhaus zastosował wyniki badań krwi i rachunek prawdopodobieństwa.",
+   "zdanie_en": "Steinhaus applied blood test results and probability theory to paternity disputes."
+  },
+  "introwizor": {
+   "zdanie": "Przyrząd rentgenowski Steinhausa wskazuje chirurgowi miejsce odłamka: lusterko pokazuje tam świecący znacznik.",
+   "zdanie_en": "Steinhaus’s X-ray device shows a surgeon where a fragment lies in the body: a mirror displays a glowing marker at that spot."
+  },
+  "taryfa-kwadratowa": {
+   "zdanie": "Steinhaus: płacić według pierwiastka z całki kwadratu mocy; przy tej samej energii równy pobór wychodzi taniej.",
+   "zdanie_en": "Steinhaus: pay according to the square root of the integral of the squared power; for the same energy, steady consumption then costs less."
+  },
+  "doktorat-u-hilberta": {
+   "zdanie": "W Getyndze Steinhaus obronił u Hilberta pracę o nowych zastosowaniach zasady Dirichleta.",
+   "zdanie_en": "In Göttingen Steinhaus defended, under Hilbert, a thesis on new applications of the Dirichlet principle."
+  },
+  "z-lawki-do-towarzystwa": {
+   "zdanie": "Na Plantach Steinhaus, Banach i Nikodym postanowili założyć towarzystwo: powstało w 1919 r., to dzisiejsze PTM.",
+   "zdanie_en": "On the Planty Steinhaus, Banach and Nikodym decided to found a society; from 1919 it worked in Kraków, and today it is the Polish Mathematical Society."
+  },
+  "rzuty-moneta": {
+   "zdanie": "Steinhaus opisał ciągi orłów i reszek jak punkty odcinka: krok ku dzisiejszym aksjomatom prawdopodobieństwa.",
+   "zdanie_en": "Steinhaus described sequences of heads and tails as points of a segment: a step towards today’s axioms of probability."
+  },
+  "uczniowie-steinhausa": {
+   "zdanie": "Według MGP Steinhaus wypromował 20 doktorów, m.in. Banacha, Orlicza i Kaca, i ma ponad 3400 akademickich potomków.",
+   "zdanie_en": "According to the Mathematics Genealogy Project Steinhaus supervised 20 doctorates, including Banach, Orlicz and Kac, and has over 3,400 academic descendants."
+  }
+ }
+}

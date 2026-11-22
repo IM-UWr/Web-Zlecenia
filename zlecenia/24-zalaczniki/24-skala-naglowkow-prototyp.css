@@ -1,0 +1,27 @@
+/* Prototyp: poniżej 1368 px nagłówki zmniejszają się proporcjonalnie do szerokości okna (wartość z 1368 px × W/1368), z dolnymi progami */
+@media (min-width: 761px) and (max-width: 1367px) {
+  .z-nagl, .z-dz, .z-pd, .z-stopka, .z-nast { --marg: clamp(24px, 4.68vw, 64px) !important; }
+  /* baner działu */
+  .z-baner-dzialu { --szk: clamp(140px, 16.8vw, 230px); --odst: clamp(14px, 2.92vw, 40px); height: calc(clamp(230px, 21.9vw, 300px) + var(--gora)) !important; }
+  .z-baner-dzialu .z-tytul { top: calc(clamp(34px, 3.65vw, 50px) + var(--gora)) !important; }
+  .z-baner-dzialu h1 { font-size: clamp(44px, 5.56vw, 76px) !important; max-width: none !important; }
+  .z-baner-dzialu .z-haslo { font-size: clamp(15px, 1.39vw, 19px) !important; }
+  .z-baner-dzialu .z-szkic-ramka { width: var(--szk) !important; height: calc(var(--szk) * 1.2) !important; right: calc(var(--marg) + var(--odst)) !important; top: calc(50% - var(--szk) * .6 + var(--gora) / 2) !important; }
+  .z-baner-dzialu .z-patron { right: calc(var(--marg) + var(--szk) + var(--odst)) !important; width: clamp(200px, 19.7vw, 270px) !important; top: calc(clamp(40px, 4.24vw, 58px) + var(--gora)) !important; }
+  .z-baner-dzialu .z-patron b { font-size: clamp(18px, 1.68vw, 23px) !important; }
+  .z-baner-dzialu .z-patron p { font-size: clamp(13px, 1.02vw, 14px) !important; }
+  .z-baner-dzialu .z-podpis-ramka { right: calc(var(--marg) + clamp(22px, 4.4vw, 60px)) !important; height: clamp(30px, 3.36vw, 46px) !important; }
+  .z-slot .pt-liczby .n { font-size: clamp(22px, 2.19vw, 30px) !important; }
+  .z-slot .pt-liczby li { font-size: 13px !important; }
+  /* nagłówek podstrony */
+  .z-nagl.z-nagl-pod h1 { font-size: clamp(40px, 4.24vw, 58px); }
+  .z-nagl-pod .z-tyt:has(.z-sygnet-nagl) { padding-left: clamp(84px, 8.9vw, 122px) !important; }
+  .z-nagl-pod .z-sygnet-nagl { width: clamp(52px, 5.4vw, 74px) !important; height: calc(clamp(52px, 5.4vw, 74px) * 1.2) !important; padding-right: clamp(12px, 1.3vw, 18px) !important; }
+  .z-nagl-pod .z-podpis-maly svg { width: clamp(40px, 4.1vw, 56px) !important; }
+  .z-nagl-pod { --zn: clamp(120px, 14.6vw, 200px); }
+  .z-nagl-pod.z-liczbami .z-znak { width: var(--zn) !important; height: var(--zn) !important; }
+  .z-nagl-pod:not(.z-liczbami) .z-znak { width: calc(var(--zn) * .725) !important; height: calc(var(--zn) * .85) !important; }
+  .z-nagl-pod .z-znak-opis { width: clamp(210px, 21.9vw, 300px) !important; right: calc(var(--znak-p) + var(--zn) * .8) !important; }
+  .z-nagl-pod.z-liczbami .z-znak-opis { right: calc(var(--znak-p) + var(--zn) + 16px) !important; }
+  .z-nagl-pod .z-znak-opis b { white-space: normal !important; margin-left: 0 !important; font-size: clamp(13.5px, 1.1vw, 15px) !important; }
+}

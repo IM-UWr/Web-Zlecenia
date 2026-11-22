@@ -1,0 +1,454 @@
+diff --git a/dok/en/TLUMACZENIA.md b/dok/en/TLUMACZENIA.md
+index 790146d..12c43b8 100644
+--- a/dok/en/TLUMACZENIA.md
++++ b/dok/en/TLUMACZENIA.md
+@@ -34,6 +34,16 @@ Zlecenie 47 (poprawka): rektorat Marczewskiego trwał w latach **1953–1957** (
+ | drugi ekran głównej — sala (`DrugiEkran.astro`) | s. HS | room HS | K10 |
+ | drugi ekran — „więcej” (`DrugiEkran.astro`, `drugi-ekran.ts`) | i jeszcze 4 · Wszystkie aktualności → | 4 more · All news → | K11 |
+ | kanał RSS (`src/pages/en/rss.xml.ts`) | Instytut Matematyczny UWr — aktualności | Mathematical Institute, University of Wrocław — news | L |
++| drugi ekran — nagłówek „Warto wiedzieć” (`DrugiEkran.astro`; przegląd 22.11.2026) | Warto wiedzieć | Highlights (było: Did you know) | — |
++| drugi ekran — Szybki dostęp, Seminaria (`DrugiEkran.astro`) | 1 referat w tym tygodniu | 1 talk this week (było: 1 talks) | — |
++| drugi ekran — link rekrutacji (`DrugiEkran.astro`) | Rekrutacja na studia | Admissions (in Polish) (było: Admission; D20) | — |
++| miejsca wydarzeń, obron, konferencji (`MIEJSCA_EN` w `src/lib/tresci.ts`) | sala 25, Instytut Informatyki Uniwersytetu Wrocławskiego · Instytut Informatyki sala 119 · Politechnika Wrocławska · budynek C-16 | room 25, Institute of Computer Science, University of Wrocław · Institute of Computer Science, room 119 · Wrocław University of Science and Technology · Building C-16 | — |
++| obrona — tytuł rozprawy po polsku (`Obrona.astro`; D5, D14) | *tytuł* | Original title: *tytuł* (lang="pl"; także lang="pl" na liście obron i w kalendarzu) | — |
++| obrona — dwóch promotorów (`Obrona.astro`) | Promotor | Supervisors (po polsku bez zmian) | — |
++| obrona — dopiski przy promotorze (`tytulyEn` w `src/lib/osoby.ts`) | (promotor pomocniczy) · (kopromotor) | (auxiliary supervisor) · (co-supervisor) | — |
++| zaproszenie na obronę bez `tresc_en` (`src/lib/widoki/obrona.ts`) | …, in online · in University of … | …, online · at University of … | — |
++| aktualność — „Dla:” (`Aktualnosc.astro`, `AktualnoscZamianaDni.astro`) | doktoranci | PhD students (było: phd students) | — |
++| Rok akademicki — legenda kolorów (`RokAkademicki.astro`) | dzień tygodnia występuje w semestrze po raz nieparzysty / parzysty | an odd-numbered / an even-numbered occurrence of that weekday in the semester | — |
+ 
+ ### „Warto wiedzieć” (zlecenie 47; `src/views/ListaWartoWiedziec.astro`, `SylwetkaWW.astro`, `WartoWiedziecWpis.astro`, `src/components/ww/`, `src/lib/ww.mjs`, `src/lib/tekstyStron.ts`)
+ 
+@@ -205,6 +215,9 @@ matematycznych, cz. XL”, „Wiadomości Matematyczne”, „Warszawa”).
+ | Instytut Matematyczny, Uniwersytet Wrocławski · Uniwersytet Wrocławski | Mathematical Institute, University of Wrocław · University of Wrocław |
+ | Materiały (z) sympozjum "…", poświęconego książce Andrzeja Kisielewicza "…", Wrocław, grudzień 2017. | Proceedings of the symposium "…" devoted to the book "…" by Andrzej Kisielewicz, Wrocław, December 2017. |
+ | (tom, mimo daty 2007r., ukazał się dopiero w roku 2008, praca nie była sprawozdawana w 2007r.) | (the volume, although dated 2007, appeared only in 2008; the paper was not reported in 2007) |
++| (praca, mimo daty 2007, ukazała się dopiero w roku 2008; [praca] nie była sprawozdawana w roku 2007) — 5 wariantów zapisu | (the paper, although dated 2007, appeared only in 2008; it was not reported in 2007) |
++| Japoński przekład "…" · 320 stron. | Japanese translation of "…" · 320 pp. |
++| Recenzent : · Materiały V Konferencji "…", 9-10 grudnia 2016 | Reviewer: · Proceedings of the 5th Conference "…", 9–10 December 2016 |
+ | Praca zbiorowa pod redakcją Witolda Więsława | collective work edited by Witold Więsław |
+ 
+ ## 4. Treści CMS — łatki (`dok/en/latki/<Repozytorium>.patch`; sekcja C audytu)
+diff --git a/src/components/WierszWydarzenia.astro b/src/components/WierszWydarzenia.astro
+index 9ed20f2..19dd5cc 100644
+--- a/src/components/WierszWydarzenia.astro
++++ b/src/components/WierszWydarzenia.astro
+@@ -11,7 +11,7 @@
+ import Link from './Link.astro';
+ import TytulReferatu from './TytulReferatu.astro';
+ import { u, isExternal } from '../lib/url';
+-import { wJezyku, RODZAJE } from '../lib/i18n';
++import { wJezyku, RODZAJE, langTekstu } from '../lib/i18n';
+ import { dayNum, monthShort, dayShort, parse, range, time, hasTime, type Lang } from '../lib/daty';
+ import { trwaLubBedzie, type Wydarzenie } from '../lib/tresci';
+ import type { Dzial } from '../lib/patroni';
+@@ -19,6 +19,7 @@ import type { Dzial } from '../lib/patroni';
+ // dzial — własny kolor wiersza pod wpisem o wydarzeniu (zlecenie 21, punkt 6); bez niego kolor otoczenia
+ interface Props { w: Wydarzenie; lang: Lang; poziom?: 'h2' | 'h3'; dzial?: Dzial; zwarty?: boolean; bezRodzaju?: boolean }
+ const { w, lang, poziom = 'h3', dzial, zwarty = false, bezRodzaju = false } = Astro.props;
++// tytuł rozprawy (podtytuł obrony): na /en polski tytuł z lang="pl" (decyzja D14); po polsku jak dotąd lang="en"
+ const H = poziom;
+ const zewn = !!w.href && isExternal(w.href);
+ const adres = w.href ? (zewn ? w.href : u(wJezyku(w.href, lang))) : undefined;
+@@ -35,7 +36,7 @@ const etykieta = [bezRodzaju ? '' : RODZAJE[w.rodzaj]?.[lang], kiedy, w.miejsce]
+         ? <Link href={adres}>{w.rodzaj === 'referat' ? <TytulReferatu tekst={w.tytul} jezyk={w.jezyk} lang={lang} /> : w.tytul}</Link>
+         : w.rodzaj === 'referat' ? <TytulReferatu tekst={w.tytul} jezyk={w.jezyk} lang={lang} /> : w.tytul}
+     </H>
+-    {w.podtytul && <p lang={w.rodzaj === 'obrona' ? 'en' : undefined}>{w.podtytul}</p>}
++    {w.podtytul && <p lang={w.rodzaj === 'obrona' ? langTekstu(w.podtytul, lang) ?? 'en' : undefined}>{w.podtytul}</p>}
+     {w.rodzaj === 'referat' && w.opis && <p class="ww-opis">{w.opis}</p>}
+     <slot />
+   </div>
+diff --git a/src/components/zal/DrugiEkran.astro b/src/components/zal/DrugiEkran.astro
+index d042847..5566db8 100644
+--- a/src/components/zal/DrugiEkran.astro
++++ b/src/components/zal/DrugiEkran.astro
+@@ -31,7 +31,7 @@ import ustawienia from '../../data/ustawienia.json';
+ import skroty from '../../data/skroty.json';
+ import plan from '../../data/plan/plan.json';
+ import { u, isExternal } from '../../lib/url';
+-import { wJezyku, wybierz, RODZAJE, ODBIORCY } from '../../lib/i18n';
++import { wJezyku, wybierz, RODZAJE, ODBIORCY, langTekstu } from '../../lib/i18n';
+ import { today, parse, weekday, type Lang } from '../../lib/daty';
+ import { pozycjeKierunkow } from '../../lib/kierunki';
+ import { tekstDnia } from '../../lib/kolory-dni';
+@@ -66,7 +66,7 @@ const wierszWydarzenia = (w: Wydarzenie): Wiersz => {
+   return {
+     dzial: dz, ...data(w.poczatek), gdzie: dz ? T(...NAZWY_DZ[dz]) : T('Wydarzenie', 'Event'),
+     co: [RODZ_WYD[w.rodzaj] ? T(...RODZ_WYD[w.rodzaj]) : '', godzina(w.poczatek), krotkieMiejsce(w.miejsce)].filter(Boolean).join(' · '),
+-    tytul: w.rodzaj === 'obrona' && w.podtytul ? w.podtytul : w.tytul, tytulLang: w.tytulLang, adres: w.href,
++    tytul: w.rodzaj === 'obrona' && w.podtytul ? w.podtytul : w.tytul, tytulLang: w.rodzaj === 'obrona' && w.podtytul ? langTekstu(w.podtytul, lang) : w.tytulLang, adres: w.href,
+     koniec: w.koniec || w.koniecIcs || w.poczatek,
+   };
+ };
+@@ -121,7 +121,7 @@ const skr = await Promise.all((skroty.kafelki as any[]).slice(0, 5).map(async (k
+     // „e-maile”: po łączniku U+2060 (łącznik słów, bez szerokości), żeby wyraz się nie łamał (zlecenie 26, punkt 4.2); łącznika niełamiącego
+     // U+2011 Manrope nie ma, przeglądarka wzięłaby go z innego kroju
+     : adres === '/pracownicy' ? T(`${osob} osób, pokoje, e-⁠maile`, `${osob} people, rooms, e-⁠mails`)
+-    : adres === '/seminaria' ? T(`${seminaria.length} ${seminaria.length === 1 ? 'referat' : 'referatów'} w tym tygodniu`, `${seminaria.length} talks this week`)
++    : adres === '/seminaria' ? T(`${seminaria.length} ${seminaria.length === 1 ? 'referat' : 'referatów'} w tym tygodniu`, `${seminaria.length} ${seminaria.length === 1 ? 'talk' : 'talks'} this week`)
+     : (wybierz(k, 'opis', lang) as string) || '';
+   return { adres, kd: false, grafik: undefined, tytul: wybierz(k, 'etykieta', lang) as string, opis };
+ }));
+@@ -202,7 +202,7 @@ const LOSUJ = glownaJs(lang);
+         <span class="gdzie">{T('Studia', 'Studies')}</span>
+         <h2 id="z-h-studia"><Link class="h-link" href={st.rekrutacja}>{T('Studiuj matematykę we Wrocławiu', 'Study mathematics in Wrocław')}</Link></h2>
+         <p>{wybierz(st, 'opis', lang)}</p>
+-        <Link class="z-rekr-link" href={st.rekrutacja}>{T('Rekrutacja na studia', 'Admission')}{!isExternal(st.rekrutacja) && <span aria-hidden="true"> →</span>}</Link>
++        <Link class="z-rekr-link" href={st.rekrutacja}>{T('Rekrutacja na studia', 'Admissions (in Polish)')}{!isExternal(st.rekrutacja) && <span aria-hidden="true"> →</span>}</Link>
+       </div>
+       <nav class="z-kier" aria-label={T('Kierunki', 'Programmes')}>
+         {kierunki.map((k) => (
+@@ -212,7 +212,7 @@ const LOSUJ = glownaJs(lang);
+     </section>
+     {warto.length > 0 && (
+       <section class="z-warto" data-dzial="instytut" aria-labelledby="z-h-warto">
+-        <div class="z-h"><h2 id="z-h-warto">{T('Warto wiedzieć', 'Did you know')}</h2><a href={href(ADRES_WW)}>{T('Wszystkie →', 'All →')}</a></div>
++        <div class="z-h"><h2 id="z-h-warto">{T('Warto wiedzieć', 'Highlights')}</h2><a href={href(ADRES_WW)}>{T('Wszystkie →', 'All →')}</a></div>
+         <div class="rzad" data-losuj={WARTO_ILE}>{warto.map((p) => (
+           <Link href={href(p.adres)} {...p.dane} hidden={!p.widoczna}>
+             {p.w.grupa === 'sylwetki' ? <span class="ww2-twarz" set:html={portretHtml(p.w)} /> : p.w.grupa === 'historie' && <span>{p.w.rok}</span>}
+diff --git a/src/content.config.ts b/src/content.config.ts
+index fb4e1ac..8822c79 100644
+--- a/src/content.config.ts
++++ b/src/content.config.ts
+@@ -168,7 +168,8 @@ const aktualnosci = defineCollection({
+     zdjecie: optStr,
+     zdjecie_opis: optStr,
+     zdjecie_opis_en: optStr,
+-    galeria: lista(z.object({ plik: z.string(), podpis: optStr })),
++    // podpis_en — podpis zdjęcia po angielsku (puste = polski)
++    galeria: lista(z.object({ plik: z.string(), podpis: optStr, podpis_en: optStr })),
+     album: optStr,
+     zalaczniki: plikList,
+     termin: lista(terminWydarzenia),
+@@ -443,6 +444,8 @@ const konferencje = defineCollection({
+     organizatorzy: optStr,
+     zaklad: optId,
+     zdjecie: optStr,
++    // opis po angielsku (Markdown, opcjonalnie); puste = na /en opis polski (z lang="pl", gdy wygląda na polski)
++    tresc_en: optStr,
+     odwolana: z.preprocess((v) => (v == null || v === '' ? false : v), z.boolean()),
+     opublikowany: published,
+   }),
+@@ -505,6 +508,8 @@ const ww_sylwetki = defineCollection({
+     liczby: liczbyBanera,
+     rocznica_urodzin: tekst,
+     obraz_zrodlo: optStr,
++    // źródło zdjęcia po angielsku (puste = polskie, na /en z lang="pl", gdy wygląda na polskie)
++    obraz_zrodlo_en: optStr,
+   }),
+ });
+ const obrazILink = {
+diff --git a/src/lib/en/publikacje.ts b/src/lib/en/publikacje.ts
+index 84f1026..9021483 100644
+--- a/src/lib/en/publikacje.ts
++++ b/src/lib/en/publikacje.ts
+@@ -23,6 +23,13 @@ const UWAGI: Record<string, string> = {
+ };
+ export const uwagiEn = (s?: string) => s && s.split(/,\s*/).map((c) => UWAGI[c.trim()] ?? c).join(', ');
+ 
++// „Materiały V Konferencji "…", 9-10 grudnia 2016” (wykaz 2018): liczebnik rzymski → porządkowy, data po angielsku
++const MIESIACE_D = ['stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca', 'lipca', 'sierpnia', 'września', 'października', 'listopada', 'grudnia'];
++const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
++const RZYM: Record<string, number> = { I: 1, V: 5, X: 10, L: 50, C: 100 };
++const rzymska = (r: string) => [...r].reduce((s, c, i, a) => s + (RZYM[c] < (RZYM[a[i + 1]] ?? 0) ? -RZYM[c] : RZYM[c]), 0);
++const porzadkowa = (n: number) => `${n}${n % 10 === 1 && n % 100 !== 11 ? 'st' : n % 10 === 2 && n % 100 !== 12 ? 'nd' : n % 10 === 3 && n % 100 !== 13 ? 'rd' : 'th'}`;
++
+ // Źródło i opis pracy (kolejność ma znaczenie: dłuższe zwroty przed krótszymi).
+ const ZRODLO: Regula[] = [
+   [/Przy nazwisku (.+?) (podwójna afiliacja|dwie afiliacje|potrójna afiliacja) ?: (.+?)\.?(?= Przy nazwisku| Oświadczenie|$)/g,
+@@ -33,6 +40,12 @@ const ZRODLO: Regula[] = [
+     (_, s, kto, k, r) => `Proceedings of the symposium "${s}" devoted to the book "${k}" by ${kto.replace(/^Andrzeja Kisielewicza$/, 'Andrzej Kisielewicz')}, Wrocław, December ${r}.`],
+   [/\(tom, mimo daty (\d{4})r\., ukazał się dopiero w roku (\d{4}), praca nie była sprawozdawana w (\d{4})r\.\)/,
+     (_, a, b, c) => `(the volume, although dated ${a}, appeared only in ${b}; the paper was not reported in ${c})`],
++  [/\(praca, mimo daty (\d{4}),? ukazała się dopiero w (?:roku (\d{4})|(\d{4}) roku)[,;] (?:praca )?nie była sprawozdawana w (?:roku (\d{4})|(\d{4}) roku)\)/g,
++    (_, a, b1, b2, c1, c2) => `(the paper, although dated ${a}, appeared only in ${b1 ?? b2}; it was not reported in ${c1 ?? c2})`],
++  [/^Japoński przekład /, 'Japanese translation of '],
++  [/Recenzent ?: /g, 'Reviewer: '],
++  [/Materiały ([IVXLC]+) Konferencji ("[^"]+"), (\d{1,2})-(\d{1,2}) (\p{L}+) (\d{4})/gu,
++    (_, r, t, a, b, m, y) => `Proceedings of the ${porzadkowa(rzymska(r))} Conference ${t}, ${a}–${b} ${MONTHS[MIESIACE_D.indexOf(m)] ?? m} ${y}`],
+   [/Bibliografia na stronach (\d+)-(\d+)/, 'Bibliography on pp. $1–$2'],
+   [/Bibliogr\./g, 'Bibliography.'],
+   [/Streszcz\. w jęz\. ang\./g, 'Abstract in English.'],
+@@ -50,6 +63,7 @@ const ZRODLO: Regula[] = [
+   [/\b[sS]\. ?(\d+) ?[-–] ?(\d+)/g, 'pp. $1–$2'],
+   [/\bs\.(\d+)\b/g, 'p. $1'],
+   [/\b(\d+) s\./g, '$1 pp.'],
++  [/\b(\d+) stron\./g, '$1 pp.'],
+   [/\bss\. ?(\d+)/g, '$1 pp.'],
+   [/ : il\./g, ' : ill.'],
+   [/\[wyd\. (\d{4})\]/g, '[published $1]'],
+diff --git a/src/lib/osoby.ts b/src/lib/osoby.ts
+index 3204d2b..4d539a2 100644
+--- a/src/lib/osoby.ts
++++ b/src/lib/osoby.ts
+@@ -38,7 +38,10 @@ export function tytulyEn(tekst: string): string {
+     .replace(new RegExp(`${przed}dr\\.?\\s+inż\\.\\s+`, 'gi'), '$1Dr ')
+     .replace(new RegExp(`${przed}dr\\.?\\s+`, 'gi'), '$1Dr ')
+     .replace(new RegExp(`${przed}mgr\\.?(?:\\s+inż\\.)?\\s+`, 'gi'), '$1')
+-    .replace(new RegExp(`${przed}inż\\.\\s+`, 'gi'), '$1');
++    .replace(new RegExp(`${przed}inż\\.\\s+`, 'gi'), '$1')
++    // dopiski przy promotorach (pole promotorzy obrony)
++    .replace(/\bpromotor pomocniczy\b/gi, 'auxiliary supervisor')
++    .replace(/\bkopromotor\b/gi, 'co-supervisor');
+ }
+ 
+ export const tytulyWJezyku = (tekst: string, lang: Lang): string => (lang === 'en' ? tytulyEn(tekst) : tekst);
+diff --git a/src/lib/tresci.ts b/src/lib/tresci.ts
+index cea482f..b398fbc 100644
+--- a/src/lib/tresci.ts
++++ b/src/lib/tresci.ts
+@@ -218,12 +218,17 @@ export function sala(s: string | undefined, lang: Lang = 'pl'): string | undefin
+ // typowe polskie fragmenty tłumaczymy tutaj („sala WS, Instytut Matematyczny UWr” → „room WS, Mathematical
+ // Institute, University of Wrocław”, „Warszawa” → „Warsaw”). Nazwy spoza listy zostają bez zmian; po polsku — bez zmian.
+ const MIEJSCA_EN: [RegExp, string][] = [
+-  [/Wydział Matematyki i Informatyki UWr/g, 'Faculty of Mathematics and Computer Science, University of Wrocław'],
+-  [/Instytut Matematyczny UWr/g, 'Mathematical Institute, University of Wrocław'],
+-  [/Instytut Informatyki UWr/g, 'Institute of Computer Science, University of Wrocław'],
++  [/Wydział Matematyki i Informatyki (?:UWr|Uniwersytetu Wrocławskiego)/g, 'Faculty of Mathematics and Computer Science, University of Wrocław'],
++  [/Instytut Matematyczny (?:UWr|Uniwersytetu Wrocławskiego)/g, 'Mathematical Institute, University of Wrocław'],
++  [/Instytut Informatyki (?:UWr|Uniwersytetu Wrocławskiego)/g, 'Institute of Computer Science, University of Wrocław'],
++  [/Instytut Informatyki/g, 'Institute of Computer Science'],
++  [/Politechnika Wrocławska/g, 'Wrocław University of Science and Technology'],
+   [/(^|, )sale ([\w.]+) i ([\w.]+)/g, '$1rooms $2 and $3'],
+   [/(^|, )sale /g, '$1rooms '],
+   [/(^|, )sala /g, '$1room '],
++  [/(^|, )budynek /g, '$1Building '],
++  // „Instytut Informatyki sala 119” → „Institute of Computer Science, room 119” (sala po nazwie miejsca)
++  [/ sala ([\w.]+)/g, ', room $1'],
+   [/Warszawa/g, 'Warsaw'],
+   [/Wiedeń/g, 'Vienna'],
+ ];
+diff --git a/src/lib/wartoWiedziec.ts b/src/lib/wartoWiedziec.ts
+index 45d4930..1bb722e 100644
+--- a/src/lib/wartoWiedziec.ts
++++ b/src/lib/wartoWiedziec.ts
+@@ -39,6 +39,7 @@ export interface WW {
+   zajawka_en?: string;
+   obraz?: string;
+   obraz_zrodlo?: string;
++  obraz_zrodlo_en?: string;
+   obraz_opis?: string;
+   obraz_opis_en?: string;
+   link?: string;
+@@ -129,7 +130,7 @@ function naWW(grupa: GrupaWW, kolekcja: KolekcjaWW, e: Wpis): WW {
+     data: { opublikowany: d.opublikowany !== false },
+     tytul: d.tytul, tytul_en: d.tytul_en,
+     zajawka: d.zajawka, zajawka_en: d.zajawka_en,
+-    obraz: d.obraz, obraz_zrodlo: d.obraz_zrodlo, obraz_opis: d.obraz_opis, obraz_opis_en: d.obraz_opis_en,
++    obraz: d.obraz, obraz_zrodlo: d.obraz_zrodlo, obraz_zrodlo_en: d.obraz_zrodlo_en, obraz_opis: d.obraz_opis, obraz_opis_en: d.obraz_opis_en,
+     link: d.link, link_etykieta: d.link_etykieta, link_etykieta_en: d.link_etykieta_en,
+     na_glownej: d.na_glownej !== false, ulubione: d.ulubione === true, zawsze: d.zawsze === true,
+     dodano, lata: d.lata, podpis: d.podpis, podpis_en: d.podpis_en, liczby: Array.isArray(d.liczby) ? d.liczby : [], rocznica, rok,
+diff --git a/src/lib/widoki/konferencja.ts b/src/lib/widoki/konferencja.ts
+index 2059a6b..557e929 100644
+--- a/src/lib/widoki/konferencja.ts
++++ b/src/lib/widoki/konferencja.ts
+@@ -3,6 +3,7 @@
+ import { render } from 'astro:content';
+ import { range, type Lang } from '../daty';
+ import { langTekstu } from '../i18n';
++import { renderMarkdown } from '../markdown';
+ import { zaklady, miejsce, trwaLubBedzie, type Konferencja } from '../tresci';
+ 
+ export async function daneKonferencji(konferencja: Konferencja, lang: Lang) {
+@@ -12,9 +13,10 @@ export async function daneKonferencji(konferencja: Konferencja, lang: Lang) {
+   // tytuł w drugim języku (pod nagłówkiem), jeśli jest — jak na stronie projektu
+   const tytulDrugi = lang === 'en' ? (d.tytul_en ? { tekst: d.tytul, lang: 'pl' } : undefined) : d.tytul_en ? { tekst: d.tytul_en, lang: 'en' } : undefined;
+   const { Content } = await render(konferencja);
+-  // Opis ma tylko wersję polską (formularz nie ma Treści EN): na /en dostaje lang="pl", gdy wygląda na polski
+-  // (wiele opisów jest po angielsku; src/lib/jezykTekstu.ts).
+-  const opisLang = langTekstu(konferencja.body, lang);
++  // Opis po angielsku: pole tresc_en (jak w aktualnościach); puste = opis polski, który na /en dostaje lang="pl", gdy wygląda
++  // na polski (wiele opisów jest po angielsku; src/lib/jezykTekstu.ts).
++  const htmlEn = lang === 'en' && d.tresc_en?.trim() ? await renderMarkdown(d.tresc_en, lang) : '';
++  const opisLang = htmlEn ? undefined : langTekstu(konferencja.body, lang);
+   const termin = range(d.poczatek, d.koniec, lang);
+   const gdzie = miejsce(d.miejsce, lang);
+   const zaklad = d.zaklad ? (await zaklady()).find((z) => z.id === d.zaklad) : undefined;
+@@ -23,5 +25,5 @@ export async function daneKonferencji(konferencja: Konferencja, lang: Lang) {
+     ? { etykieta: T('odwołana', 'cancelled'), trwa: false }
+     : trwaLubBedzie({ poczatek: d.poczatek, koniec: d.koniec }) ? { etykieta: T('nadchodząca', 'upcoming'), trwa: true } : undefined;
+   const opis = [T('Konferencja', 'Conference'), termin, gdzie].filter(Boolean).join(', ');
+-  return { tytul, tytulDrugi, Content, opisLang, termin, gdzie, zaklad, stan, opis };
++  return { tytul, tytulDrugi, Content, htmlEn, opisLang, termin, gdzie, zaklad, stan, opis };
+ }
+diff --git a/src/lib/widoki/obrona.ts b/src/lib/widoki/obrona.ts
+index 25ec867..e67599a 100644
+--- a/src/lib/widoki/obrona.ts
++++ b/src/lib/widoki/obrona.ts
+@@ -58,7 +58,9 @@ function zaproszenieEn(obrona: Obrona, przyszla: boolean): string {
+   const d = obrona.data;
+   const kto = `the doctoral dissertation of ${esc(d.kandydat)}, MSc, entitled <em>${esc(d.tytul_rozprawy)}</em>`;
+   const gdzie = miejsce(d.miejsce, 'en');
+-  const kiedy = `on ${esc(longWithDay(d.termin, 'en'))}${gdzie ? `, in ${esc(gdzie)}` : ''}`;
++  // „in room WS, …”; „online” bez przyimka; uczelnia albo instytut — „at” („at University of Tunis El Manar, Tunis”)
++  const przyimek = !gdzie || /^online$/i.test(gdzie) ? '' : /^(university|institute|faculty|mathematical institute)\b/i.test(gdzie) ? 'at ' : 'in ';
++  const kiedy = `on ${esc(longWithDay(d.termin, 'en'))}${gdzie ? `, ${przyimek}${esc(gdzie)}` : ''}`;
+   const akapity = [przyszla ? `You are cordially invited to the public defence of ${kto}, ${kiedy}.` : `The public defence of ${kto}, took place ${kiedy}.`];
+   if (d.promotorzy.length) akapity[0] += ` ${d.promotorzy.length > 1 ? 'Supervisors' : 'Supervisor'}: ${esc(d.promotorzy.map(tytulyEn).join(', '))}.`;
+   const dok = [d.rozprawa && 'dissertation', (d.streszczenie_pl || d.streszczenie_en) && (d.streszczenie_pl && d.streszczenie_en ? 'abstracts' : 'abstract'), d.recenzje.length && (d.recenzje.length > 1 ? 'reviews' : 'review')]
+diff --git a/src/views/Aktualnosc.astro b/src/views/Aktualnosc.astro
+index 8b2d89c..039f870 100644
+--- a/src/views/Aktualnosc.astro
++++ b/src/views/Aktualnosc.astro
+@@ -27,7 +27,7 @@ import WierszWydarzenia from '../components/WierszWydarzenia.astro';
+ import Galeria from '../components/Galeria.tsx';
+ import ZdjecieZ from '../components/ZdjecieZ.astro';
+ import { u, isExternal } from '../lib/url';
+-import { t, wJezyku, wybierz, RODZAJE, ODBIORCY, langPola } from '../lib/i18n';
++import { t, wJezyku, wybierz, RODZAJE, ODBIORCY, odbiorcyMalymi, langPola } from '../lib/i18n';
+ import { short, long, longWithDay, range, dayNum, monthShort, parse, hasTime, time, type Lang } from '../lib/daty';
+ import { slugOf, ofertaAktualna, type Aktualnosc } from '../lib/tresci';
+ import { daneAktualnosci } from '../lib/widoki/aktualnosc';
+@@ -60,7 +60,7 @@ const kilkaDni = !!wydarzenie?.koniec && wydarzenie.koniec.slice(0, 10) !== wyda
+ const godzOd = wydarzenie && hasTime(wydarzenie.poczatek) ? time(wydarzenie.poczatek) : '';
+ const godzDo = wydarzenie?.koniec && hasTime(wydarzenie.koniec) ? time(wydarzenie.koniec) : '';
+ const szerPliku = (await zdjecie(d.zdjecie))?.width;
+-const dlaTekst = d.dla.length > 0 ? `${t(lang, 'dla')}: ${d.dla.map((x) => ODBIORCY[x][lang].toLowerCase()).join(', ')}` : '';
++const dlaTekst = d.dla.length > 0 ? `${t(lang, 'dla')}: ${d.dla.map((x) => odbiorcyMalymi(x, lang)).join(', ')}` : '';
+ const oferta = d.rodzaj === 'kariera';
+ const wstecz = oferta ? { etykieta: en ? 'All offers' : 'Wszystkie oferty', adres: '/aktualnosci/kariera' } : { etykieta: t(lang, 'wszystkieAktualnosci'), adres: '/aktualnosci' };
+ const zgloszenia = !d.zgloszenia_do ? '' : ofertaAktualna({ zgloszenia: d.zgloszenia_do })
+@@ -110,7 +110,7 @@ const zgloszenia = !d.zgloszenia_do ? '' : ofertaAktualna({ zgloszenia: d.zglosz
+       <h2 id="h-galeria">{t(lang, 'galeria')}</h2>
+       <Galeria
+         client:visible
+-        zdjecia={d.galeria.map((g) => ({ src: u(g.plik), podpis: g.podpis }))}
++        zdjecia={d.galeria.map((g) => ({ src: u(g.plik), podpis: wybierz(g, 'podpis', lang) || undefined }))}
+         etykieta={t(lang, 'galeria')}
+         zamknij={en ? 'Close' : 'Zamknij'}
+         poprzednie={en ? 'Previous photo' : 'Poprzednie zdjęcie'}
+diff --git a/src/views/AktualnoscZamianaDni.astro b/src/views/AktualnoscZamianaDni.astro
+index 5ca40f9..d626df8 100644
+--- a/src/views/AktualnoscZamianaDni.astro
++++ b/src/views/AktualnoscZamianaDni.astro
+@@ -14,7 +14,7 @@
+ import Baza from '../layouts/Baza.astro';
+ import NaglowekStrony from '../components/NaglowekStrony.astro';
+ import { u } from '../lib/url';
+-import { t, wJezyku, RODZAJE, ODBIORCY } from '../lib/i18n';
++import { t, wJezyku, RODZAJE, odbiorcyMalymi } from '../lib/i18n';
+ import { short, longWithDay, type Lang } from '../lib/daty';
+ import { nazwaSemestru, opisZamiany, NAZWA_KOLORU, SKROT_PLANU } from '../lib/kolory-dni';
+ import { daneAktualnosciZamianyDni } from '../lib/widoki/aktualnoscZamianaDni';
+@@ -33,7 +33,7 @@ const dzialBanera = dzialWpisu({ rodzaj: 'ogloszenie', dla });
+   <div class="z-pd">
+     <div class="z-pd-tresc tresc">
+       <section class="zd">
+-        <p class="etyk zd-meta"><span>{RODZAJE.ogloszenie[lang]}</span> · <span>{t(lang, 'opublikowano')} <time datetime={a.od}>{short(a.od, lang)}</time></span> · <span>{t(lang, 'dla')}: {dla.map((x) => ODBIORCY[x][lang].toLowerCase()).join(', ')}</span></p>
++        <p class="etyk zd-meta"><span>{RODZAJE.ogloszenie[lang]}</span> · <span>{t(lang, 'opublikowano')} <time datetime={a.od}>{short(a.od, lang)}</time></span> · <span>{t(lang, 'dla')}: {dla.map((x) => odbiorcyMalymi(x, lang)).join(', ')}</span></p>
+ 
+         {minela && <div class="uwaga"><p>{T('Ta zamiana dni już się odbyła.', 'This day swap has already taken place.')}</p></div>}
+ 
+diff --git a/src/views/Konferencja.astro b/src/views/Konferencja.astro
+index ab22497..a2e1cbf 100644
+--- a/src/views/Konferencja.astro
++++ b/src/views/Konferencja.astro
+@@ -22,7 +22,7 @@ const { konferencja, lang } = Astro.props;
+ const d = konferencja.data;
+ const T = (pl: string, en: string) => (lang === 'en' ? en : pl);
+ 
+-const { tytul, tytulDrugi, Content, opisLang, termin, gdzie, zaklad, stan, opis } = await daneKonferencji(konferencja, lang);
++const { tytul, tytulDrugi, Content, htmlEn, opisLang, termin, gdzie, zaklad, stan, opis } = await daneKonferencji(konferencja, lang);
+ ---
+ <Podstrona lang={lang} tytul={tytul} tytulLang={langPola(d, 'tytul', lang)} opis={opis} opublikowany={d.opublikowany} uklad="zwarta portal-baner"
+   wstecz={{ etykieta: T('Wszystkie konferencje', 'All conferences'), adres: '/nauka/konferencje' }} dzial="nauka" klasa="tresc z-konf">
+@@ -41,7 +41,7 @@ const { tytul, tytulDrugi, Content, opisLang, termin, gdzie, zaklad, stan, opis
+       {zaklad && <><dt>{T('Zakład', 'Department')}</dt><dd><a href={u(wJezyku(`/instytut/zaklady/${zaklad.id}`, lang))}>{wybierz(zaklad.data, 'nazwa', lang)}</a></dd></>}
+     </dl>
+     {d.strona && <p class="akcja glowny"><Link href={d.strona}>{T('Strona konferencji', 'Conference website')}</Link></p>}
+-    <div class="prose opis" lang={opisLang}><Content /></div>
++    <div class="prose opis" lang={opisLang}>{htmlEn ? <Fragment set:html={htmlEn} /> : <Content />}</div>
+   </section>
+ </Podstrona>
+ 
+diff --git a/src/views/Obrona.astro b/src/views/Obrona.astro
+index e994706..abfc7ea 100644
+--- a/src/views/Obrona.astro
++++ b/src/views/Obrona.astro
+@@ -11,7 +11,7 @@ import Ikona from '../components/Ikona.astro';
+ import LiczbyBanera from '../components/LiczbyBanera.astro';
+ import ZdjecieZ from '../components/ZdjecieZ.astro';
+ import { u, isExternal } from '../lib/url';
+-import { t } from '../lib/i18n';
++import { t, langTekstu } from '../lib/i18n';
+ import { longWithDay, short, dayNum, monthShort, parse, type Lang } from '../lib/daty';
+ import { miejsce, type Obrona } from '../lib/tresci';
+ import { daneObrony } from '../lib/widoki/obrona';
+@@ -24,6 +24,8 @@ const href = (a: string) => (isExternal(a) ? a : u(a));
+ const T = (pl: string, en: string) => (lang === 'en' ? en : pl);
+ // tytuł karty (<title>): „Obrona doktoratu: …”; w banerze samo imię i nazwisko
+ const { Content, html, tytul, przyszla, opisZdjecia, dokumenty, haslo, liczby } = await daneObrony(obrona, lang);
++// na /en polski tytuł rozprawy zostaje w oryginale z etykietą „Original title:” (decyzja D5) i lang="pl" (D14); po polsku bez zmian
++const tytulPl = lang === 'en' && !!langTekstu(d.tytul_rozprawy, lang);
+ // typ pliku z prawej (wzorzec ul.pliki): rozszerzenie („PDF”) albo „strona ↗” dla linku bez rozszerzenia
+ const typPliku = (a: string) => {
+   const m = a.split(/[?#]/)[0].match(/\.([a-z0-9]{2,4})$/i);
+@@ -35,7 +37,7 @@ const typPliku = (a: string) => {
+   dzial="nauka" klasa="tresc z-obr">
+   <Fragment slot="baner">
+     <LiczbyBanera lang={lang} pozycje={liczby} />
+-    <p class="lead rozprawa" lang="en">{d.tytul_rozprawy}</p>
++    <p class="lead rozprawa" lang={tytulPl ? undefined : 'en'}>{tytulPl ? <>Original title: <span lang="pl">{d.tytul_rozprawy}</span></> : d.tytul_rozprawy}</p>
+   </Fragment>
+ 
+   <section aria-label={T('Szczegóły obrony', 'Defence details')}>
+@@ -47,7 +49,7 @@ const typPliku = (a: string) => {
+         <dl class="para">
+           <dt>{t(lang, 'kiedy')}</dt><dd>{longWithDay(d.termin, lang)}</dd>
+           {d.miejsce && <><dt>{t(lang, 'gdzie')}</dt><dd>{miejsce(d.miejsce, lang)}</dd></>}
+-          {d.promotorzy.length > 0 && <><dt>{t(lang, 'promotorzy')}</dt><dd>{d.promotorzy.map((p) => tytulyWJezyku(p, lang)).join(', ')}</dd></>}
++          {d.promotorzy.length > 0 && <><dt>{lang === 'en' && d.promotorzy.length > 1 ? 'Supervisors' : t(lang, 'promotorzy')}</dt><dd>{d.promotorzy.map((p) => tytulyWJezyku(p, lang)).join(', ')}</dd></>}
+         </dl>
+       </div>
+     </div>
+diff --git a/src/views/RokAkademicki.astro b/src/views/RokAkademicki.astro
+index 41bfec3..10ba791 100644
+--- a/src/views/RokAkademicki.astro
++++ b/src/views/RokAkademicki.astro
+@@ -69,8 +69,8 @@ const ps = (id: string) => (panele ? { 'data-ps-dla': id, 'data-ps-aktywny': id
+       'Days without classes are not counted, and a swapped day counts as the day whose timetable it follows.',
+     )}</p>
+     <ul class="kd-legenda" aria-label={T('Legenda', 'Legend')}>
+-      <li><span class="kd-wzor niebieski" aria-hidden="true"></span><span><strong>{T('Dzień niebieski', 'Blue day')}</strong> — {T('dzień tygodnia występuje w semestrze po raz nieparzysty', 'the weekday occurs in the semester for an odd time')}</span></li>
+-      <li><span class="kd-wzor pomaranczowy" aria-hidden="true"></span><span><strong>{T('Dzień pomarańczowy', 'Orange day')}</strong> — {T('dzień tygodnia występuje w semestrze po raz parzysty', 'the weekday occurs in the semester for an even time')}</span></li>
++      <li><span class="kd-wzor niebieski" aria-hidden="true"></span><span><strong>{T('Dzień niebieski', 'Blue day')}</strong> — {T('dzień tygodnia występuje w semestrze po raz nieparzysty', 'an odd-numbered occurrence of that weekday in the semester')}</span></li>
++      <li><span class="kd-wzor pomaranczowy" aria-hidden="true"></span><span><strong>{T('Dzień pomarańczowy', 'Orange day')}</strong> — {T('dzień tygodnia występuje w semestrze po raz parzysty', 'an even-numbered occurrence of that weekday in the semester')}</span></li>
+       <li><span class="kd-wzor niebieski kd-wzor-zam" aria-hidden="true">{SKROT_PLANU[lang][3]}</span><span><strong>{T('Zamiana dni', 'Day swap')}</strong> — {T('zajęcia według planu innego dnia; skrót podaje którego (np. „ŚR” — według planu środy)', 'classes follow another day’s timetable; the abbreviation tells which (e.g. “WED” — Wednesday timetable)')}</span></li>
+       <li><span class="kd-wzor wolne" aria-hidden="true"></span><span>{T('Dzień wolny od zajęć (święto, przerwa, dzień rektorski)', 'No classes (public holiday, break, Rector’s day off)')}</span></li>
+       <li><span class="kd-wzor weekend" aria-hidden="true"></span><span>{T('Sobota i niedziela', 'Saturday and Sunday')}</span></li>
+diff --git a/src/views/SylwetkaWW.astro b/src/views/SylwetkaWW.astro
+index b3c475b..938c33c 100644
+--- a/src/views/SylwetkaWW.astro
++++ b/src/views/SylwetkaWW.astro
+@@ -16,7 +16,7 @@ import SiatkaSylwetek from '../components/ww/SiatkaSylwetek.astro';
+ import RamkiWW from '../components/ww/RamkiWW.astro';
+ import LiczbyBanera from '../components/LiczbyBanera.astro';
+ import { u } from '../lib/url';
+-import { wJezyku } from '../lib/i18n';
++import { wJezyku, langTekstu } from '../lib/i18n';
+ import { zrodlaLicz } from '../lib/ww.mjs';
+ import { ADRES_WW, portretHtml, liczbyBaneraWW, type WW } from '../lib/wartoWiedziec';
+ import { zrodlaJs } from '../lib/wwSkrypty';
+@@ -30,7 +30,9 @@ const { T, tytul, tytulLang, zajawka, podpis, lata, tresc, bezTlumaczenia, wstec
+ const { powiazane, inne, inneStart } = await sekcjeSylwetki(w, wszystkie);
+ // zlecenie 55: „Fot.”, „Fot:”, „Foto:”, „Photo:” albo „Photo” wpisane na początku „Źródła zdjęcia” zdejmujemy, bo prefiks
+ // T('Fot.', 'Photo:') dopisujemy sami — zawsze dokładnie jeden, bez „Fot. Fot.”
+-const zrodloZdjecia = (w.obraz_zrodlo ?? '').replace(/^\s*(?:fot[.:]|foto:|photo(?![a-z]):?)\s*/i, '').trim();
++// Na /en pole obraz_zrodlo_en; puste = polskie, z lang="pl", gdy wygląda na polskie (decyzja D14)
++const zrodloZdjecia = (((lang === 'en' && w.obraz_zrodlo_en) || w.obraz_zrodlo) ?? '').replace(/^\s*(?:fot[.:]|foto:|photo(?![a-z]):?)\s*/i, '').trim();
++const zrodloLang = lang === 'en' && !w.obraz_zrodlo_en ? langTekstu(zrodloZdjecia, lang) : undefined;
+ const liczby = liczbyBaneraWW(w);
+ const sekcje = (tresc?.sekcje ?? []).map((s, i) => ({ ...s, id: s.id || `sekcja-${i + 1}` }));
+ // „Zobacz też” (zlecenie 53; dawniej „W »Warto wiedzieć«” — dublowało dział): wiersze mają nazwę grupy, nagłówek jej nie powtarza
+@@ -50,7 +52,7 @@ const spis = [
+     <div class="ww2-prof-l">
+       <Fragment set:html={portretHtml(w, 'ww2-duzy')} />
+       {lata && <p class="ww2-prof-lata">{lata}</p>}
+-      {w.obraz && zrodloZdjecia && <p class="ww2-prof-zrodlo">{T('Fot.', 'Photo:')} {zrodloZdjecia}</p>}
++      {w.obraz && zrodloZdjecia && <p class="ww2-prof-zrodlo">{T('Fot.', 'Photo:')} {zrodloLang ? <span lang={zrodloLang}>{zrodloZdjecia}</span> : zrodloZdjecia}</p>}
+     </div>
+     <RamkiWW lang={lang} bledy={tresc?.bledy} tba={w.tba} tlumaczenie={bezTlumaczenia ? `${ADRES_WW}/${w.slug}` : undefined} />
+     {tresc?.wstep && <div class="ww2-wstep ww2-tresc"><div class="prose" set:html={tresc.wstep} /></div>}

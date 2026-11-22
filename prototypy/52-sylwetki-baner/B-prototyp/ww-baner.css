@@ -1,0 +1,52 @@
+/* Prototyp: nowy układ strony sylwetki „Warto wiedzieć” (ww-baner, 18.11.2026).
+   Dokładny opis zmian: /home/claude/ww-baner/zmiany.md. Plik dołączany po stylach strony (index.Dg8q6Xu_.css = warto-wiedziec.css). */
+
+/* ---------- 1–2. Baner: liczby i figurka bez opisu ----------
+   Liczby (.z-slot .pt-liczby) i figurka (.z-znak) mają gotowe style z Pracowników (zalozyciele.css, zal-telefon.css), bez zmian.
+   .z-znak-sam: figurka bez .z-znak-opis (skrypt dopasowania i CSS Pracowników działają bez opisu).
+   Telefon: podpisy liczb łamią się równo już dziś (.pt-liczby li { text-wrap: balance } w stylach telefonu), twarde spacje
+   po jednoliterowych wyrazach wstawia buduj.py (w Web-Core robi to bezSierotek w LiczbyBanera.astro). */
+
+/* ---------- 3. Portret opływany tekstem ----------
+   .ww2-prof: zamiast siatki „portret | W skrócie” blok, który obejmuje portret (float) i wstęp. Portret opływa tylko wstęp;
+   sekcje z nagłówkami h2 zaczynają się zawsze pod portretem, 40 px pod blokiem (jak dotąd pod wstępem). */
+.z-ww2-os .ww2-prof { display: flow-root; margin: 0 0 40px; }
+/* 7 px w dół: góra portretu na wysokości górnej krawędzi wielkich liter pierwszej linii wstępu (18 px / 28,8 px, Manrope);
+   position: static zamiast dawnego sticky */
+.z-ww2-os .ww2-prof > .ww2-prof-l { float: left; position: static; width: 200px; margin: 7px 28px 16px 0; }
+body .tresc .ww2-prof > .ww2-wstep { margin: 0; }
+/* wstęp: mniej bardzo krótkich linii w zwężonej kolumnie obok portretu (przeglądarki bez text-wrap: pretty — bez zmian) */
+body .tresc .ww2-prof > .ww2-wstep p { text-wrap: pretty; }
+/* bloki z ramką, tłem albo własnymi znacznikami nie wchodzą pod portret — stoją obok niego */
+.z-ww2-os .ww2-prof :is(.prose ul, .prose ol, .prose blockquote, .prose figure) { display: flow-root; }
+/* TBA: ramka obok portretu, górą na wysokości portretu */
+.z-ww2-os .ww2-prof > .ww2-tba { display: flow-root; margin: 7px 0 0; }
+
+/* tablet i wąskie okno (561–1023 px): portret 160 px */
+@media (max-width: 1023px) {
+  .z-ww2-os .ww2-prof > .ww2-prof-l { width: 160px; margin: 7px 24px 14px 0; }
+}
+/* telefon (≤ 560 px): portret 110 px, dalej opływany (przy 390 px kolumna obok ma ok. 234 px, ok. 22–26 znaków w linii) */
+@media (max-width: 560px) {
+  .z-ww2-os .ww2-prof > .ww2-prof-l { width: 110px; margin: 7px 14px 12px 0; }
+}
+
+/* ---------- 4. Imię i nazwisko w jednej linii (decyzja 18.11, 23:26) ----------
+   Komputer (≥ 1024 px): tytuł nigdy się nie łamie. Gdy obok figurki się nie mieści (lewa krawędź tytułu + szerokość + 40 px
+   za lewą krawędzią figurki), skrypt dopasowania dodaje .z-znak-brak i figurka znika; tytuł, hasło i liczby liczą się wtedy
+   do prawego marginesu. Telefon bez zmian (figurka w tle, jak na innych podstronach). */
+@media (min-width: 1024px) and (min-height: 501px), (min-width: 1024px) and (pointer: fine) {
+  .z-nagl-pod.z-znak-sam h1 { white-space: nowrap; }
+  .z-nagl-pod.z-znak-sam.z-znak-brak .z-znak { display: none; }
+  /* bez JS: tytuł bez rezerwy na opis ciekawostki (jej tu nie ma), hasło do figurki minus 40 px (liczby: reguła z Pracowników) */
+  html:not(.js) .z-nagl-pod.z-znak-sam .z-tyt-g { max-width: none; }
+  html:not(.js) .z-nagl-pod.z-znak-sam .z-haslo { max-width: calc(100% - max(0px, var(--zn) - var(--marg) + var(--znak-p)) - 40px); }
+}
+/* bez JS (nie da się zmierzyć tytułu): najdłuższe obecne nazwisko („Czesław Ryll-Nardzewski”, 11,5 em) mieści się obok figurki
+   przy każdej szerokości od 1024 px (zapas co najmniej 180 px, najciaśniej przy 1024 px), więc próg szerokości nie jest potrzebny.
+   Granica: ok. 15,6 em (baner z liczbami; bez liczb 16,6 em), czyli ok. 30 znaków Brygady. Na zapas: tytuł dłuższy niż 28 znaków
+   dostaje przy budowaniu klasę .z-tyt-dlugi-bez-js i bez JS figurka znika na komputerze (obecnie żadna sylwetka). */
+@media (min-width: 1024px) and (min-height: 501px), (min-width: 1024px) and (pointer: fine) {
+  html:not(.js) .z-nagl-pod.z-znak-sam.z-tyt-dlugi-bez-js .z-znak { display: none; }
+  html:not(.js) .z-nagl-pod.z-znak-sam.z-tyt-dlugi-bez-js .z-haslo { max-width: none; }
+}

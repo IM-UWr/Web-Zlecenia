@@ -1,0 +1,40 @@
+{
+  "przypomnienia": [
+    {
+      "sprawa": "Deklaracja specjalności (II stopień)",
+      "sprawa_en": "Specialisation declaration (master's)",
+      "data": "2026-10-15",
+      "co_roku": true,
+      "dni_przed": 14,
+      "adres": "/studia/matematyka#terminy"
+    },
+    {
+      "sprawa": "Deklaracja specjalności nauczycielskiej",
+      "sprawa_en": "Declaration of the teaching specialisation",
+      "data": "2026-12-31",
+      "co_roku": true,
+      "dni_przed": 14,
+      "adres": "/studia/matematyka#terminy"
+    },
+    {
+      "sprawa": "Deklaracja specjalności (I stopień)",
+      "sprawa_en": "Specialisation declaration (bachelor's)",
+      "data": "2027-06-30",
+      "co_roku": true,
+      "dni_przed": 14,
+      "adres": "/studia/matematyka#terminy"
+    }
+  ],
+  "menu_i_kafelek": {
+    "kolejnosc": 1,
+    "menu_etykieta": "Matematyka",
+    "menu_etykieta_en": "Mathematics",
+    "menu_opis": "I i II stopień, pięć specjalności",
+    "menu_opis_en": "BSc and MSc, five specialisations",
+    "kafelek_poziom": "I i II stopień",
+    "kafelek_poziom_en": "BSc and MSc",
+    "kafelek_opis": "Nowy program studiów od roku 2026/27.",
+    "kafelek_opis_en": "New curriculum from 2026/27.",
+    "adres": "/studia/matematyka"
+  }
+}

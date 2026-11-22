@@ -1,0 +1,25 @@
+{
+  "id": "wladyslaw-slebodzinski",
+  "liczby": [
+    {
+      "n": "1931",
+      "podpis": "pochodna Liego",
+      "podpis_en": "Lie derivative",
+      "z": "pochodna Liego"
+    },
+    {
+      "n": "11",
+      "podpis": "doktorów",
+      "podpis_en": "doctoral students",
+      "z": "wypromowanych doktorów (wg [Mathematics Genealogy Project](https://mathgenealogy.org/id.php?id=157629))"
+    },
+    {
+      "n": "1961",
+      "podpis": "prezes PTM",
+      "podpis_en": "PTM president",
+      "z": "prezes Polskiego Towarzystwa Matematycznego"
+    }
+  ],
+  "pominiete": [],
+  "uwagi": "W ramce są tylko 3 punkty, więc wzięto wszystkie; 1961–1963 skrócono do roku początku. Liczba 11 ma w weryfikacji rozbieżność (pkt 13: 11 wg MGP, MacTutor i strony PWr, 10 na drzewie w WSM), ale to jedno drzewo przeciw trzem źródłom z imienną listą, a wstęp sylwetki podaje 11; zostawiono ją, bo zamienniki są słabsze. Gdyby trzeba było jej uniknąć: „1955 nagroda państwowa” (State Prize; WE1, WikiEN, bez rozbieżności). „53 naukowych potomków” nie polecam, bo to dane z MGP z tego samego drzewa i z czasem się zmieniają."
+}

@@ -1,0 +1,27 @@
+{
+  "id": "czeslaw-ryll-nardzewski",
+  "liczby": [
+    {
+      "n": "1964",
+      "podpis": "dziekan wydziału",
+      "podpis_en": "faculty dean",
+      "z": "dziekan Wydziału Matematyki, Fizyki i Chemii UWr"
+    },
+    {
+      "n": "100+",
+      "podpis": "publikacji",
+      "podpis_en": "publications",
+      "z": "opublikowanych prac naukowych"
+    },
+    {
+      "n": "1952",
+      "podpis": "nagroda PTM",
+      "podpis_en": "Mazurkiewicz Prize",
+      "z": "Nagroda PTM im. Stefana Mazurkiewicza"
+    }
+  ],
+  "pominiete": [
+    "wypromowanych doktorów (wg [Mathematics Genealogy Project](https://www.genealogy.math.ndsu.nodak.edu/id.php?id=65032))"
+  ],
+  "uwagi": "Pominięto 18 doktorów, bo weryfikacja notuje rozbieżność (18 wg MGP, PWr, Gigantów Nauki i Wikipedii; 9 wg Rocznika PAU; „ponad 10” wg R. Frankiewicza); jeśli Instytut przyjmie 18, najlepiej wstawić tę pozycję zamiast nagrody PTM. Dziekanat 1964–1966 skrócono do roku objęcia funkcji. „Nagroda Mazurkiewicza” ma 21 znaków, więc po polsku „nagroda PTM”, a po angielsku pełna nazwa."
+}

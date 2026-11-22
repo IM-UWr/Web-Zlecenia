@@ -1,0 +1,1746 @@
+diff --git a/src/content/kierunki/isim.md b/src/content/kierunki/isim.md
+index 5cc0e0e..4a2f4d6 100644
+--- a/src/content/kierunki/isim.md
++++ b/src/content/kierunki/isim.md
+@@ -64,11 +64,11 @@ tresc_en: |
+ 
+   | | Mathematical Institute | Institute of Computer Science |
+   |---|---|---|
+-  | Timetable | [winter](/en/studia/plan-zajec#zimowy) and [summer](/en/studia/plan-zajec#letni) semester | [Registration system](https://zapisy.ii.uni.wroc.pl/courses/) (also lists ISIM mathematics classes) |
++  | Timetable | [winter](/studia/plan-zajec#zimowy) and [summer](/studia/plan-zajec#letni) semester | [Registration system](https://zapisy.ii.uni.wroc.pl/courses/) (also lists ISIM mathematics classes) |
+   | Course descriptions | [USOSweb catalogue](https://usosweb.uwr.edu.pl/kontroler.php?_action=katalog2%2Fprzedmioty%2FszukajPrzedmiotu&_pattern=&_prz_kod_pattern=28-MT) | [Registration system](https://zapisy.ii.uni.wroc.pl/courses/) |
+-  | Registration for classes | USOSweb — schedule and rules: [Classes and office hours](/en/studia/zajecia) | [Registration system](https://zapisy.ii.uni.wroc.pl/), rules on the [page for new students](https://ii.uni.wroc.pl/dla-studenta/dla-nowych-studentow) |
+-  | Office hours | [Classes and office hours](/en/studia/zajecia) | [staff profiles](https://zapisy.ii.uni.wroc.pl/users/employees/) |
+-  | Exams | dates for compulsory courses are set centrally and published in mid-October ([Classes and office hours](/en/studia/zajecia)); other dates are set by the lecturer | dates are given by lecturers in the [Exams section](https://zapisy.ii.uni.wroc.pl/session/) |
++  | Registration for classes | USOSweb — schedule and rules: [Classes and office hours](/studia/zajecia) | [Registration system](https://zapisy.ii.uni.wroc.pl/), rules on the [page for new students](https://ii.uni.wroc.pl/dla-studenta/dla-nowych-studentow) |
++  | Office hours | [Classes and office hours](/studia/zajecia) | [staff profiles](https://zapisy.ii.uni.wroc.pl/users/employees/) |
++  | Exams | dates for compulsory courses are set centrally and published in mid-October ([Classes and office hours](/studia/zajecia)); other dates are set by the lecturer | dates are given by lecturers in the [Exams section](https://zapisy.ii.uni.wroc.pl/session/) |
+ 
+   The Institute of Computer Science registration system is also used to vote for the courses to be taught in the next academic year, to choose a thesis and to evaluate classes anonymously.
+ 
+@@ -164,7 +164,7 @@ tresc_en: |
+ 
+   ISIM graduates can continue with master's studies in mathematics, computer science and artificial intelligence at the Faculty of Mathematics and Computer Science, University of Wrocław, as well as at other leading universities in Poland and abroad. They find work in IT and FinTech companies, banks, insurance, consulting and leasing companies, and research centres, among others.
+ 
+-  If you plan a master's degree in computer science, pass all compulsory computer science courses at the (M) level. If you are considering a master's in mathematics, take the mathematics courses in their advanced versions. Master's studies at the Mathematical Institute are described on the [Mathematics](/en/studia/matematyka) page.
++  If you plan a master's degree in computer science, pass all compulsory computer science courses at the (M) level. If you are considering a master's in mathematics, take the mathematics courses in their advanced versions. Master's studies at the Mathematical Institute are described on the [Mathematics](/studia/matematyka) page.
+ 
+   ## FAQ {#pytania}
+ 
+@@ -202,11 +202,11 @@ tresc_en: |
+ 
+   ### How do I find a thesis supervisor and topic?
+ 
+-  You can write your thesis under the supervision of a member of staff of either the Mathematical Institute or the Institute of Computer Science; it is prepared and assessed according to the rules of the mathematics or computer science programme respectively. Usually students choose a supervisor themselves and agree a topic. Start with the topic lists ([Mathematical Institute](https://www.math.uni.wroc.pl/tematy-prac), [Institute of Computer Science](https://zapisy.ii.uni.wroc.pl/theses/)) or talk to a member of staff during office hours. At the Institute of Computer Science you can also choose a supervisor and topic through the *Diploma project* course, project-type courses and seminars. Thesis rules: [Exams and diploma](/en/studia/egzaminy-i-dyplom) (Mathematical Institute) and [theses at the Institute of Computer Science](https://ii.uni.wroc.pl/dla-studenta/prace-dyplomowe).
++  You can write your thesis under the supervision of a member of staff of either the Mathematical Institute or the Institute of Computer Science; it is prepared and assessed according to the rules of the mathematics or computer science programme respectively. Usually students choose a supervisor themselves and agree a topic. Start with the topic lists ([Mathematical Institute](https://www.math.uni.wroc.pl/tematy-prac), [Institute of Computer Science](https://zapisy.ii.uni.wroc.pl/theses/)) or talk to a member of staff during office hours. At the Institute of Computer Science you can also choose a supervisor and topic through the *Diploma project* course, project-type courses and seminars. Thesis rules: [Exams and diploma](/studia/egzaminy-i-dyplom) (Mathematical Institute) and [theses at the Institute of Computer Science](https://ii.uni.wroc.pl/dla-studenta/prace-dyplomowe).
+ 
+   ### What does the diploma exam look like?
+ 
+-  It has two parts. The mathematics part is the written bachelor's exam of the mathematics programme ([Exams and diploma](/en/studia/egzaminy-i-dyplom)). The computer science part is held together with the [diploma exam of the computer science programme](https://ii.uni.wroc.pl/dla-studenta/egzaminy); among the optional problems, ISIM students get a problem on formal languages and computational complexity instead of the algebra problem. To pass, you need at least a satisfactory grade in each part.
++  It has two parts. The mathematics part is the written bachelor's exam of the mathematics programme ([Exams and diploma](/studia/egzaminy-i-dyplom)). The computer science part is held together with the [diploma exam of the computer science programme](https://ii.uni.wroc.pl/dla-studenta/egzaminy); among the optional problems, ISIM students get a problem on formal languages and computational complexity instead of the algebra problem. To pass, you need at least a satisfactory grade in each part.
+ 
+   ### What about foreign language courses and physical education?
+ 
+diff --git a/src/content/kierunki/matematyka.md b/src/content/kierunki/matematyka.md
+index d2a2581..d73ce7c 100644
+--- a/src/content/kierunki/matematyka.md
++++ b/src/content/kierunki/matematyka.md
+@@ -33,13 +33,9 @@ tresc_en: |
+ 
+   :::etapy
+ 
+-  1. **Semesters 1–2: Foundations** — Core courses, including mathematical analysis, linear algebra and an introduction to mathematics. The year coordinator and the tutoring room help you settle in.  
+-     Deadline: Teaching specialisation: declare by 31 December (1st semester)  
+-     Form: Form C1
+-  2. **Semesters 3–4: Broadening and choosing a specialisation** — Further core courses and the first electives. At the end of the 4th semester you choose a specialisation.  
+-     Deadline: Declare your specialisation by 30 June (4th semester)  
+-     [Form C2](https://forms.cloud.microsoft/e/SWEQQ1YF5L)
+-  3. **Semesters 5–6: Specialisation and bachelor's diploma** — Specialisation courses, a team specialisation project and a bachelor's thesis. Studies end with a written bachelor's exam (February, June or September).
++  1. **Semester 1: Foundations** — Core courses, including mathematical analysis, linear algebra and an introduction to mathematics. The year coordinator and the tutoring room help you settle in.  
++  2. **Semesters 2–4: Compulsory courses and a first choice of specialisation** — Further core courses and the first electives. At the end of the 4th semester you choose a specialisation.  
++  3. **Semesters 5–6: Specialisation courses** — Specialisation courses, a team specialisation project and a bachelor's thesis. Studies end with a written bachelor's exam (February, June or September).
+ 
+   :::
+ 
+@@ -198,7 +194,7 @@ tresc_en: |
+ 
+   Mathematics teaches precise thinking and problem solving, so graduates find work in many places: data analysis and IT, banking and insurance, research centres, schools and universities.
+ 
+-  The best master's graduates can continue at the [doctoral school](/en/studia/szkola-doktorska). Employment and salary data for mathematics graduates of the University of Wrocław are published by the national [Graduate Tracking System (ELA)](https://ela.nauka.gov.pl/).
++  The best master's graduates can continue at the [doctoral school](/studia/szkola-doktorska). Employment and salary data for mathematics graduates of the University of Wrocław are published by the national [Graduate Tracking System (ELA)](https://ela.nauka.gov.pl/).
+ 
+   ## FAQ {#pytania}
+ 
+@@ -224,15 +220,15 @@ tresc_en: |
+ 
+   ### Can I take courses at the Institute of Computer Science?
+ 
+-  Yes, if places are available. You need an account in the Institute of Computer Science registration system — see [Classes and office hours](/en/studia/zajecia).
++  Yes, if places are available. You need an account in the Institute of Computer Science registration system — see [Classes and office hours](/studia/zajecia).
+ 
+   ### Where can I get help in my first year?
+ 
+-  In the tutoring room (room 202), where senior students help with problems, from the year coordinator and on the [First year](/en/studia/pierwszy-rok) page.
++  In the tutoring room (room 202), where senior students help with problems, from the year coordinator and on the [First year](/studia/pierwszy-rok) page.
+ 
+   ### When are the diploma exams held?
+ 
+-  Three times a year: in February, June and September. Rules, scope and dates: [Exams and diploma](/en/studia/egzaminy-i-dyplom).
++  Three times a year: in February, June and September. Rules, scope and dates: [Exams and diploma](/studia/egzaminy-i-dyplom).
+ 
+   :::
+ 
+diff --git a/src/content/kierunki/podyplomowe.md b/src/content/kierunki/podyplomowe.md
+index 3a70836..9c06ad9 100644
+--- a/src/content/kierunki/podyplomowe.md
++++ b/src/content/kierunki/podyplomowe.md
+@@ -8,19 +8,19 @@ tresc_en: |
+ 
+   The Mathematical Institute currently runs a three-semester **Postgraduate Qualification Programme in Teaching Mathematics** (*Kwalifikacyjne Studia Podyplomowe Nauczanie Matematyki*).
+ 
+-  ## About the programme {#about-the-programme}
++  ## About the programme {#charakterystyka-studiów}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   The programme prepares graduates to teach mathematics in primary and secondary schools. In accordance with the Regulation of the Minister of Science and Higher Education of 25 July 2019 on the standard of education preparing for the teaching profession, it provides subject-matter and didactic preparation for teaching an additional subject. It is intended for graduates of second-cycle (master's) or long-cycle master's programmes whose learning outcomes covered knowledge and skills corresponding to the general requirements of the core curriculum in mathematics, and who already have subject-matter, psychological and pedagogical preparation, preparation in the basics of didactics and voice production, and didactic preparation for teaching a subject other than mathematics.
+ 
+-  ## Who can apply {#who-can-apply}
++  ## Who can apply {#dla-kogo}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   The programme is open to holders of a master's degree in the exact and natural sciences or in engineering and technology, whose programmes included learning outcomes in mathematics (at least 60 hours of mathematics classes in the curriculum). Candidates must also hold a pedagogical qualification entitling them to work as teachers.
+ 
+-  ## Organisation {#organisation}
++  ## Organisation {#organizacja-studiów}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -29,7 +29,7 @@ tresc_en: |
+   - **Mode:** classes are held at weekends, mostly in person.
+   - **Qualification obtained:** subject-matter and didactic preparation for teaching mathematics in primary and secondary schools.
+ 
+-  ## Curriculum {#curriculum}
++  ## Curriculum {#program-studiów}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -56,7 +56,7 @@ tresc_en: |
+   - [Programme and rules of the teaching placement](/pliki/studia/podyplomowe/regulamin.pdf)
+   - [Trainee competence assessment form](/pliki/studia/podyplomowe/arkusz.pdf)
+ 
+-  ## Admission {#admission}
++  ## Admission {#rekrutacja}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -70,14 +70,14 @@ tresc_en: |
+ 
+   Documents are submitted by post or in person at the Mathematical Institute, University of Wrocław, pl. Grunwaldzki 2, 50-384 Wrocław, room 303.
+ 
+-  ## Fees {#fees}
++  ## Fees {#opłaty}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   - total cost of the programme: PLN 5,700,
+   - fee per semester: PLN 1,900 (paid at the beginning of each semester).
+ 
+-  ## Contact {#contact}
++  ## Contact {#kontakt}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+diff --git a/src/content/kierunki/siad.md b/src/content/kierunki/siad.md
+index d853dde..f0f0857 100644
+--- a/src/content/kierunki/siad.md
++++ b/src/content/kierunki/siad.md
+@@ -113,11 +113,11 @@ tresc_en: |
+ 
+   ### Where can I find the timetable?
+ 
+-  Classes are listed in the [Mathematical Institute timetable](/en/studia/plan-zajec#zimowy) (groups marked “tylko dla SIAD”). Registration rules and forms are on the [Classes and office hours](/en/studia/zajecia) page.
++  Classes are listed in the [Mathematical Institute timetable](/studia/plan-zajec#zimowy) (groups marked “tylko dla SIAD”). Registration rules and forms are on the [Classes and office hours](/studia/zajecia) page.
+ 
+   ### Where can I get help in my first year?
+ 
+-  From the first-year coordinator and on the [First year](/en/studia/pierwszy-rok) page, which includes the orientation day programme for this degree.
++  From the first-year coordinator and on the [First year](/studia/pierwszy-rok) page, which includes the orientation day programme for this degree.
+ 
+   :::
+ 
+diff --git a/src/content/kierunki/szkola-doktorska.md b/src/content/kierunki/szkola-doktorska.md
+index 9631809..3438af9 100644
+--- a/src/content/kierunki/szkola-doktorska.md
++++ b/src/content/kierunki/szkola-doktorska.md
+@@ -15,7 +15,7 @@ tresc_en: |
+ 
+   ### Courses
+ 
+-  The compulsory course load is 270 hours. Within the courses run by the College you should complete at least 4 lecture courses of at least 30 hours each, ending with an exam, and at least 2 semester-long seminars of 30 hours. You can also count university-wide courses for all doctoral colleges, courses offered by the Faculty (including research seminars), individual courses outside the regular offer, courses at other faculties and universities, and professional practice. With the consent of the head of the College you can also take courses offered by the Doctoral College of Computer Science. Classes are taught in Polish or English. Syllabi of recent courses are on the [Documents and forms](/en/studia/szkola-doktorska/dokumenty#course-syllabi-202526) page.
++  The compulsory course load is 270 hours. Within the courses run by the College you should complete at least 4 lecture courses of at least 30 hours each, ending with an exam, and at least 2 semester-long seminars of 30 hours. You can also count university-wide courses for all doctoral colleges, courses offered by the Faculty (including research seminars), individual courses outside the regular offer, courses at other faculties and universities, and professional practice. With the consent of the head of the College you can also take courses offered by the Doctoral College of Computer Science. Classes are taught in Polish or English. Syllabi of recent courses are on the [Documents and forms](/studia/szkola-doktorska/dokumenty#sylabusy-zajęć-202526) page.
+ 
+   ### What the programme expects of you
+ 
+@@ -34,7 +34,7 @@ tresc_en: |
+ 
+   ### People and defences
+ 
+-  The Institute's doctoral students are listed in the [staff directory](/en/pracownicy). Defence notices, theses and reviews are published on the [PhD defences](/en/obrony-doktorskie) page. All doctoral students of the University form the [Doctoral Students' Council of the University of Wrocław](https://doktoranci.uwr.edu.pl/).
++  The Institute's doctoral students are listed in the [staff directory](/pracownicy). Defence notices, theses and reviews are published on the [PhD defences](/obrony-doktorskie) page. All doctoral students of the University form the [Doctoral Students' Council of the University of Wrocław](https://doktoranci.uwr.edu.pl/).
+ 
+   ## Doctoral school pages {#strony}
+ 
+@@ -198,11 +198,11 @@ tresc_en: |
+ 
+   ### Do I need a supervisor before I apply?
+ 
+-  Yes. To apply, a candidate must first have a prospective supervisor, who must hold a habilitation or the title of professor. Contact details of the mathematicians are in the [staff directory](/en/pracownicy). Details are on the [Admissions](/en/studia/szkola-doktorska/rekrutacja) page.
++  Yes. To apply, a candidate must first have a prospective supervisor, who must hold a habilitation or the title of professor. Contact details of the mathematicians are in the [staff directory](/pracownicy). Details are on the [Admissions](/studia/szkola-doktorska/rekrutacja) page.
+ 
+   ### What is the entrance exam like?
+ 
+-  It is a written exam. Candidates receive 12 problems (in Polish or English — their choice), and the committee grades the 6 best solutions, each on a scale of 0–6 points. The scope covers courses taught in mathematics degree programmes, in particular analysis I–III, linear algebra and algebra I, differential equations, elements of metric topology and set theory, and probability and statistics. [Problems from previous years](/en/studia/szkola-doktorska/rekrutacja#entrance-exam-problems-from-previous-years).
++  It is a written exam. Candidates receive 12 problems (in Polish or English — their choice), and the committee grades the 6 best solutions, each on a scale of 0–6 points. The scope covers courses taught in mathematics degree programmes, in particular analysis I–III, linear algebra and algebra I, differential equations, elements of metric topology and set theory, and probability and statistics. [Problems from previous years](/studia/szkola-doktorska/rekrutacja#zadania-z-egzaminów-z-poprzednich-lat).
+ 
+   ### Can I apply without a master's degree?
+ 
+@@ -214,7 +214,7 @@ tresc_en: |
+ 
+   ### How much is the doctoral stipend?
+ 
+-  At least 37% of a professor's salary until the month in which the mid-term evaluation takes place, and at least 57% afterwards. The amount for each academic year is set by the Rector. The stipend can be received for a maximum of 4 years in total. More on the [Stipends and grants](/en/studia/szkola-doktorska/stypendia-i-granty) page.
++  At least 37% of a professor's salary until the month in which the mid-term evaluation takes place, and at least 57% afterwards. The amount for each academic year is set by the Rector. The stipend can be received for a maximum of 4 years in total. More on the [Stipends and grants](/studia/szkola-doktorska/stypendia-i-granty) page.
+ 
+   ### Can I work at a university during my training?
+ 
+@@ -226,7 +226,7 @@ tresc_en: |
+ 
+   ### Where can I find the list of doctoral students and defence announcements?
+ 
+-  The Institute's doctoral students are listed in the [staff directory](/en/pracownicy) (group “PhD students”). Defence notices, theses and reviews are published on the [PhD defences](/en/obrony-doktorskie) page.
++  The Institute's doctoral students are listed in the [staff directory](/pracownicy) (group “PhD students”). Defence notices, theses and reviews are published on the [PhD defences](/obrony-doktorskie) page.
+ 
+   :::
+ 
+diff --git a/src/content/specjalnosci/analiza-danych.md b/src/content/specjalnosci/analiza-danych.md
+index 764d7ee..f199790 100644
+--- a/src/content/specjalnosci/analiza-danych.md
++++ b/src/content/specjalnosci/analiza-danych.md
+@@ -65,7 +65,7 @@ tresc_en: |
+ 
+   <!-- RAMKA: Treść ramki; etykietę zmień w atrybucie tytul. -->
+ 
+-  :::ramka{tytul="Who is it for"}
++  :::ramka{tytul="Who it is for"}
+ 
+   For students who enjoy probability and statistics, want to program and work with data, and want to understand the mathematical foundations of statistical methods and machine learning. At the second-cycle level the specialisation assumes knowledge of the first-cycle courses **Programming and data analysis in R**, **Linear models** and **Statistics**.
+ 
+diff --git a/src/content/specjalnosci/matematyka-aktuarialno-finansowa.md b/src/content/specjalnosci/matematyka-aktuarialno-finansowa.md
+index 740d01e..d8f57b2 100644
+--- a/src/content/specjalnosci/matematyka-aktuarialno-finansowa.md
++++ b/src/content/specjalnosci/matematyka-aktuarialno-finansowa.md
+@@ -72,7 +72,7 @@ tresc_en: |
+ 
+   <!-- RAMKA: Treść ramki; etykietę zmień w atrybucie tytul. -->
+ 
+-  :::ramka{tytul="Who is it for"}
++  :::ramka{tytul="Who it is for"}
+ 
+   For those who enjoy probability theory and want to use it to price risk — in insurance and in financial markets. If you are not sure yet, take **Actuarial and Financial Overview** in semester 2: the course is meant to introduce the specialisation and help you decide, and if you choose a different path, it counts as an elective.
+ 
+diff --git a/src/content/specjalnosci/matematyka-nauczycielska.md b/src/content/specjalnosci/matematyka-nauczycielska.md
+index b317327..82bf445 100644
+--- a/src/content/specjalnosci/matematyka-nauczycielska.md
++++ b/src/content/specjalnosci/matematyka-nauczycielska.md
+@@ -61,7 +61,7 @@ tresc_en: |
+ 
+   ### How the studies are organised
+ 
+-  - **An early choice.** You declare the teaching specialisation in the 1st semester of the bachelor's programme (form C1, by 31 December), not — like the others — at the end of the 4th semester. See [deadlines and forms](/en/studia/matematyka#terminy).
++  - **An early choice.** You declare the teaching specialisation in the 1st semester of the bachelor's programme (form C1, by 31 December), not — like the others — at the end of the 4th semester. See [deadlines and forms](/studia/matematyka#terminy).
+   - **A fixed order of courses.** Teacher training starts in the 2nd semester and consists of many small courses (category N) that must be taken in the order set out in the study plan. Starting later than in the 2nd semester makes it impossible to graduate on time.
+   - **Registration only after declaring.** Only students who have declared teacher training can register for teacher-training courses (N).
+   - **Foreign language and humanities course.** You may choose English or German as your foreign language course (English is compulsory in the other specialisations), and *Language culture* as your humanities or social sciences course.
+@@ -69,7 +69,7 @@ tresc_en: |
+ 
+   ### School placements
+ 
+-  Placements are a compulsory part of the specialisation: in the bachelor's programme a psychological and pedagogical placement (30 hours) and a mathematics teaching placement in grades 4–8 of primary school (60 hours); in the master's programme a 60-hour placement in a secondary school leading to the matura exam. In each mathematics teaching placement you observe at least 12 lessons and teach at least 8 yourself. Regulations, forms and assessment rules: [Teaching placements](/en/studia/matematyka#praktyki).
++  Placements are a compulsory part of the specialisation: in the bachelor's programme a psychological and pedagogical placement (30 hours) and a mathematics teaching placement in grades 4–8 of primary school (60 hours); in the master's programme a 60-hour placement in a secondary school leading to the matura exam. In each mathematics teaching placement you observe at least 12 lessons and teach at least 8 yourself. Regulations, forms and assessment rules: [Teaching placements](/studia/matematyka#praktyki).
+ 
+   ### 2022 curriculum (studies started 2022/23–2025/26)
+ 
+@@ -77,7 +77,7 @@ tresc_en: |
+ 
+   <!-- RAMKA: Treść ramki; etykietę zmień w atrybucie tytul. -->
+ 
+-  :::ramka{tytul="Who is it for"}
++  :::ramka{tytul="Who it is for"}
+ 
+   For those who want to teach mathematics in schools — and enjoy not only solving problems but also explaining them to others. You decide early: you declare this specialisation as early as the 1st semester of the bachelor's programme (by 31 December), because the teacher-training courses start in the 2nd semester. Teacher training assumes you complete the master's programme — only the master's degree gives you full teaching qualifications.
+ 
+@@ -254,7 +254,7 @@ tresc_en: |
+ 
+   The Institute's [job offers page](/aktualnosci?rodzaj=kariera) (Polish) regularly lists schools from Wrocław and the region looking for mathematics teachers — some offers are also open to final-year students. Our graduates teach in many schools in the region: the first Lower Silesian Congress of Mathematics Teachers at our Faculty (2025) was attended by over 120 teachers, many of them our graduates.
+ 
+-  The Institute also runs a postgraduate qualification programme in *Teaching Mathematics* — see [postgraduate studies](/en/studia/podyplomowe).
++  The Institute also runs a postgraduate qualification programme in *Teaching Mathematics* — see [postgraduate studies](/studia/podyplomowe).
+ 
+   ## Sample thesis topics {#tematy}
+ 
+@@ -300,7 +300,7 @@ tresc_en: |
+ 
+   ### When and how do I declare this specialisation?
+ 
+-  In the bachelor's programme — in the 1st semester, using form C1, by 31 December (the other specialisations are chosen only at the end of the 4th semester). In the master's programme — at the start of the 1st semester, using form C3, by 15 October. See [deadlines and forms](/en/studia/matematyka#terminy).
++  In the bachelor's programme — in the 1st semester, using form C1, by 31 December (the other specialisations are chosen only at the end of the 4th semester). In the master's programme — at the start of the 1st semester, using form C3, by 15 October. See [deadlines and forms](/studia/matematyka#terminy).
+ 
+   ### Do I have to choose the extended versions of compulsory courses?
+ 
+@@ -328,7 +328,7 @@ tresc_en: |
+ 
+   ### What does the master's exam look like?
+ 
+-  The written part covers the compulsory courses of the specialisation, and the oral part covers the topic of your master's thesis. For the 2022 curriculum the written part covers analysis, arithmetic, introduction to mathematics and geometry (elementary geometry, foundations of geometry, geometric constructions) — see the [exam scope](/pliki/studia/mgr22-na-zakres.pdf) (Polish) and [Exams and diploma](/en/studia/egzaminy-i-dyplom).
++  The written part covers the compulsory courses of the specialisation, and the oral part covers the topic of your master's thesis. For the 2022 curriculum the written part covers analysis, arithmetic, introduction to mathematics and geometry (elementary geometry, foundations of geometry, geometric constructions) — see the [exam scope](/pliki/studia/mgr22-na-zakres.pdf) (Polish) and [Exams and diploma](/studia/egzaminy-i-dyplom).
+ 
+   :::
+ 
+@@ -338,7 +338,7 @@ tresc_en: |
+ 
+   ::opiekun
+ 
+-  ## Seminaria {#seminaria}
++  ## Seminars {#seminaria}
+ 
+   <!-- Dane wybierasz w polach formularza. Brak danych = pusta wstawka. -->
+ 
+diff --git a/src/content/specjalnosci/matematyka-stosowana.md b/src/content/specjalnosci/matematyka-stosowana.md
+index 574e24b..83fb43c 100644
+--- a/src/content/specjalnosci/matematyka-stosowana.md
++++ b/src/content/specjalnosci/matematyka-stosowana.md
+@@ -67,7 +67,7 @@ tresc_en: |
+ 
+   <!-- RAMKA: Treść ramki; etykietę zmień w atrybucie tytul. -->
+ 
+-  :::ramka{tytul="Who is it for"}
++  :::ramka{tytul="Who it is for"}
+ 
+   For those who enjoy differential equations and probability, want to combine mathematics with programming and computation, and are interested in applications of mathematics in the natural sciences — from population dynamics and epidemics to physics and earth sciences.
+ 
+diff --git a/src/content/specjalnosci/matematyka-teoretyczna.md b/src/content/specjalnosci/matematyka-teoretyczna.md
+index fb73f48..98f6dc1 100644
+--- a/src/content/specjalnosci/matematyka-teoretyczna.md
++++ b/src/content/specjalnosci/matematyka-teoretyczna.md
+@@ -66,7 +66,7 @@ tresc_en: |
+ 
+   <!-- RAMKA: Treść ramki; etykietę zmień w atrybucie tytul. -->
+ 
+-  :::ramka{tytul="Who is it for"}
++  :::ramka{tytul="Who it is for"}
+ 
+   For those who want to understand how mathematical theories are built, enjoy getting to the heart of a proof, and are thinking about advanced master's studies and later research work — including at a university. The specialisation requires the extended (R) versions of several key courses, so be ready for a more demanding programme.
+ 
+diff --git a/src/content/strony/studia/archiwalne-programy.md b/src/content/strony/studia/archiwalne-programy.md
+index f9dfa3d..9847ba8 100644
+--- a/src/content/strony/studia/archiwalne-programy.md
++++ b/src/content/strony/studia/archiwalne-programy.md
+@@ -12,7 +12,7 @@ tresc_en: |
+ 
+   Earlier study programmes in mathematics at the Faculty of Mathematics and Computer Science of the University of Wrocław. All documents are in Polish.
+ 
+-  ## Programmes in force from 1 October 2019 {#programmes-in-force-from-1-october-2019}
++  ## Programmes in force from 1 October 2019 {#programy-obowiązujące-od-1-października-2019-r}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -23,7 +23,7 @@ tresc_en: |
+   - [Resolution of the Faculty Council of 24 September 2019 on the minimum requirements for completing a semester in mathematics](/pliki/studia/programy/uchwala_54_2019_rwmii_minzal.pdf)
+   - [Resolution of the Faculty Council of 24 September 2019 on the requirements for re-enrolment in a semester in mathematics](/pliki/studia/programy/uchwala_55_2019_rwmii_powtsem.pdf)
+ 
+-  ## Programmes in force from 1 October 2017 {#programmes-in-force-from-1-october-2017}
++  ## Programmes in force from 1 October 2017 {#programy-obowiązujące-od-1-października-2017-r}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -34,7 +34,7 @@ tresc_en: |
+ 
+   The individual resolutions of the Faculty Council that make up the consolidated text above were adopted on [23 May 2017](/pliki/studia/programy/program_studiow_matematyka230517.pdf) and [25 September 2018](/pliki/studia/programy/urw_2018-09-25.pdf).
+ 
+-  ## Programmes in force from 1 October 2016 {#programmes-in-force-from-1-october-2016}
++  ## Programmes in force from 1 October 2016 {#programy-obowiązujące-od-1-października-2016-r}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -44,7 +44,7 @@ tresc_en: |
+ 
+   The individual resolutions of the Faculty Council that make up the consolidated text above were adopted on [19 January 2016](/pliki/studia/programy/program_studiow_matematyka190116.pdf) and [27 September 2016](/pliki/studia/programy/urw_zmiany_2016-09-27.pdf).
+ 
+-  ## Programmes in force from 1 October 2013 {#programmes-in-force-from-1-october-2013}
++  ## Programmes in force from 1 October 2013 {#programy-obowiązujące-od-1-października-2013-r}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -64,7 +64,7 @@ tresc_en: |
+   - [22 September 2015](https://www.math.uni.wroc.pl/studia/programy/URW_2015-09-22.pdf)
+   - [27 September 2016](/pliki/studia/programy/urw_zmiany_2016-09-27.pdf)
+ 
+-  ## Earlier programmes {#earlier-programmes}
++  ## Earlier programmes {#wcześniejsze-programy}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+diff --git a/src/content/strony/studia/egzaminy-i-dyplom.md b/src/content/strony/studia/egzaminy-i-dyplom.md
+index 2bedd72..7a99a2d 100644
+--- a/src/content/strony/studia/egzaminy-i-dyplom.md
++++ b/src/content/strony/studia/egzaminy-i-dyplom.md
+@@ -20,17 +20,17 @@ tresc_en: |
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+-  A guide to completing your degree in mathematics: choosing a supervisor and thesis topic, submitting the thesis in the APD system, the bachelor's and master's exams, dates and past exam papers. The formal rules — the Diploma Theses Committee, thesis assessment, the final degree grade and answers to frequent questions — are described in the [Diploma procedure](/en/studia/procedura-dyplomowania).
++  A guide to completing your degree in mathematics: choosing a supervisor and thesis topic, submitting the thesis in the APD system, the bachelor's and master's exams, dates and past exam papers. The formal rules — the Diploma Theses Committee, thesis assessment, the final degree grade and answers to frequent questions — are described in the [Diploma procedure](/studia/procedura-dyplomowania).
+ 
+-  > **Next diploma exam: 15 February 2027.** Detailed dates for registration and for the steps in the APD system are announced by the Institute before each exam session. For an idea of how a session runs, see the [2025/26 schedule](#dates).
++  > **Next diploma exam: 15 February 2027.** Detailed dates for registration and for the steps in the APD system are announced by the Institute before each exam session. For an idea of how a session runs, see the [2025/26 schedule](#terminy).
+ 
+-  ## Path to the diploma {#path-to-the-diploma}
++  ## Path to the diploma {#droga-do-dyplomu}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   ### Bachelor's studies (first cycle)
+ 
+-  The rules depend on the curriculum you follow — [which curriculum applies to me?](/en/studia/matematyka#program)
++  The rules depend on the curriculum you follow — [which curriculum applies to me?](/studia/matematyka#program)
+ 
+   | | Previous curriculum (studies started before 1 October 2026) | Curriculum from 2026/27 |
+   | --- | --- | --- |
+@@ -40,7 +40,7 @@ tresc_en: |
+ 
+   **Previous curriculum:**
+ 
+-  1. Agree on a bachelor's thesis topic with a supervisor and submit it using Form E — see [Supervisor and thesis topic](#supervisor-and-thesis-topic).
++  1. Agree on a bachelor's thesis topic with a supervisor and submit it using Form E — see [Supervisor and thesis topic](#promotor-i-temat-pracy).
+   2. Write the thesis following the Faculty guidelines and, once your supervisor accepts it, submit it in the APD system.
+   3. Pass all courses and take the written bachelor's exam (February, June or September).
+ 
+@@ -55,9 +55,9 @@ tresc_en: |
+ 
+   In the curriculum from 2026/27 a positively graded thesis gives 12 ECTS and the passed diploma exam 4 ECTS.
+ 
+-  Students of Artificial Intelligence in Data Science (SIAD) — information on the team project and the diploma exam is on the [SIAD programme page](/en/studia/siad).
++  Students of Artificial Intelligence in Data Science (SIAD) — information on the team project and the diploma exam is on the [SIAD programme page](/studia/siad).
+ 
+-  ## Supervisor and thesis topic {#supervisor-and-thesis-topic}
++  ## Supervisor and thesis topic {#promotor-i-temat-pracy}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -66,7 +66,7 @@ tresc_en: |
+   1. choose it from the [list of thesis topics](/pliki/studia/tem7.pdf) approved by the Diploma Theses Committee — some topics require additional knowledge, so it is best to contact the staff member who proposed the topic before choosing it;
+   2. agree on a topic with your future supervisor during individual consultations — such a topic must be approved by the Diploma Theses Committee.
+ 
+-  If you have trouble finding a supervisor, contact the coordinator of your specialisation (contacts on the [specialisation pages](/en/studia/matematyka#specjalnosci)).
++  If you have trouble finding a supervisor, contact the coordinator of your specialisation (contacts on the [specialisation pages](/studia/matematyka#specjalnosci)).
+ 
+   Master's seminars introduce a chosen area of mathematics and develop the skills of speaking and writing about mathematics, but they do not replace the supervisor — no thesis topics are offered at the seminar, and the thesis is directed by the supervisor.
+ 
+@@ -81,9 +81,9 @@ tresc_en: |
+ 
+   The guide to the master's curriculum in force from 2026/27 gives the dates 30 October and 30 March. If you have not found a supervisor by then, submit a request for help describing the steps you have taken so far.
+ 
+-  Changing the topic requires the approval of the Diploma Theses Committee, and changing the supervisor requires the Dean's consent; details are in the [Diploma procedure](/en/studia/procedura-dyplomowania).
++  Changing the topic requires the approval of the Diploma Theses Committee, and changing the supervisor requires the Dean's consent; details are in the [Diploma procedure](/studia/procedura-dyplomowania).
+ 
+-  ## Writing the thesis {#writing-the-thesis}
++  ## Writing the thesis {#pisanie-pracy}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -98,7 +98,7 @@ tresc_en: |
+ 
+   Before the exam every thesis is checked with anti-plagiarism software.
+ 
+-  ## Submitting the thesis in APD {#submitting-the-thesis-in-apd}
++  ## Submitting the thesis in APD {#praca-w-systemie-apd}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -109,9 +109,9 @@ tresc_en: |
+   3. The supervisor approves the thesis in APD and sends it for the anti-plagiarism check; then the supervisor and the reviewer post their reviews and grades in APD — before the exam.
+   4. At least **3 days before the exam**, settle all obligations towards the University, including the library e-clearance, following the [University Library instructions](https://www.bu.uni.wroc.pl/e-obiegowka-jak-rozliczyc-sie-z-biblioteka).
+ 
+-  The full requirements for admission to the diploma exam (§ 62 of the Study Regulations) are described in the [Diploma procedure](/en/studia/procedura-dyplomowania).
++  The full requirements for admission to the diploma exam (§ 62 of the Study Regulations) are described in the [Diploma procedure](/studia/procedura-dyplomowania).
+ 
+-  ## Bachelor's exam {#bachelors-exam}
++  ## Bachelor's exam {#egzamin-licencjacki}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -138,7 +138,7 @@ tresc_en: |
+ 
+   In the curriculum from 2026/27 the written diploma exam covers the courses: Mathematical Analysis 1–3, Linear Algebra 1–2, Algebra 1, Differential Equations 1 and Probability 1.
+ 
+-  ## Master's exam {#masters-exam}
++  ## Master's exam {#egzamin-magisterski}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -168,11 +168,11 @@ tresc_en: |
+ 
+   | Specialisation | Syllabus | Applies to curriculum |
+   | --- | --- | --- |
+-  | [Data analysis](/en/studia/matematyka/analiza-danych) | [PDF](/pliki/studia/mgr21-ad-zakres.pdf) | from 1 October 2019 |
+-  | [Actuarial and financial mathematics](/en/studia/matematyka/matematyka-aktuarialno-finansowa) | [PDF](/pliki/studia/mgr21-af-zakres.pdf) | from 1 October 2019 |
+-  | [Mathematics teaching](/en/studia/matematyka/matematyka-nauczycielska) | [PDF](/pliki/studia/mgr22-na-zakres.pdf) | from 1 October 2022 |
+-  | [Applied mathematics](/en/studia/matematyka/matematyka-stosowana) | [PDF](/pliki/studia/mgr21-st-zakres.pdf) | from 1 October 2019 |
+-  | [Theoretical mathematics](/en/studia/matematyka/matematyka-teoretyczna) | [PDF](/pliki/studia/mgr21-te-zakres.pdf) | from 1 October 2019 |
++  | [Data analysis](/studia/matematyka/analiza-danych) | [PDF](/pliki/studia/mgr21-ad-zakres.pdf) | from 1 October 2019 |
++  | [Actuarial and financial mathematics](/studia/matematyka/matematyka-aktuarialno-finansowa) | [PDF](/pliki/studia/mgr21-af-zakres.pdf) | from 1 October 2019 |
++  | [Mathematics teaching](/studia/matematyka/matematyka-nauczycielska) | [PDF](/pliki/studia/mgr22-na-zakres.pdf) | from 1 October 2022 |
++  | [Applied mathematics](/studia/matematyka/matematyka-stosowana) | [PDF](/pliki/studia/mgr21-st-zakres.pdf) | from 1 October 2019 |
++  | [Theoretical mathematics](/studia/matematyka/matematyka-teoretyczna) | [PDF](/pliki/studia/mgr21-te-zakres.pdf) | from 1 October 2019 |
+   | Mathematics in economics | [PDF](/pliki/studia/mgr21-ek-zakres.pdf) | from 1 October 2019 |
+ 
+   > **Theoretical mathematics:** besides two problems in analysis and algebra you get two problems from two areas (items 3–9 of the document), which you choose **when registering for the exam**.
+@@ -189,7 +189,7 @@ tresc_en: |
+ 
+   The master's exam grade is ¾ of the written part grade plus ¼ of the oral part grade. A positive grade in the oral part is required to pass. If you fail the oral part, the Dean sets a second date — without repeating the written part.
+ 
+-  ## Dates {#dates}
++  ## Dates {#terminy}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -208,22 +208,22 @@ tresc_en: |
+   | Written master's exam (9:00–11:00) | 18 Feb | 26 Jun | 9 Sep |
+   | Oral master's exams | 20 Feb | 30 Jun | 11 Sep |
+ 
+-  ## Past exam papers {#past-exam-papers}
++  ## Past exam papers {#zadania-z-poprzednich-lat}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+-  The [exam archive](/en/studia/egzaminy-i-dyplom/zadania) contains tests with answers and open problems from bachelor's exams and problems from the written part of master's exams, 2002–2026. The most recent:
++  The [exam archive](/studia/egzaminy-i-dyplom/zadania) contains tests with answers and open problems from bachelor's exams and problems from the written part of master's exams, 2002–2026. The most recent:
+ 
+   - bachelor's exam, September 2026: [test](/pliki/studia/egzaminy/test-2609.pdf), [test with answers](/pliki/studia/egzaminy/odp-2609.pdf), [open problems](/pliki/studia/egzaminy/otw-2609.pdf),
+   - master's exam, February 2026: [problems for all specialisations](/pliki/studia/egzaminy/mag26-02.pdf).
+ 
+-  ## Best diploma thesis competition {#best-diploma-thesis-competition}
++  ## Best diploma thesis competition {#konkurs-na-najlepszą-pracę-dyplomową}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   The Faculty of Mathematics and Computer Science runs a competition for the best diploma theses, including the categories of the best bachelor's thesis and the best master's thesis in mathematics. Faculty graduates whose theses defended in the given period received a very good grade may take part; the authors of the best theses present them at the competition final. Rules, application deadlines and results of past editions: [the competition on the Faculty website](https://wmi.uwr.edu.pl/konkurs-na-prace-dyplomowa/).
+ 
+-  ## Documents and links {#documents-and-links}
++  ## Documents and links {#dokumenty-i-linki}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+diff --git a/src/content/strony/studia/egzaminy-i-dyplom/zadania.md b/src/content/strony/studia/egzaminy-i-dyplom/zadania.md
+index 4fff497..5e8c58e 100644
+--- a/src/content/strony/studia/egzaminy-i-dyplom/zadania.md
++++ b/src/content/strony/studia/egzaminy-i-dyplom/zadania.md
+@@ -8,11 +8,11 @@ tresc_en: |
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+-  Problems from the written diploma exams in mathematics, 2002–2026: the bachelor's exam (tests, answers, open problems) and the written part of the master's exam. Exam rules, syllabi and dates are on the [Exams and diploma](/en/studia/egzaminy-i-dyplom) page. The exam papers are in Polish.
++  Problems from the written diploma exams in mathematics, 2002–2026: the bachelor's exam (tests, answers, open problems) and the written part of the master's exam. Exam rules, syllabi and dates are on the [Exams and diploma](/studia/egzaminy-i-dyplom) page. The exam papers are in Polish.
+ 
+-  > Past papers show the type and level of the problems. The current syllabus is set by the documents of the Diploma Exams Committee — the [bachelor's exam syllabus](/pliki/studia/egzlic_zagadnienia.pdf) and the [master's exam syllabi](/en/studia/egzaminy-i-dyplom#masters-exam-syllabi).
++  > Past papers show the type and level of the problems. The current syllabus is set by the documents of the Diploma Exams Committee — the [bachelor's exam syllabus](/pliki/studia/egzlic_zagadnienia.pdf) and the [master's exam syllabi](/studia/egzaminy-i-dyplom#masters-exam-syllabi).
+ 
+-  ## Bachelor's exam {#bachelors-exam}
++  ## Bachelor's exam {#egzamin-licencjacki}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -114,7 +114,7 @@ tresc_en: |
+   |  | June | [test](/pliki/studia/egzaminy/test-0206.pdf) | [answers](/pliki/studia/egzaminy/odp-0206.pdf) | [problems](/pliki/studia/egzaminy/otw-0206.pdf) | — |
+   |  | September | [test](/pliki/studia/egzaminy/test-0209.pdf) | [answers](/pliki/studia/egzaminy/odp-0209.pdf) | [problems](/pliki/studia/egzaminy/otw-0209.pdf) | — |
+ 
+-  ## Master's exam {#masters-exam}
++  ## Master's exam {#egzamin-magisterski}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+diff --git a/src/content/strony/studia/pierwszy-rok.md b/src/content/strony/studia/pierwszy-rok.md
+index ef216dd..7483b8d 100644
+--- a/src/content/strony/studia/pierwszy-rok.md
++++ b/src/content/strony/studia/pierwszy-rok.md
+@@ -12,19 +12,19 @@ tresc_en: |
+ 
+   A guide for students starting bachelor's studies at the Mathematical Institute: in **mathematics**, in **artificial intelligence in data science** (SIAD) and — for the mathematical part of the programme — in **ISIM**. The most important information is at the top; full details are in the [Guide for new students (PDF, Polish)](/pliki/studia/pierwszy-rok/poradnik_26_27.pdf), prepared by the year coordinator.
+ 
+-  ## Announcements {#announcements}
++  ## Announcements {#ogłoszenia}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   > The **health and safety (BHP) training** must be completed by **31 October 2026**. It is an online course; the details were sent to you by e-mail.
+ 
+   - [Guide for new mathematics students (PDF, Polish)](/pliki/studia/pierwszy-rok/poradnik_26_27.pdf) — required reading, please read it carefully.
+-  - [First-semester timetable for mathematics — corrected version of 9 October 2026 (PDF)](/pliki/studia/pierwszy-rok/plan_26_27z_popr3.pdf). If in doubt, the most up-to-date (though less convenient) version is the [winter-semester timetable](/en/studia/plan-zajec#zimowy).
+-  - The [tutoring room](/en/studia/tutornia) has been open in room 202 since 19 October — the duty schedule is on the tutoring room page.
++  - [First-semester timetable for mathematics — corrected version of 9 October 2026 (PDF)](/pliki/studia/pierwszy-rok/plan_26_27z_popr3.pdf). If in doubt, the most up-to-date (though less convenient) version is the [winter-semester timetable](/studia/plan-zajec#zimowy).
++  - The [tutoring room](/studia/tutornia) has been open in room 202 since 19 October — the duty schedule is on the tutoring room page.
+   - The [winter exam timetable](#first-year-exams) is available.
+   - Accounts in the University systems (USOSweb and Office 365) have been created for you, and the login details were sent to the e-mail address you gave during admission. Please activate these accounts.
+ 
+-  ## First steps {#first-steps}
++  ## First steps {#pierwsze-kroki}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -34,7 +34,7 @@ tresc_en: |
+   4. **Collect your student ID card** at the Faculty Office (dziekanat WMI, Mon–Thu 11:00–14:00), bringing your identity card. This applies to those who paid for the card in time. Certificates of student status are also issued there.
+   5. **Complete the BHP training** — an online course, available in 2026 from 15 September to 31 October. It is compulsory.
+   6. **Check your groups** in USOSweb: *Mój USOSweb* (My USOSweb) → *Grupy zajęciowe* (Class groups).
+-  7. **Connect to eduroam Wi-Fi** — login `student_ID_number@uwr.edu.pl` and your Office 365 password; instructions: [Wireless network access](/en/instytut/infrastruktura-informatyczna/siec-bezprzewodowa).
++  7. **Connect to eduroam Wi-Fi** — login `student_ID_number@uwr.edu.pl` and your Office 365 password; instructions: [Wireless network access](/instytut/infrastruktura-informatyczna/siec-bezprzewodowa).
+   8. **Get a library account** — complete the [library training](https://wmi.uwr.edu.pl/biblioteka-wydzialowa-szkolenie/) (an online course and a test; the access key is given on the training page).
+   9. **Get a locker key** from the porter's desk. There is usually one locker for two students.
+ 
+@@ -43,14 +43,14 @@ tresc_en: |
+   | USOSweb | groups, grades, registration from semester 2, oath, decisions | account activated from the IRK e-mail |
+   | Office 365 (uwr.edu.pl e-mail) | official correspondence | details from the activation e-mail |
+   | eduroam | Wi-Fi at the University and at other universities | `student_ID_number@uwr.edu.pl` + Office 365 password |
+-  | Institute student network | computers in the computer labs | login and password sent by e-mail to mathematics students ([details](/en/instytut/infrastruktura-informatyczna/siec-studencka)) |
++  | Institute student network | computers in the computer labs | login and password sent by e-mail to mathematics students ([details](/instytut/infrastruktura-informatyczna/siec-studencka)) |
+   | Library account | borrowing from University libraries | after the library training |
+ 
+-  ## Year coordinator and key people {#year-coordinator-and-key-people}
++  ## Year coordinator and key people {#opiekun-roku-i-ważne-osoby}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+-  The year coordinator is the first person to contact with questions and problems — in person or by e-mail. Before writing, check whether the answer is on this page, in the guide or on the [Mathematics](/en/studia/matematyka) and [Classes and office hours](/en/studia/zajecia) pages. The Faculty Office can also answer many questions.
++  The year coordinator is the first person to contact with questions and problems — in person or by e-mail. Before writing, check whether the answer is on this page, in the guide or on the [Mathematics](/studia/matematyka) and [Classes and office hours](/studia/zajecia) pages. The Faculty Office can also answer many questions.
+ 
+   | Role | Person | When to contact |
+   | --- | --- | --- |
+@@ -60,11 +60,11 @@ tresc_en: |
+   | Deputy Director for Teaching | Dr Tomasz Elsner, room 305 | all teaching at the Institute; decides on form requests (e.g. B1, B3) |
+   | Director of the Institute | Prof. Grzegorz Karch | |
+   | SIAD programme coordinator | Dr hab. Michał Marcinkowski, room 713 | matters concerning the SIAD programme |
+-  | ISIM tutors | see the [ISIM page](/en/studia/isim#kontakt) | choice of courses on ISIM |
++  | ISIM tutors | see the [ISIM page](/studia/isim#kontakt) | choice of courses on ISIM |
+ 
+-  Contact details of the teaching office and the Faculty Office are in the [Contact](#contact) section.
++  Contact details of the teaching office and the Faculty Office are in the [Contact](#kontakt) section.
+ 
+-  ## Key dates (winter semester 2026/27) {#key-dates-winter-semester-202627}
++  ## Key dates (winter semester 2026/27) {#ważne-terminy-semestr-zimowy-202627}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -87,11 +87,11 @@ tresc_en: |
+   | 17–23 Feb 2027 | resit session |
+   | 24 Feb 2027 | summer semester begins (registration for semester 2 opens 2–4 days earlier) |
+ 
+-  The full calendar of the year: [Academic year](/en/studia/rok-akademicki).
++  The full calendar of the year: [Academic year](/studia/rok-akademicki).
+ 
+   ### First-year exams
+ 
+-  Exam timetable for the winter session of 2026/27 (version of October 2026). The current timetable is always on the [Classes and office hours](/en/studia/zajecia#exam-session) page.
++  Exam timetable for the winter session of 2026/27 (version of October 2026). The current timetable is always on the [Classes and office hours](/studia/zajecia#sesja-egzaminacyjna) page.
+ 
+   | Course | Main session | Resit session |
+   | --- | --- | --- |
+@@ -105,7 +105,7 @@ tresc_en: |
+ 
+   The label (AI) in the timetable marks the versions of courses for the SIAD programme.
+ 
+-  ## First-year courses {#first-year-courses}
++  ## First-year courses {#przedmioty-pierwszego-roku}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -134,14 +134,14 @@ tresc_en: |
+   - Topologia or Topologia R — compulsory except for those who have declared the teaching specialisation (they have a different list of courses) and those who choose the general module (a humanities course is recommended for them, though they can also take Topology)
+   - Przegląd aktuarialno-finansowy (actuarial and financial overview, as workshops) — compulsory for the actuarial and financial specialisation, an elective for everyone else
+ 
+-  Details: the [Guide to the bachelor's curriculum (PDF, Polish)](/pliki/studia/przewodnik-mt-lic.pdf) and the [Mathematics — curriculum](/en/studia/matematyka#program) page.
++  Details: the [Guide to the bachelor's curriculum (PDF, Polish)](/pliki/studia/przewodnik-mt-lic.pdf) and the [Mathematics — curriculum](/studia/matematyka#program) page.
+ 
+   ### SIAD and ISIM
+ 
+-  - **SIAD:** in semesters 1–2 — mathematical analysis and linear algebra (in a version for this programme), introduction to mathematics, Python programming and data visualisation, and the basic AI workshop. Classes are in the Institute's timetable (groups marked "tylko dla SIAD", i.e. SIAD students only). In the first semester you are enrolled by the teaching office. More: [AI in Data Science](/en/studia/siad).
+-  - **ISIM:** the compulsory courses are Logic for Computer Science and Analiza matematyczna I; recommended ones include Algebra liniowa 1R. In the first semester you register for the Institute's courses yourself in USOSweb, and the tutors review your choices. Students admitted to both ISIM and mathematics did not take the qualifying test. More: [ISIM](/en/studia/isim).
++  - **SIAD:** in semesters 1–2 — mathematical analysis and linear algebra (in a version for this programme), introduction to mathematics, Python programming and data visualisation, and the basic AI workshop. Classes are in the Institute's timetable (groups marked "tylko dla SIAD", i.e. SIAD students only). In the first semester you are enrolled by the teaching office. More: [AI in Data Science](/studia/siad).
++  - **ISIM:** the compulsory courses are Logic for Computer Science and Analiza matematyczna I; recommended ones include Algebra liniowa 1R. In the first semester you register for the Institute's courses yourself in USOSweb, and the tutors review your choices. Students admitted to both ISIM and mathematics did not take the qualifying test. More: [ISIM](/studia/isim).
+ 
+-  ## Standard or extended level? {#standard-or-extended-level}
++  ## Standard or extended level? {#wersja-standardowa-czy-rozszerzona}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -154,7 +154,7 @@ tresc_en: |
+ 
+   > Your first-semester level and group apply only to first-semester courses. They do not limit your choice of courses in later semesters or your choice of specialisation.
+ 
+-  ## Course registration {#course-registration}
++  ## Course registration {#zapisy-na-zajęcia}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -169,13 +169,13 @@ tresc_en: |
+ 
+   - Changes made by the teaching office (limits, new groups, manual enrolment) appear in USOSweb only on the next day — the data are migrated once a day, around midnight.
+   - After round II you can withdraw only by switching from an extended to a standard course (B3) or, **once per degree**, via form A1 — by 30 November (winter) or 30 April (summer).
+-  - To take a course without meeting its prerequisites, submit form B1 before the semester; to join a full group — form B2 (from round II). Forms: [Classes and office hours](/en/studia/zajecia).
++  - To take a course without meeting its prerequisites, submit form B1 before the semester; to join a full group — form B2 (from round II). Forms: [Classes and office hours](/studia/zajecia).
+   - Plan your timetable in *Mój USOSweb* → *Plany użytkownika* (User timetables), check the prerequisites of courses (in USOS, section *Założenia*) and do not take on too much.
+   - First-year students do not register for physical education in the first semester. Foreign language courses in the mathematics programme start in semester 3.
+ 
+   Rules: [Course registration rules at the Mathematical Institute (PDF, Polish)](https://www.math.uni.wroc.pl/sites/default/files/zasady-rejestracji.pdf).
+ 
+-  ## Passing the first year (mathematics) {#passing-the-first-year-mathematics}
++  ## Passing the first year (mathematics) {#zaliczenie-pierwszego-roku-matematyka}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -205,11 +205,11 @@ tresc_en: |
+   - When you retake a course, exercise classes or labs you have already passed remain valid — you attend only the lecture and take the exam (in USOS you register for group 99).
+   - Cases not covered by these rules are decided individually by the Dean.
+ 
+-  Documents: [decisions for students finishing semester 1 (PDF)](/pliki/studia/pierwszy-rok/decyzje1rok1sem.pdf), [decisions for students finishing semester 2 (PDF)](/pliki/studia/pierwszy-rok/decyzje1rok2sem.pdf). The deadline for applications and the rules for repeating a semester: [Student affairs](/en/studia/sprawy-studenckie).
++  Documents: [decisions for students finishing semester 1 (PDF)](/pliki/studia/pierwszy-rok/decyzje1rok1sem.pdf), [decisions for students finishing semester 2 (PDF)](/pliki/studia/pierwszy-rok/decyzje1rok2sem.pdf). The deadline for applications and the rules for repeating a semester: [Student affairs](/studia/sprawy-studenckie).
+ 
+-  These decisions apply to the mathematics programme. On ISIM you need at least 27 ECTS and the compulsory courses to pass semester 1 (see [ISIM](/en/studia/isim)); on SIAD the requirements are set by the programme's curriculum — if in doubt, ask the Faculty Office.
++  These decisions apply to the mathematics programme. On ISIM you need at least 27 ECTS and the compulsory courses to pass semester 1 (see [ISIM](/studia/isim)); on SIAD the requirements are set by the programme's curriculum — if in doubt, ask the Faculty Office.
+ 
+-  ## Classes and how to study {#classes-and-how-to-study}
++  ## Classes and how to study {#jak-wyglądają-zajęcia-i-jak-się-uczyć}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -224,7 +224,7 @@ tresc_en: |
+ 
+   > Failing the same compulsory course twice usually results in removal from the list of students, and repeating a course has to be paid for.
+ 
+-  The Institute does not use the week parity shown in USOS but **day colours**: for classes held every other week, one group meets on orange days and the other on blue days — see [Day colours](/en/studia/rok-akademicki#day-colours).
++  The Institute does not use the week parity shown in USOS but **day colours**: for classes held every other week, one group meets on orange days and the other on blue days — see [Day colours](/studia/rok-akademicki#day-colours).
+ 
+   Advice from the guide:
+ 
+@@ -236,29 +236,29 @@ tresc_en: |
+   - Be careful with AI tools: having a language model solve the problem list will not teach you mathematical thinking, and it will not help you in tests and exams.
+   - Mathematics is learned in a spiral — first-year topics come back in later years, so the goal is understanding, not just passing the exam.
+ 
+-  ## Support {#support}
++  ## Support {#wsparcie}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+-  - **Tutoring room** (room 202, level 200) — a room for studying together, where senior students (tutors) help with problems. In the winter semester of 2026/27 it has been open since 19 October — [tutors' schedule](/en/studia/tutornia).
+-  - **Office hours** — every member of the teaching staff has two hours of office hours a week (doctoral students — one hour). The easiest is to go to your lecturer or exercise-class teacher; come prepared and know what you do not understand. Schedule: [Office hours](/en/studia/zajecia#konsultacje).
+-  - **Year coordinator** and **Prof. Ewa Damek** — see [Year coordinator and key people](#year-coordinator-and-key-people).
+-  - **Lecture notes** — free lecture notes and problem collections, including for Analiza matematyczna 1–2 and Wstęp do matematyki: [Lecture notes](/en/studia/skrypty).
++  - **Tutoring room** (room 202, level 200) — a room for studying together, where senior students (tutors) help with problems. In the winter semester of 2026/27 it has been open since 19 October — [tutors' schedule](/studia/tutornia).
++  - **Office hours** — every member of the teaching staff has two hours of office hours a week (doctoral students — one hour). The easiest is to go to your lecturer or exercise-class teacher; come prepared and know what you do not understand. Schedule: [Office hours](/studia/zajecia#konsultacje).
++  - **Year coordinator** and **Prof. Ewa Damek** — see [Year coordinator and key people](#opiekun-roku-i-ważne-osoby).
++  - **Lecture notes** — free lecture notes and problem collections, including for Analiza matematyczna 1–2 and Wstęp do matematyki: [Lecture notes](/studia/skrypty).
+   - **Preparatory course** — before the start of the academic year the Faculty runs a preparatory course for admitted students (in 2026 from 25 September): [drop-in.cs.uni.wroc.pl](https://drop-in.cs.uni.wroc.pl/).
+-  - **Psychological support, the Support and Accessibility Office, ombudspersons** — [Student affairs — support](/en/studia/sprawy-studenckie#support).
+-  - **Scholarships** — [Student affairs — scholarships](/en/studia/sprawy-studenckie#scholarships-and-financial-aid).
++  - **Psychological support, the Support and Accessibility Office, ombudspersons** — [Student affairs — support](/studia/sprawy-studenckie#wsparcie).
++  - **Scholarships** — [Student affairs — scholarships](/studia/sprawy-studenckie#stypendia-i-pomoc-materialna).
+ 
+-  ## Student clubs and student government {#student-clubs-and-student-government}
++  ## Student clubs and student government {#koła-naukowe-i-samorząd}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+-  - [Theoretical Mathematicians' Club](https://www.facebook.com/knmtuwr) (Koło Naukowe Matematyków Teoretyków) — among others co-organises the school [Baby Steps Beyond the Horizon](/en/aktualnosci/2026-07-14-szkola-baby-steps-beyond-the-horizon).
++  - [Theoretical Mathematicians' Club](https://www.facebook.com/knmtuwr) (Koło Naukowe Matematyków Teoretyków) — among others co-organises the school [Baby Steps Beyond the Horizon](/aktualnosci/2026-07-14-szkola-baby-steps-beyond-the-horizon).
+   - [Applied Mathematics Club](https://www.facebook.com/KNZM.UWr/) (Koło Naukowe Zastosowań Matematyki).
+   - **Faculty Student Government Council (WRSS WMI)** — [wrsswmi@uniwroc.onmicrosoft.com](mailto:wrsswmi@uniwroc.onmicrosoft.com), [Facebook](https://www.facebook.com/WRSSWMI/). A year or group is represented by its elected *starosta* (class representative).
+ 
+-  More: [Student affairs](/en/studia/sprawy-studenckie).
++  More: [Student affairs](/studia/sprawy-studenckie).
+ 
+-  ## Worth knowing now: languages and specialisations {#worth-knowing-now-languages-and-specialisations}
++  ## Worth knowing now: languages and specialisations {#warto-wiedzieć-już-teraz-języki-i-specjalności}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -280,9 +280,9 @@ tresc_en: |
+   - You declare your specialisation by the end of semester 4 (form C2, by 30 June). The exception is **mathematics teaching** — you declare it by **31 December of semester 1** (form C1). You can change your declaration until the end of your studies.
+   - It is worth preparing for the decision from the beginning of semester 2. To work as a teacher you need a master's degree, so you have to complete both the bachelor's and the master's programme.
+ 
+-  Details: [Mathematics — specialisations](/en/studia/matematyka#specjalnosci) and [deadlines and forms](/en/studia/matematyka#terminy).
++  Details: [Mathematics — specialisations](/studia/matematyka#specjalnosci) and [deadlines and forms](/studia/matematyka#terminy).
+ 
+-  ## The Institute building {#the-institute-building}
++  ## The Institute building {#budynek-instytutu}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -301,7 +301,7 @@ tresc_en: |
+ 
+   The library is open Monday to Thursday 9:00–18:00 and on Friday 9:00–17:00. The reading room also has computer workstations for readers.
+ 
+-  ## Orientation day 2026 {#orientation-day-2026}
++  ## Orientation day 2026 {#dzień-adaptacyjny-2026}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -311,19 +311,19 @@ tresc_en: |
+   - **12:00** — matriculation in the Leopoldina Hall (Main Building, pl. Uniwersytecki 1): the formal admission to the student body combined with taking the oath. You acquire student rights at the moment of matriculation and taking the oath (§ 1 of the Study Regulations).
+   - **14:00** — at the Institute: a meeting with the Institute's management (for mathematics also with the year coordinator and the Dean's representatives for safety and for equal treatment), followed by a meeting with senior students (mathematics in hall HS; SIAD first in hall EM, then in HS).
+ 
+-  Programmes: [mathematics (PDF)](/pliki/studia/pierwszy-rok/adapt2026_matematyka.pdf), [AI in data science (PDF)](/pliki/studia/pierwszy-rok/adapt2026_siad.pdf). See also: [Welcome, first-year students](/en/aktualnosci/2026-10-01-witamy-studentow-pierwszego-roku).
++  Programmes: [mathematics (PDF)](/pliki/studia/pierwszy-rok/adapt2026_matematyka.pdf), [AI in data science (PDF)](/pliki/studia/pierwszy-rok/adapt2026_siad.pdf). See also: [Welcome, first-year students](/aktualnosci/2026-10-01-witamy-studentow-pierwszego-roku).
+ 
+-  ## FAQ {#faq}
++  ## FAQ {#pytania-i-odpowiedzi}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   **Which group am I in?** Check USOSweb: *Mój USOSweb* → *Grupy zajęciowe*. In semester 1 mathematics and SIAD students are assigned to groups by the teaching office.
+ 
+-  **I am at the extended level and it is too hard. What can I do?** You can switch to the standard version of each course separately via form B3 — by the deadline announced by the lecturers (at the latest after the first test). See [Standard or extended level?](#standard-or-extended-level)
++  **I am at the extended level and it is too hard. What can I do?** You can switch to the standard version of each course separately via form B3 — by the deadline announced by the lecturers (at the latest after the first test). See [Standard or extended level?](#wersja-standardowa-czy-rozszerzona)
+ 
+   **Does my first-semester level affect my choice of specialisation?** No. The assignment applies only to first-semester courses.
+ 
+-  **What are orange and blue days?** The Institute uses day colours instead of the week parity shown in USOS — see [Day colours](/en/studia/rok-akademicki#day-colours).
++  **What are orange and blue days?** The Institute uses day colours instead of the week parity shown in USOS — see [Day colours](/studia/rok-akademicki#day-colours).
+ 
+   **My test went badly. Can I retake it?** In principle there are no retakes of individual tests — you have to do better in the next one. Some lecturers hold a resit test at the end of the semester; the rules are given at the beginning of the course.
+ 
+@@ -333,7 +333,7 @@ tresc_en: |
+ 
+   **Who should I write to when I do not know what to do?** To the year coordinator, Dr Jan Kraszewski ([jan.kraszewski@uwr.edu.pl](mailto:jan.kraszewski@uwr.edu.pl)). If he does not know the answer, he knows who does.
+ 
+-  ## Documents {#documents}
++  ## Documents {#dokumenty}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -346,7 +346,7 @@ tresc_en: |
+   - [University rules for foreign language courses (BIP, Polish)](https://bip.uni.wroc.pl/download/attachment/52874/nr-138-2026-z-dnia-27072026-lektoraty-jezykow-obcych.pdf?v=1785144437)
+   - [Study Regulations of the University of Wrocław (Polish)](https://uwr.edu.pl/wp-content/uploads/2024/09/Uchwala-Nr-68_2024-Senatu-UWr-z-2024-04-24-w-sprawie-regulaminu-studiow-na-Uniwersytecie-Wroclawskim-1.pdf)
+ 
+-  ## Contact {#contact}
++  ## Contact {#kontakt}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -357,7 +357,7 @@ tresc_en: |
+     - SIAD — Monika Retmaniak, MSc, [monika.retmaniak@uwr.edu.pl](mailto:monika.retmaniak@uwr.edu.pl),
+     - ISIM — Joanna Jędrzejkowska, MSc, tel. 71 375 7892, [Joanna.Jedrzejkowska@uwr.edu.pl](mailto:Joanna.Jedrzejkowska@uwr.edu.pl).
+ 
+-  Worth following regularly: the news on the Institute's home page, this page, the [Institute's Facebook page](https://www.facebook.com/IMUWr), the [Mathematics](/en/studia/matematyka) page and the [Classes and office hours](/en/studia/zajecia) page.
++  Worth following regularly: the news on the Institute's home page, this page, the [Institute's Facebook page](https://www.facebook.com/IMUWr), the [Mathematics](/studia/matematyka) page and the [Classes and office hours](/studia/zajecia) page.
+ opublikowany: true
+ format_tresci: jawne
+ ---
+diff --git a/src/content/strony/studia/procedura-dyplomowania.md b/src/content/strony/studia/procedura-dyplomowania.md
+index 89689a8..3e32cb9 100644
+--- a/src/content/strony/studia/procedura-dyplomowania.md
++++ b/src/content/strony/studia/procedura-dyplomowania.md
+@@ -10,9 +10,9 @@ tresc_en: |
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+-  The formal rules for completing a degree in mathematics: who can be a supervisor and a reviewer, how a thesis topic is approved and changed, how the thesis is assessed, how the diploma exam works and how the final degree grade is calculated. The practical guide — the steps to take, the APD system, the format and scope of the exams, dates and past exam papers — is on the [Exams and diploma](/en/studia/egzaminy-i-dyplom) page.
++  The formal rules for completing a degree in mathematics: who can be a supervisor and a reviewer, how a thesis topic is approved and changed, how the thesis is assessed, how the diploma exam works and how the final degree grade is calculated. The practical guide — the steps to take, the APD system, the format and scope of the exams, dates and past exam papers — is on the [Exams and diploma](/studia/egzaminy-i-dyplom) page.
+ 
+-  ## Legal basis {#legal-basis}
++  ## Legal basis {#podstawa-prawna}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -27,15 +27,15 @@ tresc_en: |
+ 
+   > This page summarises the regulations — the legal acts listed above are binding. In case of doubt, the Study Regulations prevail.
+ 
+-  ## Stages of the diploma process {#stages-of-the-diploma-process}
++  ## Stages of the diploma process {#etapy-dyplomowania}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+-  In the bachelor's programme under the previous curriculum the diploma process consists of the Team specialisation project, the bachelor's thesis and the written bachelor's exam; under the curriculum from 2026/27 bachelor's studies end with a written diploma exam, without a diploma thesis. In the master's programme it consists of Master's seminars 1 and 2, the master's thesis and the master's exam — written and oral. The individual steps are described in [Path to the diploma](/en/studia/egzaminy-i-dyplom#path-to-the-diploma).
++  In the bachelor's programme under the previous curriculum the diploma process consists of the Team specialisation project, the bachelor's thesis and the written bachelor's exam; under the curriculum from 2026/27 bachelor's studies end with a written diploma exam, without a diploma thesis. In the master's programme it consists of Master's seminars 1 and 2, the master's thesis and the master's exam — written and oral. The individual steps are described in [Path to the diploma](/studia/egzaminy-i-dyplom#droga-do-dyplomu).
+ 
+   Team specialisation projects and master's seminars develop the competences needed for research: identifying research problems independently, finding and studying sources, and presenting extended arguments on a given subject in speech and writing. Part of these classes is getting to know the Faculty guidelines for diploma theses.
+ 
+-  ## Diploma Theses Committee {#diploma-theses-committee}
++  ## Diploma Theses Committee {#komisja-prac-dyplomowych}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -47,7 +47,7 @@ tresc_en: |
+   - publishes the list of approved topics on the Institute website,
+   - at least every 3 years reviews the quality of diploma theses and the adequacy of their grades.
+ 
+-  ## Supervisor and reviewer {#supervisor-and-reviewer}
++  ## Supervisor and reviewer {#promotor-i-recenzent}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -66,26 +66,26 @@ tresc_en: |
+ 
+   Reviewers are appointed by a team set up by the Director of the Institute at the request of the chair of the Diploma Theses Committee, composed of staff members with expertise appropriate to the specialisation. A master's thesis must be assessed by at least one holder of the habilitation or a professor (§ 61(4)). By the date set by the Dean, the teaching office publishes the list of students with their thesis titles, supervisors and reviewers.
+ 
+-  ## Thesis topic {#thesis-topic}
++  ## Thesis topic {#temat-pracy}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   - **Topic offer.** The Diploma Theses Committee collects, reviews and publishes the topics proposed by staff members ([current list of topics](/pliki/studia/tem7.pdf)). Under the Regulations, master's thesis topics are made available to students no later than two semesters, and bachelor's thesis topics one semester, before the end of studies (§ 58(1)).
+   - **Choosing the topic.** A student either chooses a topic from the list and contacts the staff member who proposed it to confirm or refine it, or agrees on a topic outside the list with the staff member under whom they want to write the thesis.
+-  - **Reporting.** As soon as the subject is agreed, the student fills in Form E ([deadlines and link](/en/studia/egzaminy-i-dyplom#supervisor-and-thesis-topic)). A topic not on the list is passed to the Diploma Theses Committee for approval.
++  - **Reporting.** As soon as the subject is agreed, the student fills in Form E ([deadlines and link](/studia/egzaminy-i-dyplom#promotor-i-temat-pracy)). A topic not on the list is passed to the Diploma Theses Committee for approval.
+   - **Changing the topic.** A change going beyond a minor correction or clarification of the wording requires the approval of the Diploma Theses Committee. The supervisor informs the teaching office of the change.
+   - **Joint thesis.** A thesis may be prepared by a team of students if the parts prepared by each person can be identified and the workload of each can be assessed (§ 60(2)). The topic of a joint thesis must be approved separately by the Diploma Theses Committee, and the size of the work should be adequate to the number of co-authors.
+   - **Language and place of work.** In justified cases, with the Dean's consent, the thesis may be presented in a language other than the language of the studies and may be carried out at another faculty or outside the University (§ 60(3)–(4)).
+ 
+-  ## Preparing and submitting the thesis {#preparing-and-submitting-the-thesis}
++  ## Preparing and submitting the thesis {#przygotowanie-i-złożenie-pracy}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   The student prepares the thesis under the supervisor, individually or in a team, following the [diploma thesis guidelines](/pliki/studia/46-2017.pdf). The supervisor checks progress during individual or group consultations.
+ 
+-  The thesis is submitted electronically in the Diploma Theses Archive (APD) by the date set by the Dean (§ 61(1)) — after the supervisor has accepted it and the APD system has been opened at the student's request ([how to do it](/en/studia/egzaminy-i-dyplom#submitting-the-thesis-in-apd)). The supervisor approves the thesis in APD and sends it for the anti-plagiarism check, which every thesis undergoes before the exam (§ 61(2)). If plagiarism is suspected, the procedure set out in the Rector's order is started.
++  The thesis is submitted electronically in the Diploma Theses Archive (APD) by the date set by the Dean (§ 61(1)) — after the supervisor has accepted it and the APD system has been opened at the student's request ([how to do it](/studia/egzaminy-i-dyplom#praca-w-systemie-apd)). The supervisor approves the thesis in APD and sends it for the anti-plagiarism check, which every thesis undergoes before the exam (§ 61(2)). If plagiarism is suspected, the procedure set out in the Rector's order is started.
+ 
+-  ## Thesis assessment {#thesis-assessment}
++  ## Thesis assessment {#ocena-pracy}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -97,7 +97,7 @@ tresc_en: |
+ 
+   The Faculty Council guidelines of 2017 (item 4.5), adopted under the previous study regulations, set different rules for resolving differing grades: with a difference of 0.5 — the higher grade, with a difference of 1 — the mean, with a larger difference or a failing grade — a grade set by the Dean. The rules described above come from the Study Regulations in force since 1 October 2024.
+ 
+-  ## Diploma exam {#diploma-exam}
++  ## Diploma exam {#egzamin-dyplomowy}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -110,7 +110,7 @@ tresc_en: |
+   - **The bachelor's exam** is held three times a year (in February, June and September) and is written. The exam grade is the grade of the written part.
+   - **The master's exam** is held three times a year (in February, June and September) and has two parts: the first tests the core knowledge of the degree programme and the specialist knowledge of the specialisation (written, in mathematics), and the second — oral — concerns the master's thesis. A positive grade in the written part is required to take the oral part. The exam grade is ¾ of the written part grade plus ¼ of the oral part grade.
+ 
+-  The scope, format and scoring of the exams are described on the [Exams and diploma](/en/studia/egzaminy-i-dyplom) page.
++  The scope, format and scoring of the exams are described on the [Exams and diploma](/studia/egzaminy-i-dyplom) page.
+ 
+   ### Admission requirements
+ 
+@@ -126,7 +126,7 @@ tresc_en: |
+ 
+   A student who does not submit the diploma thesis on time, or does not take or does not pass the diploma exam within the deadlines of § 62(9)–(11), is removed from the list of students. Within 2 years of removal they may apply once to resume their studies without having to make up courses; the application must be submitted at least 7 days before the start of the assessment period (§ 66).
+ 
+-  ## Final degree grade {#final-degree-grade}
++  ## Final degree grade {#wynik-studiów}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -151,7 +151,7 @@ tresc_en: |
+   - **Studies started in 2023/24 or later:** a student whose unrounded final grade is higher than 4.80 receives a diploma with distinction.
+   - **Studies started before 2023/24:** the exam committee may raise the final grade by 0.5 if the student received very good grades for both the thesis and the diploma exam.
+ 
+-  ## FAQ {#faq}
++  ## FAQ {#pytania-i-odpowiedzi}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+diff --git a/src/content/strony/studia/program-most.md b/src/content/strony/studia/program-most.md
+index ca68073..9115bc2 100644
+--- a/src/content/strony/studia/program-most.md
++++ b/src/content/strony/studia/program-most.md
+@@ -12,7 +12,7 @@ tresc_en: |
+ 
+   MOST is a mobility programme for students and PhD students. Running since 1999, it lets participants study for a semester or a full academic year at one of twenty-nine partner universities in Poland. Participation is free of charge and does not depend on the mode of study.
+ 
+-  ## Who can apply {#who-can-apply}
++  ## Who can apply {#kto-może-wziąć-udział}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -23,7 +23,7 @@ tresc_en: |
+   - students of **second-cycle (master's) programmes** who have completed the first semester,
+   - PhD students who have completed the first year of **doctoral studies**.
+ 
+-  ## Recruitment {#recruitment}
++  ## Recruitment {#rekrutacja}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -34,13 +34,13 @@ tresc_en: |
+ 
+   All details are available on the [MOST programme website](http://www.most.amu.edu.pl/) (in Polish). The recruitment procedure is described step by step separately for [students](http://most.amu.edu.pl/index.php/rekrutacja/rekrutacja-krok-po-kroku) and for [PhD students](http://most.amu.edu.pl/index.php/doc/rekrutacjadoc). You can also watch an [information video](https://www.youtube.com/watch?v=rGdurDxx-I0) about the programme.
+ 
+-  ## MOST and Erasmus {#most-and-erasmus}
++  ## MOST and Erasmus {#most-a-erasmus}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   Do you think MOST is not for you because you have already been on Erasmus? That is no obstacle. It also works the other way round: taking part in MOST does not disqualify you when applying for a place in the Erasmus programme.
+ 
+-  ## Coordinators {#coordinators}
++  ## Coordinators {#koordynatorzy}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+diff --git a/src/content/strony/studia/skrypty.md b/src/content/strony/studia/skrypty.md
+index 0bb7d89..66871d8 100644
+--- a/src/content/strony/studia/skrypty.md
++++ b/src/content/strony/studia/skrypty.md
+@@ -24,7 +24,7 @@ tresc_en: |
+ 
+   > Many of the scripts were written for earlier editions of the courses (hence, for example, the version labels A or B in some titles), so their scope and notation may differ from the current programme. Files marked "author's page" are maintained by the authors on their personal websites.
+ 
+-  ## Analysis {#analysis}
++  ## Analysis {#analiza}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -46,7 +46,7 @@ tresc_en: |
+   - [Analiza funkcjonalna 1](https://www.math.uni.wroc.pl/~szwarc/pdf/anfun2007/analiza-funkcjonalna1.pdf) and [Analiza funkcjonalna 2](https://www.math.uni.wroc.pl/~szwarc/pdf/anfun2007/analiza-funkcjonalna2p.pdf) (in Polish) — Ryszard Szwarc. PDF (author's page). For the courses Functional Analysis 1 and 2.
+   - [Wielomiany ortogonalne i problem momentów](/pliki/studia/skrypty/szwarc-wielomiany-ortogonalne.pdf) (in Polish) — Ryszard Szwarc. PDF, 87 pp. Notes for a lecture given in the winter semester of 2003: positive definite sequences, Jacobi matrices, zeros of orthogonal polynomials, the moment problem.
+ 
+-  ## Introduction to mathematics, algebra and combinatorics {#introduction-to-mathematics-algebra-and-combinatorics}
++  ## Introduction to mathematics, algebra and combinatorics {#wstęp-do-matematyki-algebra-i-kombinatoryka}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -69,20 +69,20 @@ tresc_en: |
+ 
+   - [Zbiór zadań z kombinatoryki](https://www.math.uni.wroc.pl/~sgal/szkola/Kombinatoryka/Zbior_zadan_z_kombinatoryki.pdf) (in Polish) — Światosław R. Gal. PDF (author's page). A problem book, useful for the courses Introduction to Combinatorics (semester 1) and Combinatorics.
+ 
+-  ## Topology {#topology}
++  ## Topology {#topologia}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   - [Wstęp do topologii (A)](/pliki/studia/skrypty/krupski-wstep-do-topologii.pdf) (in Polish) — Paweł Krupski. PDF, 113 pp. For the course Topology or Topology R (semester 2).
+ 
+-  ## Differential equations {#differential-equations}
++  ## Differential equations {#równania-różniczkowe}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   - [Równania różniczkowe (A1)](/pliki/studia/skrypty/raczynski-rownania-rozniczkowe-1.pdf) (in Polish) — Andrzej Raczyński. PDF, 156 pp., 2010. For the course Differential Equations 1 (semester 4).
+   - [Warsztaty z równań różniczkowych cząstkowych](/pliki/studia/skrypty/biler-karch-nadzieja-wrzosek-warsztaty-rrcz.pdf) (in Polish) — Piotr Biler, Grzegorz Karch, Tadeusz Nadzieja, Dariusz Wrzosek. PDF, 140 pp., Toruń 2003. Lecture notes from a workshop on partial differential equations: wave equations, the heat equation, the Poisson equation, evolution problems.
+ 
+-  ## Probability and statistics {#probability-and-statistics}
++  ## Probability and statistics {#rachunek-prawdopodobieństwa-i-statystyka}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -101,7 +101,7 @@ tresc_en: |
+ 
+   - [Matematyka ubezpieczeń majątkowych i osobowych](https://www.math.uni.wroc.pl/~szekli/documents/mumio/mumio-16-trans/skrypt-16.pdf) (in Polish) — Ryszard Szekli. PDF (author's page). For the course of the same name (Property and Personal Insurance Mathematics; second-cycle studies, actuarial and financial mathematics specialisation).
+ 
+-  ## Mathematics teaching {#mathematics-teaching}
++  ## Mathematics teaching {#matematyka-nauczycielska}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -111,14 +111,14 @@ tresc_en: |
+   - [Wybrane zagadnienia z geometrii płaszczyzny](/pliki/studia/skrypty/zaremba-geometria-plaszczyzny.pdf) (in Polish) — Danuta Zaremba. PDF, 60 pp. Basic facts of Euclidean plane geometry with exercises; hints or solutions are given for some of them.
+   - [Kilka rad dla studentów odbywających praktykę nauczycielską w szkole podstawowej i gimnazjum](/pliki/studia/skrypty/zaremba-praktyka-nauczycielska.pdf) (in Polish) — Danuta Zaremba. PDF, 17 pp. Advice on preparing and teaching lessons during the teaching placement; for the placement rules see [Teaching placements](/studia/matematyka#praktyki).
+ 
+-  ## LaTeX and computer graphics {#latex-and-computer-graphics}
++  ## LaTeX and computer graphics {#latex-i-grafika-komputerowa}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   - [Wprowadzenie do systemu LaTeX](/pliki/studia/skrypty/selwat-latex.pdf) (in Polish) — Karol Selwat. PDF, 42 pp. An introduction to LaTeX written for students of the Institute; useful for the course LaTeX (semesters 2–6).
+   - [Pracownia graficzna wizualizacji obiektów matematycznych](https://dbura.math.uni.wroc.pl/dydaktyka) (in Polish) — Dariusz Buraczewski, Tomasz Elsner. PDF on the author's page (section "Skrypty do zajęć"). A script for the class on visualising mathematical objects, 2011/12.
+ 
+-  ## Other sources {#other-sources}
++  ## Other sources {#inne-źródła-materiałów}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+diff --git a/src/content/strony/studia/sprawy-studenckie.md b/src/content/strony/studia/sprawy-studenckie.md
+index 2ae43f7..87a7557 100644
+--- a/src/content/strony/studia/sprawy-studenckie.md
++++ b/src/content/strony/studia/sprawy-studenckie.md
+@@ -10,9 +10,9 @@ tresc_en: |
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+-  A guide for students of the Mathematical Institute: who handles what, how to deal with the most common matters, where to find scholarships, exchanges and support. The Institute's deadlines and forms (course registration, specialisation, thesis supervisor) are listed on the programme page: [Mathematics — deadlines and forms](/en/studia/matematyka#terminy).
++  A guide for students of the Mathematical Institute: who handles what, how to deal with the most common matters, where to find scholarships, exchanges and support. The Institute's deadlines and forms (course registration, specialisation, thesis supervisor) are listed on the programme page: [Mathematics — deadlines and forms](/studia/matematyka#terminy).
+ 
+-  ## Where to go {#where-to-go}
++  ## Where to go {#gdzie-załatwić-sprawę}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -39,38 +39,38 @@ tresc_en: |
+   | Financial aid (scholarships, grants) | Monika Retmaniak, MA | 71 375 7890, [Monika.Retmaniak@uwr.edu.pl](mailto:Monika.Retmaniak@uwr.edu.pl) |
+   | Head of the Faculty Office | Małgorzata Pielużek, MA | 71 375 7895, [Malgorzata.Pieluzek@uwr.edu.pl](mailto:Malgorzata.Pieluzek@uwr.edu.pl) |
+ 
+-  Students of *Artificial Intelligence in Data Analysis* — see the contacts on the [programme page](/en/studia/siad).
++  Students of *Artificial Intelligence in Data Analysis* — see the contacts on the [programme page](/studia/siad).
+ 
+   **Vice-Dean for Mathematics Teaching and Student Affairs:** Dr hab. Andrzej Raczyński, [Andrzej.Raczynski@uwr.edu.pl](mailto:Andrzej.Raczynski@uwr.edu.pl) — office hours on Mondays 11:00–12:00. Changes and cancellations: [Dean's office hours](https://wmi.uwr.edu.pl/dziekanat/dyzury-dziekanskie/).
+ 
+-  ## Who is responsible {#who-is-responsible}
++  ## Who is responsible {#kto-za-co-odpowiada}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   | Role | Person | Contact |
+   | --- | --- | --- |
+   | Deputy Director for Teaching | Dr Tomasz Elsner | room 305, [Tomasz.Elsner@math.uni.wroc.pl](mailto:Tomasz.Elsner@math.uni.wroc.pl) |
+-  | First-year coordinator | Dr Jan Kraszewski | [Jan.Kraszewski@math.uni.wroc.pl](mailto:Jan.Kraszewski@math.uni.wroc.pl), [First year](/en/studia/pierwszy-rok) |
+-  | Specialisation coordinators | — | see [Specialisations](/en/studia/matematyka#specjalnosci) |
++  | First-year coordinator | Dr Jan Kraszewski | [Jan.Kraszewski@math.uni.wroc.pl](mailto:Jan.Kraszewski@math.uni.wroc.pl), [First year](/studia/pierwszy-rok) |
++  | Specialisation coordinators | — | see [Specialisations](/studia/matematyka#specjalnosci) |
+   | Erasmus+ coordinator | Dr Motiejus Valiunas | room 306, [Motiejus.Valiunas@math.uni.wroc.pl](mailto:Motiejus.Valiunas@math.uni.wroc.pl) |
+   | MOST coordinator | Prof. Wojciech Młotkowski | [Wojciech.Mlotkowski@math.uni.wroc.pl](mailto:Wojciech.Mlotkowski@math.uni.wroc.pl) |
+   | Doctoral College of Mathematics | Ewa Lamch | phone 71 375 7494, [Ewa.Lamch@math.uni.wroc.pl](mailto:Ewa.Lamch@math.uni.wroc.pl) |
+   | Dean's Plenipotentiary for the Safety of Students and PhD Students | Dr hab. Ziemowit Rzeszotnik | room 706, [Ziemowit.Rzeszotnik@math.uni.wroc.pl](mailto:Ziemowit.Rzeszotnik@math.uni.wroc.pl) |
+   | Dean's Plenipotentiary for Equal Treatment and Anti-Discrimination | Dr Paweł Laskoś-Grabowski | see [Faculty authorities](https://wmi.uwr.edu.pl/wladze-wydzialu/) |
+ 
+-  ## USOSweb and official communication {#usosweb-and-official-communication}
++  ## USOSweb and official communication {#usosweb-i-komunikacja}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   - [USOSweb](https://usosweb.uwr.edu.pl/) — course registration, grades, decisions and payments; your study record is kept in USOS.
+-  - [University e-mail (Office 365)](https://login.microsoftonline.com/) — accounts in USOSweb and Office 365 are created after admission (see [First year](/en/studia/pierwszy-rok)).
++  - [University e-mail (Office 365)](https://login.microsoftonline.com/) — accounts in USOSweb and Office 365 are created after admission (see [First year](/studia/pierwszy-rok)).
+   - [SKOS e-learning platform](https://skos.ii.uni.wroc.pl/course/index.php?categoryid=21) — pages of selected courses.
+ 
+   > **Remember:** messages sent via USOS or to your university e-mail are binding if they were posted at least 3 working days before the matter they concern (§ 7 of the Study Regulations). Check your data, grades, scholarships and payments in USOS regularly, and notify the Faculty Office within 14 days of a change of name, address or financial situation (§ 9).
+ 
+   Your student ID card confirms your student status. A first-cycle graduate may keep the card until 31 October of the year of graduation (§ 3).
+ 
+-  ## Common matters step by step {#common-matters-step-by-step}
++  ## Common matters step by step {#najczęstsze-sprawy-krok-po-kroku}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -78,10 +78,10 @@ tresc_en: |
+ 
+   ### Courses, specialisation and supervisor
+ 
+-  Matters handled by the Institute are dealt with using online forms; deadlines and links are on the programme page: [Mathematics — deadlines and forms](/en/studia/matematyka#terminy). In particular:
++  Matters handled by the Institute are dealt with using online forms; deadlines and links are on the programme page: [Mathematics — deadlines and forms](/studia/matematyka#terminy). In particular:
+ 
+   - course registration in USOSweb according to the schedule; withdrawal after registration closes — **once per degree**, by 30 November (winter) or 30 April (summer), forms A1/A2;
+-  - enrolment without prerequisites (B1), above the group limit (B2), switching from the extended to the standard version (B3) — details: [Classes and office hours](/en/studia/zajecia);
++  - enrolment without prerequisites (B1), above the group limit (B2), switching from the extended to the standard version (B3) — details: [Classes and office hours](/studia/zajecia);
+   - declaration of specialisation (C1–C3) and of the master's thesis supervisor (E).
+ 
+   A change of programme or specialisation requires the Dean's consent and is possible after completing at least the first semester (§ 53).
+@@ -98,7 +98,7 @@ tresc_en: |
+   | 5 | at least 114 ECTS | — |
+   | 6 | at least 144 ECTS | — |
+ 
+-  ECTS credits are counted cumulatively; the resolution also allows the equivalent versions of the courses listed. First-year decisions: [First year](/en/studia/pierwszy-rok).
++  ECTS credits are counted cumulatively; the resolution also allows the equivalent versions of the courses listed. First-year decisions: [First year](/studia/pierwszy-rok).
+ 
+   If you do not meet the requirements:
+ 
+@@ -122,7 +122,7 @@ tresc_en: |
+   - **Individual study plan (IPS)** — mainly for outstanding students or students involved in research; you can choose courses towards the required ECTS or take additional courses, working with an academic tutor. Submit the request with the proposed plan and the tutor's name before the start of the semester (§ 24).
+   - **Individual organisation of studies (IOS)** — in justified and documented cases, e.g. studying two programmes, work, family situation, health problems. You complete all courses, but some may be passed extramurally or with modified dates and forms of assessment — changes must be agreed with the instructors. The request lists the courses and the changes and is submitted before the semester, within the deadline set by the Dean (§ 25).
+ 
+-  Students with disabilities and special needs have the right to an adapted study process — see [Support](#support).
++  Students with disabilities and special needs have the right to an adapted study process — see [Support](#wsparcie).
+ 
+   ### Resignation, removal and reinstatement
+ 
+@@ -144,7 +144,7 @@ tresc_en: |
+   - If your absence from an exam is excused, the examiner restores your right to that attempt on another date (§ 34).
+   - Against other decisions of the Dean you may request reconsideration within 14 days of their delivery (§ 67).
+ 
+-  ## Scholarships and financial aid {#scholarships-and-financial-aid}
++  ## Scholarships and financial aid {#stypendia-i-pomoc-materialna}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -157,7 +157,7 @@ tresc_en: |
+ 
+   At the Faculty, financial aid is handled by Monika Retmaniak, MA (Faculty Office, phone 71 375 7890).
+ 
+-  ## Exchange programmes {#exchange-programmes}
++  ## Exchange programmes {#wymiany-studenckie}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -172,34 +172,34 @@ tresc_en: |
+ 
+   ### MOST
+ 
+-  Exchange with Polish universities for one semester or a full year, free of charge. Recruitment: 15 April – 15 May (winter semester or full year) and **31 October – 30 November** (summer semester). Coordinator: Prof. Wojciech Młotkowski. Details: [MOST programme](/en/studia/program-most).
++  Exchange with Polish universities for one semester or a full year, free of charge. Recruitment: 15 April – 15 May (winter semester or full year) and **31 October – 30 November** (summer semester). Coordinator: Prof. Wojciech Młotkowski. Details: [MOST programme](/studia/program-most).
+ 
+   ### ISEP and other programmes
+ 
+   [ISEP](https://international.uni.wroc.pl/wymiana-wyjazdy/inne-wymiany) is a worldwide exchange network; currently it offers one-semester stays at universities in the USA. Other offers: [UWr International Office](https://international.uni.wroc.pl/wymiana-wyjazdy).
+ 
+-  ## Careers and jobs {#careers-and-jobs}
++  ## Careers and jobs {#kariera-i-praca}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+-  - **Job, internship and traineeship offers** are published in the [news](/en/aktualnosci) (type "Career").
++  - **Job, internship and traineeship offers** are published in the [news](/aktualnosci) (type "Career").
+   - **Employers** wishing to publish an offer should send it to Dr Jan Kraszewski ([Jan.Kraszewski@math.uni.wroc.pl](mailto:Jan.Kraszewski@math.uni.wroc.pl)). Business contact coordinators of the Institute: Prof. Ewa Damek ([Ewa.Damek@math.uni.wroc.pl](mailto:Ewa.Damek@math.uni.wroc.pl)), Dr Przemysław Klusik ([Przemyslaw.Klusik@math.uni.wroc.pl](mailto:Przemyslaw.Klusik@math.uni.wroc.pl)), Dr hab. Krzysztof Topolski ([Krzysztof.Topolski@math.uni.wroc.pl](mailto:Krzysztof.Topolski@math.uni.wroc.pl)).
+   - [UWr Career Office](https://biurokarier.uwr.edu.pl/) (ul. Kuźnicza 49A) — [job offers](https://biurokarier.uwr.edu.pl/jobs), [traineeship programmes](https://biurokarier.uwr.edu.pl/programy-stazowe/), [career counselling](https://biurokarier.uwr.edu.pl/doradztwo-konsultacje/).
+ 
+-  ## Student government and student clubs {#student-government-and-student-clubs}
++  ## Student government and student clubs {#samorząd-i-koła-naukowe}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   - **Faculty Student Government Council of WMI (WRSS WMI)** — [wrsswmi@uniwroc.onmicrosoft.com](mailto:wrsswmi@uniwroc.onmicrosoft.com), [Facebook](https://www.facebook.com/WRSSWMI/). It represents students before the Faculty authorities.
+   - [Student Government of the University of Wrocław](https://samorzadstudentow.uwr.edu.pl/) — [Regulations of the Student Government](https://samorzadstudentow.uwr.edu.pl/wp-content/uploads/sites/507/2025/09/Nr-157_2019-z-dnia-30.12.2019-r.-REGULAMIN_samorzadu-studentow-1.pdf). Each year or group is represented by its elected student representative (*starosta*).
+-  - [Theoretical Mathematicians' Club](https://www.facebook.com/knmtuwr) — among others co-organises the school [Baby Steps Beyond the Horizon](/en/aktualnosci/2026-07-14-szkola-baby-steps-beyond-the-horizon).
++  - [Theoretical Mathematicians' Club](https://www.facebook.com/knmtuwr) — among others co-organises the school [Baby Steps Beyond the Horizon](/aktualnosci/2026-07-14-szkola-baby-steps-beyond-the-horizon).
+   - [Applied Mathematics Club](https://www.facebook.com/KNZM.UWr/)
+ 
+-  ## Support {#support}
++  ## Support {#wsparcie}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+-  - **Tutoring room** (room 202) — senior students help with mathematical problems, especially first-year students ([details](/en/studia/tutornia)).
++  - **Tutoring room** (room 202) — senior students help with mathematical problems, especially first-year students ([details](/studia/tutornia)).
+   - **Academic ombudspersons of WMI** — students, PhD students and staff can turn to them with problems concerning the institute/faculty community. The ombudsperson listens, diagnoses the problem and gives advice or help, acting confidentially, impartially, informally and independently of the university authorities. Prof. Ewa Damek — [edamek@math.uni.wroc.pl](mailto:edamek@math.uni.wroc.pl), room 901 (Mathematical Institute); Jarosław Byrka — [jaroslaw.byrka@cs.uni.wroc.pl](mailto:jaroslaw.byrka@cs.uni.wroc.pl), room 244 (Institute of Computer Science). It is best to arrange contact by e-mail first ([details](https://wmi.uwr.edu.pl/wladze-wydzialu/)).
+   - **Student Rights Ombudsperson** (UWr Student Government): [rps@uwr.edu.pl](mailto:rps@uwr.edu.pl); **anti-discrimination ombudsperson** of UWr: [rownosc@uwr.edu.pl](mailto:rownosc@uwr.edu.pl).
+   - **[Support and Accessibility Office](https://uwr.edu.pl/pomocny-uwr/osoby-z-niepelnosprawnosciami/biuro-wsparcia-i-dostepnosci/)** — for students with disabilities and special needs: ul. Kuźnicza 49/55, rooms 19 and 20, open 9:00–14:00, [niepelnosprawni@uwr.edu.pl](mailto:niepelnosprawni@uwr.edu.pl), phone 71 375 2664 (please arrange a meeting in advance). Forms of support include a teaching assistant, transport within Wrocław, individual foreign language classes, adapted teaching materials, temporary loan of specialist equipment and psychological consultations (Rector's Order No. 68/2026).
+@@ -208,7 +208,7 @@ tresc_en: |
+ 
+   > In an emergency threatening life or health, call **112**.
+ 
+-  ## Regulations {#regulations}
++  ## Regulations {#przepisy}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -217,7 +217,7 @@ tresc_en: |
+   - [Conditions for repeating a semester in Mathematics](https://bip.uni.wroc.pl/download/attachment/37997/uchwala-nr-11-w-sprawie-okreslenia-warunkow-wymaganych-na-powtorny-wpis-na-semestr-na-kierunku-matematyka.pdf) (Faculty Council Resolution No. 11/2023)
+   - [Regulations on benefits for students](https://uwr.edu.pl/wp-content/uploads/2026/10/Tekst-ujednolicony-zarz.-196-2023-Regulamin-swiadczen-dla-studentow-po-zarz.-153-2026.pdf) (Rector's Order No. 196/2023, consolidated text)
+   - [Study records in USOS](https://bip.uni.wroc.pl/download/attachment/27171/nr-160_2020-z-dnia-18122020-r-dokumentacja-w-usos.pdf) (Rector's Order No. 160/2020)
+-  - Other regulations for the programme (foreign languages, physical education, teacher training, diploma theses): [Mathematics — regulations](/en/studia/matematyka#akty)
++  - Other regulations for the programme (foreign languages, physical education, teacher training, diploma theses): [Mathematics — regulations](/studia/matematyka#akty)
+ opublikowany: true
+ format_tresci: jawne
+ ---
+diff --git a/src/content/strony/studia/szkola-doktorska/dokumenty.md b/src/content/strony/studia/szkola-doktorska/dokumenty.md
+index cd8149d..ecec6cf 100644
+--- a/src/content/strony/studia/szkola-doktorska/dokumenty.md
++++ b/src/content/strony/studia/szkola-doktorska/dokumenty.md
+@@ -20,9 +20,9 @@ tresc_en: |
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+-  Most forms are available only in Polish. Programmes of study for each cohort are listed on the [main doctoral school page](/en/studia/szkola-doktorska#program); regulations and orders are under [Regulations](/en/studia/szkola-doktorska#akty).
++  Most forms are available only in Polish. Programmes of study for each cohort are listed on the [main doctoral school page](/studia/szkola-doktorska#program); regulations and orders are under [Regulations](/studia/szkola-doktorska#akty).
+ 
+-  ## Forms for everyday matters {#forms-for-everyday-matters}
++  ## Forms for everyday matters {#wzory-na-co-dzień}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -36,7 +36,7 @@ tresc_en: |
+   - Documentation of doctoral training — forms (annexes to Rector's Ordinance No. 182/2023) — [DOCX](/pliki/szkola-doktorska/dokumenty/182-2023_dokumentacja_przebiegu_ksztalcenia_szd.docx); the ordinance itself: [Polish](https://szd.uwr.edu.pl/wp-content/uploads/sites/189/2023/08/182-2023-dokumentacja-przebiegu-ksztalcenia-SzD.pdf), [English](https://szd.uwr.edu.pl/wp-content/uploads/sites/189/2023/09/Ordinance-No-182_2023.pdf)
+   - Course syllabus template for the doctoral school — [PDF](/pliki/szkola-doktorska/dokumenty/sylabus_kolegia.pdf), [DOC](/pliki/szkola-doktorska/dokumenty/sylabus_kolegia.doc)
+ 
+-  ## Insurance {#insurance}
++  ## Insurance {#ubezpieczenia}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -45,15 +45,15 @@ tresc_en: |
+   - Authorisation to forward insurance registration documents — [PDF](/pliki/szkola-doktorska/dokumenty/upowaznienia_w_sprawie_ubezpieczen.pdf), [DOCX](/pliki/szkola-doktorska/dokumenty/upowaznienia_w_sprawie_ubezpieczen.docx)
+   - Rules for registering doctoral students for social and health insurance (Rector's Ordinance No. 7/2020) — [PDF](/pliki/szkola-doktorska/dokumenty/regulamin_-ubezpieczenie_szkola_doktorska-2020.pdf)
+ 
+-  ## Mid-term evaluation {#mid-term-evaluation}
++  ## Mid-term evaluation {#ocena-śródokresowa}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   - Report on the implementation of the individual research plan (IPB) — [DOCX](/pliki/szkola-doktorska/dokumenty/sprawozdanie_z_realizacji_ipb_oceny_srodokresowej.docx)
+   - Supervisor's opinion on the implementation of the IPB — [DOCX](/pliki/szkola-doktorska/dokumenty/opinia_promotora_z_realizacji_ipb_oceny_srodokresowej.docx)
+-  - Rector's Ordinance No. 25/2021 on the mid-term evaluation schedule and forms — [Polish](https://szd.uwr.edu.pl/wp-content/uploads/sites/189/2024/07/TU-25-2021-zmiana-zarzadzenie-25-2021-harmonogram-przeprowadz.-oceny-srodokresowej-stan-na-12.04.2024.pdf), [English](https://szd.uwr.edu.pl/wp-content/uploads/sites/189/2024/07/Regulation-No_70-2024-1.pdf)
++  - Rector's Ordinance No. 25/2021 on the mid-term evaluation schedule and forms (as of 12 April 2024) — [Polish](https://szd.uwr.edu.pl/wp-content/uploads/sites/189/2024/07/TU-25-2021-zmiana-zarzadzenie-25-2021-harmonogram-przeprowadz.-oceny-srodokresowej-stan-na-12.04.2024.pdf), [English](https://szd.uwr.edu.pl/wp-content/uploads/sites/189/2024/07/Regulation-No_70-2024-1.pdf)
+ 
+-  ## Professional practice (teaching) {#professional-practice-teaching}
++  ## Professional practice (teaching) {#praktyki-zawodowe-zajęcia-dydaktyczne}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -61,11 +61,11 @@ tresc_en: |
+   - Declaration on planned professional practice in the form of teaching (Annex 9 to the rules) — [PDF](/pliki/szkola-doktorska/dokumenty/oswiadczenie_o_planowanym.pdf)
+   - Declaration on completed professional practice in the form of teaching (Annex 10 to the rules) — [PDF](/pliki/szkola-doktorska/dokumenty/oswiadczenie_o_zrealizowaniu.pdf)
+ 
+-  ## Doctoral thesis {#doctoral-thesis}
++  ## Doctoral thesis {#rozprawa-doktorska}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+-  Step-by-step description: [Thesis and the doctoral degree](/en/studia/szkola-doktorska/stopien-doktora).
++  Step-by-step description: [Thesis and the doctoral degree](/studia/szkola-doktorska/stopien-doktora).
+ 
+   - Procedure for submitting the doctoral thesis — [PDF](/pliki/szkola-doktorska/dokumenty/procedura_zlozenia_rozprawy_doktorskiej.pdf)
+   - Application to start the doctoral degree proceedings — [PDF](/pliki/szkola-doktorska/dokumenty/wniosek_wszczecie_postepowania_szd.pdf), [DOCX](/pliki/szkola-doktorska/dokumenty/wniosek_wszczecie_postepowania_szd.docx)
+@@ -74,7 +74,7 @@ tresc_en: |
+   - Supervisor's declaration — [PDF](/pliki/szkola-doktorska/dokumenty/oswiadczenie_promotora.pdf), [DOCX](/pliki/szkola-doktorska/dokumenty/oswiadczenie_promotora.docx)
+   - UWr Senate Resolution No. 131/2019 on the procedure for conferring doctoral and habilitation degrees (consolidated text of 16 February 2024) — [PDF](/pliki/szkola-doktorska/dokumenty/2024_-_tekst_jednolity_uchwaly_nr_131_2019_w_sprawie_trybu_postepowania_o_nadanie_stopni_naukowych_dr_i_dr_hab.pdf)
+ 
+-  ## APD system (thesis archive) and plagiarism checks {#apd-system-thesis-archive-and-plagiarism-checks}
++  ## APD system (thesis archive) and plagiarism checks {#system-apd-i-kontrola-antyplagiatowa}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -83,7 +83,7 @@ tresc_en: |
+   - APD procedure for supervisors and reviewers — [PDF](/pliki/szkola-doktorska/dokumenty/apd_dr_dla_promotora_i_recenzenta.pdf)
+   - APD procedure for administrative staff — [PDF](/pliki/szkola-doktorska/dokumenty/instrukcja_rozprawy_dr_apd_dziekanat.pdf)
+ 
+-  ## Regulations {#regulations}
++  ## Regulations {#regulaminy}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -92,7 +92,7 @@ tresc_en: |
+   - Co-tutelle agreements (Rector's Ordinance No. 167/2021) — [PDF](https://szd.uwr.edu.pl/wp-content/uploads/sites/189/2024/02/Nr-167_2021-z-dnia-25.10.2021-r.-cotutelle-3.pdf)
+   - Further orders and resolutions of the Doctoral School: [szd.uwr.edu.pl](https://szd.uwr.edu.pl/uchwaly-i-zarzadzenia/)
+ 
+-  ## Course syllabi (2025/26) {#course-syllabi-202526}
++  ## Course syllabi (2025/26) {#sylabusy-zajęć-202526}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -106,13 +106,13 @@ tresc_en: |
+ 
+   **Winter semester — seminars:** [High-dimensional probability](/pliki/szkola-doktorska/sylabusy/sylabus-wrp.pdf)
+ 
+-  ## Contact {#contact}
++  ## Contact {#kontakt}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   Doctoral School secretary at the Institute: Ewa Lamch, MA, room 303, phone 71 375 7494, [ewa.lamch@math.uni.wroc.pl](mailto:ewa.lamch@math.uni.wroc.pl).
+ 
+-  See also: [Admissions](/en/studia/szkola-doktorska/rekrutacja) · [Stipends and grants](/en/studia/szkola-doktorska/stypendia-i-granty) · [Thesis and the doctoral degree](/en/studia/szkola-doktorska/stopien-doktora)
++  See also: [Admissions](/studia/szkola-doktorska/rekrutacja) · [Stipends and grants](/studia/szkola-doktorska/stypendia-i-granty) · [Thesis and the doctoral degree](/studia/szkola-doktorska/stopien-doktora)
+ opublikowany: true
+ format_tresci: jawne
+ ---
+diff --git a/src/content/strony/studia/szkola-doktorska/rekrutacja.md b/src/content/strony/studia/szkola-doktorska/rekrutacja.md
+index d9ac3f3..8ccc5a3 100644
+--- a/src/content/strony/studia/szkola-doktorska/rekrutacja.md
++++ b/src/content/strony/studia/szkola-doktorska/rekrutacja.md
+@@ -12,16 +12,16 @@ tresc_en: |
+ 
+   Admission to the Doctoral School of the University of Wrocław is by competition and takes place within doctoral colleges. Candidates in mathematics apply to the **Doctoral College of Mathematics**. The admission rules are adopted each year by the University Senate, and the schedule and number of places are set by orders of the Rector. This page describes the rules of the most recent admission round (for 2026/27).
+ 
+-  ## Key information {#key-information}
++  ## Key information {#najważniejsze-informacje}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+-  - **You need a supervisor before you apply.** The prospective main supervisor must hold a habilitation or the title of professor. Contact details of the mathematicians are in the [staff directory](/en/pracownicy).
++  - **You need a supervisor before you apply.** The prospective main supervisor must hold a habilitation or the title of professor. Contact details of the mathematicians are in the [staff directory](/pracownicy).
+   - Admission is based on a **written entrance exam** in mathematics.
+   - Number of places: **8** (according to the Institute's information for the 2026/27 admission round).
+   - Beyond the admission limits, candidates whose doctoral stipend is funded from other sources (e.g. research projects) may also be admitted; for them a separate admission round outside the regular schedule may be announced, with the Rector's consent.
+ 
+-  ## Who can apply {#who-can-apply}
++  ## Who can apply {#kto-może-kandydować}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -34,7 +34,7 @@ tresc_en: |
+ 
+   Before the exam of a candidate without a master's degree, the admissions committee decides, on the basis of the documents provided and by a majority vote, whether to admit them to the procedure.
+ 
+-  ## How admission works {#how-admission-works}
++  ## How admission works {#jak-przebiega-rekrutacja}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -47,7 +47,7 @@ tresc_en: |
+ 
+   A refusal of admission is an administrative decision. Within 14 days of its delivery you may request reconsideration of the case, or within 30 days file a complaint with the Provincial Administrative Court in Wrocław.
+ 
+-  ## Entrance exam {#entrance-exam}
++  ## Entrance exam {#egzamin-kwalifikacyjny}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -55,9 +55,9 @@ tresc_en: |
+   - Candidates receive **12 problems**; the committee grades the **6 best-solved** ones, each on a scale of 0–6 points.
+   - Maximum score: **36 points**; minimum score needed for a positive result: **15 points**. Candidates are ranked by their score.
+   - Scope: courses taught in mathematics degree programmes, in particular analysis I–III, linear algebra and algebra I, differential equations, elements of metric topology and set theory, and probability and statistics.
+-  - Recommended reading: exam problems from previous years ([see below](#entrance-exam-problems-from-previous-years)).
++  - Recommended reading: exam problems from previous years ([see below](#zadania-z-egzaminów-z-poprzednich-lat)).
+ 
+-  ## Required documents {#required-documents}
++  ## Required documents {#wymagane-dokumenty}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -68,7 +68,7 @@ tresc_en: |
+   5. The candidate's statement on whether they hold a doctoral degree and whether they are or have ever been a doctoral student of another college of the UWr Doctoral School or of another doctoral school.
+   6. Candidates without a master's degree: an opinion from an independent researcher justifying the high level of the candidate's research achievements.
+ 
+-  ## Admission 2026/27 (completed) {#admission-202627-completed}
++  ## Admission 2026/27 (completed) {#rekrutacja-202627-zakończona}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -93,7 +93,7 @@ tresc_en: |
+   - [Rector's Order No. 85/2026 — IRKa registration procedure](https://szd.uwr.edu.pl/wp-content/uploads/sites/189/2026/05/Nr-85-2026-z-dni-25.05.2026-IRKa-doktorantow_-1.pdf) · [English version](https://szd.uwr.edu.pl/wp-content/uploads/sites/189/2026/05/Ordinance-85-2026-of-the-Rector-of-the-University-of-Wroclaw-of-25-May-2026-on-the-introduction-of-the-Procedure-of-registration-in-the-system-of-the-Internet-Registration-of-Candidates-IRK-.pdf)
+   - Candidate's statement: [Polish version (DOCX)](/pliki/szkola-doktorska/rekrutacja/obowiazujace-oswiadczenie-kandydata-do-szkoly-doktorskiej-uniwersytetu-wroclawskiego-43.docx) · [English version (DOCX)](/pliki/szkola-doktorska/rekrutacja/obowiazujace-oswiadczenie-kandydata-do-szkoly-doktorskiej-uniwersytetu-wroclawskiego-wersja-anglojezyczna-9.docx)
+ 
+-  ## Entrance exam problems from previous years {#entrance-exam-problems-from-previous-years}
++  ## Entrance exam problems from previous years {#zadania-z-egzaminów-z-poprzednich-lat}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -104,13 +104,13 @@ tresc_en: |
+   - [2014](/pliki/szkola-doktorska/egzaminy/egzamin_2014.pdf) · [2015](/pliki/szkola-doktorska/egzaminy/egzamin_2015.pdf) · [2016](/pliki/szkola-doktorska/egzaminy/egzamin_2016.pdf) · [2017](/pliki/szkola-doktorska/egzaminy/egzdok2017.pdf) · [2018](/pliki/szkola-doktorska/egzaminy/egzamin_sd_2018.pdf) · [2019](/pliki/szkola-doktorska/egzaminy/egzamin_km_2019.pdf) · [2020](/pliki/szkola-doktorska/egzaminy/egzamin_km_2020_pl.pdf) · [2021](/pliki/szkola-doktorska/egzaminy/zadania2021.pdf)
+   - [2024](/pliki/szkola-doktorska/egzaminy/egzamin_dokt_2024_final.pdf) · [2025](/pliki/szkola-doktorska/egzaminy/egzamin_dokt_2025_final.pdf) · [2026](/pliki/szkola-doktorska/egzaminy/egzamin_dokt_2026.pdf)
+ 
+-  ## Contact {#contact}
++  ## Contact {#kontakt}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   Doctoral School secretary at the Institute: Ewa Lamch, MA, room 303, phone 71 375 7494, [ewa.lamch@math.uni.wroc.pl](mailto:ewa.lamch@math.uni.wroc.pl). Head of the Doctoral College of Mathematics: Prof. Piotr Kowalski, room 502, [piotr.kowalski@math.uni.wroc.pl](mailto:piotr.kowalski@math.uni.wroc.pl).
+ 
+-  See also: [Stipends and grants](/en/studia/szkola-doktorska/stypendia-i-granty) · [Documents and forms](/en/studia/szkola-doktorska/dokumenty) · [UWr Doctoral School](https://szd.uwr.edu.pl/)
++  See also: [Stipends and grants](/studia/szkola-doktorska/stypendia-i-granty) · [Documents and forms](/studia/szkola-doktorska/dokumenty) · [UWr Doctoral School](https://szd.uwr.edu.pl/)
+ opublikowany: true
+ format_tresci: jawne
+ ---
+diff --git a/src/content/strony/studia/szkola-doktorska/stopien-doktora.md b/src/content/strony/studia/szkola-doktorska/stopien-doktora.md
+index e066421..781ee11 100644
+--- a/src/content/strony/studia/szkola-doktorska/stopien-doktora.md
++++ b/src/content/strony/studia/szkola-doktorska/stopien-doktora.md
+@@ -12,7 +12,7 @@ tresc_en: |
+ 
+   Training at the Doctoral School ends with the submission of the doctoral thesis. The date of submission is the day on which the application to start the doctoral degree proceedings is filed, together with the thesis and the supervisor's positive opinion. The thesis must be submitted by the date set in the individual research plan (IPB). The proceedings in mathematics are conducted by the **Mathematics Discipline Council**.
+ 
+-  ## Before submitting the thesis {#before-submitting-the-thesis}
++  ## Before submitting the thesis {#przed-złożeniem-rozprawy}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -21,7 +21,7 @@ tresc_en: |
+   3. **The supervisor** sends the thesis from APD to the Uniform Anti-Plagiarism System (JSA), evaluates the similarity report and, if there are no signs of copyright infringement, approves the thesis in APD and submits an electronic declaration admitting it to the defence together with a positive opinion.
+   4. **Print the thesis** downloaded from APD (double-sided, Times New Roman 12, line spacing no larger than 1.5) in 4 copies bearing the automatically added control numbers, bound in thin cardboard (sea green), and deliver them to room 303 at the Mathematical Institute.
+ 
+-  ## Application to start the proceedings {#application-to-start-the-proceedings}
++  ## Application to start the proceedings {#wniosek-o-wszczęcie-postępowania}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -37,9 +37,9 @@ tresc_en: |
+   - a document confirming command of a modern foreign language at level B2 or higher — an exam at the UWr School of Foreign Languages (SPNJO), a certificate, or a diploma supplement;
+   - information on any earlier or ongoing doctoral proceedings elsewhere, and other documents requested by the chair of the discipline council.
+ 
+-  All steps should be completed **at least 2 weeks before** the planned meeting of the discipline council. Forms: [Documents and forms — doctoral thesis](/en/studia/szkola-doktorska/dokumenty#doctoral-thesis).
++  All steps should be completed **at least 2 weeks before** the planned meeting of the discipline council. Forms: [Documents and forms — doctoral thesis](/studia/szkola-doktorska/dokumenty#rozprawa-doktorska).
+ 
+-  ## Reviews and defence {#reviews-and-defence}
++  ## Reviews and defence {#recenzje-i-obrona}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -48,11 +48,11 @@ tresc_en: |
+   - A candidate who has received positive reviews from **at least 2 reviewers** may be admitted to the public defence.
+   - The date of the defence cannot be earlier than 30 days after publication in BIP; the defence notice appears in BIP at least 10 days before the defence.
+   - The defence is public. The candidate presents a summary of the thesis, the reviews are presented, followed by an open discussion in which everyone present may ask questions. In a closed session the discipline council then adopts a resolution on conferring the doctoral degree; in justified cases it may award the thesis a distinction.
+-  - Defence notices of the Mathematical Institute, with theses and reviews: [PhD defences](/en/obrony-doktorskie).
++  - Defence notices of the Mathematical Institute, with theses and reviews: [PhD defences](/obrony-doktorskie).
+ 
+   Sources: [procedure for submitting the doctoral thesis](/pliki/szkola-doktorska/dokumenty/procedura_zlozenia_rozprawy_doktorskiej.pdf), [UWr Senate Resolution No. 131/2019](/pliki/szkola-doktorska/dokumenty/2024_-_tekst_jednolity_uchwaly_nr_131_2019_w_sprawie_trybu_postepowania_o_nadanie_stopni_naukowych_dr_i_dr_hab.pdf) (consolidated text of 16 February 2024), [Rector's Ordinance No. 161/2023](/pliki/szkola-doktorska/dokumenty/nr_161-2023_z_dnia_28.06.2023_-_apd_postepowanie_doktorskie.pdf) and the [application form](/pliki/szkola-doktorska/dokumenty/wniosek_wszczecie_postepowania_szd.pdf) (Annex 20 to Rector's Ordinance No. 182/2023), all in Polish.
+ 
+-  ## Contact {#contact}
++  ## Contact {#kontakt}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+diff --git a/src/content/strony/studia/szkola-doktorska/stypendia-i-granty.md b/src/content/strony/studia/szkola-doktorska/stypendia-i-granty.md
+index f144f62..32aaeef 100644
+--- a/src/content/strony/studia/szkola-doktorska/stypendia-i-granty.md
++++ b/src/content/strony/studia/szkola-doktorska/stypendia-i-granty.md
+@@ -8,7 +8,7 @@ haslo_en: Funding your doctorate
+ tresc_en: |
+   <!-- UKŁAD JAWNY: ## rozpoczyna sekcję w spisie. Nazwę można zmieniać; {#id} zachowuje adres. Bloki :::nazwa … ::: sterują wyglądem; komentarze są tylko instrukcjami dla redaktora. -->
+ 
+-  ## Doctoral stipend {#doctoral-stipend}
++  ## Doctoral stipend {#stypendium-doktoranckie}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -21,37 +21,37 @@ tresc_en: |
+   - **Suspension for parental leave:** during a suspension corresponding to maternity, paternity or parental leave, the doctoral student keeps the right to the stipend.
+   - Payment stops at the end of the month in which the doctoral student was removed from the list of doctoral students or in which the statutory stipend period ended.
+ 
+-  ## Stipends in research projects {#stipends-in-research-projects}
++  ## Stipends in research projects {#stypendia-w-projektach-badawczych}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   Beyond the regular admission limits, candidates whose doctoral stipend is funded from sources other than the university subsidy — for example research projects or programmes — may also be admitted. With the Rector's consent, a separate admission round outside the regular schedule may be announced for them, with additional requirements related to the project. They must still obtain at least the minimum score in the admission procedure.
+ 
+-  Calls for such stipends appear in the Institute's [News](/en/aktualnosci) — for example, in April 2026 a [call was announced](/en/aktualnosci/2026-04-30-konkurs-na-stypendium-dla-doktoranta) for a four-year research stipend for a doctoral student in the project “Systems of equations and growth rates in groups” led by Dr Motiejus Valiunas.
++  Calls for such stipends appear in the Institute's [News](/aktualnosci) — for example, in April 2026 a [call was announced](/aktualnosci/2026-04-30-konkurs-na-stypendium-dla-doktoranta) for a four-year research stipend for a doctoral student in the project “Systems of equations and growth rates in groups” led by Dr Motiejus Valiunas.
+ 
+-  ## Grants, research visits and mobility {#grants-research-visits-and-mobility}
++  ## Grants, research visits and mobility {#granty-staże-i-wyjazdy}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   - **Grant applications.** The programme of the Doctoral College of Mathematics requires doctoral students to demonstrate the ability to prepare an application for research funding. Under the Doctoral School regulations, doctoral students have the right to organisational and academic support in preparing grant applications and in obtaining national and foreign scholarships.
+   - **Travel and grants.** According to the College's programme (from 2024/25), doctoral students can receive travel funding and research grants, similarly to academic staff.
+-  - **Research visits and stays abroad.** With the prior consent of the head of the College, doctoral students may go on research visits and foreign scholarships related to their thesis; time spent abroad counts towards the training period. Trips longer than one month must be reported to the supervisor and the head of the College. Form: [doctoral student's travel card](/en/studia/szkola-doktorska/dokumenty).
+-  - **MOST programme.** A national mobility programme that lets doctoral students spend time at another Polish university; admission rounds run from 15 April to 15 May and from 31 October to 30 November. Details: [MOST programme](/en/studia/program-most) and [MOST at the UWr Doctoral School](https://szd.uwr.edu.pl/most/).
++  - **Research visits and stays abroad.** With the prior consent of the head of the College, doctoral students may go on research visits and foreign scholarships related to their thesis; time spent abroad counts towards the training period. Trips longer than one month must be reported to the supervisor and the head of the College. Form: [doctoral student's travel card](/studia/szkola-doktorska/dokumenty).
++  - **MOST programme.** A national mobility programme that lets doctoral students spend time at another Polish university; admission rounds run from 15 April to 15 May and from 31 October to 30 November. Details: [MOST programme](/studia/program-most) and [MOST at the UWr Doctoral School](https://szd.uwr.edu.pl/most/).
+   - **Co-tutelle.** Rules for co-tutelle (joint supervision) agreements are set out in [Rector's Ordinance No. 167/2021](https://szd.uwr.edu.pl/wp-content/uploads/sites/189/2024/02/Nr-167_2021-z-dnia-25.10.2021-r.-cotutelle-3.pdf) (in Polish).
+   - **Młody Badacz (Young Researcher) grants** of the Excellence Initiative – Research University programme, mentioned on the previous version of this page, are no longer open — the 2020–2025 editions have ended ([information on the completed editions](https://uwr.edu.pl/uczelnia-badawcza/konkursy-2/zakonczone/mlody-badacz-2020-2025/), in Polish).
+ 
+-  ## Other benefits {#other-benefits}
++  ## Other benefits {#inne-świadczenia}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+-  - **Student loan** — available to doctoral students under 35, once and for no longer than 4 years.
++  - **Student loan** — available to doctoral students under 35; the loan is granted only once, for the period of study at the doctoral school and for no longer than 4 years.
+   - **Student housing** — doctoral students may apply for a place in a university dormitory, also with their spouse and children.
+-  - **Social and health insurance** — doctoral students are insured under separate regulations; insurance forms are on the [Documents and forms](/en/studia/szkola-doktorska/dokumenty#insurance) page.
++  - **Social and health insurance** — doctoral students are insured under separate regulations; insurance forms are on the [Documents and forms](/studia/szkola-doktorska/dokumenty#ubezpieczenia) page.
+   - **Holidays** — doctoral students are entitled to breaks of up to 8 weeks a year, to be taken outside the teaching period.
+ 
+   Sources: the Law of 20 July 2018 on Higher Education and Science (Articles 209–211) and the [rules and regulations of the UWr Doctoral School](https://szd.uwr.edu.pl/wp-content/uploads/sites/189/2024/02/ANNOUNCEMENT-of-the-Rector-of-the-University-of-Wroclaw-of-5-July-2023.pdf).
+ 
+-  See also: [Admissions](/en/studia/szkola-doktorska/rekrutacja) · [Documents and forms](/en/studia/szkola-doktorska/dokumenty)
++  See also: [Admissions](/studia/szkola-doktorska/rekrutacja) · [Documents and forms](/studia/szkola-doktorska/dokumenty)
+ opublikowany: true
+ format_tresci: jawne
+ ---
+diff --git a/src/content/strony/studia/tutornia.md b/src/content/strony/studia/tutornia.md
+index 9da6e80..ff36d25 100644
+--- a/src/content/strony/studia/tutornia.md
++++ b/src/content/strony/studia/tutornia.md
+@@ -38,10 +38,10 @@ tresc_en: |
+   <!-- LINKI: Jeden link na punkt; po — można dopisać opis. -->
+ 
+   :::linki
+-  - [Lecturers' office hours](/en/studia/zajecia#konsultacje)
+-  - [Year coordinator and key people](/en/studia/pierwszy-rok#year-coordinator-and-key-people)
+-  - [Lecture notes and problem sets](/en/studia/skrypty)
+-  - [Psychological support, ombudspersons and the Support Office](/en/studia/sprawy-studenckie#support)
++  - [Lecturers' office hours](/studia/zajecia#konsultacje)
++  - [Year coordinator and key people](/studia/pierwszy-rok#opiekun-roku-i-ważne-osoby)
++  - [Lecture notes and problem sets](/studia/skrypty)
++  - [Psychological support, ombudspersons and the Support Office](/studia/sprawy-studenckie#wsparcie)
+   :::
+ opublikowany: true
+ format_tresci: jawne
+diff --git a/src/content/strony/studia/zajecia.md b/src/content/strony/studia/zajecia.md
+index c3c3c97..b124c73 100644
+--- a/src/content/strony/studia/zajecia.md
++++ b/src/content/strony/studia/zajecia.md
+@@ -10,9 +10,9 @@ tresc_en: |
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+-  A guide to classes at the Mathematical Institute: how and when to register for courses in USOSweb, which form to submit in special situations, and where to find the timetable, exam dates and lecturers' office hours. Specialisation declarations and the choice of a thesis supervisor (forms C1–C3 and E) are described on the programme page: [Mathematics — deadlines and forms](/en/studia/matematyka#terminy).
++  A guide to classes at the Mathematical Institute: how and when to register for courses in USOSweb, which form to submit in special situations, and where to find the timetable, exam dates and lecturers' office hours. Specialisation declarations and the choice of a thesis supervisor (forms C1–C3 and E) are described on the programme page: [Mathematics — deadlines and forms](/studia/matematyka#terminy).
+ 
+-  ## Upcoming deadlines {#upcoming-deadlines}
++  ## Upcoming deadlines {#najbliższe-terminy}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -21,20 +21,20 @@ tresc_en: |
+   | Date | What |
+   | --- | --- |
+   | by 10 November 2026 (Tuesday) | withdrawal from an e-learning course run with Hasselt University — Form H2 (see [E-learning](#e-learning)) |
+-  | by 30 November 2026 | one-time withdrawal from a course after registration has closed — [Form A1 or A2](#forms) |
++  | by 30 November 2026 | one-time withdrawal from a course after registration has closed — [Form A1 or A2](#formularze) |
+   | 6–16 February 2027 | exam session — [exam schedule (PDF)](/pliki/studia/zajecia/sesja2027luty.pdf) |
+   | 17–23 February 2027 | resit session — [resit schedule (PDF)](/pliki/studia/zajecia/sesja_poprawkowa2027luty.pdf) |
+ 
+-  The full calendar of the year is on the [Academic year](/en/studia/rok-akademicki) page.
++  The full calendar of the year is on the [Academic year](/studia/rok-akademicki) page.
+ 
+-  ## Timetable and course offer {#timetable-and-course-offer}
++  ## Timetable and course offer {#plan-zajęć-i-oferta-przedmiotów}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+-  - **Timetable:** [winter semester 2026/27](/en/studia/plan-zajec#zimowy), [summer semester 2026/27](/en/studia/plan-zajec#letni). Together with the timetable, the full list of courses offered in the semester (by category, including one-off courses) is published before the semester starts.
+-  - **Day colours:** classes held every other week follow the day colours, not the week parity shown in USOS — see [Day colours](/en/studia/rok-akademicki#day-colours).
++  - **Timetable:** [winter semester 2026/27](/studia/plan-zajec#zimowy), [summer semester 2026/27](/studia/plan-zajec#letni). Together with the timetable, the full list of courses offered in the semester (by category, including one-off courses) is published before the semester starts.
++  - **Day colours:** classes held every other week follow the day colours, not the week parity shown in USOS — see [Day colours](/studia/rok-akademicki#day-colours).
+   - **Course descriptions:** [course catalogue in USOSweb](https://usosweb.uwr.edu.pl/kontroler.php?_action=katalog2%2Fprzedmioty%2FszukajPrzedmiotu&_pattern=&_prz_kod_pattern=28-MT) — syllabuses, including prerequisites (the “Założenia” section).
+-  - **First-year timetable** and information for new students: [First year](/en/studia/pierwszy-rok).
++  - **First-year timetable** and information for new students: [First year](/studia/pierwszy-rok).
+ 
+   ## Office hours {#konsultacje}
+ 
+@@ -48,11 +48,11 @@ tresc_en: |
+ 
+   Until then:
+ 
+-  - e-mail addresses and room numbers of staff and PhD students are in the [staff directory](/en/pracownicy); many entries also link to a personal website, where it is worth checking for office hours;
++  - e-mail addresses and room numbers of staff and PhD students are in the [staff directory](/pracownicy); many entries also link to a personal website, where it is worth checking for office hours;
+   - also check the lecturer's profile in [USOSweb](https://usosweb.uwr.edu.pl/);
+   - if in doubt, ask the lecturer in class or arrange a meeting by e-mail.
+ 
+-  ## Course registration {#course-registration}
++  ## Course registration {#zapisy-na-zajęcia}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -73,7 +73,7 @@ tresc_en: |
+   | 2nd (no queues) | first two weeks of the semester | register directly in groups with free places and withdraw freely |
+   | 3rd (no queues) | 1–2 days | only register for free places — withdrawal is no longer possible |
+ 
+-  > **Note:** if your request for one form of classes is rejected, your request for the whole course is rejected — e.g. no place in a lab group also means rejection from the tutorial group. Once the 2nd round has closed, you can no longer withdraw from a course except in the cases listed under [Forms](#forms).
++  > **Note:** if your request for one form of classes is rejected, your request for the whole course is rejected — e.g. no place in a lab group also means rejection from the tutorial group. Once the 2nd round has closed, you can no longer withdraw from a course except in the cases listed under [Forms](#formularze).
+ 
+   ### Group limits
+ 
+@@ -88,7 +88,7 @@ tresc_en: |
+ 
+   ### Teacher-training courses
+ 
+-  Teacher-training courses (category N) have a separate registration in USOSweb, open only to students who have declared the *mathematics teaching* specialisation on Form C1 or C3 ([deadlines](/en/studia/matematyka#terminy)).
++  Teacher-training courses (category N) have a separate registration in USOSweb, open only to students who have declared the *mathematics teaching* specialisation on Form C1 or C3 ([deadlines](/studia/matematyka#terminy)).
+ 
+   ### Good practice
+ 
+@@ -96,7 +96,7 @@ tresc_en: |
+   - For courses taught at two levels you may be registered for only one level at a time.
+   - If you decide to drop a course, withdraw at once instead of waiting for registration to end — especially for classes with a limited number of places.
+ 
+-  ## Prerequisites {#prerequisites}
++  ## Prerequisites {#wymagania-wstępne}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -112,7 +112,7 @@ tresc_en: |
+ 
+   Graduates of other universities who are unsure whether they meet the prerequisites should consult the lecturer, who takes the final decision.
+ 
+-  ## Standard and extended versions {#standard-and-extended-versions}
++  ## Standard and extended versions {#wersja-standardowa-i-rozszerzona}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -127,7 +127,7 @@ tresc_en: |
+ 
+   A student of *mathematics* or ISIM may switch from the extended to the standard version of a compulsory course even after registration has closed: submit [Form B3](https://forms.cloud.microsoft/e/h0HMFkuYvb) within the period agreed by the lecturers of both versions and announced by the end of the second week of classes. This switch does not use up the one-time right to withdraw from a course (A1/A2).
+ 
+-  ## Forms {#forms}
++  ## Forms {#formularze}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -141,7 +141,7 @@ tresc_en: |
+   | [H1](https://forms.cloud.microsoft/e/fsh598KCeu) | registration for an e-learning course run with Hasselt University | 2–3 days after the semester starts (winter 2026/27: by 5 October) |
+   | H2 | withdrawal from an e-learning course | about a month after classes start (winter 2026/27: by 10 November) |
+ 
+-  The link to Form H2 is not currently available here — if you need it, write to the teaching office (see [Contact](#contact)). Specialisation declarations (C1–C3) and the choice of a master's thesis supervisor (E): [Mathematics — deadlines and forms](/en/studia/matematyka#terminy).
++  The link to Form H2 is not currently available here — if you need it, write to the teaching office (see [Contact](#kontakt)). Specialisation declarations (C1–C3) and the choice of a master's thesis supervisor (E): [Mathematics — deadlines and forms](/studia/matematyka#terminy).
+ 
+   ### Withdrawing after registration has closed
+ 
+@@ -151,20 +151,20 @@ tresc_en: |
+   2. withdrawal from an e-learning course run with Hasselt University — Form H2 (see [E-learning](#e-learning));
+   3. **one-time withdrawal from a course** — once per degree (once in the bachelor's and once in the master's programme), by **30 November** (winter semester) or **30 April** (summer semester): Form A1 (bachelor's) or A2 (master's). For courses with a team project (e.g. *Zespołowy projekt specjalnościowy*, in English Specialisation team project) the lecturer's consent is also required. This right is independent of the corresponding right at the Institute of Computer Science.
+ 
+-  ## Repeating a course {#repeating-a-course}
++  ## Repeating a course {#powtarzanie-przedmiotu}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+   - A student who has failed a compulsory course must register for it again at the first opportunity; repeating a course is subject to a fee.
+   - Tutorials or labs you have already passed remain valid: if you failed only the exam, after registering again you attend only the lecture and take the exam. Because USOS requires registration for all forms of classes, register for **group no. 99** in that case. For courses with both tutorials and labs, this rule applies to each of them separately.
+-  - The rule does not apply to a new course of study (e.g. after re-admission or in the master's programme). If you are unsure whether a credit is still valid, contact the [Faculty Office](/en/studia/sprawy-studenckie).
++  - The rule does not apply to a new course of study (e.g. after re-admission or in the master's programme). If you are unsure whether a credit is still valid, contact the [Faculty Office](/studia/sprawy-studenckie).
+   - For a course taught at two levels, you may choose the version of the course you repeat (the standard version is recommended).
+ 
+-  ## Exam session {#exam-session}
++  ## Exam session {#sesja-egzaminacyjna}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+-  In the academic year 2026/27 the winter exam session runs from 6 to 16 February 2027 and the resit session from 17 to 23 February 2027; in the summer semester — from 18 June to 1 July 2027 and from 1 to 9 September 2027 ([Academic year](/en/studia/rok-akademicki)).
++  In the academic year 2026/27 the winter exam session runs from 6 to 16 February 2027 and the resit session from 17 to 23 February 2027; in the summer semester — from 18 June to 1 July 2027 and from 1 to 9 September 2027 ([Academic year](/studia/rok-akademicki)).
+ 
+   ### Exam dates for lectures
+ 
+@@ -173,7 +173,7 @@ tresc_en: |
+   - [main session schedule, February 2027 (PDF)](/pliki/studia/zajecia/sesja2027luty.pdf)
+   - [resit session schedule, February 2027 (PDF)](/pliki/studia/zajecia/sesja_poprawkowa2027luty.pdf)
+ 
+-  Exam dates for lectures not included in these schedules are announced by the lecturer. The schedules also give the dates of the written bachelor's and master's exams — more on [Exams and diploma](/en/studia/egzaminy-i-dyplom).
++  Exam dates for lectures not included in these schedules are announced by the lecturer. The schedules also give the dates of the written bachelor's and master's exams — more on [Exams and diploma](/studia/egzaminy-i-dyplom).
+ 
+   ### Key rules (Study Regulations)
+ 
+@@ -182,7 +182,7 @@ tresc_en: |
+   - You have the right to two attempts: the main one in the exam session and a resit in the resit session. If you pass at the first attempt, you cannot take the resit. An earlier exam date is possible on terms set by the examiner (§ 34).
+   - If your absence from an exam is excused, the examiner sets a new date; with the Dean's consent exams may be held up to 10 days after the end of the session (§ 34).
+   - The curriculum may include at most 8 exams per academic year and at most 5 per session (§ 30).
+-  - Check your grades in USOSweb and report a wrong or missing grade to the teacher within 3 working days. Appeals and other procedures: [Student affairs](/en/studia/sprawy-studenckie).
++  - Check your grades in USOSweb and report a wrong or missing grade to the teacher within 3 working days. Appeals and other procedures: [Student affairs](/studia/sprawy-studenckie).
+ 
+   ## E-learning {#e-learning}
+ 
+@@ -216,7 +216,7 @@ tresc_en: |
+ 
+   Pages of selected Mathematical Institute courses are on the Moodle platform [SKOS](https://skos.ii.uni.wroc.pl/course/index.php?categoryid=21).
+ 
+-  ## Other institutes and faculties {#other-institutes-and-faculties}
++  ## Other institutes and faculties {#inne-instytuty-i-wydziały}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -230,7 +230,7 @@ tresc_en: |
+ 
+   You may take a course taught at another faculty of the University and count it towards your studies with the consent of the Dean of the Faculty of Mathematics and Computer Science and of the dean of the faculty offering the course (contact that faculty's office). This applies in particular to the humanities or social sciences elective and, in the master's programme, to courses in the foundations of the natural or exact sciences. The Dean decides how the course is included in your study plan; courses counted as extracurricular are not included in the settlement of your studies but are recorded in the diploma supplement (§ 28 of the Study Regulations). Request forms: [Request forms (Faculty, Polish)](https://wmi.uwr.edu.pl/dziekanat/dokumenty/formularze-podan/).
+ 
+-  ## Language courses and PE {#language-courses-and-pe}
++  ## Language courses and PE {#lektoraty-i-wf}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -254,7 +254,7 @@ tresc_en: |
+   - Some classes are partly paid; the fee is due within 14 days of the end of the correction period, and if you do not withdraw during the correction period you are charged even if you do not attend.
+   - Rules: [regulations on PE classes and assessment (Rector's order no. 148/2026, Polish)](https://bip.uni.wroc.pl/download/attachment/53077/nr-148-2026-z-dnia-18092026-regulamin-organizacji-i-zaliczen-wf.pdf?v=1789731867).
+ 
+-  ## Contact {#contact}
++  ## Contact {#kontakt}
+ 
+   <!-- TEKST: Zwykły Markdown. Specjalny układ wymaga jawnego znacznika bloku. -->
+ 
+@@ -262,7 +262,7 @@ tresc_en: |
+   | --- | --- | --- |
+   | Registration and withdrawals, timetable | Teaching office of the Mathematical Institute — Justyna Jędrzejewska-Idczak | room 315, phone 71 375 7436, [Justyna.Jedrzejewska-Idczak@uwr.edu.pl](mailto:Justyna.Jedrzejewska-Idczak@uwr.edu.pl) |
+   | Consent to enrol without meeting the prerequisites (B1) | Deputy Director for Teaching — Dr Tomasz Elsner | room 305, [Tomasz.Elsner@math.uni.wroc.pl](mailto:Tomasz.Elsner@math.uni.wroc.pl) |
+-  | Validity of credits, passing the semester, requests to the Dean | Faculty Office (WMI) | [Student affairs](/en/studia/sprawy-studenckie) |
++  | Validity of credits, passing the semester, requests to the Dean | Faculty Office (WMI) | [Student affairs](/studia/sprawy-studenckie) |
+ opublikowany: true
+ format_tresci: jawne
+ ---

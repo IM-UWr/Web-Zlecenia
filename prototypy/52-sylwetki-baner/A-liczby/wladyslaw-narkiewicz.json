@@ -1,0 +1,27 @@
+{
+  "id": "wladyslaw-narkiewicz",
+  "liczby": [
+    {
+      "n": "1968",
+      "podpis": "Nagroda Banacha",
+      "podpis_en": "Banach Prize",
+      "z": "Nagroda Główna PTM im. Stefana Banacha"
+    },
+    {
+      "n": "1996",
+      "podpis": "pierwszy dziekan WMI",
+      "podpis_en": "first Faculty dean",
+      "z": "pierwszy dziekan Wydziału Matematyki i Informatyki"
+    },
+    {
+      "n": "1961",
+      "podpis": "doktorat u Hartmana",
+      "podpis_en": "PhD under Hartman",
+      "z": "doktorat u Stanisława Hartmana"
+    }
+  ],
+  "pominiete": [
+    "pierwsze wydanie monografii o liczbach algebraicznych"
+  ],
+  "uwagi": "Pominięto monografię 1974, bo weryfikacja notuje rozbieżność roku pierwszego wydania (Open Library: 1973, pozostałe źródła: 1974); w zamian doktorat u Hartmana, który łączy go z inną sylwetką. Rok 1996 (pierwszy dziekan WMI) potwierdza historia WMI; rozbieżność w weryfikacji dotyczy tylko wcześniejszego dziekanatu (WMiF czy WMFiCh), nie samego faktu. Liczby doktorów celowo brak (MGP 5, Duda–Weron dodają Dobrowolskiego). Podpisy 20 i 19 znaków mieszczą się w twardym limicie; krótsza wersja to „pierwszy dziekan”. Osoba żyjąca, tekst czeka na akceptację."
+}

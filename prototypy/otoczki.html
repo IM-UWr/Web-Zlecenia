@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pl"><head><meta charset="utf-8"><title>Podgląd: otoczki i baner seminarium</title>
+<style>
+  html,body{height:100%;margin:0;font:13.5px/1.3 system-ui,'Segoe UI',sans-serif;background:#0d1830;color:#fff}
+  body{display:flex;flex-direction:column}
+  #pas{display:flex;align-items:center;flex-wrap:wrap;gap:6px 14px;min-height:44px;padding:4px 14px;flex:none;box-sizing:border-box}
+  #pas b{font-weight:700}
+  #warianty{display:inline-flex;border:1px solid #ffffff55}
+  #warianty button{padding:6px 11px;border:0;background:none;color:#fff;font:inherit;cursor:pointer;white-space:nowrap}
+  #warianty button+button{border-left:1px solid #ffffff55}
+  #warianty button:hover{background:#ffffff1f}
+  #warianty button[aria-pressed=true]{background:#e4a550;color:#0d1830;font-weight:700}
+  select{padding:6px 8px;font:inherit;background:#fff;color:#111;border:0;max-width:240px}
+  label{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;cursor:pointer}
+  iframe{flex:1;width:100%;border:0;background:#fff}
+</style></head><body>
+<div id="pas"><b>Otoczki</b>
+  <span id="warianty">
+    <button data-v="">Obecne</button><button data-v="a">A Tło</button><button data-v="b">B Tło i kreska pod</button><button data-v="c">C Tło i kreska z lewej</button><button data-v="d">D Stała obwódka</button><button data-v="e">E Wypełnienie</button>
+  </span>
+  <select id="strona" aria-label="Strona"></select>
+  <label><input type="checkbox" id="wymus"> Pokaż wszystkie podświetlone</label>
+  <label><input type="checkbox" id="wiersze"> Także wiersze list</label>
+  <label><input type="checkbox" id="baner" checked> Nowy baner seminarium</label>
+</div>
+<iframe id="o" title="Podgląd strony"></iframe>
+<script>
+/* przyciski (linki wyglądające jak pozycje menu) */
+const PRZ=['.z-dz-rzad a','.z-kier a','.z-warto .rzad a','.z-skr a','.tresc ul.linki a','.z-pd-tresc .z-zob a','.z-dz-linki a'];
+/* całe wiersze list, klikalne w całości */
+const WIE=['.wa','.wiersz.klik','.z-w','.z-dz-wiersz.z-dz-klik'];
+const M=':root:root:root ';
+const stan=(v,decl,po='')=>{
+  const l=[];
+  for(const s of PRZ) l.push(`html[data-o="${v}"]${M}${s}:hover${po}`,`html[data-o="${v}"]${M}${s}:focus-visible${po}`,`html[data-o="${v}"][data-o-wymus]${M}${s}${po}`);
+  for(const s of WIE) l.push(`html[data-o="${v}"][data-o-wiersze]${M}${s}:hover${po}`,`html[data-o="${v}"][data-o-wiersze][data-o-wymus]${M}${s}${po}`);
+  return l.join(',\n')+` { ${decl} }\n`;
+};
+const wsz=(prefix,lista)=>lista.map(s=>`${prefix}${M}${s}`).join(', ');
+const CSS=`@media (min-width: 761px) {
+/* wspólne: kolory liczone na elemencie (kolor działu dziedziczy po [data-dzial]), płynna zmiana */
+${wsz('html[data-o]',PRZ)}, ${wsz('html[data-o][data-o-wiersze]',WIE)} {
+  --o-tlo: color-mix(in srgb, var(--d-a) 10%, transparent);
+  --o-tlo-m: color-mix(in srgb, var(--d-a) 7%, transparent);
+  --o-wcisk: color-mix(in srgb, var(--d-a) 18%, transparent);
+  --o-ramka: color-mix(in srgb, var(--d-a) 32%, transparent);
+  transition: background-color var(--t-krotki) var(--rytm), box-shadow var(--t-krotki) var(--rytm), color var(--t-krotki) var(--rytm);
+}
+/* klikalna otoczka: większe pole bez przesuwania tekstu (dopełnienie i ujemny margines) */
+html[data-o]${M}.z-dz-rzad a { display: inline-block; padding: 3px 10px; margin: -3px -10px; }
+html[data-o]${M}.z-kier a { padding: 6px 5px; margin: -6px -5px; }
+html[data-o]${M}.z-warto .rzad a { padding-inline: 8px; margin-inline: -8px; }
+html[data-o]${M}.tresc ul.linki a, html[data-o]${M}.z-pd-tresc .z-zob a { padding-inline: 8px; margin-inline: -8px; }
+html[data-o]${M}.z-dz-linki a { padding: 2px 6px; margin: -2px -6px; }
+html[data-o][data-o-wiersze]${M}:is(.wa, .wiersz.klik, .z-w, .z-dz-wiersz.z-dz-klik) { padding-inline: 8px; margin-inline: -8px; }
+html[data-o][data-o-wiersze]${M}.z-kolumna .pozycje { overflow: visible clip; }
+/* fokus z klawiatury zawsze widoczny */
+${wsz('html[data-o]',PRZ.map(s=>s+':focus-visible'))} { outline: 2px solid var(--d-a); outline-offset: 1px; }
+/* wciśnięcie */
+${wsz('html[data-o]',PRZ.map(s=>s+':active'))} { background-color: var(--o-wcisk) !important; }
+
+/* A: samo tło w kolorze działu */
+${stan('a','background-color: var(--o-tlo);')}
+/* B: tło i kreska pod spodem */
+${stan('b','background-color: var(--o-tlo-m); box-shadow: inset 0 -2px 0 var(--d-a);')}
+/* C: tło i kreska z lewej, jak spis „Na tej stronie” i ramka uwagi */
+${stan('c','background-color: var(--o-tlo-m); box-shadow: inset 3px 0 0 var(--d-a);')}
+/* D: obwódka widoczna zawsze, jak przyciski Planu zajęć */
+html[data-o="d"]${M}.z-dz .z-dz-rzad ul { gap: 6px 10px; }
+html[data-o="d"]${M}.z-dz-rzad a { margin: -3px 0; }
+html[data-o="d"]${M}.z-kier { gap: 0 10px; }
+html[data-o="d"]${M}.z-kier a { margin: 0; padding: 6px 8px; }
+html[data-o="d"]${M}.tresc ul.linki a, html[data-o="d"]${M}.z-pd-tresc .z-zob a { border-bottom: 0; margin: 0 -8px 6px; }
+${wsz('html[data-o="d"]',PRZ.filter(s=>s!=='.z-skr a'&&s!=='.z-dz-linki a'))} { box-shadow: inset 0 0 0 1px var(--o-ramka); }
+${stan('d','background-color: var(--o-tlo-m); box-shadow: inset 0 0 0 1px var(--d-a);')}
+/* E: pełne wypełnienie kolorem działu, jak aktywny przycisk Planu zajęć */
+${stan('e','background-color: var(--d-a); color: var(--bg) !important; text-decoration-color: currentColor;')}
+${stan('e','color: var(--bg) !important;',' :is(b, small, span, h3, a, p, time, i, strong, .t, .gdzie, .kiedy, .kto)')}
+${stan('e','color: var(--bg) !important;','::after')}
+}
+@media (min-width: 761px) {
+html[data-o-sem]${M}.z-nagl-pod :is(.z-haslo, .z-slot, .z-podpis-maly) { display: none; }
+html[data-o-sem]${M}.z-nagl-pod .z-sygnet-nagl { bottom: -5px; }
+}
+#o-koord { margin-top: 18px; }
+html:not([data-o-sem]) #o-koord { display: none; }
+${M}#o-koord .kontakty a { text-decoration-thickness: 1px; }
+${M}#o-koord b { margin: 2px 0 0; font-size: 19px; }
+${M}#o-koord .wart { display: block; margin-top: 3px; font-size: 15.5px; line-height: 1.45; }
+@media (prefers-reduced-motion: reduce) {
+  ${wsz('html[data-o]',PRZ)}, ${wsz('html[data-o][data-o-wiersze]',WIE)} { transition: none; }
+}`;
+const STRONY=[['Działy (menu w pasie)',[['Instytut: Władze, Pracownicy…','instytut'],['Studia: kierunki','studia'],['Nauka','nauka'],['Popularyzacja','popularyzacja']]],
+['Strona główna',[['Szybki dostęp: kierunki, Warto wiedzieć','#druga']]],
+['Seminarium (nowy baner)',[['Teoria prawdopodobieństwa','seminaria/prawdopodobienstwo'],['Geometria','seminaria/geometria'],['Dyskretna analiza harmoniczna','seminaria/dyskretna-analiza-harmoniczna']]],
+['Podstrony',[['Władze Instytutu („Zobacz też”)','instytut/wladze'],['Seminaria','seminaria'],['Obrony','obrony-doktorskie'],['Aktualności','aktualnosci']]]];
+const BAZA='/Web-Core/';
+const o=document.getElementById('o'), wyb=document.getElementById('strona'), wymus=document.getElementById('wymus'), wiersze=document.getElementById('wiersze'), baner=document.getElementById('baner'), przyciski=[...document.querySelectorAll('#warianty button')];
+for(const [g,l] of STRONY){const og=document.createElement('optgroup');og.label=g;for(const [n,a] of l){const op=document.createElement('option');op.value=a;op.textContent=n;og.append(op);}wyb.append(og);}
+const z=location.hash;
+let wariant=(z.match(/g=([a-e])/)||[])[1]??'a'; if(/g=0/.test(z)) wariant='';
+wymus.checked=/w=1/.test(z); wiersze.checked=/l=1/.test(z);
+const startowa=decodeURIComponent((z.match(/s=([^&]*)/)||[])[1]||'instytut');
+let doDrugiego=false;
+/* seminarium: w banerze tylko nazwa (sygnet i link wstecz zostają); koordynatorzy, e-mail i zakład w treści, wzorzec .kontakty */
+function seminarium(d){
+  const tresc=d.querySelector('.z-pd-tresc.z-sm'), nag=d.querySelector('.z-nagl-pod'), zr=d.querySelector('.sem-koord');
+  if(!tresc||!nag) return;
+  if(nag.dataset.oL===undefined) nag.dataset.oL=nag.classList.contains('z-liczbami')?'1':'0';
+  d.documentElement.toggleAttribute('data-o-sem',baner.checked);
+  nag.classList.toggle('z-liczbami',!baner.checked&&nag.dataset.oL==='1');
+  if(d.getElementById('o-koord')||!zr) return;
+  const blok=d.createElement('div'); blok.id='o-koord'; blok.className='kontakty';
+  const kol=(etyk,html)=>{const k=d.createElement('div');k.innerHTML='<span class="etyk">'+etyk+'</span>'+html;blok.append(k);};
+  const naz=zr.querySelector('.sem-koord-n'), et=zr.querySelector('.sem-koord-l');
+  if(naz){const l=[...naz.querySelectorAll('a')]; kol(et?et.textContent.trim():'Koordynatorzy',(l.length?l.map(a=>'<b>'+a.outerHTML+'</b>').join(''):'<b>'+naz.innerHTML+'</b>'));}
+  const li=[...zr.querySelectorAll('.sem-meta li')];
+  const mail=li.find(x=>x.querySelector('a[href^="mailto:"]')); if(mail) kol('Kontakt','<span class="wart">'+mail.querySelector('a').outerHTML+'</span>');
+  const zak=li.filter(x=>x!==mail); if(zak.length) kol(zak.length>1?'Zakłady':'Zakład',zak.map(x=>'<span class="wart">'+x.querySelector('a').outerHTML+'</span>').join(''));
+  const opis=tresc.querySelector(':scope > .opis'); if(opis) opis.append(blok); else tresc.prepend(blok);
+}
+function nalozy(){
+  const d=o.contentDocument; if(!d) return;
+  const e=d.documentElement;
+  if(wariant) e.dataset.o=wariant; else delete e.dataset.o;
+  e.toggleAttribute('data-o-wymus',wymus.checked); e.toggleAttribute('data-o-wiersze',wiersze.checked);
+  if(!d.getElementById('o-otoczki')){const s=d.createElement('style');s.id='o-otoczki';s.textContent=CSS;d.head.append(s);}
+  seminarium(d);
+  przyciski.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.v===wariant)));
+  history.replaceState(null,'','#g='+(wariant||'0')+'&w='+(wymus.checked?1:0)+'&l='+(wiersze.checked?1:0)+'&s='+encodeURIComponent(wyb.value));
+}
+/* styl nakładany od razu po powstaniu dokumentu, bez czekania na zdjęcia (także po kliknięciu linku w ramce) */
+function czuwaj(){ const t=setInterval(()=>{ let d; try{d=o.contentDocument;}catch(e){return;} if(d&&d.head&&d.body&&d.URL!=='about:blank'&&!d.getElementById('o-otoczki')){ clearInterval(t); nalozy(); o.contentWindow.addEventListener('pagehide',czuwaj,{once:true}); } },40); setTimeout(()=>clearInterval(t),15000); }
+function idz(a){ doDrugiego=a==='#druga'; o.src=doDrugiego?BAZA:BAZA+a; czuwaj(); }
+o.addEventListener('load',()=>{nalozy(); if(doDrugiego){const d=o.contentDocument,el=d.querySelector('.z-druga-obszar,.z-druga'); if(el) o.contentWindow.scrollTo({top:el.getBoundingClientRect().top,behavior:'instant'});}});
+przyciski.forEach(b=>b.addEventListener('click',()=>{wariant=b.dataset.v;nalozy();}));
+wymus.addEventListener('change',nalozy); wiersze.addEventListener('change',nalozy); baner.addEventListener('change',nalozy);
+wyb.addEventListener('change',()=>idz(wyb.value));
+wyb.value=startowa; idz(startowa);
+</script>
+</body></html>

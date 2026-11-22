@@ -1,0 +1,563 @@
+diff --git a/.pages.yml b/.pages.yml
+index b92693f..e5014ca 100644
+--- a/.pages.yml
++++ b/.pages.yml
+@@ -176,6 +176,9 @@ content:
+     - name: podpis
+       label: Podpis
+       type: string
++    - name: podpis_en
++      label: Podpis EN
++      type: string
+     - name: pozycja
+       type: boolean
+       hidden: true
+diff --git a/src/content/aktualnosci/2015-01-01-stypendium-im-hugona-steinhausa-dla-grzegorza-swiderskiego.md b/src/content/aktualnosci/2015-01-01-stypendium-im-hugona-steinhausa-dla-grzegorza-swiderskiego.md
+index bf6db5a..7a3e233 100644
+--- a/src/content/aktualnosci/2015-01-01-stypendium-im-hugona-steinhausa-dla-grzegorza-swiderskiego.md
++++ b/src/content/aktualnosci/2015-01-01-stypendium-im-hugona-steinhausa-dla-grzegorza-swiderskiego.md
+@@ -5,7 +5,7 @@ rodzaj: "sukces"
+ zajawka: "Mgr Grzegorz Świderski otrzymał Stypendium im. Hugona Steinhausa przyznawane przez Wrocławskie Centrum Akademickie."
+ zdjecie: "/pliki/aktualnosci/swiderski.jpg"
+ zdjecie_opis: "Mgr Grzegorz Świderski"
+-zdjecie_opis_en: "Grzegorz Świderski, MSc"
++zdjecie_opis_en: "Grzegorz Świderski"
+ tytul_en: "Hugo Steinhaus Scholarship for Grzegorz Świderski"
+ zajawka_en: "Grzegorz Świderski has received the Hugo Steinhaus Scholarship awarded by the Wrocław Academic Centre."
+ tresc_en: |
+diff --git a/src/content/aktualnosci/2016-11-13-stypendium-im-steinhausa-dla-daniela-hoffmanna.md b/src/content/aktualnosci/2016-11-13-stypendium-im-steinhausa-dla-daniela-hoffmanna.md
+index a388f58..0273e48 100644
+--- a/src/content/aktualnosci/2016-11-13-stypendium-im-steinhausa-dla-daniela-hoffmanna.md
++++ b/src/content/aktualnosci/2016-11-13-stypendium-im-steinhausa-dla-daniela-hoffmanna.md
+@@ -7,7 +7,7 @@ dla:
+ zajawka: "Doktorant mgr Daniel Hoffmann otrzymał Stypendium im. Hugona Steinhausa; wyróżniony został także mgr Piotr Dyszewski."
+ zdjecie: "/pliki/aktualnosci/hoffmann2.jpg"
+ zdjecie_opis: "Mgr Daniel Hoffmann"
+-zdjecie_opis_en: "Daniel Hoffmann, MSc"
++zdjecie_opis_en: "Daniel Hoffmann"
+ tytul_en: "Hugo Steinhaus Scholarship for Daniel Hoffmann"
+ zajawka_en: "PhD student Daniel Hoffmann has received the Hugo Steinhaus Scholarship; Piotr Dyszewski received an honourable mention."
+ tresc_en: |
+diff --git a/src/content/aktualnosci/2017-11-13-agnieszka-hejna-laureatka-konkursu-najlepszy-dyplom-roku.md b/src/content/aktualnosci/2017-11-13-agnieszka-hejna-laureatka-konkursu-najlepszy-dyplom-roku.md
+index 1299f62..241889c 100644
+--- a/src/content/aktualnosci/2017-11-13-agnieszka-hejna-laureatka-konkursu-najlepszy-dyplom-roku.md
++++ b/src/content/aktualnosci/2017-11-13-agnieszka-hejna-laureatka-konkursu-najlepszy-dyplom-roku.md
+@@ -5,7 +5,7 @@ rodzaj: "sukces"
+ zajawka: "Doktorantka mgr Agnieszka Hejna zdobyła nagrodę Marszałka Województwa Dolnośląskiego w konkursie „Najlepszy Dyplom Roku”."
+ zdjecie: "/pliki/aktualnosci/hejna5.jpg"
+ zdjecie_opis: "Mgr Agnieszka Hejna"
+-zdjecie_opis_en: "Agnieszka Hejna, MSc"
++zdjecie_opis_en: "Agnieszka Hejna"
+ tytul_en: "Agnieszka Hejna wins the “Best Diploma of the Year” competition"
+ zajawka_en: "PhD student Agnieszka Hejna has received the Marshal of the Lower Silesian Voivodeship award in the “Best Diploma of the Year” competition."
+ tresc_en: "We are pleased to announce that our PhD student **Agnieszka Hejna** has received the award of the Marshal of the Lower Silesian Voivodeship in the *Najlepszy Dyplom Roku* (Best Diploma of the Year) competition for her master's thesis, supervised by Prof. Jacek Dziubański."
+diff --git a/src/content/aktualnosci/2017-11-14-stypendium-im-steinhausa-dla-piotra-dyszewskiego.md b/src/content/aktualnosci/2017-11-14-stypendium-im-steinhausa-dla-piotra-dyszewskiego.md
+index ddc0b7e..1874313 100644
+--- a/src/content/aktualnosci/2017-11-14-stypendium-im-steinhausa-dla-piotra-dyszewskiego.md
++++ b/src/content/aktualnosci/2017-11-14-stypendium-im-steinhausa-dla-piotra-dyszewskiego.md
+@@ -5,7 +5,7 @@ rodzaj: "sukces"
+ zajawka: "Doktorant mgr Piotr Dyszewski otrzymał Stypendium im. Hugona Steinhausa przyznawane przez Wrocławskie Centrum Akademickie."
+ zdjecie: "/pliki/aktualnosci/dyszewski4.jpg"
+ zdjecie_opis: "Mgr Piotr Dyszewski"
+-zdjecie_opis_en: "Piotr Dyszewski, MSc"
++zdjecie_opis_en: "Piotr Dyszewski"
+ tytul_en: "Hugo Steinhaus Scholarship for Piotr Dyszewski"
+ zajawka_en: "PhD student Piotr Dyszewski has received the Hugo Steinhaus Scholarship awarded by the Wrocław Academic Centre."
+ tresc_en: |
+diff --git a/src/content/aktualnosci/2018-03-29-agnieszka-hejna-laureatka-nagrody-im-jozefa-marcinkiewicza.md b/src/content/aktualnosci/2018-03-29-agnieszka-hejna-laureatka-nagrody-im-jozefa-marcinkiewicza.md
+index 72ec9e6..b0c50e8 100644
+--- a/src/content/aktualnosci/2018-03-29-agnieszka-hejna-laureatka-nagrody-im-jozefa-marcinkiewicza.md
++++ b/src/content/aktualnosci/2018-03-29-agnieszka-hejna-laureatka-nagrody-im-jozefa-marcinkiewicza.md
+@@ -5,7 +5,7 @@ rodzaj: "sukces"
+ zajawka: "Doktorantka mgr Agnieszka Hejna otrzymała II nagrodę w LXI edycji Konkursu im. Józefa Marcinkiewicza."
+ zdjecie: "/pliki/aktualnosci/hejna5.jpg"
+ zdjecie_opis: "Mgr Agnieszka Hejna"
+-zdjecie_opis_en: "Agnieszka Hejna, MSc"
++zdjecie_opis_en: "Agnieszka Hejna"
+ tytul_en: "Agnieszka Hejna wins a Józef Marcinkiewicz Prize"
+ zajawka_en: "PhD student Agnieszka Hejna won second prize in the 61st Józef Marcinkiewicz competition."
+ tresc_en: |
+diff --git a/src/content/aktualnosci/2018-04-10-agnieszka-hejna-laureatka-konkursu-krok-w-przyszlosc.md b/src/content/aktualnosci/2018-04-10-agnieszka-hejna-laureatka-konkursu-krok-w-przyszlosc.md
+index 13c5722..b9efe3a 100644
+--- a/src/content/aktualnosci/2018-04-10-agnieszka-hejna-laureatka-konkursu-krok-w-przyszlosc.md
++++ b/src/content/aktualnosci/2018-04-10-agnieszka-hejna-laureatka-konkursu-krok-w-przyszlosc.md
+@@ -7,7 +7,7 @@ dla:
+ zajawka: "Doktorantka mgr Agnieszka Hejna zdobyła nagrodę główną konkursu Fundacji mBanku na najlepszą pracę studencką z matematyki."
+ zdjecie: "/pliki/aktualnosci/hejna5.jpg"
+ zdjecie_opis: "Mgr Agnieszka Hejna"
+-zdjecie_opis_en: "Agnieszka Hejna, MSc"
++zdjecie_opis_en: "Agnieszka Hejna"
+ tytul_en: "Agnieszka Hejna wins the “Krok w Przyszłość” (Step into the Future) competition"
+ zajawka_en: "PhD student Agnieszka Hejna has won the main prize of the mBank Foundation competition for the best student paper in mathematics."
+ tresc_en: |
+diff --git a/src/content/aktualnosci/2018-11-12-stypendium-im-steinhausa-dla-agnieszki-hejny.md b/src/content/aktualnosci/2018-11-12-stypendium-im-steinhausa-dla-agnieszki-hejny.md
+index 1b8131b..dab2dba 100644
+--- a/src/content/aktualnosci/2018-11-12-stypendium-im-steinhausa-dla-agnieszki-hejny.md
++++ b/src/content/aktualnosci/2018-11-12-stypendium-im-steinhausa-dla-agnieszki-hejny.md
+@@ -5,7 +5,7 @@ rodzaj: "sukces"
+ zajawka: "Doktorantka mgr Agnieszka Hejna otrzymała Stypendium im. Hugona Steinhausa przyznawane przez Wrocławskie Centrum Akademickie."
+ zdjecie: "/pliki/aktualnosci/hejna2.jpg"
+ zdjecie_opis: "Mgr Agnieszka Hejna"
+-zdjecie_opis_en: "Agnieszka Hejna, MSc"
++zdjecie_opis_en: "Agnieszka Hejna"
+ tytul_en: "Hugo Steinhaus Scholarship for Agnieszka Hejna"
+ zajawka_en: "PhD student Agnieszka Hejna has received the Hugo Steinhaus Scholarship awarded by the Wrocław Academic Centre."
+ tresc_en: |
+diff --git a/src/content/aktualnosci/2019-11-14-stypendium-im-steinhausa-dla-edyty-kani.md b/src/content/aktualnosci/2019-11-14-stypendium-im-steinhausa-dla-edyty-kani.md
+index a156d57..2760069 100644
+--- a/src/content/aktualnosci/2019-11-14-stypendium-im-steinhausa-dla-edyty-kani.md
++++ b/src/content/aktualnosci/2019-11-14-stypendium-im-steinhausa-dla-edyty-kani.md
+@@ -5,7 +5,7 @@ rodzaj: "sukces"
+ zajawka: "Doktorantka mgr Edyta Kania otrzymała Stypendium im. Hugona Steinhausa przyznawane przez Wrocławskie Centrum Akademickie."
+ zdjecie: "/pliki/aktualnosci/edyta_kania.jpg"
+ zdjecie_opis: "Mgr Edyta Kania"
+-zdjecie_opis_en: "Edyta Kania, MSc"
++zdjecie_opis_en: "Edyta Kania"
+ tytul_en: "Hugo Steinhaus Scholarship for Edyta Kania"
+ zajawka_en: "PhD student Edyta Kania has received the Hugo Steinhaus Scholarship awarded by the Wrocław Academic Centre."
+ tresc_en: |
+diff --git a/src/content/aktualnosci/2020-03-23-agnieszka-hejna-laureatka-nagrody-ptm.md b/src/content/aktualnosci/2020-03-23-agnieszka-hejna-laureatka-nagrody-ptm.md
+index b27706e..a6dd2b5 100644
+--- a/src/content/aktualnosci/2020-03-23-agnieszka-hejna-laureatka-nagrody-ptm.md
++++ b/src/content/aktualnosci/2020-03-23-agnieszka-hejna-laureatka-nagrody-ptm.md
+@@ -8,7 +8,7 @@ dla:
+ zajawka: "Mgr Agnieszka Hejna otrzymała nagrodę Polskiego Towarzystwa Matematycznego dla Młodych Matematyków za cykl pięciu prac z analizy harmonicznej."
+ zdjecie: "/pliki/aktualnosci/hejna2.jpg"
+ zdjecie_opis: "Mgr Agnieszka Hejna"
+-zdjecie_opis_en: "Agnieszka Hejna, MSc"
++zdjecie_opis_en: "Agnieszka Hejna"
+ tytul_en: "Agnieszka Hejna receives the Polish Mathematical Society Prize"
+ zajawka_en: "Agnieszka Hejna has received the Polish Mathematical Society Prize for Young Mathematicians for a series of five papers in harmonic analysis."
+ tresc_en: "We are pleased to announce that **Agnieszka Hejna** of the Mathematical Institute of the University of Wrocław, a PhD student of Prof. Jacek Dziubański, has received the [Polish Mathematical Society Prize for Young Mathematicians](https://www.ptm.org.pl/kategorie/konkursy/konkurs-dla-mlodych-matematykow) for a series of five papers in harmonic analysis published in renowned mathematical journals."
+diff --git a/src/content/aktualnosci/2021-03-19-nagroda-dla-agnieszki-hejny.md b/src/content/aktualnosci/2021-03-19-nagroda-dla-agnieszki-hejny.md
+index 4341958..314e581 100644
+--- a/src/content/aktualnosci/2021-03-19-nagroda-dla-agnieszki-hejny.md
++++ b/src/content/aktualnosci/2021-03-19-nagroda-dla-agnieszki-hejny.md
+@@ -8,7 +8,7 @@ dla:
+ zajawka: "Mgr Agnieszka Hejna otrzymała nagrodę specjalną Polskiego Towarzystwa Kobiet w Matematyce w III edycji Konkursu im. Edyty Szymańskiej."
+ zdjecie: "/pliki/aktualnosci/hejna2_1.jpg"
+ zdjecie_opis: "Mgr Agnieszka Hejna"
+-zdjecie_opis_en: "Agnieszka Hejna, MSc"
++zdjecie_opis_en: "Agnieszka Hejna"
+ tytul_en: "Award for Agnieszka Hejna"
+ zajawka_en: "Agnieszka Hejna has received the special prize of the Polish Women in Mathematics society in the third edition of the Edyta Szymańska Competition."
+ tresc_en: "We are pleased to announce that **Agnieszka Hejna** has received the special prize funded by the Polish Women in Mathematics society for participants of the [third edition of the Edyta Szymańska Competition](https://wmi.amu.edu.pl/zycie-naukowe/konkurs-im.-edyty-szymanskiej)."
+diff --git a/src/content/aktualnosci/2021-11-16-stypendium-im-steinhausa-dla-szymona-cygana.md b/src/content/aktualnosci/2021-11-16-stypendium-im-steinhausa-dla-szymona-cygana.md
+index 4b2e4dd..b782ef0 100644
+--- a/src/content/aktualnosci/2021-11-16-stypendium-im-steinhausa-dla-szymona-cygana.md
++++ b/src/content/aktualnosci/2021-11-16-stypendium-im-steinhausa-dla-szymona-cygana.md
+@@ -8,7 +8,7 @@ dla:
+ zajawka: "Doktorant mgr Szymon Cygan otrzymał Stypendium im. Hugona Steinhausa przyznawane przez Wrocławskie Centrum Akademickie."
+ zdjecie: "/pliki/aktualnosci/scygan.jpg"
+ zdjecie_opis: "Mgr Szymon Cygan"
+-zdjecie_opis_en: "Szymon Cygan, MSc"
++zdjecie_opis_en: "Szymon Cygan"
+ tytul_en: "Hugo Steinhaus Scholarship for Szymon Cygan"
+ zajawka_en: "PhD student Szymon Cygan has received the Hugo Steinhaus Scholarship awarded by the Wrocław Academic Centre."
+ tresc_en: |
+diff --git a/src/content/aktualnosci/2024-11-14-stypendium-im-steinhausa-dla-macieja-korpalskiego.md b/src/content/aktualnosci/2024-11-14-stypendium-im-steinhausa-dla-macieja-korpalskiego.md
+index bc7cf86..e8f629a 100644
+--- a/src/content/aktualnosci/2024-11-14-stypendium-im-steinhausa-dla-macieja-korpalskiego.md
++++ b/src/content/aktualnosci/2024-11-14-stypendium-im-steinhausa-dla-macieja-korpalskiego.md
+@@ -8,7 +8,7 @@ dla:
+ zajawka: "Doktorant mgr Maciej Korpalski otrzymał Stypendium im. Hugona Steinhausa przyznawane przez Wrocławskie Centrum Akademickie."
+ zdjecie: "/pliki/aktualnosci/maciek_korpalski_2024.jpg"
+ zdjecie_opis: "Mgr Maciej Korpalski"
+-zdjecie_opis_en: "Maciej Korpalski, MSc"
++zdjecie_opis_en: "Maciej Korpalski"
+ tytul_en: "Hugo Steinhaus Scholarship for Maciej Korpalski"
+ zajawka_en: "PhD student Maciej Korpalski has received the Hugo Steinhaus Scholarship awarded by the Wrocław Academic Centre."
+ tresc_en: |
+diff --git a/src/content/aktualnosci/2025-11-05-stypendium-im-steinhausa-dla-piotra-blaszkiewicza.md b/src/content/aktualnosci/2025-11-05-stypendium-im-steinhausa-dla-piotra-blaszkiewicza.md
+index 3136172..67718fd 100644
+--- a/src/content/aktualnosci/2025-11-05-stypendium-im-steinhausa-dla-piotra-blaszkiewicza.md
++++ b/src/content/aktualnosci/2025-11-05-stypendium-im-steinhausa-dla-piotra-blaszkiewicza.md
+@@ -8,7 +8,7 @@ dla:
+ zajawka: "Doktorant mgr Piotr Błaszkiewicz otrzymał Stypendium im. Hugona Steinhausa przyznawane przez Wrocławskie Centrum Akademickie."
+ zdjecie: "/pliki/aktualnosci/piotr_blaszkiewicz.jpg"
+ zdjecie_opis: "Mgr Piotr Błaszkiewicz"
+-zdjecie_opis_en: "Piotr Błaszkiewicz, MSc"
++zdjecie_opis_en: "Piotr Błaszkiewicz"
+ tytul_en: "Hugo Steinhaus Scholarship for Piotr Błaszkiewicz"
+ zajawka_en: "PhD student Piotr Błaszkiewicz has received the Hugo Steinhaus Scholarship awarded by the Wrocław Academic Centre."
+ tresc_en: |
+diff --git a/src/content/aktualnosci/2026-04-20-konkurs-prac-dyplomowych.md b/src/content/aktualnosci/2026-04-20-konkurs-prac-dyplomowych.md
+index 001aec6..85c937b 100644
+--- a/src/content/aktualnosci/2026-04-20-konkurs-prac-dyplomowych.md
++++ b/src/content/aktualnosci/2026-04-20-konkurs-prac-dyplomowych.md
+@@ -26,10 +26,10 @@ tresc_en: |
+ 
+   - **1st place** (PLN 1500): **Jakub Janeczko**, *Akcelerator graficzny fixed-pipeline oparty na FPGA* (An FPGA-based fixed-pipeline graphics accelerator), supervisor: Dr Marek Materzok
+   - **2nd place** (PLN 1000):
+-    - **Zuzanna Kurnicka**, *Implementacja systemu dystrybucji powiadomień na platformie MS Teams w oparciu o architekturę chmurową MS Azure* (Implementing a notification distribution system on the MS Teams platform using the MS Azure cloud architecture), supervisor: Paweł Rzechonek, MSc
+-    - **Kacper Misiaszek**, *But: Infrastructure Automation for Programming Contests*, supervisor: Tomasz Wierzbicki, MSc
++    - **Zuzanna Kurnicka**, *Implementacja systemu dystrybucji powiadomień na platformie MS Teams w oparciu o architekturę chmurową MS Azure* (Implementing a notification distribution system on the MS Teams platform using the MS Azure cloud architecture), supervisor: Paweł Rzechonek
++    - **Kacper Misiaszek**, *But: Infrastructure Automation for Programming Contests*, supervisor: Tomasz Wierzbicki
+   - **3rd place** (PLN 500):
+-    - **Agnieszka Grala**, *Self-Supervised Learning in Deep Switching Kalman Filters*, supervisors: Dr hab. Piotr Wnuk-Lipiński, Mikołaj Słupiński, MSc
++    - **Agnieszka Grala**, *Self-Supervised Learning in Deep Switching Kalman Filters*, supervisors: Dr hab. Piotr Wnuk-Lipiński, Mikołaj Słupiński
+     - **Michał Siwiec**, *Maszyna do rozwiązywania Sudoku* (A Sudoku-solving machine), supervisor: Prof. Krzysztof Loryś
+     - **Wiktor Zoga**, *Generations in self-similar fragmentation of positive index*, supervisor: Dr Piotr Dyszewski
+ 
+diff --git a/src/content/aktualnosci/2026-05-29-lvzhou-chen-laureatem-nagrody-im-kamila-duszenki.md b/src/content/aktualnosci/2026-05-29-lvzhou-chen-laureatem-nagrody-im-kamila-duszenki.md
+index 46936c9..21bbf73 100644
+--- a/src/content/aktualnosci/2026-05-29-lvzhou-chen-laureatem-nagrody-im-kamila-duszenki.md
++++ b/src/content/aktualnosci/2026-05-29-lvzhou-chen-laureatem-nagrody-im-kamila-duszenki.md
+@@ -16,7 +16,7 @@ tresc_en: |
+ 
+   Chen's work is motivated by a variety of problems in geometric group theory, where he uses topological, combinatorial and dynamical approaches. He is an expert on stable commutator length and has made significant contributions to the theory of mapping class groups of infinite-genus surfaces. Together with Yash Lodha he solved Wiegold's problem through a novel and creative spectral-gap result for a variant of stable commutator length.
+ 
+-  Chen is widely involved in mentoring undergraduate students, among others through the experimental geometry lab at Purdue, directed reading programmes and student math clubs.
++  Chen is widely involved in mentoring undergraduate students, among others through the experimental geometry lab at Purdue, directed reading programmes and student mathematics clubs.
+ 
+   In his free time he enjoys playing games, watching films and listening to music.
+ 
+diff --git a/src/content/aktualnosci/2026-06-19-seminarium-ze-statystyki.md b/src/content/aktualnosci/2026-06-19-seminarium-ze-statystyki.md
+index 43889d8..fdf0ec0 100644
+--- a/src/content/aktualnosci/2026-06-19-seminarium-ze-statystyki.md
++++ b/src/content/aktualnosci/2026-06-19-seminarium-ze-statystyki.md
+@@ -28,16 +28,16 @@ tresc_en: |
+ 
+   ## Part I: Monday 22 June, 11:00, room 602
+ 
+-  - Dr Michał Kos (IM UWr) — *FDR Control via Sorted L-One Penalized Estimator (SLOPE) Method*
+-  - Prof. Małgorzata Bogdan (IM UWr) — *From Structured Sparsity to Causal Effects: GSLOPE, PCGLASSO, and SLOPE-Based Doubly Robust Inference*
+-  - Krystyna Grzesiak (IM UWr) — *Evaluating Imputation Methods*
++  - Dr Michał Kos (Mathematical Institute, UWr) — *FDR Control via Sorted L-One Penalized Estimator (SLOPE) Method*
++  - Prof. Małgorzata Bogdan (Mathematical Institute, UWr) — *From Structured Sparsity to Causal Effects: GSLOPE, PCGLASSO, and SLOPE-Based Doubly Robust Inference*
++  - Krystyna Grzesiak (Mathematical Institute, UWr) — *Evaluating Imputation Methods*
+   - Dominik Nowakowski (Medical University of Białystok) — *missKnockoffs: A Model-X Knockoff Framework for Variable Selection with Missing Data*
+ 
+   ## Part II: Wednesday 24 June, 11:00, room 605
+ 
+-  - Joanna Pokora (IM UWr) — *Adaptive Bayesian SLOPE*
++  - Joanna Pokora (Mathematical Institute, UWr) — *Adaptive Bayesian SLOPE*
+   - Maria Bochenek (MIM UW) — *Network flow methods for alignment and deconvolution of multidimensional spectra*
+-  - Dr Mateusz Staniak (IM UWr) — *Modeling Hydrogen-Deuterium Exchange Mass Spectrometry data via convolutions of exchange probabilities*
++  - Dr Mateusz Staniak (Mathematical Institute, UWr) — *Modeling Hydrogen-Deuterium Exchange Mass Spectrometry data via convolutions of exchange probabilities*
+   - Dr Michał Tracz (Faculty of Biotechnology, UWr) — *Challenges of AP-MS data interpretation in biological relevance driven studies*
+   - Dr Vanessa Linke (International Institute of Molecular and Cell Biology) — *What Counts as Significant? Lessons from Applied Proteomics*
+ 
+diff --git a/src/content/aktualnosci/2026-07-14-szkola-baby-steps-beyond-the-horizon.md b/src/content/aktualnosci/2026-07-14-szkola-baby-steps-beyond-the-horizon.md
+index 36fddb0..b519f09 100644
+--- a/src/content/aktualnosci/2026-07-14-szkola-baby-steps-beyond-the-horizon.md
++++ b/src/content/aktualnosci/2026-07-14-szkola-baby-steps-beyond-the-horizon.md
+@@ -20,9 +20,9 @@ tresc_en: |
+ 
+   The aim of the school is to show students diverse and rapidly developing mathematics before they enter a narrow specialisation. It is intended mainly for final-year bachelor's and master's students, but PhD students are very welcome. The school is hybrid — remote streaming allows lecturers and students from abroad to take part, so the lectures will be in English.
+ 
+-  The lectures should be accessible to students who have completed the basic courses in analysis, algebra, linear algebra, topology, differential equations, probability, complex functions and functional analysis.
++  The lectures should be accessible to students who have completed the basic courses in analysis, algebra, linear algebra, topology, differential equations, probability, complex functions and functional analysis. We expect each of the invited lecturers to try to bring their field of research closer to students who have completed only the basic courses.
+ 
+-  To take part, register using the [registration form](https://sites.google.com/impan.pl/26babysteps/registration?authuser=0), choosing on-site or online participation:
++  We encourage students to take part in the school. To register, use the [registration form](https://sites.google.com/impan.pl/26babysteps/registration?authuser=0), choosing on-site or online participation:
+ 
+   - on-site participants: registration until 31 July 2026,
+   - online participants: registration until 26 August 2026.
+diff --git a/src/content/aktualnosci/2026-09-23-2-kongres-mlodych-odkrywcow.md b/src/content/aktualnosci/2026-09-23-2-kongres-mlodych-odkrywcow.md
+index 18d4f2d..46af195 100644
+--- a/src/content/aktualnosci/2026-09-23-2-kongres-mlodych-odkrywcow.md
++++ b/src/content/aktualnosci/2026-09-23-2-kongres-mlodych-odkrywcow.md
+@@ -13,7 +13,7 @@ termin:
+     dzien_konca: "2026-09-22"
+     miejsce: "Wydział Matematyki i Informatyki UWr"
+ tytul_en: "2nd Congress of Young Explorers"
+-zajawka_en: "Nearly 170 secondary school students attended lectures, workshops and an outdoor game."
++zajawka_en: "Nearly 170 students from almost 20 secondary schools took part in lectures, workshops and an outdoor game."
+ tresc_en: |
+   On **21–22 September 2026** the second [**Lower Silesian Congress of Young Explorers**](https://odkrywcy.math.uni.wroc.pl/) took place, organised by the Wrocław Mathematicians Foundation and the Faculty of Mathematics and Computer Science.
+ 
+diff --git a/src/content/aktualnosci/2026-10-17-rusza-tutornia.md b/src/content/aktualnosci/2026-10-17-rusza-tutornia.md
+index 7885f62..6255bcb 100644
+--- a/src/content/aktualnosci/2026-10-17-rusza-tutornia.md
++++ b/src/content/aktualnosci/2026-10-17-rusza-tutornia.md
+@@ -10,7 +10,7 @@ zajawka_en: "From 19 October, senior students help with maths problems in room 2
+ tresc_en: |
+   On Monday **19 October** the **tutoring room** opens in room **202** (next to the Institute entrance from the car park). First-year students are especially welcome — senior students will help them with their mathematical problems.
+ 
+-  The current tutors' schedule is on the [Tutoring room](/en/studia/tutornia) page.
++  The current tutors' schedule is on the [Tutoring room](/studia/tutornia) page.
+ opublikowany: true
+ ---
+ 
+diff --git a/src/content/aktualnosci/2026-11-10-seminarium-wydzialowe-problem-milenijny.md b/src/content/aktualnosci/2026-11-10-seminarium-wydzialowe-problem-milenijny.md
+index f74496e..ca29019 100644
+--- a/src/content/aktualnosci/2026-11-10-seminarium-wydzialowe-problem-milenijny.md
++++ b/src/content/aktualnosci/2026-11-10-seminarium-wydzialowe-problem-milenijny.md
+@@ -9,32 +9,18 @@ termin:
+     godzina: 13:00
+     miejsce: Instytut Informatyki sala 119
+     pozycja: false
+-tresc_en: >-
+-  On behalf of the Dean of the Faculty, we cordially invite all staff members
+-  and students to the [Faculty
+-  Seminar](https://wmi.uwr.edu.pl/seminarium-wydzialowe/), which will take place
+-  on **Tuesday, November 10, at 1:00 p.m.** in **Room 119** of the Institute of
+-  Computer Science.
++tresc_en: |-
++  On behalf of the Dean of the Faculty, we cordially invite all staff members and students to the [Faculty seminar](https://wmi.uwr.edu.pl/seminarium-wydzialowe/), which will take place on Tuesday 10 November at 13:00 in room 119 of the Institute of Computer Science.
+ 
++  The speaker will be **Prof. Grzegorz Karch** from our Institute, who will give a lecture entitled
+ 
+-  The speaker will be **Professor Grzegorz Karch** from our Institute, who will
+-  give a lecture entitled
+-
+-
+-  *"The Millennium Prize Problem and Its Proposed Solution by OpenAI."*
+-
+-
+-  As usual, the Dean invites everyone for coffee and cake at **12:30 p.m.**,
+-  just before the seminar, in the lobby outside Room 119.
++  *Problem Milenijny i jego rozwiązanie zaproponowane przez OpenAI* (The Millennium Prize Problem and its solution proposed by OpenAI).
+ 
++  As usual, the Dean invites everyone for coffee and cake at 12:30, just before the seminar, in the lobby outside room 119.
+ 
+   **Abstract:**
+ 
+-
+-  The lecture will discuss one of the Millennium Prize Problems, concerning the
+-  Navier–Stokes equations. We will then explain whether the work produced by
+-  OpenAI actually solves this problem. The lecture will be accessible to anyone
+-  familiar with the basics of multivariable calculus.
++  The lecture will discuss one of the Millennium Prize Problems, concerning the Navier–Stokes equations. We will then explain whether the work produced by OpenAI actually solves this problem. The lecture will be accessible to anyone familiar with the basics of multivariable calculus.
+ zajawka: Problem Milenijny i jego rozwiązanie zaproponowane przez OpenAI
+ zajawka_en: The Millennium Prize Problem and OpenAI’s Proposed Solution
+ dla:
+@@ -43,10 +29,10 @@ dla:
+   - pracownicy
+ zdjecie: /pliki/aktualnosci/wir.png
+ zdjecie_opis: "OpenAI votrex "
+-zdjecie_opis_en: Grzegorz Karch
++zdjecie_opis_en: OpenAI vortex
+ zalaczniki:
+   - nazwa: "Slajd z wykładu prof. Grzegorza Karch "
+-    nazwa_en: Slides from Professor Grzegorz Karch’s lecture
++    nazwa_en: Slides from Prof. Grzegorz Karch’s lecture (Polish)
+     plik: /pliki/aktualnosci/2026navierstokeslecture.pdf
+     pozycja: false
+ zaklad: rownania-rozniczkowe
+diff --git a/src/content/aktualnosci/2026-11-11-stypendium-im-steinhausa-dla-dominika-gdesza.md b/src/content/aktualnosci/2026-11-11-stypendium-im-steinhausa-dla-dominika-gdesza.md
+index 9d021b5..d382f56 100644
+--- a/src/content/aktualnosci/2026-11-11-stypendium-im-steinhausa-dla-dominika-gdesza.md
++++ b/src/content/aktualnosci/2026-11-11-stypendium-im-steinhausa-dla-dominika-gdesza.md
+@@ -1,22 +1,22 @@
+ ---
+ tytul: Stypendium im. Steinhausa dla Dominika Gdesza
++tytul_en: Hugo Steinhaus Scholarship for Dominik Gdesz
+ opublikowany: true
+ data: 2026-11-11
+ rodzaj: sukces
+-tresc_en: >-
+-  Our PhD student, **Dominik Gdesz**, has been awarded a scholarship under the
+-  Student Scholarship Program organized by the Wrocław Academic Centre. He
+-  received the **Hugo Steinhaus Scholarship** in Mathematical Sciences.
++tresc_en: |-
++  Our PhD student, **Dominik Gdesz**, has been awarded a scholarship under the Student Scholarship Programme organised by the Wrocław Academic Centre. He received the **Hugo Steinhaus Scholarship** in Mathematical Sciences.
+ 
+-
+-  Our PhD student, **Rafał Łyżwa**, also received an honorable mention.
++  Our PhD student, **Rafał Łyżwa**, also received an honourable mention.
+ zajawka: "Dominik Gdesz został laureatem Studenckiego Programu Stypendialnego "
++zajawka_en: Dominik Gdesz has become a laureate of the Student Scholarship Programme.
+ dla:
+   - studenci
+   - doktoranci
+   - pracownicy
+ zdjecie: /pliki/aktualnosci/dominik-gdesz20262.jpeg
+ zdjecie_opis: Dominik Gdesz
++zdjecie_opis_en: Dominik Gdesz
+ ---
+ Nasz doktorant mgr **Dominik Gdesz** został laureatem Studenckiego Programu Stypendialnego w ramach konkursu organizowanego przez Wrocławskie Centrum Akademickie. Otrzymał on **Stypendium im. Hugona Steinhausa** (w zakresie nauk matematycznych).
+ 
+diff --git a/src/content/aktualnosci/2026-11-13-medale-uniwersytetu-dla-profesorow-bozejki-i-rolskiego.md b/src/content/aktualnosci/2026-11-13-medale-uniwersytetu-dla-profesorow-bozejki-i-rolskiego.md
+index edafbe0..de8f016 100644
+--- a/src/content/aktualnosci/2026-11-13-medale-uniwersytetu-dla-profesorow-bozejki-i-rolskiego.md
++++ b/src/content/aktualnosci/2026-11-13-medale-uniwersytetu-dla-profesorow-bozejki-i-rolskiego.md
+@@ -17,15 +17,19 @@ zdjecie: /pliki/aktualnosci/uwr.png
+ galeria:
+   - plik: /pliki/aktualnosci/mb.jpeg
+     podpis: J.M. Rektor i prof. Marek Bożejko
++    podpis_en: The Rector and Prof. Marek Bożejko
+     pozycja: false
+   - plik: /pliki/aktualnosci/tr.jpeg
+     podpis: J.M. Rektor i prof. Tomasz Rolski
++    podpis_en: The Rector and Prof. Tomasz Rolski
+     pozycja: false
+ zalaczniki:
+   - nazwa: Nota biograficzna prof. Marka Bożejki
++    nazwa_en: Biographical note on Prof. Marek Bożejko (Polish)
+     plik: /pliki/aktualnosci/marekbozejkonotabiograficzna.pdf
+     pozycja: false
+   - nazwa: Nota biograficzna prof. Tomasza Rolskiego
++    nazwa_en: Biographical note on Prof. Tomasz Rolski (Polish)
+     plik: /pliki/aktualnosci/tomaszrolskinotabiograficzna.pdf
+     pozycja: false
+ ---
+diff --git a/src/content/aktualnosci/2026-11-18-nagroda-im-prof-andrzeja-hulanickiego-dla-agnieszki-i-mariusza.md b/src/content/aktualnosci/2026-11-18-nagroda-im-prof-andrzeja-hulanickiego-dla-agnieszki-i-mariusza.md
+index ad7656b..0958fa1 100644
+--- a/src/content/aktualnosci/2026-11-18-nagroda-im-prof-andrzeja-hulanickiego-dla-agnieszki-i-mariusza.md
++++ b/src/content/aktualnosci/2026-11-18-nagroda-im-prof-andrzeja-hulanickiego-dla-agnieszki-i-mariusza.md
+@@ -1,44 +1,24 @@
+ ---
+ tytul: Nagroda im. prof. Andrzeja Hulanickiego dla Agnieszki i Mariusza
+-tytul_en: The Professor Andrzej Hulanicki Award for Agnieszka and Mariusz
++tytul_en: Prof. Andrzej Hulanicki Award for Agnieszka and Mariusz
+ opublikowany: true
+ data: 2026-11-17
+ rodzaj: sukces
+-tresc_en: >-
+-  The **Andrzej Hulanicki Award** is presented to young researchers at the
+-  Institute of Mathematics of the University of Wrocław in recognition of
+-  outstanding achievements in research, teaching, and academic service. The
+-  award commemorates Professor Andrzej Hulanicki, an eminent mathematician, full
+-  member of the Polish Academy of Sciences, and founder of the Wrocław school of
+-  harmonic analysis.
++tresc_en: |-
++  The **Andrzej Hulanicki Award** is presented to young researchers at the Mathematical Institute of the University of Wrocław in recognition of outstanding achievements in research, teaching, and academic service. The award commemorates Professor Andrzej Hulanicki, an eminent mathematician, full member of the Polish Academy of Sciences, and founder of the Wrocław school of harmonic analysis.
+ 
++  Two equal awards for 2025 were presented to **Dr Agnieszka Hejna-Łyżwa** and **Dr Mariusz Tobolski**.
+ 
+-  Two equal awards for 2025 were presented to **Dr. Agnieszka Hejna-Łyżwa** and
+-  **Dr. Mariusz Tobolski**.
++  **Dr Agnieszka Hejna-Łyżwa** was recognised for her significant research achievements, highly regarded teaching and outreach activities, work with mathematically gifted young people, and involvement in organising conferences, educational initiatives, and student activities.
+ 
++  **Dr Mariusz Tobolski** was recognised for his significant research achievements, leadership of national and international research projects, highly regarded teaching and outreach activities, and contributions to the organisation and development of the mathematical community.
+ 
+-  **Dr. Agnieszka Hejna-Łyżwa** was recognized for her significant research
+-  achievements, highly regarded teaching and outreach activities, work with
+-  mathematically gifted young people, and involvement in organizing conferences,
+-  educational initiatives, and student activities.
++  Both award recipients successfully combine active research careers with a strong commitment to teaching, mathematical outreach, and academic life.
+ 
+-
+-  **Dr. Mariusz Tobolski** was recognized for his significant research
+-  achievements, leadership of national and international research projects,
+-  highly regarded teaching and outreach activities, and contributions to the
+-  organization and development of the mathematical community.
+-
+-
+-  Both award recipients successfully combine active research careers with a
+-  strong commitment to teaching, mathematical outreach, and academic life.
+-
+-
+-  [**Award website and list of
+-  recipients**](https://hulanickiaward.math.uni.wroc.pl/nagrodzeni)
++  [**Award website and list of recipients**](https://hulanickiaward.math.uni.wroc.pl/nagrodzeni)
+ zajawka: Dwie równorzędne nagrody im. A. Hulanickiego za rok 2025 otrzymali dr
+   Agnieszka Hejna-Łyżwa oraz dr Mariusz Tobolski.
+-zajawka_en: The two equal-ranking Professor Andrzej Hulanicki Awards for 2025
+-  were presented to Dr. Agnieszka Hejna-Łyżwa and Dr. Mariusz Tobolski.
++zajawka_en: Two equal-ranking Andrzej Hulanicki Awards for 2025 were presented to Dr Agnieszka Hejna-Łyżwa and Dr Mariusz Tobolski.
+ dla:
+   - studenci
+   - doktoranci
+@@ -49,6 +29,7 @@ zdjecie_opis_en: Agnieszka Hejna-Łyżwa and Mariusz Tobolski
+ galeria:
+   - plik: /pliki/aktualnosci/agnieszkaimariuszweb.jpg
+     podpis: "Agnieszka Hejna-Łyżwa i Mariusz Tobolski "
++    podpis_en: Agnieszka Hejna-Łyżwa and Mariusz Tobolski
+     pozycja: false
+ ---
+ Nagroda im. **Andrzeja Hulanickiego przyznawana** jest młodym pracownikom naukowym Instytutu Matematycznego Uniwersytetu Wrocławskiego za wybitne osiągnięcia naukowe, dydaktyczne i organizacyjne. Upamiętnia ona profesora Andrzeja Hulanickiego, wybitnego matematyka, członka rzeczywistego PAN i twórcę wrocławskiej szkoły analizy harmonicznej.
+diff --git a/src/content/aktualnosci/2026-11-18-wyklad-popularnonaukowy-z-cyklu-misiu.md b/src/content/aktualnosci/2026-11-18-wyklad-popularnonaukowy-z-cyklu-misiu.md
+index 4901f08..d7660fa 100644
+--- a/src/content/aktualnosci/2026-11-18-wyklad-popularnonaukowy-z-cyklu-misiu.md
++++ b/src/content/aktualnosci/2026-11-18-wyklad-popularnonaukowy-z-cyklu-misiu.md
+@@ -1,5 +1,6 @@
+ ---
+ tytul: "Wykład popularnonaukowy z cyklu MISIU. "
++tytul_en: Popular science lecture in the MISIU series
+ opublikowany: true
+ data: 2026-11-18
+ rodzaj: wydarzenie
+@@ -8,64 +9,34 @@ termin:
+     godzina: 12:15
+     miejsce: sala 25, Instytut Informatyki Uniwersytetu Wrocławskiego
+     pozycja: false
+-tresc_en: >-
+-  MISIU is a series of popular science lectures on mathematics and computer
+-  science aimed at high school students. Each event consists of two 45-minute
+-  lectures: one on mathematics and one on computer science.
++tresc_en: |-
++  MISIU (Matematyczno-Informatyczne Spotkania na Uniwersytecie – Mathematics and Computer Science Meetings at the University) is a series of popular science lectures on mathematics and computer science aimed at secondary school students. Each event consists of two 45-minute lectures: one on mathematics and one on computer science.
+ 
++  Schools interested in participating are welcome to contact us at: promocja [ at ] cs.uni.wroc.pl.
+ 
+-  Schools interested in participating are welcome to contact us at: promocja [
+-  at ] cs.uni.wroc.pl.
+-
+-
+-  Once the date and topics of the next event have been announced, we will
+-  publish a registration form.
+-
++  Once the date and topics of the next event have been announced, we will publish a registration form.
+ 
+   ## Piotr Polesiuk
+ 
++  ### *Jak zbudowałem własny procesor nie mając miliona dolarów* (How I built my own processor without a million dollars)
+ 
+-  ### *How I Built My Own Processor Without a Million Dollars*
+-
+-
+-  A processor—the heart of every computer—is usually associated with advanced
+-  technology requiring enormous financial resources and specialized knowledge.
+-  However, it turns out that a processor is made up of components that operate
+-  according to very simple principles.
+-
+-
+-  During this lecture, I will explain how a processor works and what it is made
+-  of. I will also show that, with a little creativity and determination, you can
+-  build a simple processor yourself without spending a fortune—all thanks to a
+-  somewhat forgotten technology from half a century ago.
++  A processor — the heart of every computer — is usually associated with advanced technology requiring enormous financial resources and specialist knowledge. However, it turns out that a processor is made up of components that operate according to very simple principles.
+ 
++  During this lecture, I will explain how a processor works and what it is made of. I will also show that, with a little creativity and determination, you can build a simple processor yourself without spending a fortune — all thanks to a somewhat forgotten technology from half a century ago.
+ 
+   ## Michał Bałwanowski
+ 
++  ### *Nieprzewidywalna matematyka prostych reguł* (The unpredictable mathematics of simple rules)
+ 
+-  ### *The Unpredictable Mathematics of Simple Rules*
+-
+-
+-  Can something that follows simple, well-understood rules still surprise us?
+-  Absolutely! Sometimes, just a few straightforward rules are enough to generate
+-  extraordinary patterns and reveal phenomena whose behavior is difficult to
+-  predict.
+-
+-
+-  In this lecture, we will explore mathematics from a slightly different
+-  perspective. We will see how simple models can reproduce surprisingly complex
+-  phenomena. We will also discover that even seemingly innocent games involving
+-  coloring squares can lead to questions that mathematicians are still trying to
+-  answer.
++  Can something that follows simple, well-understood rules still surprise us? Absolutely! Sometimes, just a few straightforward rules are enough to generate extraordinary patterns and reveal phenomena whose behaviour is difficult to predict.
+ 
++  In this lecture, we will explore mathematics from a slightly different perspective. We will see how simple models can reproduce surprisingly complex phenomena. We will also discover that even seemingly innocent games involving colouring squares can lead to questions that mathematicians are still trying to answer.
+ 
+-  There will be plenty of animations, experiments, and opportunities to test
+-  your own predictions. The goal is to show that even the simplest mathematics
+-  can hold a wealth of surprises.
++  There will be plenty of animations, experiments and opportunities to test your own predictions. The goal is to show that even the simplest mathematics can hold a wealth of surprises.
+ zajawka: Matematyczno-Informatyczne Spotkania na Uniwersytecie to seria wykładów
+   popularyzujących matematykę i informatykę dla uczniów szkół średnich.
+-zajawka_en: Series of popular science lectures on mathematics and computer
+-  science aimed at high school students.
++zajawka_en: |-
++  Mathematics and Computer Science Meetings at the University (MISIU) is a series of lectures popularising mathematics and computer science for secondary school students.
+ dla:
+   - kandydaci
+ zdjecie: /pliki/aktualnosci/lz80hu7371ee5e67ca0549.webp
+diff --git a/src/content/strony/obrony-doktorskie.md b/src/content/strony/obrony-doktorskie.md
+index df30662..ed3425a 100644
+--- a/src/content/strony/obrony-doktorskie.md
++++ b/src/content/strony/obrony-doktorskie.md
+@@ -9,7 +9,7 @@ tresc_en: |-
+ 
+   Under the Law on Higher Education and Science, the thesis with its abstract and the reviews are made available in the University of Wrocław's Public Information Bulletin (BIP) at least 30 days before the defence, and information on its date, place and format at least 10 days before it. For convenience, we also collect these materials here. Each defence page gives the date and place, the defence notice, the thesis, abstracts in Polish and English, and the reviews. You can add an upcoming defence to your own calendar; all defences also appear in the Institute calendar.
+ 
+-  The defence is held at an open meeting, and everyone present may put questions to the candidate. We invite staff, doctoral students and students, as well as anyone interested in mathematics: it is a good opportunity to hear about new results and to support candidates on an important day for them. The procedure, including how to submit a thesis, is described in the Study section, on the page "Doctoral thesis and the conferral of the degree".
++  The defence is held at an open meeting, and everyone present may put questions to the candidate. We invite staff, doctoral students and students, as well as anyone interested in mathematics: it is a good opportunity to hear about new results and to support candidates on an important day for them. The procedure, including how to submit a thesis, is described in the Study section, on the page “Doctoral thesis and the conferral of the degree”.
+ opis: 'Publiczne obrony rozpraw doktorskich z matematyki: zawiadomienia, rozprawy, streszczenia i recenzje.'
+ opis_en: 'Public defences of doctoral theses in mathematics: notices, theses, abstracts and reviews.'
+ haslo: Publiczne obrony rozpraw

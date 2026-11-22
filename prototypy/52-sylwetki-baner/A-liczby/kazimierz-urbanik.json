@@ -1,0 +1,28 @@
+{
+  "id": "kazimierz-urbanik",
+  "liczby": [
+    {
+      "n": "1975",
+      "podpis": "rektor UWr",
+      "podpis_en": "UWr rector",
+      "z": "rektor Uniwersytetu Wrocławskiego (dwie kadencje)"
+    },
+    {
+      "n": "1980",
+      "podpis": "założył czasopismo",
+      "podpis_en": "founded a journal",
+      "z": "założył „Probability and Mathematical Statistics”"
+    },
+    {
+      "n": "1965",
+      "podpis": "członek PAN",
+      "podpis_en": "Academy member",
+      "z": "członek PAN w wieku 35 lat"
+    }
+  ],
+  "pominiete": [
+    "wypromowanych doktorów (wg listy uczniów; [MGP](https://www.genealogy.math.ndsu.nodak.edu/id.php?id=61558) podaje 18)"
+  ],
+  "uwagi": "Pominięto liczbę doktorów (rozbieżność: 17 wg listy uczniów, 18 wg MGP). Rektorat 1975–1981 skrócono do roku objęcia funkcji. Z pozycji o PAN wypadło „w wieku 35 lat”, bo się nie mieści; spór w weryfikacji („najmłodszy” czy „jeden z najmłodszych”) nie dotyczy roku 1965. Nazwa PMS się nie mieści, stąd „założył czasopismo”.",
+  "redakcja": "poprawione przy scalaniu 18.11, 23:25"
+}

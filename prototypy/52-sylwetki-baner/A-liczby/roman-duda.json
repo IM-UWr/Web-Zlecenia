@@ -1,0 +1,28 @@
+{
+  "id": "roman-duda",
+  "liczby": [
+    {
+      "n": "1995",
+      "podpis": "rektor UWr",
+      "podpis_en": "UWr rector",
+      "z": "rektor Uniwersytetu Wrocławskiego"
+    },
+    {
+      "n": "1970",
+      "podpis": "Nagroda Banacha",
+      "podpis_en": "Banach Prize",
+      "z": "Nagroda Główna PTM im. Stefana Banacha"
+    },
+    {
+      "n": "4",
+      "podpis": "doktorów",
+      "podpis_en": "doctoral students",
+      "z": "wypromowanych doktorów (wg MGP)"
+    }
+  ],
+  "pominiete": [
+    "wypromowanych doktorów (wg [Mathematics Genealogy Project](https://www.mathgenealogy.org/id.php?id=58377))"
+  ],
+  "uwagi": "Trzy różne strony: rektorat (dla Uczelni), Nagroda Banacha (topologia) i monografia szkoły lwowskiej (historia matematyki); z przedziału 1995–1999 został rok objęcia urzędu, a dopisek o wydaniu angielskim 2014 i link znikają. Pominięto 4 doktorów (MGP) jako najmniej charakterystyczne; to dobra wymiana, gdyby podpis „o szkole lwowskiej” uznano za zbyt mało samodzielny. Wybrane fakty nie mają rozbieżności w weryfikacji; osoba żyjąca, tekst czeka na akceptację.",
+  "redakcja": "poprawione przy scalaniu 18.11, 23:25"
+}

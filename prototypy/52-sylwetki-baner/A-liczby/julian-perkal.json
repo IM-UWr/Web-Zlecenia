@@ -1,0 +1,26 @@
+{
+  "id": "julian-perkal",
+  "liczby": [
+    {
+      "n": "1951",
+      "podpis": "taksonomia wrocławska",
+      "podpis_en": "Wrocław taxonomy",
+      "z": "taksonomia wrocławska (z Florkiem, Łukaszewiczem, Steinhausem i Zubrzyckim)"
+    },
+    {
+      "n": "1956",
+      "podpis": "dziekan wydziału",
+      "podpis_en": "faculty dean",
+      "z": "dziekan Wydziału Matematyki, Fizyki i Chemii"
+    },
+    {
+      "n": "1961",
+      "podpis": "Tow. Biometryczne",
+      "podpis_en": "Biometric Society",
+      "z": "przewodniczący sekcji biometrycznej, z której wyrosło Polskie Towarzystwo Biometryczne"
+    }
+  ],
+  "pominiete": [],
+  "uwagi": "Wzięto trzy punkty z ramki. „Taksonomia wrocławska” ma 21 znaków, więc zostało samo „taksonomia”; obok hasła o współtwórcy taksonomii wrocławskiej jest to jasne. Przy biometrii rok zmieniono z 1959 (sekcja przy PTP, wg samej historii PTB) na 1961, kiedy powstało samodzielne Polskie Towarzystwo Biometryczne (to też jest w tekście). Rok 1961 podają zgodnie PTB, Dom i Kop, a rozbieżność z pkt 1 dotyczy tylko końca przewodnictwa (1964 czy 1965). „Sekcja biometryczna” nie byłaby zrozumiała bez kontekstu. Rok 1951 dotyczy pracy w Coll. Math. 2; spór 1951/1952 dotyczy tylko tomu „Przeglądu Antropologicznego”. Liczbę 91 prac pominięto, bo ma jedno źródło.",
+  "redakcja": "poprawione przy scalaniu 18.11, 23:25"
+}

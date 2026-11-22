@@ -1,0 +1,185 @@
+<style>
+/* ===== B2 · Zwijany baner =====
+   Zdjęcie na cały pierwszy ekran (100svh), tytuł na dole na ciemnej Odrze. Przy przewijaniu zdjęcie zwija się
+   w granatowy pas (--zw) z tytułem i hasłem, który zostaje u góry (position: sticky z ujemnym top — bez JS).
+   Skrypt tylko przelicza postęp --p do przenikania tytułów i lekkiej paralaksy. */
+/* v6 (31.10, 22:54): po zwinięciu nazwa „Instytut Matematyczny” jest w pasku nawigacji (jak na podstronach),
+   a pod nim tylko bursztynowe hasło — pas ma 64 px paska + 36 px na hasło */
+:root { --zw: 100px; }
+/* v8 (31.10, 23:00): pasek nawigacji z ciemnawym, lekko przezroczystym tłem — na zdjęciu i po zwinięciu */
+.hdr, .hdr.pelny { background: rgb(10 18 38 / .58); -webkit-backdrop-filter: blur(10px) saturate(1.15); backdrop-filter: blur(10px) saturate(1.15);
+  box-shadow: 0 1px 0 rgb(255 255 255 / .06); }
+.hdr:not(.pelny) { box-shadow: none; } /* na zdjęciu bez linii: pasek przechodzi w zdjęcie gradientem */
+.b2-hero { position: sticky; z-index: 10; overflow: hidden; background: #0b1428; color: #fff;
+  top: calc(var(--zw) - 100vh); top: calc(var(--zw) - 100svh); height: 100vh; height: 100svh; }
+/* v5 (31.10, 22:50): zdjęcie oddalone — szerszy kadr z całym budynkiem Instytutu (880×1056 z kampus-zmierzch.jpg).
+   Nie wypełnia już całego ekranu: stoi u góry na pełną szerokość i łagodnie przechodzi w granat, na którym jest tytuł. */
+/* v9 (31.10, 23:01): zdjęcie niżej — zaczyna się pod paskiem nawigacji; przejścia: ciemny pasek → zdjęcie → ciemne tło tytułu */
+/* v12 (31.10, 23:08): ostre zdjęcie aż do dołu ekranu (bez rozmytego przedłużenia). Źródło ma tylko 1056 px wysokości,
+   więc wypełnienie wysokości wymaga przybliżenia ok. 1,35× — kadr przesunięty w prawo, żeby mural i główna część budynku
+   zostały, kosztem lewego skrzydła. U góry zostaje przejście z ciemnego paska w zdjęcie. */
+/* v22 (31.10, 23:24): zdjęcie w wysokiej jakości od użytkownika (884×1779, podbite z kadru y 660–1826); żeby Instytut stał tak nisko jak w v19,
+   obraz zaczyna się 47 px niżej (dół wychodzi poza ekran, tam jest rzeka) */
+/* v23 (31.10, 23:25): przybliżone ok. 1,12×, żeby budynek sięgał bliżej krawędzi ekranu (marginesy ok. 15–20 px zamiast ok. 38) */
+.b2-hero img.ostre { position: absolute; left: -6%; top: 107px; width: 112%; height: auto; aspect-ratio: 884 / 1779;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, rgb(0 0 0 / .3) 36px, rgb(0 0 0 / .6) 72px, rgb(0 0 0 / .85) 120px, #000 176px);
+  mask-image: linear-gradient(180deg, transparent 0, rgb(0 0 0 / .3) 36px, rgb(0 0 0 / .6) 72px, rgb(0 0 0 / .85) 120px, #000 176px); /* v27: od paska jeszcze krócej (176 px; v26: 234, v19: 293) */
+  transform: translateY(calc(var(--p, 0) * var(--przes, 0px))); }
+:root[data-theme='dark'] .b2-hero img.ostre { filter: brightness(.9) saturate(.95); }
+.b2-hero .scrim-g { position: absolute; inset: 0 0 auto; height: 124px; background: linear-gradient(180deg, rgb(var(--scrim) / .72), rgb(var(--scrim) / 0)); }
+/* v10 (31.10, 23:03): zdjęcie idzie do dołu ekranu — pod ostrym zdjęciem leży to samo zdjęcie rozmyte i przyciemnione
+   (dzięki temu budynek zostaje cały, bez przybliżania), a ciemny gradient jest tylko wokół tekstu */
+.b2-hero .tlo-roz { display: none; }
+/* v11 (31.10, 23:07): ciemne tło tylko pod tekstem — od lewej krawędzi do końca najdłuższej linii,
+   a od końca tekstu gradient w prawo, żeby obok tekstu wyłaniało się zdjęcie (zamiast ciemnej ramki na całą szerokość) */
+.b2-hero .scrim-d { display: none; }
+.b2-duzy { right: auto !important; width: fit-content; max-width: calc(100% - 32px); }
+.b2-duzy::before { content: ''; position: absolute; z-index: -1; left: -16px; right: -310px; top: -224px; bottom: -240px; pointer-events: none;
+  /* v29 (31.10, 23:32): ciemność z dolnego pola w górę 2× dalej i płynniej — 224 px (było 112), 16 stopni smootherstep; w bok 310 px; w dół do brzegu; pod tekstem 97% */
+  background: linear-gradient(90deg, rgb(var(--scrim) / 0.97) 0, rgb(var(--scrim) / 0.97) calc(100% - 310px), rgb(var(--scrim) / 0.943) calc(100% - 279px), rgb(var(--scrim) / 0.869) calc(100% - 248px), rgb(var(--scrim) / 0.760) calc(100% - 217px), rgb(var(--scrim) / 0.629) calc(100% - 186px), rgb(var(--scrim) / 0.485) calc(100% - 155px), rgb(var(--scrim) / 0.341) calc(100% - 124px), rgb(var(--scrim) / 0.210) calc(100% - 93px), rgb(var(--scrim) / 0.101) calc(100% - 62px), rgb(var(--scrim) / 0.027) calc(100% - 31px), rgb(var(--scrim) / 0.000) calc(100% - 0px));
+  -webkit-mask-image: linear-gradient(180deg, rgb(0 0 0 / 0.000) 0px, rgb(0 0 0 / 0.002) 14px, rgb(0 0 0 / 0.016) 28px, rgb(0 0 0 / 0.049) 42px, rgb(0 0 0 / 0.104) 56px, rgb(0 0 0 / 0.180) 70px, rgb(0 0 0 / 0.275) 84px, rgb(0 0 0 / 0.384) 98px, rgb(0 0 0 / 0.500) 112px, rgb(0 0 0 / 0.616) 126px, rgb(0 0 0 / 0.725) 140px, rgb(0 0 0 / 0.820) 154px, rgb(0 0 0 / 0.896) 168px, rgb(0 0 0 / 0.951) 182px, rgb(0 0 0 / 0.984) 196px, rgb(0 0 0 / 0.998) 210px, rgb(0 0 0 / 1.000) 224px, #000 100%);
+  mask-image: linear-gradient(180deg, rgb(0 0 0 / 0.000) 0px, rgb(0 0 0 / 0.002) 14px, rgb(0 0 0 / 0.016) 28px, rgb(0 0 0 / 0.049) 42px, rgb(0 0 0 / 0.104) 56px, rgb(0 0 0 / 0.180) 70px, rgb(0 0 0 / 0.275) 84px, rgb(0 0 0 / 0.384) 98px, rgb(0 0 0 / 0.500) 112px, rgb(0 0 0 / 0.616) 126px, rgb(0 0 0 / 0.725) 140px, rgb(0 0 0 / 0.820) 154px, rgb(0 0 0 / 0.896) 168px, rgb(0 0 0 / 0.951) 182px, rgb(0 0 0 / 0.984) 196px, rgb(0 0 0 / 0.998) 210px, rgb(0 0 0 / 1.000) 224px, #000 100%); }
+.b2-hero .zwin { position: absolute; inset: 0; background: rgb(14 25 52 / .9); opacity: clamp(0, calc((var(--p, 0) - .35) * 1.6), 1); }
+:root[data-theme='dark'] .b2-hero .zwin { background: rgb(9 16 34 / .92); }
+.b2-duzy { position: absolute; left: 16px; right: 16px; bottom: 98px; opacity: clamp(0, calc(1 - var(--p, 0) * 1.6), 1);
+  transform: translateY(calc(var(--p, 0) * -36px)); }
+.b2-maly { position: absolute; left: 16px; right: 16px; bottom: 9px; opacity: clamp(0, calc((var(--p, 0) - .62) * 3), 1); pointer-events: none; }
+.b2-maly .n { display: block; font-size: 22px; font-weight: 800; line-height: 1.2; letter-spacing: -.018em; }
+.b2-maly .haslo { display: block; font-size: 15px; font-weight: 700; line-height: 1.3; color: var(--accent); }
+.b2-dalej { position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 8px;
+  min-height: 48px; padding: 0 16px 0 20px; border-radius: 999px; white-space: nowrap; font-size: 15px; font-weight: 700; color: #fff;
+  background: rgb(var(--scrim) / .72); box-shadow: inset 0 0 0 1.5px rgb(255 255 255 / .5);
+  opacity: clamp(0, calc(1 - var(--p, 0) * 4), 1); }
+.b2-dalej svg.i { width: 20px; height: 20px; }
+:root:not(.rm) .b2-dalej svg.i { animation: podskok 1.4s 1.4s 2 ease-in-out; }
+@keyframes podskok { 0%, 100% { transform: none; } 50% { transform: translateY(5px); } }
+.b2-hero .podpis-fot { right: 12px; top: 74px; max-width: 62%; text-align: right; line-height: 1.3; opacity: clamp(0, calc(1 - var(--p, 0) * 3), 1); }
+.b2-main { padding-top: 4px; z-index: 1; }
+
+/* lista dużych wierszy: działy */
+.wiersze { padding: 2px 4px; }
+.wiersze ul { list-style: none; margin: 0; padding: 0; }
+.wiersz { display: grid; grid-template-columns: 60px minmax(0, 1fr) 20px; align-items: center; gap: 0 14px; min-height: 80px; padding: 10px 10px; color: var(--ink); }
+li + li .wiersz { border-top: 1px solid var(--line); }
+.wiersz img { width: 60px; height: 60px; border-radius: 12px; object-fit: cover; background: var(--surface); }
+.wiersz b { display: flex; align-items: center; gap: 6px; font-size: 18px; font-weight: 800; line-height: 1.2; letter-spacing: -.015em; }
+.wiersz b svg.i { width: 15px; height: 15px; color: var(--muted); }
+.wiersz small { display: block; margin-top: 3px; font-size: 13.5px; font-weight: 500; line-height: 1.35; color: var(--muted); }
+.wiersz > svg.i { width: 20px; height: 20px; color: var(--muted); }
+
+/* aktualności: karty przewijane w bok (tylko ręcznie) */
+.karty { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 14px; overscroll-behavior-x: contain;
+  margin: 10px -14px 4px; padding: 0 14px 8px; list-style: none; scrollbar-width: none; }
+.karty::-webkit-scrollbar { display: none; }
+.karty li { flex: 0 0 80%; scroll-snap-align: start; display: flex; }
+.karta { display: flex; flex-direction: column; width: 100%; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--bg); color: var(--ink); }
+.karta img, .karta .bez { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--surface); }
+.karta .bez { display: grid; place-content: center; text-align: center; background: var(--znacznik); color: var(--znacznik-ink); }
+.karta .bez b { font-size: 38px; font-weight: 800; line-height: 1; letter-spacing: -.02em; }
+.karta .bez small { margin-top: 6px; font-size: 13px; font-weight: 700; opacity: .85; }
+.karta .kb { display: grid; gap: 5px; padding: 10px 12px 12px; }
+.karta .meta { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; }
+.karta .t { font-size: 16px; font-weight: 800; line-height: 1.3; letter-spacing: -.01em; }
+.karta .z { font-size: 13.5px; line-height: 1.45; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.karta-wszystkie { align-items: center; justify-content: center; gap: 8px; background: var(--surface); font-weight: 800; font-size: 15px; color: var(--znacznik-tekst); }
+.licznik { display: flex; align-items: center; justify-content: space-between; margin: 0 2px 6px; font-size: 13px; font-weight: 700; color: var(--muted); }
+.kropki { display: flex; gap: 5px; }
+.kropki i { width: 6px; height: 6px; border-radius: 3px; background: var(--line); transition: width .2s, background-color .2s; }
+.kropki i.akt { width: 16px; background: var(--znacznik-tekst); }
+</style>
+
+@@NAGLOWEK@@
+
+<section class="b2-hero" aria-labelledby="h1">
+  <img class="ostre" src="{{img:b2-instytut2}}" alt="Budynek Instytutu Matematycznego przy placu Grunwaldzkim o zmierzchu, z lotu ptaka; w dole bulwar nad Odrą" fetchpriority="high">
+  <div class="scrim-g"></div>
+  <div class="scrim-d"></div>
+  <div class="zwin"></div>
+  <div class="b2-duzy tytul tytul-wej">
+    <h1 id="h1">Instytut<br>Matematyczny</h1>
+    <p class="haslo">Badania, studia i popularyzacja</p>
+    <p class="pod">Wydział Matematyki i Informatyki UWr</p>
+  </div>
+  <div class="b2-maly" aria-hidden="true"><span class="haslo">Badania, studia i popularyzacja</span></div>
+  <a class="b2-dalej" href="#dzialy">Na skróty i wydarzenia<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+</section>
+
+<main id="dzialy" class="fale b2-main" aria-label="Na skróty, wydarzenia i aktualności">
+  @@SKROTY@@
+  @@WYDARZENIA@@
+  @@AKTUALNOSCI_LISTA@@
+  @@SEMINARIA@@
+  @@STUDIA@@
+</main>
+@@STOPKA@@
+
+@@MENU@@
+@@SZUKAJ@@
+<div class="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  var R = document.documentElement, raf = 0;
+  function rm() { return R.classList.contains('rm') || R.dataset.rm === '1' || window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+  function zw() { return parseFloat(getComputedStyle(R).getPropertyValue('--zw')) || 100; }
+  function licz() {
+    raf = 0;
+    var H = window.innerHeight, z = zw(), zak = Math.max(1, H - z);
+    var p = Math.min(1, Math.max(0, window.scrollY / zak));
+    R.style.setProperty('--p', p.toFixed(3));
+    var hdr = document.querySelector('.hdr'); if (hdr) hdr.classList.toggle('pelny', p > .8);
+    /* paralaksa: w zwiniętym pasie widać środek zdjęcia (budynek); przy ograniczeniu ruchu — bez przesunięcia */
+    var im = document.querySelector('.b2-hero img.ostre'), ih = im ? im.getBoundingClientRect().height : H * .6, it = im ? im.offsetTop : 0;
+    R.style.setProperty('--przes', (rm() ? 0 : Math.round(H - z / 2 - it - ih / 2)) + 'px');
+  }
+  function plan() { if (!raf) raf = requestAnimationFrame(licz); }
+  window.addEventListener('scroll', plan, { passive: true });
+  window.addEventListener('resize', plan);
+  window.poRuchu = plan;
+  licz();
+  /* „Działy i aktualności” — przewija dokładnie do zwiniętego pasa */
+  document.querySelector('.b2-dalej').addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: window.innerHeight - zw(), behavior: rm() ? 'auto' : 'smooth' });
+  });
+  /* v7 (31.10, 22:57): bez zatrzymywania się w połowie między zdjęciem a „Na skróty”.
+     Po zakończeniu przewijania (scrollend albo 140 ms ciszy, nigdy gdy palec jest na ekranie) w strefie przejścia:
+     w dół — od razu do „Na skróty” (wystarczy 8 px); w górę — do zdjęcia dopiero po przewinięciu o ≥ 25% strefy,
+     inaczej powrót do „Na skróty”. Poza strefą (treść niżej) przewijanie jest zupełnie zwykłe. */
+  (function () {
+    var lastY = window.scrollY, kier = 0, t = 0, auto = false, dotyk = false;
+    function strefa() { return Math.max(1, window.innerHeight - zw()); }
+    function dociagnij() {
+      if (auto || dotyk) return;
+      var Z = strefa(), y = window.scrollY;
+      if (y <= 0 || y >= Z - 1) return;
+      var cel = kier > 0 ? (y > 8 ? Z : 0) : (y < Z * 0.75 ? 0 : Z);
+      auto = true; setTimeout(function () { auto = false; }, rm() ? 50 : 900);
+      window.scrollTo({ top: cel, behavior: rm() ? 'auto' : 'smooth' });
+    }
+    function plan() { clearTimeout(t); t = setTimeout(dociagnij, 140); }
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY; if (y !== lastY) kier = y > lastY ? 1 : -1; lastY = y;
+      if (!auto) plan();
+    }, { passive: true });
+    if ('onscrollend' in window) window.addEventListener('scrollend', function () { if (auto) { auto = false; return; } clearTimeout(t); dociagnij(); });
+    window.addEventListener('touchstart', function () { dotyk = true; clearTimeout(t); }, { passive: true });
+    window.addEventListener('touchend', function () { dotyk = false; plan(); }, { passive: true });
+    window.addEventListener('touchcancel', function () { dotyk = false; plan(); }, { passive: true });
+  })();
+  /* licznik kart aktualności */
+  var pas = document.querySelector('.karty'), kropki = document.querySelectorAll('.kropki i'), nr = document.querySelector('.licznik span');
+  if (pas) {
+    var t = 0;
+    pas.addEventListener('scroll', function () {
+      clearTimeout(t);
+      t = setTimeout(function () {
+        var w = pas.firstElementChild.getBoundingClientRect().width + 12;
+        var i = Math.min(kropki.length - 1, Math.round(pas.scrollLeft / w));
+        kropki.forEach(function (k, j) { k.classList.toggle('akt', j === i); });
+        if (nr) nr.textContent = (i + 1) + ' z ' + kropki.length;
+      }, 60);
+    }, { passive: true });
+  }
+})();
+</script>

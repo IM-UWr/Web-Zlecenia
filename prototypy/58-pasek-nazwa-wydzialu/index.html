@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pasek telefonu: nazwa wydziału EN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Brygada+1918:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: rzeczowy raport z przeglądu, jak notatka dla zespołu strony.
+   IDEA: karta poprawek z prawdziwymi zrzutami paska, porównywanymi przy tej samej szerokości.
+   PICTURE: duży zrzut paska przy 430 px z zaznaczonym miejscem kolizji, potem przełączane warianty.
+   COLOUR and TYPE: granat i ciepły papier strony IM, czerwień tylko do zaznaczenia błędu; Brygada 1918 + Manrope jak na stronie.
+   LAYOUT: jedna kolumna do 980 px, zrzuty w naturalnej szerokości telefonu, na wąskim ekranie skalowane. */
+:root{color-scheme:light dark;
+  --bg:light-dark(#f7f5f0,#0f1729);--panel:light-dark(#ffffff,#16213a);--ink:light-dark(#14213d,#eef2fa);
+  --muted:light-dark(#5a6478,#a9b4c8);--line:light-dark(#e2ddd2,#2a3756);--granat:#14213d;
+  --zle:light-dark(#c8102e,#ff5a6e);--dobrze:light-dark(#1f7a4d,#5fd39a);--chip:light-dark(#ece8de,#1e2b49)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Manrope,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Brygada 1918",Georgia,serif;font-weight:600;line-height:1.08;text-wrap:balance;margin:0}
+h1{font-size:clamp(30px,4.6vw,46px)}h2{font-size:clamp(24px,3vw,32px);margin-bottom:12px}h3{font-size:21px}
+.band{padding:clamp(28px,4vw,56px) max(5vw,16px)}.in{max-width:980px;margin:0 auto}
+.hero{background:var(--granat);color:#fff}
+.hero p.lead{color:#c9d2e4;max-width:62ch;margin:14px 0 0}
+.fakty{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:rgb(255 255 255/.16);margin-top:28px;border-top:1px solid rgb(255 255 255/.16)}
+.fakty div{background:var(--granat);padding:14px 16px 4px 0}.fakty b{display:block;font:600 28px/1.1 "Brygada 1918",serif;white-space:nowrap}
+.fakty span{color:#c9d2e4;font-size:14px}
+.zrzut{position:relative;display:block;width:min(100%,var(--w));margin:0;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgb(0 0 0/.25)}
+.zrzut img{display:block;width:100%;height:auto}
+.kolizja{position:absolute;border:2px dashed var(--zle);border-radius:4px;box-shadow:0 0 0 999px rgb(0 0 0/.0)}
+.hero .kolizja{border-color:#ff5a6e;background:rgb(255 90 110/.12)}
+.para{display:grid;gap:18px;margin-top:30px}
+.podpis{font-size:14px;color:#c9d2e4;margin:8px 0 0}
+.siatka{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:16px}
+.siatka figure{margin:0}.siatka figcaption{font-size:14px;color:var(--muted);margin-top:6px}
+.siatka .zrzut{box-shadow:none;border-radius:8px}
+p{max-width:68ch}code{font:13.5px/1.5 ui-monospace,Consolas,monospace;background:var(--chip);padding:1px 5px;border-radius:4px;overflow-wrap:anywhere}
+.ster{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:10px max(5vw,16px)}
+.ster .in{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center}
+.grupa{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.grupa>span{font-size:14px;color:var(--muted);margin-right:4px}
+.grupa button{font:600 15px Manrope,sans-serif;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.grupa button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grupa button:focus-visible{outline:3px solid var(--zle);outline-offset:2px}
+.karta{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;margin-top:18px}
+.karta header{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;margin-bottom:12px}
+.karta .lit{font:600 15px Manrope,sans-serif;background:var(--chip);border-radius:6px;padding:2px 9px}
+.karta .zal{font-size:14px;font-weight:700;color:var(--dobrze)}
+.karta .zrzut{box-shadow:none;border-radius:8px}
+.pm{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:4px 24px;margin-top:14px;font-size:15px}
+.pm ul{margin:0;padding-left:20px}.pm h4{margin:0 0 2px;font-size:14px;color:var(--muted);font-weight:600}
+.uwaga{font-size:14px;color:var(--muted);margin:10px 0 0}
+.rek{border-left:4px solid var(--dobrze);padding:4px 0 4px 18px}
+ul.odrzucone li{margin-bottom:6px}
+footer{font-size:14px;color:var(--muted)}
+pre,.scroll{overflow-x:auto}
+#c-czy-d{background:var(--panel);border-bottom:1px solid var(--line)}
+.cd-wiersz{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:8px 18px;align-items:center;margin-top:16px}
+.cd-wiersz .lit{min-width:36px;text-align:center;font:600 15px Manrope,sans-serif;background:var(--chip);border-radius:6px;padding:2px 9px;justify-self:start}
+.cd-wiersz .zrzut{box-shadow:none;border-radius:8px;border:1px solid var(--line)}
+.cd-wiersz small{display:block;color:var(--muted);font-size:14px;margin-top:4px}
+.tab{border-collapse:collapse;width:100%;font-size:15px}
+.tab th,.tab td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.tab thead th{font-weight:700}.tab tbody th{font-weight:600;color:var(--muted);width:30%}
+.tab td.l{white-space:nowrap}
+@media(max-width:600px){.cd-wiersz{grid-template-columns:1fr}.tab{font-size:13.5px}.tab td.l{white-space:normal}.tab th,.tab td{padding:8px 6px}}
+@media(max-width:600px){.karta{padding:14px}.fakty b{font-size:24px}}
+</style>
+</head>
+<body>
+
+<section class="band hero">
+  <div class="in">
+    <h1>Po angielsku nazwa wydziału wjeżdża pod przyciski paska</h1>
+    <p class="lead">Na telefonie o szerokości 421–503 px druga linia „Faculty of Mathematics and Computer Science” nie łamie się i nie chowa, więc chodzi pod flagę „PL” i księżyc. Dzieje się to na każdej podstronie z paskiem, na banerze i po przewinięciu. Po polsku nazwa się mieści.</p>
+    <div class="fakty">
+      <div><b>421–503 px</b><span>szerokości z błędem (EN)</span></div>
+      <div><b>do 71 px</b><span>tyle tekstu chodzi pod przyciski</span></div>
+      <div><b>430 / 440 px</b><span>np. iPhone Plus i Pro Max</span></div>
+      <div><b>≤ 420 px</b><span>bez błędu: linia wydziału jest tam ukryta w obu językach</span></div>
+    </div>
+    <div class="para">
+      <figure style="margin:0">
+        <div class="zrzut" style="--w:430px">
+          <img src="img/obecnie-430.webp" width="860" height="236" alt="Pasek przy 430 px: napis Faculty of Mathematics and Computer Science zachodzi na flagę PL">
+          <span class="kolizja" style="left:61.4%;width:14.6%;top:24%;height:17%"></span>
+        </div>
+        <p class="podpis">Instytut (EN), 430 px, na banerze. Czerwona ramka: koniec nazwy pod flagą „PL”.</p>
+      </figure>
+      <figure style="margin:0">
+        <div class="zrzut" style="--w:430px">
+          <img src="img/obecnie-430-jasny.webp" width="860" height="128" alt="Ten sam pasek po przewinięciu, na jasnym tle, z tym samym nachodzeniem">
+          <span class="kolizja" style="left:61.4%;width:14.6%;top:45%;height:31%"></span>
+        </div>
+        <p class="podpis">Aktualności (EN), 430 px, po przewinięciu (jasny pasek).</p>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="c-czy-d">
+  <div class="in">
+    <h2>C czy D: krótsza nazwa w pasku</h2>
+    <p>Zrzuty są tu powiększone 1,5×, żeby dało się przeczytać drobny napis. Obie wersje działają tylko po angielsku i tylko przy 421–519 px. Do 420 px linii wydziału nie ma, jak dziś, a od 520 px jest pełna nazwa, bo już się mieści. Dla porównania jest też D′, czyli D z „Comp. Sci.”.</p>
+    <div class="grupa" role="group" aria-label="Szerokość ekranu w porównaniu C i D" style="margin-top:14px"><span>Szerokość</span><span id="cd-szer"></span></div>
+    <div class="grupa" role="group" aria-label="Stan paska w porównaniu C i D" style="margin-top:8px"><span>Pasek</span><span id="cd-stan"></span></div>
+    <div id="cd"></div>
+    <div class="scroll" style="margin-top:22px">
+      <table class="tab">
+        <thead><tr><th></th><th>C</th><th>D</th><th>D′</th></tr></thead>
+        <tbody>
+          <tr><th>Napis</th><td>Faculty of Mathematics &amp; CS</td><td>Faculty of Math. &amp; Comp. Science</td><td>Faculty of Math. &amp; Comp. Sci.</td></tr>
+          <tr><th>Szerokość napisu</th><td class="l">161 px</td><td class="l">186 px</td><td class="l">161 px</td></tr>
+          <tr><th>Odstęp od flagi przy 421 / 430 / 440 px</th><td class="l">30 / 38 / 48 px</td><td class="l">5 / 13 / 22 px</td><td class="l">29 / 38 / 47 px</td></tr>
+          <tr><th>Jak czyta się nazwa</th><td>akronim CS obok pełnego „Mathematics”</td><td>wszystkie słowa oficjalnej nazwy, skrócone</td><td>jak D, z krótszym „Sci.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="uwaga">Dla porównania: polska nazwa ma dziś przy 421 / 430 / 440 px odstęp 4 / 12 / 21 px od flagi, czyli D jest tak samo ciasny jak polska wersja.</p>
+    <div class="rek" style="margin-top:18px">
+      <p><b>Moim zdaniem D.</b> Czyta się jak oficjalna nazwa, tylko skrócona, a „CS” obok pełnego „Mathematics” w C wygląda nierówno. Ciasno robi się tylko przy 421–432 px, i to tak samo jak dziś po polsku. Jeśli te 5 px przy fladze przeszkadza, D′ ma zapas C i tę samą formę co D.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="in">
+    <h2>Na każdej podstronie tak samo</h2>
+    <p>Wszystkie podstrony mają ten sam pasek (<code>Naglowek.astro</code>), więc błąd powtarza się wszędzie poza okładką strony głównej. Zrzuty przy 430 px:</p>
+    <div class="siatka" id="strony"></div>
+
+    <h2 style="margin-top:40px">Skąd się to bierze</h2>
+    <p>Druga linia paska (<code>.brand-sub</code>) ma <code>white-space: nowrap</code> (<code>global.css</code>, linia 178). Do 420 px jest ukryta w obu językach (linie 212–216). Od 421 px się pokazuje, a angielska nazwa ma 261 px szerokości, przy ok. 184 px miejsca. Po polsku nazwa jest krótsza i się mieści, choć przy 421 px zostają tylko 4 px do flagi.</p>
+    <p>Na stronie głównej ten sam problem rozwiązano już wcześniej: po zjechaniu z okładki angielska linia wydziału chowa się do 500 px (<code>zal-telefon.css</code>, linia 67). Ta reguła działa jednak tylko na stronie głównej (<code>.brand-okladka</code>), a podstrony jej nie dostały. Komputer (od 1024 px) ma inny pasek i błędu nie ma.</p>
+  </div>
+</section>
+
+<nav class="ster" aria-label="Porównanie wariantów">
+  <div class="in">
+    <div class="grupa" role="group" aria-label="Szerokość ekranu"><span>Szerokość</span><span id="szer"></span></div>
+    <div class="grupa" role="group" aria-label="Stan paska"><span>Pasek</span><span id="stan"></span></div>
+  </div>
+</nav>
+
+<section class="band" style="padding-top:24px">
+  <div class="in">
+    <h2>Wszystkie warianty</h2>
+    <p>Każdy wariant to prawdziwa strona z dodaną regułą CSS, zrzucona przy wybranej szerokości. Przy 412 px wszystkie wyglądają tak samo (linia wydziału ukryta), a przy 520 px też (nazwa już się mieści).</p>
+    <div id="warianty"></div>
+
+    <h2 style="margin-top:44px">Zalecenie</h2>
+    <div class="rek">
+      <p><b>Jeśli krótsza nazwa: D</b> (albo D′, jeśli D jest za ciasno przy fladze). Porównanie jest wyżej, w części „C czy D”.</p>
+      <p><b>Jeśli bez skrótów: A.</b> Na większości telefonów (360–414 px) linii wydziału i tak nie ma, w żadnym języku. A tylko przedłuża to samo zachowanie na 421–519 px po angielsku, tak jak strona główna po zjechaniu z okładki.</p>
+      <p>B zostawia pełną nazwę i sam się dopasowuje, ale daje trzy linie w pasku.</p>
+    </div>
+
+    <h3 style="margin-top:30px">Odrzucone</h3>
+    <ul class="odrzucone">
+      <li><b>Mniejsze litery.</b> Żeby pełna nazwa zmieściła się w jednej linii przy 421 px, krój musiałby spaść z 12 px do ok. 8,5 px, a tego już nie da się czytać.</li>
+      <li><b>Przeniesienie przełącznika języka lub trybu ciemnego do menu.</b> Za duża zmiana jak na ten błąd. Przełącznik języka ma być na wierzchu.</li>
+      <li><b>Wielokropek („…Comp…”).</b> Ucięta nazwa urzędowa wygląda gorzej niż jej brak.</li>
+    </ul>
+
+    <footer style="margin-top:36px">Zmierzone na kodzie z gałęzi main (commit 7dfc959 z 20.11.2026) z treściami z repozytoriów Web-*. Zbudowane w chmurze i zrzucone w Chrome, w skali 2×, z wyłączonymi animacjami. Wariant C podmienia tekst skryptem tylko na potrzeby zrzutu.</footer>
+  </div>
+</section>
+
+<script>
+{
+const SZER=[412,430,440,480,520];
+const STANY=[['','Na banerze'],['-jasny','Po przewinięciu']];
+const STRONY=[['p-studia','Studies'],['p-pracownicy','Staff'],['p-seminaria','Seminars'],['p-aktualnosci','News']];
+const WAR=[
+ {id:'obecnie',lit:'Dziś',nazwa:'Bez zmian',opis:'Druga linia nie łamie się i nie chowa, więc przy 421–503 px wjeżdża pod flagę i księżyc.'},
+ {id:'A',lit:'A',zal:'zalecany bez skrótu',nazwa:'Chowaj linię wydziału, gdy brak miejsca',
+  opis:'Po angielsku druga linia znika do 519 px, tak jak na telefonach do 420 px (w obu językach) i na stronie głównej po zjechaniu z okładki. Po polsku bez zmian.',
+  plus:['pasek w jednej linii, spokojny','to samo, co strona już robi na węższych telefonach i na stronie głównej','jedna reguła, jeden próg dla wszystkich stron'],
+  minus:['po angielsku przy 421–519 px nie widać nazwy wydziału','próg trzeba poprawić, jeśli zmieni się tekst albo przyciski'],
+  css:'@media (max-width: 519px) { .hdr .brand-sub:lang(en) { display: none; } }  /* zastępuje regułę 500 px strony głównej */'},
+ {id:'B',lit:'B',nazwa:'Dwie linie, gdy trzeba',
+  opis:'Nazwa łamie się na „Faculty of Mathematics / and Computer Science”, tylko wtedy, gdy się nie mieści. W pasku są wtedy trzy linie.',
+  plus:['nazwa wydziału zostaje','bez progów: sam się dopasuje do tekstu i przycisków','po polsku przy 421–436 px też odsuwa nazwę od flagi (dziś 4–15 px)'],
+  minus:['pasek gęsty: trzy linie zajmują 47 z 61 px','inny układ niż na pozostałych szerokościach','po polsku przy 421–436 px też dwie linie'],
+  css:'.hdr .brand-sub { white-space: normal; text-wrap: balance; }'},
+ {id:'C',lit:'C',nazwa:'Krótsza nazwa: „Faculty of Mathematics & CS”',
+  opis:'Od 421 do 519 px w pasku po angielsku stoi „Faculty of Mathematics & CS” (161 px, przy 421 px zostaje 30 px do flagi). Od 520 px pełna nazwa.',
+  plus:['jedna linia i nazwa wydziału widoczna','duży zapas do flagi'],
+  minus:['akronim CS obok pełnego „Mathematics”','nieoficjalny skrót, inny niż na okładce i w stopce'],
+  css:'/* Naglowek.astro: pełna i krótka nazwa w .brand-sub, przełączane przy 519 px (tylko EN) */'},
+ {id:'D',lit:'D',zal:'zalecany ze skrótem',nazwa:'Krótsza nazwa: „Faculty of Math. & Comp. Science”',
+  opis:'Od 421 do 519 px w pasku po angielsku stoi „Faculty of Math. & Comp. Science” (186 px). Przy 421 px zostaje 5 px do flagi, przy 430 px 13 px. Od 520 px pełna nazwa.',
+  plus:['wszystkie słowa oficjalnej nazwy, tylko skrócone','jedna linia i nazwa wydziału widoczna'],
+  minus:['przy 421–432 px ciasno przy fladze (tak samo ciasno jak dziś polska nazwa)','nieoficjalny skrót, inny niż na okładce i w stopce'],
+  css:'/* jak C, inny tekst krótkiej nazwy */'}
+];
+let szer=430, stan='';
+const $=s=>document.querySelector(s);
+const img=(n,w,h,alt,sk=1)=>`<div class="zrzut" style="--w:${w*sk}px"><img src="img/${n}.webp" width="${w*2}" height="${h*2}" alt="${alt}" loading="lazy"></div>`;
+$('#strony').innerHTML=STRONY.map(([n,t])=>`<figure>${img(n,430,118,'Pasek na stronie '+t+' przy 430 px')}<figcaption>${t}</figcaption></figure>`).join('');
+function przyciski(){
+  $('#szer').innerHTML=SZER.map(w=>`<button type="button" data-w="${w}" aria-pressed="${w===szer}">${w} px</button>`).join('');
+  $('#stan').innerHTML=STANY.map(([k,t])=>`<button type="button" data-s="${k}" aria-pressed="${k===stan}">${t}</button>`).join('');
+}
+function karty(){
+  const h=stan?64:118;
+  $('#warianty').innerHTML=WAR.map(v=>`<article class="karta" id="wariant-${v.id}">
+    <header><span class="lit">${v.lit}</span><h3>${v.nazwa}</h3>${v.zal?`<span class="zal">${v.zal}</span>`:''}</header>
+    ${img(v.id+'-'+szer+stan,szer,h,'Wariant '+v.lit+' przy '+szer+' px')}
+    <p style="margin:12px 0 0">${v.opis}</p>
+    ${v.plus?`<div class="pm"><div><h4>Za</h4><ul>${v.plus.map(x=>`<li>${x}</li>`).join('')}</ul></div><div><h4>Przeciw</h4><ul>${v.minus.map(x=>`<li>${x}</li>`).join('')}</ul></div></div>`:''}
+    ${v.css?`<p class="uwaga">CSS: <code>${v.css}</code></p>`:''}
+  </article>`).join('');
+}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  let cel;
+  if(b.dataset.w){szer=+b.dataset.w;cel=`[data-w="${szer}"]`}else if('s' in b.dataset){stan=b.dataset.s;cel=`[data-s="${stan}"]`}else return;
+  przyciski(); karty(); document.querySelector(cel)?.focus({preventScroll:true});
+});
+przyciski(); karty();
+
+// porównanie C i D (własne przyciski, niezależne od paska wariantów)
+const CD_SZER=[421,430,440,480];
+const CD=[
+ {id:'C',lit:'C',txt:'Faculty of Mathematics & CS',z:{421:30,430:38,440:48,480:84}},
+ {id:'D',lit:'D',txt:'Faculty of Math. & Comp. Science',z:{421:5,430:13,440:22,480:59}},
+ {id:'E',lit:'D′',txt:'Faculty of Math. & Comp. Sci.',z:{421:29,430:38,440:47,480:84}}
+];
+let cdSzer=421, cdStan='';
+function cdRysuj(){
+  $('#cd-szer').innerHTML=CD_SZER.map(w=>`<button type="button" data-cw="${w}" aria-pressed="${w===cdSzer}">${w} px</button>`).join('');
+  $('#cd-stan').innerHTML=STANY.map(([k,t])=>`<button type="button" data-cs="${k}" aria-pressed="${k===cdStan}">${t}</button>`).join('');
+  const h=cdStan?64:118;
+  $('#cd').innerHTML=CD.map(v=>`<div class="cd-wiersz"><span class="lit">${v.lit}</span><div>${img(v.id+'-'+cdSzer+cdStan,cdSzer,h,'Wariant '+v.lit+': '+v.txt+' przy '+cdSzer+' px',1.5)}<small>„${v.txt}”, ${v.z[cdSzer]} px do flagi</small></div></div>`).join('');
+}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return; let cel;
+  if(b.dataset.cw){cdSzer=+b.dataset.cw;cel=`[data-cw="${cdSzer}"]`}else if('cs' in b.dataset){cdStan=b.dataset.cs;cel=`[data-cs="${cdStan}"]`}else return;
+  cdRysuj(); document.querySelector(cel)?.focus({preventScroll:true});
+});
+cdRysuj();
+}
+</script>
+</body>
+</html>

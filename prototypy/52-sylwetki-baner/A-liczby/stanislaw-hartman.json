@@ -1,0 +1,29 @@
+{
+  "id": "stanislaw-hartman",
+  "liczby": [
+    {
+      "n": "1964",
+      "podpis": "zbiory interpolacyjne",
+      "podpis_en": "interpolation sets",
+      "z": "praca o zbiorach interpolacyjnych (z C. Ryll-Nardzewskim)"
+    },
+    {
+      "n": "1953",
+      "podpis": "Nagroda Banacha",
+      "podpis_en": "Banach Prize",
+      "z": "Nagroda Główna PTM im. Stefana Banacha"
+    },
+    {
+      "n": "1968",
+      "podpis": "poparł studentów",
+      "podpis_en": "backed the students",
+      "z": "zajawka: W 1968 r. usunięty z Uniwersytetu za poparcie studentów."
+    }
+  ],
+  "pominiete": [
+    "doktorat u Edwarda Marczewskiego",
+    "doktorów według [Mathematics Genealogy Project](https://mathgenealogy.org/id.php?id=34146)"
+  ],
+  "uwagi": "Wynik, wyróżnienie i rok 1968, który eksponują podpis i zajawka (opozycjonista); pozycja 1968 pochodzi z tekstu, nie z „W skrócie”. Pominięto liczbę doktorów (rozbieżność: 5 wg MGP, 7 wg „Wrocławskiej szkoły matematycznej”) i doktorat 1947 (rozbieżność co do promotora: Marczewski wg MGP i UWr, Steinhaus wg nekrologu w CM). Pełne „zbiory interpolacyjne” mają 21 znaków, stąd „zbiory I₀” (oznaczenie użyte w tekście).",
+  "redakcja": "poprawione przy scalaniu 18.11, 23:25"
+}

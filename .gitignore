@@ -1,0 +1,7 @@
+# robocze kopie i archiwa (nie są historią zleceń)
+/robocze/
+*.bundle
+*.tar
+*.tar.gz
+*.tgz
+*.zip

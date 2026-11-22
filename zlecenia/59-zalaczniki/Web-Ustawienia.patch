@@ -1,0 +1,124 @@
+diff --git a/src/content/strony/deklaracja-dostepnosci.md b/src/content/strony/deklaracja-dostepnosci.md
+index 1aab114..e76d237 100644
+--- a/src/content/strony/deklaracja-dostepnosci.md
++++ b/src/content/strony/deklaracja-dostepnosci.md
+@@ -12,18 +12,18 @@ tresc_en: |
+ 
+   The Mathematical Institute of the University of Wrocław is committed to making its website accessible in accordance with the Polish Act of 4 April 2019 on the digital accessibility of websites and mobile applications of public bodies.
+ 
+-  ## How the site was built {#how-the-site-was-built}
++  ## How the site was built {#jak-zbudowano-stronę}
+ 
+   - the layout works on phones and with screen magnification,
+   - the site can be used with the keyboard alone; there is a "skip to content" link,
+   - colours meet the WCAG 2.1 AA contrast requirements in light and dark mode,
+   - photos have text descriptions, and mathematical formulas are rendered as text (KaTeX).
+ 
+-  ## Known limitations {#known-limitations}
++  ## Known limitations {#znane-ograniczenia}
+ 
+   Some attachments (PDF files) published earlier on the old website may not be fully accessible.
+ 
+-  ## Feedback {#feedback}
++  ## Feedback {#zgłoszenia}
+ 
+   If something on the site is not accessible to you, please write to [dyrekcja@math.uni.wroc.pl](mailto:dyrekcja@math.uni.wroc.pl).
+ opublikowany: true
+diff --git a/src/content/strony/o-stronie.md b/src/content/strony/o-stronie.md
+index 6c3fbe2..f3155a0 100644
+--- a/src/content/strony/o-stronie.md
++++ b/src/content/strony/o-stronie.md
+@@ -9,7 +9,7 @@ pasek_boczny: spis
+ tresc_en: |
+   <!-- UKŁAD JAWNY: ## rozpoczyna sekcję w spisie. Nazwę można zmieniać; {#id} zachowuje adres. Bloki :::nazwa … ::: sterują wyglądem; komentarze są tylko instrukcjami dla redaktora. -->
+ 
+-  ## Four patrons {#four-patrons}
++  ## Four patrons {#czterech-patronów}
+ 
+   The site is built around four mathematicians who, after the war, built mathematics in Wrocław from the ground up. Each of them is the patron of one section of the site and gives it its colour, and the Institute's lecture rooms bear their names.
+ 
+@@ -20,13 +20,13 @@ tresc_en: |
+ 
+   The patron's face is drawn line by line when you enter the section page, and the page headers show facts from his life and mathematics, drawn at random for each visit.
+ 
+-  ## Image sources {#image-sources}
++  ## Image sources {#źródła-ilustracji}
+ 
+   - **Sketches of the patrons**, based on photographs: Władysław Ślebodziński (1938) and Hugo Steinhaus (1968) — Wikimedia Commons ([Ślebodziński](https://commons.wikimedia.org/wiki/File:W%C5%82adys%C5%82aw_%C5%9Alebodzi%C5%84ski.jpg), [Steinhaus](https://commons.wikimedia.org/wiki/File:Hugo_Steinhaus.jpg)), public domain; Edward Marczewski and Bronisław Knaster — MacTutor History of Mathematics, University of St Andrews ([Marczewski](https://mathshistory.st-andrews.ac.uk/Biographies/Marczewski/), [Knaster](https://mathshistory.st-andrews.ac.uk/Biographies/Knaster/pictdisplay/)).
+   - **Signatures**, from reproductions: Edward Marczewski — *Nowa Księga Szkocka* (New Scottish Book), vol. I, entry of 7 July 1946 ([Library of the Faculty of Mathematics and Computer Science, University of Wrocław](https://wmi.uwr.edu.pl/biblioteka-wydzialowa/nowa-ksiega-szkocka/)); Władysław Ślebodziński — membership card of 1948, in: H. Langner-Matuszczyk, *Władysław Ślebodziński – matematyk, więzień KL Auschwitz nr 79053*, „Śląska Republika Uczonych”, vol. 7, 2016 ([publication page](https://sites.google.com/pwr.edu.pl/slebodzinski/strona-g%C5%82%C3%B3wna)); Bronisław Knaster (1946) and Hugo Steinhaus (1957) — J. Dutkiewicz, *Mieczysław Warmus. Życie i praca naukowa*, 2003 ([Digital Library of the Warsaw University of Technology](https://bcpw.bg.pw.edu.pl/dlibra/publication/1567/edition/1591?language=pl)).
+   - **Campus photograph** on the home page: Corvus monedula, [fotopolska.eu](https://fotopolska.eu/1158570), licence [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en); cropped and sharpened.
+ 
+-  ### Portraits in “Did you know” {#portrety}
++  ### Portraits in “Highlights” {#portrety}
+ 
+   Portraits on the profile pages, in order of surname. Photographs under CC BY-SA licences are shared here in a modified version under the same licence.
+ 
+@@ -47,17 +47,17 @@ tresc_en: |
+   - **Krzysztof Tabisz** — [Mathematical Institute, University of Wrocław](https://www.math.uni.wroc.pl/users/tabisz); cropped, enlarged and sharpened.
+   - **Kazimierz Urbanik** — Ryszard Świtacz (Reprography Unit, Wrocław University Library), home archive of Henryk Zieliński, 27 February 1981, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:1981-02-27_uczestnicy_Urbanik001.jpg), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en); cropped, enlarged and sharpened.
+ 
+-  ## Found an error? {#found-an-error}
++  ## Found an error? {#błąd-na-stronie}
+ 
+   At the bottom of every page there is a link “Report an error on this page”. You can also write to the editors: **(address to be added)**.
+ 
+-  ## How this site was made {#how-this-site-was-made}
++  ## How this site was made {#jak-zrobiona-jest-ta-strona}
+ 
+   Design and development: Szymon Cygan. The content is maintained by the editors in Pages CMS, and the site rebuilds itself a few minutes after every change. The code is open: [IM-UWr/Web-Core on GitHub](https://github.com/IM-UWr/Web-Core).
+ 
+   Typefaces: Brygada 1918 and Manrope (SIL Open Font License); mathematical formulas: KaTeX. The site does not use tracking cookies — details in the [Privacy policy](/polityka-prywatnosci).
+ 
+-  ## Previous website {#previous-website}
++  ## Previous website {#poprzednia-strona}
+ 
+   A copy of the Institute's previous website is available in the [archive](https://www.math.uni.wroc.pl/).
+ opublikowany: true
+diff --git a/src/content/strony/polityka-prywatnosci.md b/src/content/strony/polityka-prywatnosci.md
+index 7c3b4e5..3a517db 100644
+--- a/src/content/strony/polityka-prywatnosci.md
++++ b/src/content/strony/polityka-prywatnosci.md
+@@ -18,7 +18,7 @@ tresc_en: |
+   - The theme choice (light or dark) is stored only in your browser (localStorage) and is never sent anywhere.
+   - The Google map on the Institute page (Contact and getting here) loads only after you click „Show Google map”; from then on Google (Google Maps) may set its own cookies. The choice is remembered in your browser (localStorage).
+ 
+-  ## Seminar email notifications {#seminar-email-notifications}
++  ## Seminar email notifications {#powiadomienia-e-mail-o-seminariach}
+ 
+   - If you sign up on a seminar page, we store your email address, the seminar you chose and the dates of signing up, confirming and unsubscribing.
+   - The address is used **only** to send emails about new talks in that seminar. It is not shared with anyone and is not used for any other purpose.
+diff --git a/src/data/nawigacja.json b/src/data/nawigacja.json
+index 2fab981..2fdfbe4 100644
+--- a/src/data/nawigacja.json
++++ b/src/data/nawigacja.json
+@@ -188,7 +188,7 @@
+         },
+         {
+           "nazwa": "Na co dzień",
+-          "nazwa_en": "Everyday",
++          "nazwa_en": "Day to day",
+           "opis": "zajęcia, kalendarz, pierwszy rok, tutornia",
+           "opis_en": "classes, calendar, first year, tutoring",
+           "kierunki": false,
+@@ -297,7 +297,7 @@
+               "etykieta": "Dla uczniów",
+               "etykieta_en": "For pupils",
+               "opis": "kółka, obozy i konkursy",
+-              "opis_en": "clubs, camps and competitions",
++              "opis_en": "maths circles, camps and competitions",
+               "adres": "/popularyzacja/uczniowie"
+             },
+             {
+diff --git a/src/data/stopka.json b/src/data/stopka.json
+index 16876a4..8dfe5b2 100644
+--- a/src/data/stopka.json
++++ b/src/data/stopka.json
+@@ -47,7 +47,7 @@
+         },
+         {
+           "etykieta": "Rekrutacja",
+-          "etykieta_en": "Admissions",
++          "etykieta_en": "Admissions (in Polish)",
+           "adres": "https://studia-wmi.uwr.edu.pl/"
+         }
+       ]

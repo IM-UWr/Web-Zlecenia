@@ -1,0 +1,552 @@
+diff --git a/src/content/strony/popularyzacja/nauczyciele.md b/src/content/strony/popularyzacja/nauczyciele.md
+index b6e0a82..566df19 100644
+--- a/src/content/strony/popularyzacja/nauczyciele.md
++++ b/src/content/strony/popularyzacja/nauczyciele.md
+@@ -5,16 +5,15 @@ opublikowany: true
+ tresc_en: |-
+   <!-- Zachowaj identyfikatory {#…} przy nagłówkach, aby działały dotychczasowe odnośniki. Znaczniki ::: otaczają specjalne układy. -->
+ 
+-  ## For mathematics teachers {#for-mathematics-teachers}
++  ## What Fundacja Matematyków Wrocławskich offers teachers {#dla-nauczycieli-matematyki}
+ 
+-  A weekly seminar, postgraduate studies, trips and courses — plus classes, competitions and camps worth sending your pupils to or attending with a whole class.
+ 
+   <!-- Każdy punkt listy to jeden kafelek. Zachowaj wcięcia opisów i odnośników. -->
+   :::kafelki
+ 
+   - **I³ seminar**
+ 
+-    Inspiration, Individualisation, Interdisciplinarity: meetings of primary and secondary school teachers, at the Institute since 2004. Once a semester the meeting is held off site.
++    Inspiration, Individualisation, Interdisciplinarity: meetings of primary and secondary school teachers, held since 2004.
+ 
+     When: Tuesdays, 17:00–18:30
+ 
+@@ -24,7 +23,7 @@ tresc_en: |-
+ 
+   - **Postgraduate studies “Nauczanie matematyki” (Teaching Mathematics)**
+ 
+-    Qualifying studies run by the Institute: a licence to teach mathematics for graduates of other subjects.
++    A qualification programme run by the Institute: a qualification to teach mathematics for graduates of other programmes.
+ 
+     Admissions: every year, June–October (IRK)
+ 
+@@ -34,7 +33,7 @@ tresc_en: |-
+ 
+   - **Poznajemy Matematyczną Europę (Discovering Mathematical Europe)**
+ 
+-    Since 2008, trips for teachers from Lower Silesian schools, following the traces of mathematics in Poland and abroad.
++    Regular trips for teachers from Lower Silesian schools, following in the footsteps of mathematicians and mathematics — in Poland and abroad, sometimes in quite exotic places.
+ 
+     When: weekends, school breaks, summer holidays
+ 
+@@ -42,7 +41,7 @@ tresc_en: |-
+ 
+   - **Courses and training**
+ 
+-    Courses run by the Foundation, e.g. on specific difficulties in learning mathematics (dyscalculia), when enough people sign up.
++    Various courses run by Fundacja Matematyków Wrocławskich (the Wrocław Mathematicians Foundation), e.g. on difficulties in learning mathematics.
+ 
+     When: depending on enrolment
+ 
+@@ -50,26 +49,33 @@ tresc_en: |-
+ 
+   :::
+ 
+-  ## A mathematics teacher’s school year {#a-mathematics-teachers-school-year}
++
++  ## Dolnośląski Kongres Nauczycieli Matematyki {#dokonomat}
++
++  For some time now we have been organising Dolnośląskie Kongresy Nauczycieli Matematyki (Lower Silesian Congresses of Mathematics Teachers), one-day conferences for secondary-school mathematics teachers from Lower Silesia (and the surrounding area). Our staff give lectures and workshops there, including on using artificial intelligence methods in a teacher’s work. The congresses also aim to bring the teaching community together, and the Lower Silesian Superintendent of Education (Dolnośląska Kurator Oświaty) is a frequent guest.
++
++  [Dolnośląski Kongres Nauczycieli Matematyki](https://dokonamat2.math.uni.wroc.pl/)
++
++  ## A mathematics teacher’s school year {#rok-szkolny-nauczyciela-matematyki}
+ 
+   | When | What | Who for |
+   | --- | --- | --- |
+-  | every Tuesday | [I³ seminar](https://fmw.math.uni.wroc.pl/dla-nauczycieli/seminarium-i3/seminarium-dla-nauczycieli-i3) at the Institute | teachers |
+-  | September | [Dolnośląski Festiwal Nauki](http://www.festiwal.wroc.pl) (Lower Silesian Science Festival): lectures and workshops, also for classes | with a class |
++  | every Tuesday | [I³ seminar](https://fmw.math.uni.wroc.pl/dla-nauczycieli/seminarium-i3/seminarium-dla-nauczycieli-i3) at the Institute | for teachers |
++  | September | [Dolnośląski Festiwal Nauki](http://www.festiwal.wroc.pl) (Lower Silesian Science Festival): lectures and workshops, also for classes | for teachers and pupils |
+   | early October | [Marsze na Orientację](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/marsz-na-orientacj%C4%99/wroc%C5%82awskie-matematyczne-marsze-na-orientacj%C4%99-0) (Orienteering Marches): “teachers and families” category | teachers, families |
+   | autumn | school entries for the [KOMA competition](https://fmw.math.uni.wroc.pl/koma/konkurs-matematyczny-koma) and the [Maraton](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/maraton-matematyczny/maraton-matematyczny) (Mathematical Marathon) | with pupils |
+   | during the school year | [Wrocławskie Spotkania Matematyczne](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/spotkania-matematyczne/wroc%C5%82awskie-spotkania-matematyczne) (Wrocław Mathematical Meetings), most often on Saturdays | with a class |
+   | school breaks, summer holidays | [Poznajemy Matematyczną Europę](https://fmw.math.uni.wroc.pl/dla-nauczycieli/matematyczna-europa/poznajemy-matematyczn%C4%85-europ%C4%99) | teachers |
+   | June – October | admissions to [postgraduate studies](https://www.math.uni.wroc.pl/kwalifikacyjne-studia-podyplomowe-nauczanie-matematyki) | applicants |
+ 
+-  ## For your pupils {#for-your-pupils}
++  ## For your pupils {#dla-twoich-uczniów}
+ 
+   <!-- Każdy punkt listy to jeden kafelek. Zachowaj wcięcia opisów i odnośników. -->
+   :::kafelki
+ 
+   - **Maths circles**
+ 
+-    On Saturdays, from year 3 of primary school, with olympiad groups.
++    For pupils from year 3 of primary school, in groups at different levels (up to olympiad level).
+ 
+     [Circles](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/k%C3%B3%C5%82ka-matematyczne/mi%C4%99dzyszkolne-k%C3%B3%C5%82ka-matematyczne)
+ 
+@@ -98,15 +104,14 @@ tresc_en: |-
+ 
+   :::
+ 
+-  ## Future teachers {#future-teachers}
++  ## Future teachers {#przyszli-nauczyciele}
+ 
+-  Pracownia Dydaktyki i Popularyzacji Matematyki (the Laboratory of Mathematics Education and Outreach) trains students in the teaching specialisation and supervises their school placements — gladly in cooperation with schools in the region.
++  Pracownia Dydaktyki i Popularyzacji Matematyki (the Mathematics Education and Outreach Unit) trains students in the teaching specialisation and supervises their school placements — gladly in cooperation with schools in the region.
+ 
+   <!-- Każdy punkt listy zawiera odnośnik. -->
+   :::linki
+ 
+   - [Teaching specialisation](/studia/matematyka/matematyka-nauczycielska)
+-  - [Who runs outreach](/popularyzacja/organizatorzy)
+ 
+   :::
+ format_tresci: jawne
+diff --git a/src/content/strony/popularyzacja/organizatorzy.md b/src/content/strony/popularyzacja/organizatorzy.md
+index ed572a4..40dea99 100644
+--- a/src/content/strony/popularyzacja/organizatorzy.md
++++ b/src/content/strony/popularyzacja/organizatorzy.md
+@@ -6,15 +6,15 @@ opis: "Fundacja Matematyków Wrocławskich, Portal, PTM i Pracownia Dydaktyki."
+ format_tresci: jawne
+ tytul_en: "Organisers"
+ haslo_en: "Who does it"
+-opis_en: "Fundacja Matematyków Wrocławskich, the Portal, the PTM and the Laboratory of Mathematics Education."
++opis_en: "Fundacja Matematyków Wrocławskich, the Portal, the PTM and the Mathematics Education and Outreach Unit."
+ tresc_en: |-
+   <!-- Zachowaj identyfikatory {#…} przy nagłówkach, aby działały dotychczasowe odnośniki. Znaczniki ::: otaczają specjalne układy. -->
+ 
+-  ## Who does it {#who-does-it}
++  ## Who does it {#kto-to-robi}
+ 
+   We run outreach at the Institute together with our partners. Each of them has its own website with dates and registration.
+ 
+-  ## Partners {#partners}
++  ## Partners {#partnerzy}
+ 
+   <!-- Każdy punkt ma rolę kursywą, nazwę pogrubioną i własny opis. -->
+   :::kontakty
+@@ -45,14 +45,14 @@ tresc_en: |-
+ 
+   :::
+ 
+-  ## At the Institute {#at-the-institute}
++  ## At the Institute {#w-instytucie}
+ 
+   <!-- Każdy punkt ma rolę kursywą, nazwę pogrubioną i własny opis. -->
+   :::kontakty
+ 
+   - *laboratory*
+ 
+-    **Pracownia Dydaktyki i Popularyzacji Matematyki (Laboratory of Mathematics Education and Outreach)**
++    **Pracownia Dydaktyki i Popularyzacji Matematyki (Mathematics Education and Outreach Unit)**
+ 
+     It trains future teachers and supervises their placements. In practice it links the Institute with the Foundation: it coordinates circles, camps, competitions and the I³ seminar.
+ 
+@@ -60,7 +60,7 @@ tresc_en: |-
+ 
+   :::
+ 
+-  ## Want to help? {#want-to-help}
++  ## Want to help? {#chcesz-pomóc}
+ 
+   Classes at circles and camps are also run by the Institute’s students and doctoral students. If you would like to teach, write to the Foundation.
+ ---
+diff --git a/src/content/strony/popularyzacja/uczniowie.md b/src/content/strony/popularyzacja/uczniowie.md
+index 46c6f5a..fb1f395 100644
+--- a/src/content/strony/popularyzacja/uczniowie.md
++++ b/src/content/strony/popularyzacja/uczniowie.md
+@@ -5,24 +5,79 @@ opublikowany: true
+ tresc_en: |-
+   <!-- Zachowaj identyfikatory {#…} przy nagłówkach, aby działały dotychczasowe odnośniki. Znaczniki ::: otaczają specjalne układy. -->
+ 
+-  ## Mathematics after school {#mathematics-after-school}
++  ## MISIU {#misiu}
+ 
+-  On Saturdays at maths circles, in winter and summer at camps, several times a year at competitions. Classes are run by the Institute’s students, doctoral students and staff together with Fundacja Matematyków Wrocławskich (the Wrocław Mathematicians Foundation).
++  *Matematyczno-Informatyczne Spotkania na Uniwersytecie* (MISIU, Mathematics and Computer Science Meetings at the University) is a series of lectures popularising mathematics and computer science for secondary-school students. Each meeting consists of two lectures — one on mathematics and one on computer science — each lasting 45 minutes. Interested schools are welcome to contact us: promocja [ at ] cs.uni.wroc.pl. Information about upcoming meetings is on the [MISIU website](https://studia-wmi.uwr.edu.pl/misiu/) (in Polish).
+ 
+-  ## Regularly: maths circles {#regularly-maths-circles}
++  ## Competitions {#konkursy}
+ 
+-  Międzyszkolne Kółka Matematyczne (inter-school maths circles) meet at the Institute on Saturdays, usually every two weeks, for three hours. Groups are formed by age and level: from year 3 of primary school to secondary school, with separate olympiad groups.
++  <!-- Każdy punkt listy to jeden kafelek. Zachowaj wcięcia opisów i odnośników. -->
++  :::kafelki
++
++  - **Olimpiada Lingwistyki Matematycznej (Olympiad in Mathematical Linguistics)**
++
++    This olympiad calls for a combination of mathematical and language skills. Prize-winners have a chance to take part in the final of the International Linguistics Olympiad.
++
++    When: all year
++
++    [Information](https://olm.math.uni.wroc.pl/)
++
++  - **Olimpiada Sztucznej Inteligencji (Artificial Intelligence Olympiad)**
++
++    A new olympiad that we organise together with the Jagiellonian University, Adam Mickiewicz University and the University of Warsaw.
++
++    When: all year
++
++    [Information](https://www.oai.edu.pl/)
++
++  - **Dolnośląskie Mecze Matematyczne (Lower Silesian Maths Matches)**
++
++    The matches are played by teams representing primary schools from Lower Silesia. They are not only an interesting competition but also an exceptional opportunity to learn mathematics and to develop the skills of arguing, presenting solutions and following reasoning carefully.
++
++    When: all year
++
++    [Information and registration](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/mecze-matematyczne/dolno%C5%9Bl%C4%85skie-mecze-matematyczne)
++
++  - **Wrocławski Maraton Matematyczny (Wrocław Mathematical Marathon)**
++
++    The marathon is about solving problems… until you drop. Some editions last over a dozen hours — until only one competitor is left on the battlefield.
++
++    When: in September, during Dolnośląski Festiwal Nauki (the Lower Silesian Science Festival).
++
++    [Information](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/maraton-matematyczny/maraton-matematyczny)
++
++  - **Konkurs Matematyczny KOMA (KOMA Mathematics Competition)**
++
++    Its aim is to develop independent thinking and action, listening with understanding, note-taking, and acquiring new knowledge and putting it to practical use.
++
++    When: qualifying round in December.
++
++    [Information and registration](https://fmw.math.uni.wroc.pl/koma/konkurs-matematyczny-koma)
++
++  - **Many, many more**
++
++    Memoriał Urszuli Marciniak (Urszula Marciniak Memorial), Wieża Babel (Tower of Babel), Mistrzostwa w Geometrii Elementarnej (Championship in Elementary Geometry)…
++
++    When: all year.
++
++    [More information](https://fmw.math.uni.wroc.pl/)
++
++  :::
++
++  ## Maths circles {#kółka-matematyczne}
++
++  Międzyszkolne Kółka Matematyczne (inter-school maths circles) take place in the Institute building. We welcome pupils from year 3 of primary school and offer many groups formed according to age and level.
+ 
+   <!-- Każdy punkt listy to jeden kafelek. Zachowaj wcięcia opisów i odnośników. -->
+   :::kafelki
+ 
+   - **Primary school**
+ 
+-    Puzzles, games, first proofs, and in years 7–8 preparation for Olimpiada Matematyczna Juniorów (the Junior Mathematical Olympiad).
++    Puzzles, games, first proofs, and from year 7 also preparation for Olimpiada Matematyczna Juniorów (the Junior Mathematical Olympiad).
+ 
+     Years: 3–8
+ 
+-    Where: Institute, pl. Grunwaldzki 2/4
++    Where: Institute, pl. Grunwaldzki 2
+ 
+     [Groups and registration](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/k%C3%B3%C5%82ka-matematyczne/mi%C4%99dzyszkolne-k%C3%B3%C5%82ka-matematyczne)
+ 
+@@ -30,22 +85,22 @@ tresc_en: |-
+ 
+     Olympiad problems and mathematics beyond the syllabus, preparation for Olimpiada Matematyczna (the Mathematical Olympiad).
+ 
+-    Years: general and technical schools
++    Schools: general and technical secondary schools
+ 
+-    Where: Institute, pl. Grunwaldzki 2/4
++    Where: Institute, pl. Grunwaldzki 2
+ 
+     [Groups and registration](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/k%C3%B3%C5%82ka-matematyczne/mi%C4%99dzyszkolne-k%C3%B3%C5%82ka-matematyczne)
+ 
+   :::
+ 
+-  ## Camps {#camps}
++  ## Camps {#obozy}
+ 
+   <!-- Każdy punkt listy to jeden kafelek. Zachowaj wcięcia opisów i odnośników. -->
+   :::kafelki
+ 
+   - **Zimowe Szkoły Matematyki (Winter Schools of Mathematics)**
+ 
+-    Since 1989, usually in the second week after the winter school break: a trip for gifted young people, ending with Wielki Test Wiadomości (the Great Knowledge Test).
++    Held since 1989, for secondary-school students from Lower Silesia who are interested in mathematics.
+ 
+     When: winter
+ 
+@@ -53,45 +108,45 @@ tresc_en: |-
+ 
+   - **Letni Obóz Naukowy (Summer Science Camp)**
+ 
+-    Since 2002, at the end of the school year: from year 4 of primary school to school leavers.
++    Held since 2002, for pupils interested in mathematics: from year 4 of primary school to school leavers.
+ 
+     When: June
+ 
+     [Summer Camp](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/letni-ob%C3%B3z-naukowy/letni-ob%C3%B3z-naukowy)
+ 
+-  - **Obóz przygotowawczy do OMJ (Junior Olympiad preparation camp)**
++  - **Preparation camp for Olimpiada Matematyczna Juniorów**
+ 
+-    For pupils in years 7–8: November and March (for finalists).
++    For pupils in years 7 and 8, in November and March (the March camp is for OMJ finalists).
+ 
+     When: November, March
+ 
+     [OMJ camp](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/ob%C3%B3z-omj/ob%C3%B3z-przygotowawczy-do-omj)
+ 
+-  - **Obóz Olimpiady Matematycznej (Mathematical Olympiad camp)**
++  - **Mathematical Olympiad camp**
+ 
+-    For secondary school pupils preparing for the Mathematical Olympiad.
++    For secondary-school students preparing for Olimpiada Matematyczna.
+ 
+     [OM camp](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/ob%C3%B3z-om/ob%C3%B3z-olimpiady-matematycznej)
+ 
+   :::
+ 
+-  ## The school year at a glance: competitions {#the-school-year-at-a-glance-competitions}
++  ## The school year at a glance: competitions {#rok-szkolny-w-skrócie-zawody-i-konkursy}
+ 
+   | When | What | Who for |
+   | --- | --- | --- |
+-  | September | [Wrocławski Maraton Matematyczny](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/maraton-matematyczny/maraton-matematyczny) (Wrocław Mathematical Marathon; final at the Institute, during the Lower Silesian Science Festival) | primary year 3 to secondary, adults too |
+-  | September | [Olimpiada Lingwistyki Matematycznej](https://olm.math.uni.wroc.pl/) (Olympiad in Mathematical Linguistics): school stage | secondary schools |
+-  | early October | [Matematyczne Marsze na Orientację](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/marsz-na-orientacj%C4%99/wroc%C5%82awskie-matematyczne-marsze-na-orientacj%C4%99-0) (Mathematical Orienteering Marches) | primary year 4 to secondary, families |
+-  | November | [KOMA competition](https://fmw.math.uni.wroc.pl/koma/konkurs-matematyczny-koma): entries until mid-November | primary year 3 to secondary |
+-  | January | [„Wieża Babel” linguistics competition](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/lingwistyka-matematyczna/konkursy-z-lingwistyki-matematycznej) (Tower of Babel) | primary school |
+-  | January – March | [Memoriał Urszuli Marciniak](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/memoria%C5%82-urszuli-marciniak/memoria%C5%82-urszuli-marciniak) (Urszula Marciniak Memorial): puzzles (final in March) | primary year 3 to secondary |
+-  | January, February | Second-stage rounds of [OMJ and OM](https://om.mimuw.edu.pl/) (the Junior and Mathematical Olympiads) at the Institute | olympiad participants |
+-  | during the year | [Dolnośląskie Mecze Matematyczne](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/mecze-matematyczne/dolno%C5%9Bl%C4%85skie-mecze-matematyczne) (Lower Silesian Maths Matches) · [Mistrzostwa Polski w Geometrii Elementarnej](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/geometria-elementarna/mistrzostwa-polski-w-geometrii-elementarnej) (Polish Championship in Elementary Geometry) · [Origami „Żuraw”](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/matorigami-%C5%BCuraw/konkurs-matematycznego-origami-%C5%BCuraw) (“Crane” origami) · [KoALa](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/koala/konkurs-koala-kombinatoryka-algorytmikalogika) | various age categories |
+-  | first Saturday of the summer holidays | [Wings for Maths](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/wings-maths/wings-maths): charity team competition at the Institute | teams of any age |
++  | September | [Wrocławski Maraton Matematyczny](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/maraton-matematyczny/maraton-matematyczny) (final at the Institute, Dolnośląski Festiwal Nauki) | for everyone |
++  | September | [Olimpiada Lingwistyki Matematycznej](https://olm.math.uni.wroc.pl/): school stage | for secondary schools |
++  | early October | [Matematyczne Marsze na Orientację](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/marsz-na-orientacj%C4%99/wroc%C5%82awskie-matematyczne-marsze-na-orientacj%C4%99-0) (Mathematical Orienteering Marches) | for everyone |
++  | November | [KOMA competition](https://fmw.math.uni.wroc.pl/koma/konkurs-matematyczny-koma): entries until mid-November | for pupils |
++  | January | [“Wieża Babel” linguistics competition](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/lingwistyka-matematyczna/konkursy-z-lingwistyki-matematycznej) | primary school |
++  | January – March | [Memoriał Urszuli Marciniak](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/memoria%C5%82-urszuli-marciniak/memoria%C5%82-urszuli-marciniak): puzzles (final in March) | for pupils |
++  | January, February | Second-stage rounds of [OMJ and OM](https://om.mimuw.edu.pl/) (the Junior and Mathematical Olympiads) at the Institute | for olympiad participants |
++  | during the year | [Dolnośląskie Mecze Matematyczne](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/mecze-matematyczne/dolno%C5%9Bl%C4%85skie-mecze-matematyczne) · [Mistrzostwa Polski w Geometrii Elementarnej](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/geometria-elementarna/mistrzostwa-polski-w-geometrii-elementarnej) (Polish Championship in Elementary Geometry) · [Origami “Żuraw”](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/matorigami-%C5%BCuraw/konkurs-matematycznego-origami-%C5%BCuraw) (“Crane” origami) · [KoALa](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/koala/konkurs-koala-kombinatoryka-algorytmikalogika) | for everyone |
++  | first Saturday of the summer holidays | [Wings for Maths](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/wings-maths/wings-maths): charity team competition at the Institute | for everyone |
+ 
+-  ## Lectures: Wrocławskie Spotkania Matematyczne {#lectures-wrocławskie-spotkania-matematyczne}
++  ## Lectures: Wrocławskie Spotkania Matematyczne {#wykłady-wrocławskie-spotkania-matematyczne}
+ 
+-  The Wrocław Mathematical Meetings are popular lectures at the Institute during the school year, most often on Saturdays. For pupils, teachers and students.
++  Wrocławskie Spotkania Matematyczne (Wrocław Mathematical Meetings) are popular lectures at the Institute during the school year, most often on Saturdays. For pupils, teachers and students.
+ 
+   <!-- Każdy punkt listy zawiera odnośnik. -->
+   :::linki
+@@ -100,7 +155,7 @@ tresc_en: |-
+ 
+   :::
+ 
+-  ## For independent work {#for-independent-work}
++  ## For independent work {#do-samodzielnej-pracy}
+ 
+   <!-- Każdy punkt listy zawiera odnośnik. -->
+   :::linki
+@@ -111,33 +166,35 @@ tresc_en: |-
+ 
+   :::
+ 
+-  ## How to start {#how-to-start}
++  <!--
++  ## Jak zacząć {#jak-zacząć}
+ 
+-  <!-- Numeruj kroki. Tytuły są pogrubione, a opisy i odnośniki wcięte. -->
+   :::etapy
+ 
+-  1. **Choose**
++  1. **Wybierz**
+ 
+-     A circle if you want something regular; a competition or a camp if you would rather do it once and do it properly.
++     Kółko, jeśli chcesz regularnie; zawody albo obóz, jeśli wolisz raz, a porządnie.
+ 
+-  2. **Sign up**
++  2. **Zapisz się**
+ 
+-     Registration is on the website of Fundacja Matematyków Wrocławskich; some activities are free, while camps and circles are paid.
++     Zapisy są na stronach Fundacji Matematyków Wrocławskich; część zajęć jest bezpłatna, obozy i kółka są odpłatne.
+ 
+      [Fundacja Matematyków Wrocławskich](https://fmw.math.uni.wroc.pl/)
+ 
+-  3. **Come to the Institute**
++  3. **Przyjdź do Instytutu**
+ 
+-     pl. Grunwaldzki 2/4, Wrocław. Circles, lectures and some competitions take place in the Institute’s rooms.
++     pl. Grunwaldzki 2/4, Wrocław. Kółka, wykłady i część zawodów odbywają się w salach Instytutu.
+ 
+   :::
+ 
+-  ## For parents {#for-parents}
++  -->
++
++  ## Information for parents {#dla-rodziców}
+ 
+   <!-- Tekst w ramce ma etykietę podaną w parametrze tytul. -->
+   :::ramka{tytul="Good to know"}
+ 
+-  You don’t need olympiad results to join circles and camps — curiosity is enough. The youngest groups start in year 3 of primary school. Registration, fees and scholarships are handled by Fundacja Matematyków Wrocławskich.
++  You don’t need to be an olympiad contestant to take part in our activities — curiosity and an interest in mathematics are enough.
+ 
+   :::
+ format_tresci: jawne
+diff --git a/src/content/strony/popularyzacja/wszyscy.md b/src/content/strony/popularyzacja/wszyscy.md
+index 49fa750..2bc6197 100644
+--- a/src/content/strony/popularyzacja/wszyscy.md
++++ b/src/content/strony/popularyzacja/wszyscy.md
+@@ -10,7 +10,7 @@ opis_en: "The Wrocławskie Spotkania lectures, the Dolnośląski Festiwal Nauki
+ tresc_en: |-
+   <!-- Zachowaj identyfikatory {#…} przy nagłówkach, aby działały dotychczasowe odnośniki. Znaczniki ::: otaczają specjalne układy. -->
+ 
+-  ## Mathematics without exams {#mathematics-without-exams}
++  ## Mathematics without exams {#matematyka-bez-egzaminów}
+ 
+   Lectures, a festival and competitions for anyone who is curious — at any age, alone, with family or in a team.
+ 
+@@ -49,7 +49,7 @@ tresc_en: |-
+ 
+   :::
+ 
+-  ## The year at a glance {#the-year-at-a-glance}
++  ## The year at a glance {#rok-w-skrócie}
+ 
+   | When | What | Who for |
+   | --- | --- | --- |
+@@ -59,7 +59,7 @@ tresc_en: |-
+   | during the year | [Mistrzostwa Polski w Geometrii Elementarnej](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/geometria-elementarna/mistrzostwa-polski-w-geometrii-elementarnej) (Polish Championship in Elementary Geometry), [origami „Żuraw”](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/matorigami-%C5%BCuraw/konkurs-matematycznego-origami-%C5%BCuraw) (“Crane” origami) | Open and adult categories |
+   | first Saturday of the summer holidays | [Wings for Maths](https://fmw.math.uni.wroc.pl/dla-uczni%C3%B3w/wings-maths/wings-maths): charity team competition at the Institute | teams of any age |
+ 
+-  ## Competitions for adults and families {#competitions-for-adults-and-families}
++  ## Competitions for adults and families {#zawody-w-których-startują-dorośli-i-rodziny}
+ 
+   <!-- Każdy punkt listy to jeden kafelek. Zachowaj wcięcia opisów i odnośników. -->
+   :::kafelki
+@@ -90,7 +90,7 @@ tresc_en: |-
+ 
+   :::
+ 
+-  ## Further reading {#further-reading}
++  ## Further reading {#do-czytania}
+ 
+   <!-- Każdy punkt listy to jeden kafelek. Zachowaj wcięcia opisów i odnośników. -->
+   :::kafelki
+diff --git a/src/data/popularyzacja.md b/src/data/popularyzacja.md
+index 2294aa9..5a17f34 100644
+--- a/src/data/popularyzacja.md
++++ b/src/data/popularyzacja.md
+@@ -2,81 +2,53 @@
+ tytul: Popularyzacja
+ tytul_en: Outreach
+ opublikowany: true
+-tresc_en: >-
++tresc_en: |-
+   <!-- Zwykłe akapity Markdown. Pierwszy akapit wyróżnia szablon strony. -->
+ 
++  Someone once asked Hugo Steinhaus what mathematicians actually do. Steinhaus began to answer by drawing curves with a stick on a park path. That conversation was the seed of [“Mathematical Snapshots”](https://pl.wikipedia.org/wiki/Kalejdoskop_matematyczny) (in Polish), a classic book popularising mathematics, known all over the world. We try to follow the path set out by Steinhaus and to talk about mathematics in an accessible way — in lecture rooms, at camps for young people, and sometimes in rather unusual places. We invite you to explore what we offer:
+ 
+-  Someone once asked Hugo Steinhaus what mathematicians actually do. Steinhaus
+-  began to explain, drawing curves with a stick on a path in a park. That
+-  conversation eventually gave rise to Mathematical Snapshots, a classic book
+-  popularizing mathematics that has become famous around the world.
+ 
++  <!-- Każdy punkt listy to jeden kafelek. Zachowaj wcięcia opisów i odnośników. -->
++  :::kafelki
+ 
+-  Mathematicians at our Institute still strive to share mathematics in the same
+-  spirit—both in lecture halls and at mathematics camps.
++  - **[For pupils](/popularyzacja/uczniowie)**
+ 
++    Together with Fundacja Matematyków Wrocławskich (the Wrocław Mathematicians Foundation) we organise events for primary-school pupils (from year 3) and for secondary-school students.
++
++    [Lectures, competitions, circles, camps](/popularyzacja/uczniowie)
++
++  - **[For teachers](/popularyzacja/nauczyciele)**
++
++    We invite teachers to lectures and training sessions, and once a year to Dolnośląski Kongres Nauczycieli Matematyki (the Lower Silesian Congress of Mathematics Teachers).
++
++    [Conferences, training, networking](/popularyzacja/nauczyciele)
++
++  - **[For everyone](/popularyzacja/wszyscy/)**
++
++    For people of any age and any profession who are interested in mathematics, we offer lectures (also as part of Dolnośląski Festiwal Nauki, the Lower Silesian Science Festival) and competitions.
++
++    [Lectures, competitions, problems](/popularyzacja/wszyscy)
++
++  - **[Partners](/popularyzacja/organizatorzy/)**
++
++    We work closely with Fundacja Matematyków Wrocławskich, Wrocławski Portal Matematyczny (the Wrocław Mathematical Portal) and the Polish Mathematical Society.
++
++    [About our partners](/popularyzacja/organizatorzy/)
++
++  :::
+ 
+-  We invite you to explore what we have to offer.
+ 
+ 
+   <!--
++  A non-mathematician once asked Hugo Steinhaus what a mathematician actually does all day. Steinhaus picked up a stick and began drawing curves for him on a park path, and from that conversation — as he wrote in the preface — grew “Mathematical Snapshots” (“Kalejdoskop matematyczny”, 1938): a book in which drawings and photographs all but replace proofs, and whose first edition had red-and-green glasses waiting in a pocket for viewing its three-dimensional illustrations. Mathematicians from the Institute and their partners still talk about mathematics this way — in lecture rooms, at camps, and sometimes out in the field with a map and compass.
++
++  The youngest can start with maths circles. The inter-school circles, run by Fundacja Matematyków Wrocławskich (the Wrocław Mathematicians Foundation) together with the Institute, meet on Saturdays, welcome children from the third year of primary school and prepare older pupils for the olympiads. Since 1989 the Institute’s students, doctoral students and staff have run Zimowe Szkoły Matematyki (Winter Schools of Mathematics) — residential camps for gifted young people from Lower Silesia and the Opole region, which end with Wielki Test Wiadomości (the Great Knowledge Test). Since the early 1990s the Institute’s lecture rooms have hosted Wrocławskie Spotkania Matematyczne (Wrocław Mathematical Meetings) — popular lectures during the school year, attended by pupils, teachers and students; similar meetings modelled on them have started in Legnica, Lubin, Wałbrzych and Poznań.
++
++  Mathematics can also be a sport. In Wrocławski Maraton Matematyczny (the Wrocław Mathematical Marathon) play continues until one competitor is left in a category — usually for 11 to 15 hours. In Matematyczne Marsze na Orientację (Mathematical Orienteering Marches), held since 2003, patrols look for checkpoints with a map and compass, and have to locate two of the points themselves by solving a rebus and a geometric construction. There is also a mathematical origami competition and Olimpiada Lingwistyki Matematycznej (the Olympiad in Mathematical Linguistics), in which the rules of unfamiliar languages are worked out by reasoning alone. Adults take part in many of these competitions too, and whole families in the marches.
+ 
+-  A non-mathematician once asked Hugo Steinhaus what a mathematician actually
+-  does all day. Steinhaus picked up a stick and began drawing curves for him on
+-  a park path, and from that conversation — as he wrote in the preface — grew
+-  “Mathematical Snapshots” (“Kalejdoskop matematyczny”, 1938): a book in which
+-  drawings and photographs all but replace proofs, and whose first edition had
+-  red-and-green glasses waiting in a pocket for viewing its three-dimensional
+-  illustrations. Mathematicians from the Institute and their partners still talk
+-  about mathematics this way — in lecture rooms, at camps, and sometimes out in
+-  the field with a map and compass.
+-
+-
+-  The youngest can start with maths circles. The inter-school circles, run by
+-  Fundacja Matematyków Wrocławskich (the Wrocław Mathematicians Foundation)
+-  together with the Institute, meet on Saturdays, welcome children from the
+-  third year of primary school and prepare older pupils for the olympiads. Since
+-  1989 the Institute’s students, doctoral students and staff have run Zimowe
+-  Szkoły Matematyki (Winter Schools of Mathematics) — residential camps for
+-  gifted young people from Lower Silesia and the Opole region, which end with
+-  Wielki Test Wiadomości (the Great Knowledge Test). Since the early 1990s the
+-  Institute’s lecture rooms have hosted Wrocławskie Spotkania Matematyczne
+-  (Wrocław Mathematical Meetings) — popular lectures during the school year,
+-  attended by pupils, teachers and students; similar meetings modelled on them
+-  have started in Legnica, Lubin, Wałbrzych and Poznań.
+-
+-
+-  Mathematics can also be a sport. In Wrocławski Maraton Matematyczny (the
+-  Wrocław Mathematical Marathon) play continues until one competitor is left in
+-  a category — usually for 11 to 15 hours. In Matematyczne Marsze na Orientację
+-  (Mathematical Orienteering Marches), held since 2003, patrols look for
+-  checkpoints with a map and compass, and have to locate two of the points
+-  themselves by solving a rebus and a geometric construction. There is also a
+-  mathematical origami competition and Olimpiada Lingwistyki Matematycznej (the
+-  Olympiad in Mathematical Linguistics), in which the rules of unfamiliar
+-  languages are worked out by reasoning alone. Adults take part in many of these
+-  competitions too, and whole families in the marches.
+-
+-
+-  A large part of this work is aimed at teachers, because they are the ones who
+-  show pupils every day what mathematics is. Pracownia Dydaktyki i Popularyzacji
+-  Matematyki (the Laboratory of Mathematics Education and Outreach) trains
+-  future teachers in the teaching specialisation and supervises their school
+-  placements, and practising teachers can gain qualifications through
+-  postgraduate studies. Since 2004 the I³ seminar for mathematics teachers —
+-  from the words inspiration, individualisation, interdisciplinarity — has met
+-  at the Institute, and the Foundation organises or supports courses, training
+-  and trips for them.
+-
+-
+-  Where to start? You will find circles, camps, competitions and training on the
+-  Foundation’s website, and articles, problem leagues and event announcements on
+-  Wrocławski Portal Matematyczny (the Wrocław Mathematical Portal). Students are
+-  encouraged to write their own papers by the competition of the Wrocław Branch
+-  of the Polish Mathematical Society (PTM), started in 1967 by Józef Łukaszewicz
+-  — one of the oldest such competitions in Poland. We invite anyone who wants to
+-  find out what a mathematician actually does.
++  A large part of this work is aimed at teachers, because they are the ones who show pupils every day what mathematics is. Pracownia Dydaktyki i Popularyzacji Matematyki (the Mathematics Education and Outreach Unit) trains future teachers in the teaching specialisation and supervises their school placements, and practising teachers can gain qualifications through postgraduate studies. Since 2004 the I³ seminar for mathematics teachers — from the words inspiration, individualisation, interdisciplinarity — has met at the Institute, and the Foundation organises or supports courses, training and trips for them.
+ 
++  Where to start? You will find circles, camps, competitions and training on the Foundation’s website, and articles, problem leagues and event announcements on Wrocławski Portal Matematyczny (the Wrocław Mathematical Portal). Students are encouraged to write their own papers by the competition of the Wrocław Branch of the Polish Mathematical Society (PTM), started in 1967 by Józef Łukaszewicz — one of the oldest such competitions in Poland. We invite anyone who wants to find out what a mathematician actually does.
+ 
+   -->
+ format_tresci: jawne

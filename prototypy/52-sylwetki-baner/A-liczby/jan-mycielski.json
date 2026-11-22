@@ -1,0 +1,28 @@
+{
+  "id": "jan-mycielski",
+  "liczby": [
+    {
+      "n": "1962",
+      "podpis": "aksjomat determinacji",
+      "podpis_en": "axiom of determinacy",
+      "z": "aksjomat determinacji (z Hugonem Steinhausem)"
+    },
+    {
+      "n": "1955",
+      "podpis": "grafy Mycielskiego",
+      "podpis_en": "Mycielski graphs",
+      "z": "konstrukcja grafów Mycielskiego"
+    },
+    {
+      "n": "1965",
+      "podpis": "Nagroda Banacha",
+      "podpis_en": "Banach Prize",
+      "z": "Nagroda im. Stefana Banacha PTM"
+    }
+  ],
+  "pominiete": [
+    "wypromowanych doktorów (wg [Mathematics Genealogy Project](https://www.mathgenealogy.org/id.php?id=25278))"
+  ],
+  "uwagi": "Przy punktach z „W skrócie” weryfikacja nie notuje rozbieżności. Wybrano dwa wyniki, z których jest znany, i Nagrodę Banacha; pominięto 6 doktorów, bo tylko jeden doktorat powstał we Wrocławiu. „aksjomat determinacji” ma 21 znaków, czyli jest ponad twardym limitem, stąd „aksjomat AD”; jeśli dopuścicie 21 znaków, lepsza jest pełna nazwa.",
+  "redakcja": "poprawione przy scalaniu 18.11, 23:25"
+}

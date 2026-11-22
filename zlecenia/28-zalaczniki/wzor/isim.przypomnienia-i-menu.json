@@ -1,0 +1,13 @@
+{
+  "przypomnienia": [],
+  "menu_i_kafelek": {
+    "kolejnosc": 3,
+    "menu_etykieta": "ISIM",
+    "menu_etykieta_en": "ISIM",
+    "kafelek_poziom": "Kierunek",
+    "kafelek_poziom_en": "Programme",
+    "kafelek_opis": "Studia I stopnia wspólnie z Instytutem Informatyki.",
+    "kafelek_opis_en": "Bachelor's programme run jointly with the Institute of Computer Science.",
+    "adres": "/studia/isim"
+  }
+}

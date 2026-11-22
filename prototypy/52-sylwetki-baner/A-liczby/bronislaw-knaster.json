@@ -1,0 +1,27 @@
+{
+  "id": "bronislaw-knaster",
+  "liczby": [
+    {
+      "n": "1945",
+      "podpis": "katedra topologii",
+      "podpis_en": "Chair of Topology",
+      "z": "Katedra Topologii od pierwszych wykładów we Wrocławiu"
+    },
+    {
+      "n": "1922",
+      "podpis": "pseudołuk",
+      "podpis_en": "pseudo-arc",
+      "z": "pierwsze kontinuum dziedzicznie nierozkładalne (rozprawa doktorska)"
+    },
+    {
+      "n": "8",
+      "podpis": "doktorów",
+      "podpis_en": "doctoral students",
+      "z": "wypromowanych doktorów (według [Mathematics Genealogy Project](https://mathgenealogy.org/id.php?id=25831))"
+    }
+  ],
+  "pominiete": [
+    "początek seminarium wyższego z topologii"
+  ],
+  "uwagi": "Rola pioniera (katedra od 15.11.1945), wynik matematyczny i szkoła; wszystkie trzy bez rozbieżności (8 doktorów: MGP i drzewo w D23). Rok 1922 dotyczy ogłoszenia wyniku, a nie nadania stopnia (spór 1922/1923 dotyczy tylko doktoratu). Podpis „pseudołuk” opiera się na zdaniu z tekstu, że to ten sam obiekt, który Moise nazwał tak w 1948 r.; pełnej nazwy „kontinuum dziedzicznie nierozkładalne” nie da się zmieścić. Seminarium (1947) pominięto, bo „seminarium topologii” ma 20 znaków i dubluje wątek katedry."
+}

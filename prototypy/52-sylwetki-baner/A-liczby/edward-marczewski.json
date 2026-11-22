@@ -1,0 +1,28 @@
+{
+  "id": "edward-marczewski",
+  "liczby": [
+    {
+      "n": "1953",
+      "podpis": "rektor UWr",
+      "podpis_en": "UWr rector",
+      "z": "rektor Uniwersytetu Wrocławskiego"
+    },
+    {
+      "n": "1930",
+      "podpis": "tw. Szpilrajna",
+      "podpis_en": "Szpilrajn theorem",
+      "z": "twierdzenie Szpilrajna o rozszerzaniu porządków"
+    },
+    {
+      "n": "1957",
+      "podpis": "prezes PTM",
+      "podpis_en": "PTM president",
+      "z": "tekst sylwetki (nie z ramki): „W latach 1957–1959 przewodniczył Polskiemu Towarzystwu Matematycznemu”"
+    }
+  ],
+  "pominiete": [
+    "wypromowanych doktorów (według [nekrologu](https://mathshistory.st-andrews.ac.uk/Extras/Marczewski_obituary/); [Mathematics Genealogy Project](https://www.mathgenealogy.org/id.php?id=25112) notuje 12)"
+  ],
+  "uwagi": "Liczbę 13 doktorów pominięto zgodnie z briefem: weryfikacja (pkt 5) notuje 13 w nekrologu i D23 wobec 12 w MGP, a baner nie pomieści dopisku; w zamian wzięto z tekstu prezesurę PTM 1957–1959 (NEK, D16, bez rozbieżności). Lata rektoratu 1953–1957 są zgodne we wszystkich źródłach. Błędne „1957–1962” jest tylko w patroni.ts i TLUMACZENIA.md, to osobna poprawka. „Twierdzenie Szpilrajna” ma 21 znaków, stąd skrót „tw.”. Dyrekcji Instytutu nie użyto, bo jej rok początku jest sporny (pkt 2: od 1945 czy od 1951), a hasło i tak ją wymienia.",
+  "redakcja": "poprawione przy scalaniu 18.11, 23:25"
+}

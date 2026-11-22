@@ -1,0 +1,334 @@
+diff --git a/.pages.yml b/.pages.yml
+index 161680e..d323a59 100644
+--- a/.pages.yml
++++ b/.pages.yml
+@@ -141,6 +141,12 @@ content:
+       <!-- TEKST: Zwykły tekst. Akapity oddziela pusta linia. Pliki: wgraj w „Media” i wklej link. -->
+       <!-- Rejestracja, program, plakat: wstaw link w osobnej linii. -->
+       <!-- Program, rejestracja, opłaty: każda informacja w osobnym akapicie. -->
++  - name: tresc_en
++    label: Opis EN
++    description: "Opis po angielsku, w tym samym układzie co opis polski (te same linki i pliki). Puste = na stronie angielskiej pokaże się opis polski."
++    type: code
++    options:
++      format: markdown
+   - name: strona
+     label: Strona internetowa konferencji
+     type: string
+diff --git a/src/content/konferencje/2016-7th-euro-japanese-workshop-on-blow-up.md b/src/content/konferencje/2016-7th-euro-japanese-workshop-on-blow-up.md
+index 159e744..3d8b7db 100644
+--- a/src/content/konferencje/2016-7th-euro-japanese-workshop-on-blow-up.md
++++ b/src/content/konferencje/2016-7th-euro-japanese-workshop-on-blow-up.md
+@@ -1,5 +1,6 @@
+ ---
+ tytul: "7th Euro-Japanese Workshop on Blow-up"
++tresc_en: "Organisers: M. Fila, G. Karch, D. Wrzosek."
+ poczatek: "2016-09-04"
+ koniec: "2016-09-09"
+ miejsce: "Będlewo"
+diff --git a/src/content/konferencje/2016-combinatorics-and-groups.md b/src/content/konferencje/2016-combinatorics-and-groups.md
+index 0c0ff60..e99e434 100644
+--- a/src/content/konferencje/2016-combinatorics-and-groups.md
++++ b/src/content/konferencje/2016-combinatorics-and-groups.md
+@@ -1,5 +1,9 @@
+ ---
+ tytul: "Combinatorics and Groups"
++tresc_en: |-
++  Organiser: Prof. Tadeusz Januszkiewicz (Institute of Mathematics of the Polish Academy of Sciences; Mathematical Institute, University of Wrocław).
++
++  Co-organisers: Prof. Tomasz Łuczak (Adam Mickiewicz University, Poznań), Dr Piotr Nowak (IMPAN; Faculty of Mathematics, Informatics and Mechanics, University of Warsaw), Dr Sylwia Antoniuk (IMPAN; Adam Mickiewicz University, Poznań), Dr Jakub Gismatulin (Mathematical Institute, UWr; IMPAN), Dr Damian Osajda (Mathematical Institute, UWr), Dr Łukasz Garncarek (Mathematical Institute, UWr)
+ poczatek: "2016-04-11"
+ koniec: "2016-04-14"
+ miejsce: "Będlewo"
+diff --git a/src/content/konferencje/2016-mathematics-of-pattern-formation.md b/src/content/konferencje/2016-mathematics-of-pattern-formation.md
+index 2bff2b4..c779f41 100644
+--- a/src/content/konferencje/2016-mathematics-of-pattern-formation.md
++++ b/src/content/konferencje/2016-mathematics-of-pattern-formation.md
+@@ -1,5 +1,6 @@
+ ---
+ tytul: "Mathematics of pattern formation"
++tresc_en: "Organisers: G. Karch, A. Marciniak-Czochra, P. Gwiazda"
+ poczatek: "2016-09-11"
+ koniec: "2016-09-16"
+ miejsce: "Będlewo"
+diff --git a/src/content/konferencje/2016-stochastic-models-v.md b/src/content/konferencje/2016-stochastic-models-v.md
+index 1a5572e..d911f91 100644
+--- a/src/content/konferencje/2016-stochastic-models-v.md
++++ b/src/content/konferencje/2016-stochastic-models-v.md
+@@ -1,5 +1,8 @@
+ ---
+ tytul: "Stochastic models V"
++tresc_en: |-
++  Organisers: K. Dębicki, Z. Palmowski, R. Szekli (chair), T. Rolski  
++  Co-organiser: Banach Center, Institute of Mathematics of the Polish Academy of Sciences
+ poczatek: "2016-09-11"
+ koniec: "2016-09-17"
+ miejsce: "Będlewo"
+diff --git a/src/content/konferencje/2016-winter-school-in-abstract-analysis-2016.md b/src/content/konferencje/2016-winter-school-in-abstract-analysis-2016.md
+index ef4be90..6736c07 100644
+--- a/src/content/konferencje/2016-winter-school-in-abstract-analysis-2016.md
++++ b/src/content/konferencje/2016-winter-school-in-abstract-analysis-2016.md
+@@ -1,5 +1,17 @@
+ ---
+ tytul: "Winter School in Abstract Analysis 2016"
++tresc_en: |-
++  Organisers:
++
++  - Mathematical Institute, University of Wrocław;
++  - Institute of Mathematics of the Czech Academy of Sciences,
++  - Institute of Mathematics, Charles University, Prague,
++  - Institute of Mathematics of the Hungarian Academy of Sciences,
++  - Institute of Mathematics, Šafárik University, Košice.
++
++  Venue: Hejnice near Liberec.
++
++  Contact: Prof. David Chodounsky (Czech Academy of Sciences), phone 420222090715, e-mail: [info@winterschool.eu](mailto:info@winterschool.eu).
+ poczatek: "2016-01-30"
+ koniec: "2016-02-06"
+ miejsce: "Hejnice"
+diff --git a/src/content/konferencje/2016-xxx-konferencja-z-historii-matematyki.md b/src/content/konferencje/2016-xxx-konferencja-z-historii-matematyki.md
+index 40dfa9c..44c0b5c 100644
+--- a/src/content/konferencje/2016-xxx-konferencja-z-historii-matematyki.md
++++ b/src/content/konferencje/2016-xxx-konferencja-z-historii-matematyki.md
+@@ -1,6 +1,12 @@
+ ---
+ tytul: "XXX Konferencja z Historii Matematyki"
+ tytul_en: "XXX Conference on the History of Mathematics"
++tresc_en: |-
++  The next, XXX Conference on the History of Mathematics will take place at the Banach Center in Będlewo on **5–8 May 2016**. The conference is devoted mainly to the history of Polish mathematics, but talks on other topics are also possible, for example anniversaries related to the history of mathematics.
++
++  The conference is organised and scientifically supervised by Witold Więsław.
++
++  [Conference programme](https://www.math.uni.wroc.pl/sites/default/files/xxx.program2.pdf) (in Polish)
+ poczatek: "2016-05-05"
+ koniec: "2016-05-08"
+ miejsce: "Będlewo"
+diff --git a/src/content/konferencje/2017-winter-school-in-abstract-analysis-2017.md b/src/content/konferencje/2017-winter-school-in-abstract-analysis-2017.md
+index 8c0550f..8d94af3 100644
+--- a/src/content/konferencje/2017-winter-school-in-abstract-analysis-2017.md
++++ b/src/content/konferencje/2017-winter-school-in-abstract-analysis-2017.md
+@@ -1,5 +1,9 @@
+ ---
+ tytul: "Winter School in Abstract Analysis 2017"
++tresc_en: |-
++  From 28 January to 4 February the conference **Winterschool in Abstract Analysis, section Set Theory & Topology**, co-organised by the Mathematical Institute, University of Wrocław, takes place in Hejnice (Czech Republic). The Winterschool is an annual conference that has attracted specialists in set theory and topology for many years. This year the invited lectures will be given by Joan Bagaria (Barcelona), David Aspero (Norwich), Andrew Marks (Los Angeles) and Christina Brech (São Paulo).
++
++  The conference is partly sponsored by the [International Visegrad Fund](http://www.visegradfund.org).
+ poczatek: "2017-01-28"
+ koniec: "2017-02-04"
+ miejsce: "Hejnice"
+diff --git a/src/content/konferencje/2017-xxxi-konferencja-z-historii-matematyki.md b/src/content/konferencje/2017-xxxi-konferencja-z-historii-matematyki.md
+index d343c9a..699ba28 100644
+--- a/src/content/konferencje/2017-xxxi-konferencja-z-historii-matematyki.md
++++ b/src/content/konferencje/2017-xxxi-konferencja-z-historii-matematyki.md
+@@ -1,6 +1,12 @@
+ ---
+ tytul: "XXXI Konferencja z Historii Matematyki"
+ tytul_en: "XXXI Conference on the History of Mathematics"
++tresc_en: |-
++  Organiser and scientific supervisor: W. Więsław.
++
++  [Information about the conference](https://www.math.uni.wroc.pl/sites/default/files/xxxi_histmat_info.pdf) (in Polish)
++
++  [Conference programme](https://www.math.uni.wroc.pl/sites/default/files/xxxi_histmat_program2.pdf) (in Polish)
+ poczatek: "2017-05-22"
+ koniec: "2017-05-26"
+ miejsce: "Będlewo"
+diff --git a/src/content/konferencje/2018-probabilistic-aspects-of-harmonic-analysis.md b/src/content/konferencje/2018-probabilistic-aspects-of-harmonic-analysis.md
+index 113c2a8..4140830 100644
+--- a/src/content/konferencje/2018-probabilistic-aspects-of-harmonic-analysis.md
++++ b/src/content/konferencje/2018-probabilistic-aspects-of-harmonic-analysis.md
+@@ -1,5 +1,6 @@
+ ---
+ tytul: "Probabilistic Aspects of Harmonic Analysis"
++tresc_en: The conference honours the scientific achievements of Prof. Ewa Damek.
+ poczatek: "2018-05-06"
+ koniec: "2018-05-12"
+ miejsce: "Będlewo"
+diff --git a/src/content/konferencje/2018-winter-school-in-abstract-analysis-2018.md b/src/content/konferencje/2018-winter-school-in-abstract-analysis-2018.md
+index 80d0dfb..79418df 100644
+--- a/src/content/konferencje/2018-winter-school-in-abstract-analysis-2018.md
++++ b/src/content/konferencje/2018-winter-school-in-abstract-analysis-2018.md
+@@ -1,5 +1,9 @@
+ ---
+ tytul: "Winter School in Abstract Analysis 2018"
++tresc_en: |-
++  From 27 January to 3 February the conference **Winterschool in Abstract Analysis, section Set Theory & Topology**, co-organised by the Mathematical Institute, University of Wrocław, takes place in Hejnice (Czech Republic). The Winterschool is an annual conference that has attracted specialists in set theory and topology for many years. This year the invited lectures will be given by Leandro Aurichi (São Paulo), Joel David Hamkins (New York) and Itay Neeman (Los Angeles).
++
++  The conference is partly sponsored by the [International Visegrad Fund](http://www.visegradfund.org).
+ poczatek: "2018-01-27"
+ koniec: "2018-02-03"
+ miejsce: "Hejnice"
+diff --git a/src/content/konferencje/2018-xxxii-konferencja-z-historii-matematyki.md b/src/content/konferencje/2018-xxxii-konferencja-z-historii-matematyki.md
+index 88189f8..de6e480 100644
+--- a/src/content/konferencje/2018-xxxii-konferencja-z-historii-matematyki.md
++++ b/src/content/konferencje/2018-xxxii-konferencja-z-historii-matematyki.md
+@@ -1,6 +1,12 @@
+ ---
+ tytul: "XXXII Konferencja z Historii Matematyki"
+ tytul_en: "XXXII Conference on the History of Mathematics"
++tresc_en: |-
++  Organiser and scientific supervisor: W. Więsław.
++
++  [Conference programme](https://www.math.uni.wroc.pl/sites/default/files/xxxii_konferencja_z_historii_matematyki_2018_program.pdf) (in Polish)
++
++  [Information about the conference](https://www.math.uni.wroc.pl/sites/default/files/xxxii_konferencja_z_historii_matematyki_2018.pdf) (in Polish)
+ poczatek: "2018-04-23"
+ koniec: "2018-04-27"
+ miejsce: "Będlewo"
+diff --git a/src/content/konferencje/2019-winter-school-in-abstract-analysis-2019.md b/src/content/konferencje/2019-winter-school-in-abstract-analysis-2019.md
+index 748221a..e1044e7 100644
+--- a/src/content/konferencje/2019-winter-school-in-abstract-analysis-2019.md
++++ b/src/content/konferencje/2019-winter-school-in-abstract-analysis-2019.md
+@@ -1,5 +1,7 @@
+ ---
+ tytul: "Winter School in Abstract Analysis 2019"
++tresc_en: |-
++  From 26 January to 2 February the conference **Winterschool in Abstract Analysis, section Set Theory & Topology**, co-organised by the Mathematical Institute, University of Wrocław, takes place in Hejnice (Czech Republic). The Winterschool is an annual conference that has attracted specialists in set theory and topology for many years. This year the invited lectures will be given by James Cummings (Pittsburgh, USA), Miroslav Hušek (Prague, Czech Republic), Wiesław Kubiś (Prague, Czech Republic) and Jordi Lopez-Abad (Madrid, Spain).
+ poczatek: "2019-01-26"
+ koniec: "2019-02-02"
+ miejsce: "Hejnice"
+diff --git a/src/content/konferencje/2019-xxxiii-konferencja-z-historii-matematyki.md b/src/content/konferencje/2019-xxxiii-konferencja-z-historii-matematyki.md
+index df1f3b6..3486c05 100644
+--- a/src/content/konferencje/2019-xxxiii-konferencja-z-historii-matematyki.md
++++ b/src/content/konferencje/2019-xxxiii-konferencja-z-historii-matematyki.md
+@@ -1,6 +1,12 @@
+ ---
+ tytul: "XXXIII Konferencja z Historii Matematyki"
+ tytul_en: "XXXIII Conference on the History of Mathematics"
++tresc_en: |-
++  Organiser and scientific supervisor: W. Więsław
++
++  [Conference programme](https://www.math.uni.wroc.pl/sites/default/files/xxxiii_khm_program.pdf) (in Polish)
++
++  [Information about the conference](https://www.math.uni.wroc.pl/sites/default/files/xxxiii_khm_info.pdf) (in Polish)
+ poczatek: "2019-05-27"
+ koniec: "2019-05-31"
+ miejsce: "Będlewo"
+diff --git a/src/content/konferencje/2020-xxxiv-konferencja-z-historii-matematyki.md b/src/content/konferencje/2020-xxxiv-konferencja-z-historii-matematyki.md
+index 4bc9e3a..d649a0c 100644
+--- a/src/content/konferencje/2020-xxxiv-konferencja-z-historii-matematyki.md
++++ b/src/content/konferencje/2020-xxxiv-konferencja-z-historii-matematyki.md
+@@ -1,6 +1,10 @@
+ ---
+ tytul: "XXXIV Konferencja z Historii Matematyki"
+ tytul_en: "XXXIV Conference on the History of Mathematics"
++tresc_en: |-
++  Chair of the Organising Committee: W. Więsław
++
++  **Due to the coronavirus epidemic, the XXXIV Conference on the History of Mathematics has been cancelled. The new date of the conference is 17–21 May 2021.**
+ poczatek: "2020-05-04"
+ koniec: "2020-05-08"
+ miejsce: "Będlewo"
+diff --git a/src/content/konferencje/2021-xxxiv-konferencja-z-historii-matematyki.md b/src/content/konferencje/2021-xxxiv-konferencja-z-historii-matematyki.md
+index 7c46a2e..609d9a1 100644
+--- a/src/content/konferencje/2021-xxxiv-konferencja-z-historii-matematyki.md
++++ b/src/content/konferencje/2021-xxxiv-konferencja-z-historii-matematyki.md
+@@ -1,6 +1,10 @@
+ ---
+ tytul: "XXXIV Konferencja z Historii Matematyki"
+ tytul_en: "XXXIV Conference on the History of Mathematics"
++tresc_en: |-
++  Organiser and scientific supervisor: W. Więsław
++
++  **Due to the worsening coronavirus epidemic, the XXXIV Conference on the History of Mathematics has been postponed until next year. It will take place in Będlewo on 8–13 May 2022.**
+ poczatek: "2021-05-17"
+ koniec: "2021-05-21"
+ miejsce: "Będlewo"
+diff --git a/src/content/konferencje/2022-xxxiv-konferencja-z-historii-matematyki.md b/src/content/konferencje/2022-xxxiv-konferencja-z-historii-matematyki.md
+index 2732347..1af6bd0 100644
+--- a/src/content/konferencje/2022-xxxiv-konferencja-z-historii-matematyki.md
++++ b/src/content/konferencje/2022-xxxiv-konferencja-z-historii-matematyki.md
+@@ -1,6 +1,10 @@
+ ---
+ tytul: "XXXIV Konferencja z Historii Matematyki"
+ tytul_en: "XXXIV Conference on the History of Mathematics"
++tresc_en: |-
++  Organiser and scientific supervisor: W. Więsław
++
++  **Due to the worsening coronavirus epidemic, the XXXIV Conference on the History of Mathematics has been postponed until next year. It will take place in Będlewo on 7–12 May 2023.**
+ poczatek: "2022-05-08"
+ koniec: "2022-05-13"
+ miejsce: "Będlewo"
+diff --git a/src/content/konferencje/2024-contemporary-harmonic-analysis-and-its-synergies.md b/src/content/konferencje/2024-contemporary-harmonic-analysis-and-its-synergies.md
+index ceb577d..3438b65 100644
+--- a/src/content/konferencje/2024-contemporary-harmonic-analysis-and-its-synergies.md
++++ b/src/content/konferencje/2024-contemporary-harmonic-analysis-and-its-synergies.md
+@@ -1,5 +1,6 @@
+ ---
+ tytul: "Contemporary Harmonic Analysis and its Synergies"
++tresc_en: Simons Semester in harmonic analysis.
+ poczatek: "2024-08-01"
+ koniec: "2024-09-30"
+ miejsce: "Wrocław/Będlewo/Warszawa"
+diff --git a/src/content/strony/nauka/sukcesy/historia.md b/src/content/strony/nauka/sukcesy/historia.md
+index 688bc61..6921bd0 100644
+--- a/src/content/strony/nauka/sukcesy/historia.md
++++ b/src/content/strony/nauka/sukcesy/historia.md
+@@ -20,7 +20,7 @@ tresc_en: |
+ 
+   This overview was carried over from the previous website of the Institute and covers distinctions up to 2014. More recent achievements are listed on the [Achievements](/nauka/sukcesy) page.
+ 
+-  ## Lectures and congresses {#lectures-and-congresses}
++  ## Lectures and congresses {#wykłady-i-kongresy}
+ 
+   **International Congress of Mathematicians**
+ 
+@@ -41,7 +41,7 @@ tresc_en: |
+   - 1998 Kazimierz Urbanik,
+   - 1993 Władysław Narkiewicz
+ 
+-  ## Prizes and distinctions {#prizes-and-distinctions}
++  ## Prizes and distinctions {#nagrody-i-wyróżnienia}
+ 
+   **Foundation for Polish Science Prize in exact sciences – the “Polish Nobel”**
+ 
+@@ -53,7 +53,7 @@ tresc_en: |
+ 
+   **Honorary doctorates**
+ 
+-  - Kazimierz Urbanik (Wrocław University of Technology – 1995, University of Łódź – 1995),
++  - Kazimierz Urbanik (Wrocław University of Science and Technology – 1995, University of Łódź – 1995),
+   - Hugo Steinhaus (University of Warsaw – 1958, Medical Academy in Wrocław – 1961, Adam Mickiewicz University – 1963, University of Wrocław – 1965),
+   - Edward Marczewski (University of Wrocław – 1973),
+   - Bronisław Knaster (Medical Academy in Wrocław – 1961),
+@@ -135,7 +135,7 @@ tresc_en: |
+   - 1980 Edward Dobrowolski,
+   - 1971 Janusz Charatonik
+ 
+-  ## Prizes of the Polish Mathematical Society {#prizes-of-the-polish-mathematical-society}
++  ## Prizes of the Polish Mathematical Society {#nagrody-polskiego-towarzystwa-matematycznego}
+ 
+   **[Stefan Banach Prize](http://www.ptm.org.pl/kategorie/konkursy/nagrody-glowne-ptm/nagroda-glowna-ptm-im-stefana-banacha)**
+ 
+@@ -231,7 +231,7 @@ tresc_en: |
+   - 1957 Andrzej Hulanicki,
+   - 1956 Stefan Paszkowski, Jan Mycielski
+ 
+-  ## Scholarships {#scholarships}
++  ## Scholarships {#stypendia}
+ 
+   **Minister of Science and Higher Education scholarship for outstanding young researchers**
+ 
+diff --git a/src/data/publikacje.json b/src/data/publikacje.json
+index f686a0e..ad9a08e 100644
+--- a/src/data/publikacje.json
++++ b/src/data/publikacje.json
+@@ -85,7 +85,7 @@
+     {
+       "nazwa": "Applicationes Mathematicae",
+       "opis": "Czasopismo poświęcone matematyce stosowanej, zwłaszcza modelowaniu matematycznemu i równaniom różniczkowym cząstkowym oraz ich zastosowaniom; publikuje także prace z matematyki finansowej i ubezpieczeniowej, optymalizacji, rachunku prawdopodobieństwa i statystyki oraz metod numerycznych. Dawniej „Zastosowania Matematyki”.",
+-      "opis_en": "A journal dedicated to applied mathematics, especially mathematical modelling, partial differential equations and their applications; it also publishes papers on mathematics of finance and insurance, optimization, probability and statistics, and numerical methods. Formerly Zastosowania Matematyki.",
++      "opis_en": "A journal dedicated to applied mathematics, especially mathematical modelling, partial differential equations and their applications; it also publishes papers on mathematics of finance and insurance, optimisation, probability and statistics, and numerical methods. Formerly Zastosowania Matematyki.",
+       "wydawca": "Instytut Matematyczny PAN",
+       "wydawca_en": "Institute of Mathematics, Polish Academy of Sciences",
+       "issn": "1233-7234",
+@@ -99,7 +99,7 @@
+       "wydawca": "Instytut Matematyczny PAN",
+       "wydawca_en": "Institute of Mathematics, Polish Academy of Sciences",
+       "redakcja": "Instytut Matematyczny, Uniwersytet Wrocławski, pl. Grunwaldzki 2/4, 50-384 Wrocław",
+-      "redakcja_en": "Institute of Mathematics, University of Wrocław, pl. Grunwaldzki 2/4, 50-384 Wrocław, Poland",
++      "redakcja_en": "Mathematical Institute, University of Wrocław, pl. Grunwaldzki 2/4, 50-384 Wrocław, Poland",
+       "issn": "0010-1354",
+       "eissn": "1730-6302",
+       "adres": "https://impan.pl/en/publishing-house/journals-and-series/colloquium-mathematicum"

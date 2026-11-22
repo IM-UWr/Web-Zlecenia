@@ -1,0 +1,15 @@
+@media (max-width:760px){
+.hdr{transition:background-color var(--t-sredni) var(--rytm),border-color var(--t-sredni) var(--rytm),box-shadow var(--t-sredni) var(--rytm)}
+.hdr{--pasek-krycie:45%}
+body:has(.z-nagl-pod[data-dzial]) .hdr{--pasek-krycie:40%}
+body:has(.z-foto-nat) .hdr{--pasek-krycie:60%}
+.hdr.przewiniety:not(.jasny):not(.bez-rozmycia){background:color-mix(in srgb,var(--granat) var(--pasek-krycie),transparent)!important;-webkit-backdrop-filter:blur(14px) saturate(1.1)!important;backdrop-filter:blur(14px) saturate(1.1)!important;border-bottom-color:rgb(255 255 255/.1)!important;box-shadow:0 8px 24px rgb(0 0 0/.18)!important}
+.hdr.jasny{background:color-mix(in srgb,var(--bg) 95%,transparent)!important;-webkit-backdrop-filter:blur(8px)!important;backdrop-filter:blur(8px)!important;border-bottom-color:var(--line)!important;box-shadow:0 6px 18px rgb(13 24 48/.06)!important}
+.hdr.jasny .brand-name{color:var(--ink)!important}
+.hdr.jasny .brand-sub{color:var(--muted)!important}
+.hdr.jasny .brand-logo{background:var(--uwr)!important}
+.hdr.jasny .icon-btn{color:color-mix(in srgb,var(--ink) 76%,transparent)!important}
+.hdr.jasny .icon-btn.burger{background:var(--surface)!important;color:var(--ink)!important}
+.z-menu.z-menu-jasny{background:color-mix(in srgb,var(--bg) 97%,transparent);color:var(--ink);box-shadow:-18px 0 40px #0d183024;border-left:1px solid var(--line)}.z-menu-jasny h2 a{color:var(--ink)}.z-menu-jasny h2 a:after{background:var(--d-a, var(--line))}.z-menu-jasny ul a{color:var(--text)}.z-menu-jasny ul a:hover{color:var(--ink)}.z-menu-jasny ul a[aria-current=page],.z-menu-jasny section[data-dzial] h2 a[aria-current=page]{color:var(--d-a)}.z-menu-jasny section{border-bottom-color:var(--line)}.z-menu-jasny .z-menu-sygnet path{stroke:var(--d-a)}.z-menu-jasny .z-menu-szukaj{border-color:var(--line);color:var(--muted)}.z-menu-jasny .z-menu-szukaj:focus-within{border-color:var(--ink)}.z-menu-jasny .z-menu-szukaj input{color:var(--ink)}.z-menu-jasny .z-menu-szukaj input::placeholder{color:var(--muted)}.z-menu-jasny .z-zamknij button{background:var(--surface);color:var(--ink)}.z-menu-jasny .z-zamknij button:hover{background:var(--line)}.z-menu-jasny .z-menu-grupa h3{color:var(--muted)}.z-menu-jasny .z-menu-rozwin{color:var(--ink)}.z-menu-jasny .z-menu-rozwin:hover{background:var(--surface)}
+.z-menu.z-menu-jasny{background:var(--bg);border-left:1px solid var(--line)}
+}

@@ -1,0 +1,28 @@
+{
+  "id": "andrzej-hulanicki",
+  "liczby": [
+    {
+      "n": "1964",
+      "podpis": "grupy średniowalne",
+      "podpis_en": "amenable groups",
+      "z": "twierdzenie o grupach średniowalnych"
+    },
+    {
+      "n": "17",
+      "podpis": "doktorów",
+      "podpis_en": "doctoral students",
+      "z": "wypromowanych doktorów (wg Studia Mathematica)"
+    },
+    {
+      "n": "2002",
+      "podpis": "doktorat h.c.",
+      "podpis_en": "honorary doctorate",
+      "z": "doktorat honoris causa Uniwersytetu w Orleanie"
+    }
+  ],
+  "pominiete": [
+    "wypromowanych doktorów (wg [„Studia Mathematica”](https://impan.pl/shop/media/wysiwyg/sm/189/sm189-2-01.pdf))"
+  ],
+  "uwagi": "Pominięto 17 doktorów, bo weryfikacja notuje rozbieżność (17 wg noty w „Studia Mathematica” i wspomnienia E. Damek, 7 wg MGP, 6 wg Dudy i Werona). Te dwa główne źródła są jednak zgodne, a 17 jest też w zajawce, więc Instytut może wstawić tę pozycję zamiast doktoratu h.c. Pozostałe pozycje to wynik, otwarcie Instytutu na świat i wyróżnienie.",
+  "redakcja": "poprawione przy scalaniu 18.11, 23:25"
+}
