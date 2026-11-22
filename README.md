@@ -1,7 +1,7 @@
-# Web-Zlecenia — historia zleceń strony IM UWr (prywatne)
+# Web-Zlecenia — historia zleceń strony IM UWr
 
-Changelog pracy nad stroną Instytutu Matematycznego UWr: zlecenia, dziennik i raporty. Repozytorium jest **prywatne**,
-widoczne tylko dla właściciela, i **nie trafia na stronę**. Kod strony jest w publicznym [IM-UWr/Web-Core](https://github.com/IM-UWr/Web-Core).
+Changelog pracy nad stroną Instytutu Matematycznego UWr: zlecenia, dziennik i raporty. Repozytorium jest publiczne, ale jego treść
+**nie trafia na stronę**. Kod strony jest w [IM-UWr/Web-Core](https://github.com/IM-UWr/Web-Core). Nie zapisuj tu haseł, tokenów ani prywatnych danych.
 
 ## Co tu jest
 - `zlecenia/NN-*.md` — zlecenia w kolejności numerów. Wykonane mają w tytule „WYKONANE”. `zasady.md` to wspólne zasady; `NN-zalaczniki/` to załączniki;

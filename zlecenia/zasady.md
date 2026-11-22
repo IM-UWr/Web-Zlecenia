@@ -64,8 +64,9 @@ Nowy tekst strony — także strony działu i tekst nad listą (Seminaria, Konfe
 ## Jedna gałąź `main` (od 7.11.2026, decyzja właściciela)
 Od 7.11 repozytoria treści i Web-Core mają jedną gałąź `main`, a Web-Podglad buduje się z `main`. **Każdy push na `main` od razu zmienia Podgląd**, a redaktorzy pracują w CMS na `main`. Dlatego: pracuj na lokalnej gałęzi roboczej (np. `praca/NN-nazwa`), commituj lokalnie, a na `main` wypychaj dopiero po słowie właściciela „push”, po `git pull --rebase` (redaktorzy mogli w tym czasie zapisać zmiany). Gałęzi roboczych nie wypychaj na GitHuba, bo CMS pokazuje redaktorom wszystkie gałęzie. Budowa Core (workflow „Budowanie i publikacja strony”) jest wyłączona; nie włączaj jej bez polecenia.
 
-## Historia zleceń w prywatnym repozytorium Web-Zlecenia (od 23.11.2026, decyzja właściciela)
-Folder `.przekazanie/` jest klonem prywatnego repozytorium https://github.com/IM-UWr/Web-Zlecenia. Widzi je tylko właściciel i nie trafia na stronę.
+## Historia zleceń w repozytorium Web-Zlecenia (od 23.11.2026, decyzja właściciela)
+Folder `.przekazanie/` jest klonem publicznego repozytorium https://github.com/IM-UWr/Web-Zlecenia. Jego treść nie trafia na stronę.
+- **Repozytorium jest publiczne:** nie zapisuj w nim haseł, tokenów ani prywatnych danych.
 - **Na początku pracy:** `git -C .przekazanie pull --ff-only`. Nowe zlecenia mogą przyjść prosto na GitHub.
 - **Po każdym zapisie** zrób od razu commit i push w `.przekazanie`. Zapisem jest:
   - zlecenie, także wykonane, zapisane jako changelog z „WYKONANE” w tytule;
