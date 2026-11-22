@@ -1666,3 +1666,14 @@ Kryteria odbioru:
 - raport: rozmiary (max DAH EN 894 KB, < 1 MB) i Kalendarz → Archiwum (pomiar bez emulacji CPU ×4 — niedostępna) — spełnione częściowo, opis w raporcie.
 Odstępstwa: numer 68; push bez czekania na „push” (polecenie właściciela).
 Uwaga: niezatwierdzone zmiany innej sesji w Web-Core nietknięte (praca tylko w worktree).
+
+## porzadki-materialy-historia-foldery (zlecenie 69) — 2026-11-23 00:48
+Status: zrobione, wypchnięte (polecenia właściciela 22–23.11, cytaty w zleceniu).
+Zlecenie: zlecenia/69-porzadki-materialy-historia-foldery.md (changelog; 68 zajęte przez równoległą sesję).
+Commity: Web-Zlecenia e35e014, b5c4591, 160e7be i ten wpis; Web-Core f647f6f7, 9f62de8d [skip ci]; Web-Podglad da0d563 [skip ci].
+Kryteria odbioru:
+- stare mapy i instrukcje dla redaktorów usunięte (2 dokumenty claude.ai, PDF Czat-AI w Web-Podglad, Claude outputs) — spełnione;
+- historia zleceń lokalnie i na GitHubie (IM-UWr/Web-Zlecenia, publiczne, bez sekretów; pull na start, push po każdym zapisie w zasady.md, CLAUDE.md i pamięci) — spełnione;
+- robocze kopie i zrzuty usunięte (robocze/, archiwa, raport-zrzuty/ — Kosz) — spełnione;
+- foldery strony w Documents\Github usunięte (7 i IM-Website-test do Kosza, tresci/tresci-B/tresci-C na stałe, Web-Core-B odłączony) — spełnione poza 19 plikami piaskownicy Codex w tresci-B i tresci-C (usuwa właściciel jako administrator);
+- inne projekty właściciela nietknięte — spełnione.
