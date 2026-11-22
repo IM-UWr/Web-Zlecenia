@@ -1651,3 +1651,18 @@ Commity: Web-Core 1a791362; Web-Podglad 321a0a0 [skip ci].
 Kryteria odbioru:
 - oba adresy 200, application/pdf, rozmiary jak pliki — spełnione (Podgląd 45080966245);
 - kopie usunięte: Web-Podglad/dla-redaktorow/Mapa…, Web-Core dok/mapa-redakcyjna-IM-UWr.pdf, Web-Core/Claude outputs/Mapa… (Kosz) — spełnione; kopie w starych folderach (podglad-z33, tresci-B, tresci-C, Web-Core-B) — przy porządkach folderów.
+
+## seminaria-minione-wedlug-lat (zlecenie 68) — 2026-11-23 00:45
+Status: zrobione, wypchnięte (polecenie właściciela: „Przed pushem: git pull --rebase origin main, ponowna budowa i kontrole, potem push na main bez czekania na »push«”).
+Zlecenie: zlecenia/68-seminaria-minione-wedlug-lat.md (pisane jako 67; 67 zajęte → 68). Raport: raporty/RAPORT-ZLECENIE-68.md.
+Zmienione pliki: src/lib/daty.ts (rokAkademicki, od 1.10), src/lib/widoki/seminarium.ts (lataMinionych), src/views/Seminarium.astro (lata h3#rok-RRRR-RR, siatka na rok, tytuł h4, spis z latami, skrypt na wszystkie siatki).
+Commity: Web-Core e081f76f (po rebase na 9f62de8d). Praca w osobnym worktree Web-Core-67 (usunięty po pushu).
+Kryteria odbioru:
+- podział na lata akademickie z liczbą (PL/EN odmiana), od najnowszego — spełnione (2626 wierszy PL+EN, reguła 1.10 bez błędu);
+- spis: Nadchodzące, Minione, lata — spełnione (klik myszą i Enter, znacznik podąża);
+- minione z jednego roku jak dotąd — spełnione (Analiza harmoniczna i Prawdopodobieństwo na treściach z main);
+- wiersze jak przed zmianą, dwie kolumny i rozwijanie w każdym roku, kotwice #<slug> — spełnione (getComputedStyle 244 wierszy przy 1920/1440/1024/390, jasny i ciemny; 2648 linków z Kalendarza i listy seminariów);
+- inne strony bez zmian — spełnione (diff dist: poza /seminaria/<id> tylko znaczniki czasu); repozytoria treści bez zmian — spełnione;
+- raport: rozmiary (max DAH EN 894 KB, < 1 MB) i Kalendarz → Archiwum (pomiar bez emulacji CPU ×4 — niedostępna) — spełnione częściowo, opis w raporcie.
+Odstępstwa: numer 68; push bez czekania na „push” (polecenie właściciela).
+Uwaga: niezatwierdzone zmiany innej sesji w Web-Core nietknięte (praca tylko w worktree).
