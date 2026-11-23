@@ -94,6 +94,46 @@ Serwowane lokalnie dwie budowy (przed i po) z tymi samymi treściami. Wbudowana 
 - Ocena (szacunek): przewijanie raczej płynne. Odczuwalny może być moment przełączenia na Archiwum i pierwsze wczytanie (1,2 MB). Do potwierdzenia na prawdziwym telefonie lub w DevTools (Performance, CPU 4× slowdown).
 - Kodu Kalendarza nie zmieniałem.
 
+## Część 2 (23.11, ok. 01:00): spis bez lat, starsze lata zwinięte, archiwum wypchnięte
+**Polecenie właściciela:** „tak, wypchnij archiwum. I w seminariach jednak wywal wskazywanie lat na pasku bocznym, bo wtedy lista mailingowa zjedzie. Zróbmy tak, że minione pokazują się na 2 lata do tyłu. A wcześniejsze są zwinięte listy i trzeba kliknąć, żeby się rozwinęła”.
+
+**Web-Core `76f1518b`** (`src/views/Seminarium.astro`):
+- **Spis „Na tej stronie”:** zostały tylko „Nadchodzące referaty” i „Minione referaty”, a „Powiadomienia e-mail” stoją tuż pod spisem.
+- **Lata minionych:**
+  - dwa najnowsze lata są rozwinięte, jak dotąd;
+  - starsze lata są zwinięte (`details.sem-rok-zw`). Wiersz roku wygląda jak nagłówek roku („2024/25 · 18 referatów”), ze strzałką z prawej i kreską między latami. Kliknięcie rozwija siatkę referatów tego roku.
+- **Kotwice:** kotwica referatu (`#<slug>` z Kalendarza) albo roku (`#rok-RRRR-RR`) w zwiniętym roku rozwija ten rok i przewija do celu.
+- **Mało lat:** seminarium z minionymi z jednego roku jest bez podziału, a z dwóch lat ma oba lata rozwinięte.
+- **Wybór „2 lat”:** rozwinięte są dwa najnowsze lata, w których są minione referaty. Dziś to 2026/27 i 2025/26. Seminarium bez świeżych referatów ma więc rozwinięte swoje dwa ostatnie lata zamiast samych zwiniętych.
+
+**Sprawdzone (z archiwum, 1440 i 390 px, PL i EN):**
+- Geometria: rozwinięte 2026/27 i 2025/26, zwiniętych 12 lat. Statystyka: rozwinięte 2 lata, zwinięte 3.
+- Klik w 2018/19 rozwija rok. W rozwiniętym roku są dwie kolumny (450 + 450 px), a streszczenie z prawej kolumny zajmuje cały rząd (948 px), sąsiad schodzi pod nie, przesunięcie 0 px.
+- Kotwice do zwiniętych lat:
+  - `dyskretna-analiza-harmoniczna#2019-01-10-vergara`: rok 2018/19 rozwinięty, wiersz 99 px od góry (jak dotąd);
+  - `analiza-harmoniczna#2014-03-12-nowak`: rok 2013/14 rozwinięty, wiersz widoczny na dole strony;
+  - `en/seminaria/topologia#rok-2019-20` (390 px): rok rozwinięty, pod nagłówkiem strony.
+- Kontrole: konsola czysta, `astro check` 0 błędów, `sprawdz_tresci.py` OK, indeks wyszukiwarki 926 stron / 58 525 słów (treść zwiniętych lat jest w HTML, więc jest też w indeksie).
+- Budowa na treściach z `main`: 953 strony.
+- Podgląd po pushu (build 45086345054, sukces): Geometria ma 238 minionych referatów, rozwinięte lata 2026/27 i 2025/26, zwiniętych lat 12 (pierwszy z nich 2024/25, 18 referatów), a spis zawiera tylko dwie pozycje. DAH: 260 referatów, 12 lat zwiniętych; AH: 230 i 12; Statystyka: 25 i 3.
+
+**Archiwum w repozytoriach treści:** z paczki `67-tresci-archiwum.zip` weszły tylko nowe pliki.
+- Pliki, które już były na `main`, różniły się od paczki wyłącznie końcami linii, więc ich nie nadpisywałem. Nic nie zostało usunięte.
+- `sprawdz_pola_cms.py` na 17 repozytoriach (8 z archiwum + 9 z `main`): 3500 plików, 0 problemów.
+
+| Repozytorium | Commit | Referaty | Pliki w Media |
+|---|---|---|---|
+| Web-Sem-Analiza-Harmoniczna | `1d5a4f7` | 232 | — |
+| Web-Sem-Dyskretna-Analiza-Harmoniczna | `5e67193` | 257 | 9 |
+| Web-Sem-Geometria | `9dc0bd2` | 244 | 184 |
+| Web-Sem-Prawdopodobienstwo | `0b79615` | 145 | 11 |
+| Web-Sem-Rownania-Rozniczkowe | `4eaf416` | 153 | 12 |
+| Web-Sem-Statystyka | `e8d5741` | 15 | 2 |
+| Web-Sem-Teoria-Modeli | `deedeae` | 98 | — |
+| Web-Sem-Topologia | `d80dc90` | 157 | — |
+
+Razem dodałem 1301 referatów i 218 plików.
+
 ## Odstępstwa i uwagi
 - Numer 68 zamiast 67 (patrz wyżej). Worktree i gałąź robocza miały nazwę `zlecenie-67` z polecenia właściciela.
 - Zlecenie mówiło „push po słowie »push«”. Właściciel w poleceniu startowym kazał wypchnąć na `main` bez czekania. Przed pushem: `git pull --rebase origin main` (doszedł commit `9f62de8d` z CLAUDE.md i .gitignore), ponowna budowa i kontrole.

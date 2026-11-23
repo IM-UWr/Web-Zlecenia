@@ -1677,3 +1677,15 @@ Kryteria odbioru:
 - robocze kopie i zrzuty usunięte (robocze/, archiwa, raport-zrzuty/ — Kosz) — spełnione;
 - foldery strony w Documents\Github usunięte (7 i IM-Website-test do Kosza, tresci/tresci-B/tresci-C na stałe, Web-Core-B odłączony) — spełnione poza 19 plikami piaskownicy Codex w tresci-B i tresci-C (usuwa właściciel jako administrator);
 - inne projekty właściciela nietknięte — spełnione.
+
+## seminaria-minione-wedlug-lat, część 2 (zlecenie 68) — 2026-11-23 01:10
+Status: zrobione, wypchnięte (polecenie właściciela 23.11: „tak, wypchnij archiwum. I w seminariach jednak wywal wskazywanie lat na pasku bocznym…”).
+Raport: raporty/RAPORT-ZLECENIE-68.md, sekcja „Część 2”.
+Commity: Web-Core 76f1518b; archiwum w 8 repozytoriach Web-Sem (AH 1d5a4f7, DAH 5e67193, Geometria 9dc0bd2, Prawdopodobieństwo 0b79615, Równania 4eaf416, Statystyka e8d5741, Teoria Modeli deedeae, Topologia d80dc90).
+Kryteria odbioru:
+- spis bez lat (tylko Nadchodzące i Minione; powiadomienia e-mail tuż pod spisem) — spełnione;
+- dwa najnowsze lata minionych rozwinięte, starsze zwinięte, klik rozwija (dwie kolumny w rozwiniętym roku działają) — spełnione;
+- kotwice z Kalendarza i #rok-RRRR-RR do zwiniętego roku rozwijają go — spełnione;
+- archiwum referatów wypchnięte do repozytoriów treści (tylko nowe pliki, 1301 referatów, 218 plików, sprawdz_pola_cms 0 problemów) — spełnione;
+- Podgląd przebudowany i sprawdzony — spełnione (build 45086345054; Geometria: 238 minionych, 2 lata rozwinięte, 12 zwiniętych, spis bez lat).
+Uwaga: worktree Web-Core-67 i gałąź zlecenie-67 usunięte; folder Web-Core-67-robocze (paczka, klony repozytoriów treści) zostawiony do decyzji właściciela.
